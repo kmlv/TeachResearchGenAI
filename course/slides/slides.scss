@@ -455,11 +455,19 @@ $hairline: #ececec; // hairlines
   accent-color: $accent;
 }
 
+.reveal .dialogue-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  margin: 16px 0 28px;
+}
+
 .reveal .dialogue-chapters {
   display: flex;
-  gap: 36px;
+  gap: 32px;
   align-items: baseline;
-  margin: 18px 0 30px;
+  margin: 0;
 }
 
 .reveal .dialogue-chapters p {
@@ -486,6 +494,71 @@ $hairline: #ececec; // hairlines
   border-bottom-color: $accent;
   color: $accent;
   outline: none;
+}
+
+.reveal .dialogue-playback-tools,
+.reveal .dialogue-rate-controls {
+  display: flex;
+  align-items: center;
+}
+
+.reveal .dialogue-playback-tools {
+  flex: 0 0 auto;
+  gap: 14px;
+}
+
+.reveal .dialogue-rate-controls {
+  gap: 10px;
+}
+
+.reveal .dialogue-control-button {
+  appearance: none;
+  min-width: 34px;
+  border: 0;
+  border-bottom: 1px solid $mark;
+  border-radius: 0;
+  padding: 2px 3px 3px;
+  background: transparent;
+  color: $quiet;
+  font: inherit;
+  font-size: 19px;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.reveal .dialogue-control-button:hover,
+.reveal .dialogue-control-button:focus-visible {
+  border-bottom-color: $accent;
+  color: $accent;
+  outline: none;
+}
+
+.reveal .dialogue-control-button.is-disabled {
+  border-bottom-color: $hairline;
+  color: $mark;
+  cursor: default;
+  opacity: 0.55;
+}
+
+.reveal .dialogue-control-button.is-disabled:hover,
+.reveal .dialogue-control-button.is-disabled:focus-visible {
+  border-bottom-color: $mark;
+  color: $mark;
+}
+
+.reveal .dialogue-controls-separator {
+  color: $mark;
+  font-size: 19px;
+  line-height: 1;
+}
+
+.reveal .dialogue-rate-output {
+  min-width: 48px;
+  color: $ink;
+  font-size: 19px;
+  line-height: 1.2;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
 }
 
 .reveal .dialogue-window {
