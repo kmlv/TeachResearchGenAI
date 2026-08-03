@@ -1,0 +1,2 @@
+search_id,platform,query,date_utc,filters,results_count,export_file,notes
+S01,Semantic Scholar,"\"large language model\" persuasion human attitudes beliefs intentions behavior",2026-08-02,"relevance; 2023-2026",452,candidates.csv,"Eight records were curated for teaching; they are not the first eight results"

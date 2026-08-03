@@ -1,0 +1,56 @@
+---
+title: "Práctica de literatura: Juntos y evidencia educativa"
+subtitle: "Corpus congelado · extracción tentativa · auditoría humana · mini-síntesis"
+lang: es
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-title: "En esta práctica"
+    toc-location: right
+    code-copy: true
+    embed-resources: true
+    page-layout: article
+---
+
+::: {.callout-important title="La regla del ejercicio"}
+Trabaja solo con los cuatro pasajes de esta página. El asistente propone una
+tabla; la fuente y tu pareja deciden qué sobrevive. No busques fuentes nuevas y
+no subas PDFs.
+:::
+
+```{=html}
+<style>
+.answer-line {
+  display: inline-block;
+  width: min(14rem, 100%);
+  max-width: 100%;
+  min-height: 1.2em;
+  border-bottom: 1px solid currentColor;
+  vertical-align: bottom;
+}
+.answer-line-wide {
+  display: block;
+  width: 100%;
+  margin: .35rem 0 1rem;
+}
+</style>
+```
+
+{{< include sources.md >}}
+
+{{< include worksheet.md >}}
+
+{{< include prompt.md >}}
+
+## Si el asistente no está disponible
+
+Pide al facilitador la matriz de respaldo. El trabajo principal —detectar qué
+parte coincide con la fuente y qué parte fue añadida— no requiere un modelo.
+
+## Para continuar después de la práctica
+
+[Abra la guía del flujo completo](workflow-guide.html) y
+[descargue el `starter_workspace`](starter_workspace.zip). El mismo paquete
+funciona como archivos subidos en un proyecto de ChatGPT o Claude y como carpeta
+local en Codex o Claude Code.

@@ -1,0 +1,226 @@
+---
+title: "Guía: revisión de literatura con ChatGPT, Claude, Codex o Claude Code"
+subtitle: "Un flujo sin API basado en archivos verificables"
+lang: es
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-title: "En esta guía"
+    toc-location: right
+    code-copy: true
+    page-layout: article
+---
+
+::: {.callout-tip title="La idea central"}
+La herramienta puede cambiar. El flujo permanece: **pregunta → protocolo →
+registro de búsqueda → cribado → matriz de evidencia → síntesis**. Cada etapa
+deja un archivo que otra persona puede revisar.
+:::
+
+## Qué aprenderá
+
+Al terminar podrá:
+
+1. escoger una herramienta gratuita, abierta o ya disponible para cada etapa;
+2. usar el mismo paquete de archivos en ChatGPT, Claude, Codex o Claude Code;
+3. separar propuestas de la IA de decisiones humanas;
+4. producir una mini-síntesis que apunte a evidencia verificable.
+
+Esto no convierte un ejercicio breve en una revisión sistemática. Para una
+revisión publicable hacen falta, además, una estrategia de búsqueda justificada,
+deduplicación, cribado acorde con el protocolo, evaluación de calidad o riesgo
+de sesgo y reporte metodológico apropiado.
+
+## Una pila gratuita, abierta o ya disponible
+
+::: {.table-responsive}
+| Etapa | Opción práctica | Acción | Artefacto que debe conservar |
+|---|---|---|---|
+| Descubrir | Semantic Scholar + ResearchRabbit | buscar y seguir citas | `search_log.csv` |
+| Organizar | Zotero | guardar metadatos y textos obtenidos legalmente | biblioteca + exportación |
+| Cribar | CSV; Rayyan o ASReview cuando crece el corpus | aplicar criterios y registrar razones | `candidates.csv` |
+| Extraer | ChatGPT, Claude, Codex o Claude Code | proponer campos y localizar pasajes | `evidence.csv` |
+| Sintetizar | el mismo asistente, solo después de verificar | redactar desde filas aprobadas | `synthesis.md` |
+:::
+
+**Qué compra un servicio integrado como Elicit:** menos traspasos entre
+interfaces y extracción tabular más cómoda. **Qué no compra:** cobertura
+perfecta, una decisión metodológica correcta ni verificación humana.
+
+Enlaces oficiales: [Semantic Scholar](https://www.semanticscholar.org/),
+[ResearchRabbit](https://www.researchrabbit.ai/),
+[Zotero](https://www.zotero.org/), [Rayyan](https://www.rayyan.ai/),
+[ASReview](https://asreview.nl/) y [Elicit](https://elicit.com/).
+
+## Descargue el workspace
+
+[Descargar la carpeta preparada](starter_workspace.zip){.btn .btn-primary}
+
+También puede [examinar los archivos sin descargar](starter_workspace/README.md).
+
+La carpeta incluye:
+
+```text
+starter_workspace/
+├── AGENTS.md          # reglas para Codex
+├── CLAUDE.md          # importa las mismas reglas en Claude Code
+├── PROJECT-INSTRUCTIONS.md # reglas portátiles para proyectos de chat
+├── question.md
+├── protocol.md
+├── search_log.csv
+├── candidates.csv
+├── evidence.csv
+├── synthesis.md
+├── PROMPTS.md
+└── validate_workspace.py
+```
+
+## Ruta 1 — usar ChatGPT o Claude como aplicación
+
+Esta ruta no requiere terminal.
+
+1. Cree un proyecto en ChatGPT o Claude.
+2. Pegue `PROJECT-INSTRUCTIONS.md` en las instrucciones del proyecto.
+3. Añada `question.md`, `protocol.md`, `search_log.csv`, `candidates.csv`,
+   `evidence.csv`, `synthesis.md` y cualquier texto obtenido legalmente.
+4. Copie una solicitud de `PROMPTS.md`.
+5. Pida una propuesta de cribado o extracción, no una síntesis general.
+6. Compare la salida con la fuente y registre la decisión humana.
+7. Descargue los archivos actualizados y conserve la versión anterior.
+
+ChatGPT mantiene archivos e instrucciones compartidas dentro de un proyecto;
+un proyecto local de Codex puede conectarse directamente a una carpeta. Claude
+permite cargar archivos e instrucciones en sus proyectos. Consulte la
+[documentación de proyectos de ChatGPT](https://learn.chatgpt.com/docs/projects)
+y la [documentación de proyectos de Claude](https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects).
+
+`validate_workspace.py` se ejecuta en la ruta local de Codex o Claude Code. En
+la ruta de chat, descargue y revise las versiones antes/después; el proyecto no
+ejecuta ese archivo por el mero hecho de haberlo subido.
+
+## Ruta 2 — usar Codex sobre la carpeta
+
+Esta ruta usa el inicio de sesión o plan que ya tenga en Codex; **no cree ni
+pegue una clave API**. Las cuotas y funciones disponibles pueden variar.
+
+En la aplicación de escritorio, cree un proyecto local y seleccione
+`starter_workspace`. En VS Code, abra esa carpeta y empiece un chat de Codex.
+Si ya usa el CLI:
+
+```bash
+cd starter_workspace
+codex
+```
+
+Primera solicitud:
+
+```text
+Lee AGENTS.md, question.md y protocol.md. No edites todavía. Resume el estado
+del flujo, enumera las decisiones humanas pendientes y propón una sola acción
+siguiente.
+```
+
+Codex descubre `AGENTS.md` desde la raíz del proyecto. Antes de aceptar un
+cambio, revise el diff. Después pida:
+
+```text
+Ejecuta python3 validate_workspace.py. Reporta los archivos cambiados, las
+decisiones pendientes y cualquier dato que no pudiste verificar. No publiques
+ni envíes nada.
+```
+
+Referencias oficiales: [proyectos locales y carpetas en
+Codex](https://learn.chatgpt.com/docs/projects#use-local-projects-for-folders-and-codebases)
+y [reglas mediante
+AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md).
+
+## Ruta 3 — usar Claude Code sobre la misma carpeta
+
+Esta ruta usa el inicio de sesión o plan que ya tenga en Claude Code; **no cree
+ni pegue una clave API**. Las cuotas y funciones disponibles pueden variar.
+
+Abra una terminal en la carpeta:
+
+```bash
+cd starter_workspace
+claude
+```
+
+`CLAUDE.md` importa `AGENTS.md`, por lo que ambos agentes reciben las mismas
+reglas. Use `/memory` para comprobar que se cargó y pegue la misma solicitud
+inicial. Revise los cambios antes de aceptarlos y ejecute el mismo validador.
+
+Referencias oficiales: [instalar y abrir Claude
+Code](https://code.claude.com/docs/en/getting-started) y [usar CLAUDE.md e
+importar AGENTS.md](https://code.claude.com/docs/en/memory#agentsmd).
+
+## Las cuatro solicitudes que importan
+
+### 1. Proponer cribado
+
+```text
+Aplica protocol.md a las filas pendientes de candidates.csv. Propón include,
+exclude, uncertain o editorial_flag y una razón basada solo en los metadatos.
+No cambies las columnas humanas. Si el título no basta, usa uncertain.
+```
+
+### 2. Extraer con localizador
+
+```text
+Usa únicamente los textos autorizados en papers/. Propón una fila de
+evidence.csv con diseño, población, intervención, comparador, resultado, un
+fragmento exacto de máximo 25 palabras y un localizador. Si falta algo, escribe
+NO ENCONTRADO. No marques la fila como verificada.
+```
+
+### 3. Auditar antes de aceptar
+
+```text
+Compara la fila con la fuente. Separa texto que sí aparece, interpretación
+razonable y afirmación que excede la fuente o el diseño. Devuelve una lista de
+comprobaciones para que yo decida.
+```
+
+### 4. Sintetizar solo lo aprobado
+
+```text
+Usa únicamente filas de evidence.csv con human_verified=yes. Redacta qué
+permite decir la evidencia, qué no permite afirmar y qué vacíos quedan. Conserva
+record_id o DOI junto a cada afirmación. Si no hay filas verificadas, detente.
+```
+
+## Cinco barreras humanas
+
+El agente debe detenerse antes de:
+
+- cambiar la pregunta o los criterios;
+- decidir un caso incierto;
+- marcar una fuente como verificada;
+- introducir una fuente que no aparece en el registro de búsqueda;
+- presentar o publicar la síntesis.
+
+`AGENTS.md` y `CLAUDE.md` son instrucciones, no controles infalibles. La
+revisión del diff, el validador y la inspección de la fuente siguen siendo
+necesarios.
+
+## Practique con el corpus congelado
+
+- [Abrir el clip de descubrimiento y cribado](discovery-screening-clip.html)
+- [Abrir la práctica Juntos](participant-packet.html)
+- [Ver las solicitudes completas](starter_workspace/PROMPTS.md)
+
+El clip enseña cómo un corpus deja consulta, fecha y razones de cribado. La
+práctica enseña que una cita auténtica todavía puede ser evidencia incorrecta
+para una afirmación. El workspace une ambos aprendizajes en un flujo que puede
+reutilizarse después de clase. La carpeta `papers/` se entrega vacía por
+derechos de autor: para extraer, añada textos obtenidos legalmente o practique
+primero con los cuatro pasajes del paquete Juntos.
+
+## Fuentes metodológicas y de producto
+
+- [AHRQ: actualización sistemática sobre automatización de revisiones
+  sistemáticas](https://www.ncbi.nlm.nih.gov/books/NBK620201/)
+- [PRISMA 2020](https://www.prisma-statement.org/prisma-2020)
+- [OpenAI: proyectos, archivos y AGENTS.md](https://learn.chatgpt.com/docs/projects)
+- [Anthropic: proyectos y Claude Code](https://code.claude.com/docs/en/getting-started)

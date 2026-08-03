@@ -1,0 +1,307 @@
+---
+title: "Razonamiento adversarial y agentes verificables"
+author:
+  - name: "Kristian López Vargas"
+    affiliation: "Profesor asociado de economía, Universidad de California, Santa Cruz"
+lang: es
+format:
+  revealjs:
+    theme: [default, slides.scss]
+    width: 1600
+    height: 900
+    margin: 0.04
+    slide-number: c/t
+    progress: true
+    controls: false
+    menu: false
+    transition: none
+    background-transition: none
+    hash: true
+    history: false
+    center: false
+    incremental: false
+    highlight-style: github
+    embed-resources: false
+---
+
+## Razonamiento y crítica {.divider}
+
+::: {.notes}
+BLOQUE · 35 minutos · ocho láminas
+
+REPARTO · 15 minutos de encuadre, 15 de ejercicio y auditoría en parejas, 5 de
+producto escrito. La transición al bloque de agentes va dentro de la última
+lámina.
+
+PRODUCTO · cada participante sale con una oración de limitaciones que otra
+persona auditó con una rúbrica de cuatro preguntas.
+
+NO REPETIR · las conversaciones que acaban de escucharse ya mostraron que la
+primera respuesta no basta y que el equipo firma la conclusión. Este bloque no
+vuelve a demostrarlo: lo convierte en un procedimiento con criterio de
+aprobación.
+:::
+
+## De la objeción al producto
+
+En las dos conversaciones, el valor no estuvo en la primera respuesta. Estuvo
+en la objeción que obligó a reformular el problema.
+
+::: {.lead}
+Al terminar este bloque cada persona saldrá con una objeción escrita que otra
+persona pudo auditar.
+:::
+
+::: {.prompt}
+No calificamos la prosa del modelo · auditamos si la objeción cumple condiciones
+:::
+
+::: {.notes}
+MINUTO · 2
+
+DECIR · «Ya vimos dos conversaciones donde la corrección llegó desde afuera del
+modelo. Ahora vamos a hacer eso mismo con su trabajo, y con una diferencia: al
+final de los treinta y cinco minutos alguien más va a auditar lo que
+escribieron.»
+
+CLIC · revelar la segunda frase antes de nombrar el producto
+
+ESPERAR · nada; es el encuadre y dura menos de dos minutos
+
+SI NADIE HABLA · no aplica
+:::
+
+## Cuatro movimientos, una sola operación
+
+::: {.quad}
+- **Hipótesis rival** — otra explicación del mismo hecho
+- **Amenaza** — qué rompería la interpretación preferida
+- **Prueba discriminante** — qué observación separaría ambas
+- **Referee** — qué habría que cambiar antes de defenderlo
+:::
+
+::: {.lead}
+Son la misma operación repetida: obligar a una idea a competir con una
+alternativa que podría ganarle.
+:::
+
+::: {.notes}
+MINUTO · 3
+
+DECIR · «No son cuatro usos desconectados de la IA. Es una sola operación
+aplicada en cuatro momentos del argumento.»
+
+CLIC · cuatro movimientos y luego el cierre
+
+ESPERAR · que alguien reconozca uno en su propio trabajo
+
+SI NADIE HABLA · «Yo empiezo por la rival y después pregunto qué dato me haría
+dejar de creer en mi explicación. El orden importa: la amenaza sin rival suele
+volverse una lista de advertencias.»
+
+NOTA · una hipótesis rival no cambia de tema. Compite por explicar la misma
+observación. Si ambas predicen exactamente lo mismo, todavía no hay prueba, y
+eso es lo que resuelve la lámina siguiente.
+:::
+
+## Una objeción que no cambia nada
+
+::: {.rules}
+- Cambia la interpretación principal
+- Es compatible con lo que ya sabemos
+- Puede investigarse con evidencia
+- Obliga a una acción concreta
+:::
+
+::: {.prompt}
+Una lista larga de objeciones no equivale a una crítica útil
+:::
+
+::: {.notes}
+MINUTO · 3
+
+DECIR · «Una objeción útil no es la que suena más sofisticada. Es la que, si
+fuera cierta, cambiaría lo que podemos afirmar. Estas cuatro condiciones son
+las que vamos a usar como rúbrica al final del bloque, así que conviene leerlas
+dos veces.»
+
+CLIC · cuatro condiciones
+
+ESPERAR · que la sala descarte «se necesita más investigación» y «la muestra es
+pequeña» como objeciones sin acción
+
+SI NADIE HABLA · «Prueben con esta: “podría haber sesgo de selección”. ¿Cambia
+la interpretación? Sí. ¿Obliga a una acción concreta? Solo si dicen quién queda
+seleccionado y por qué. Sin eso es boilerplate.»
+:::
+
+## La prueba que separa
+
+Volvamos al caso de movilidad: viajes más largos aparecen junto a menor
+estabilidad laboral.
+
+::: {.quad}
+- **Si el viaje causa la inestabilidad** — al acortarse el trayecto, la
+  estabilidad mejora para la misma persona
+- **Si el tipo de empleo causa ambos** — al acortarse el trayecto, la
+  estabilidad no cambia
+:::
+
+::: {.lead}
+La prueba no es un método. Es la observación en la que las dos explicaciones
+dejan de coincidir.
+:::
+
+::: {.notes}
+MINUTO · 4
+
+DECIR · «Este es el punto donde una conversación interesante se vuelve un
+programa de investigación. Fíjense en que no dije regresión ni entrevista. Dije
+qué veríamos bajo cada explicación.»
+
+CLIC · primero el cuadrante izquierdo, después el derecho, y al final el cierre
+
+ESPERAR · una predicción distinta bajo cada explicación, no un método
+
+SI NADIE HABLA · «El caso ya lo construyó la sala hace media hora. Lo único que
+agrego es la columna de la derecha: si el empleo informal produce a la vez
+trayectos largos e inestabilidad, acortar el trayecto no debería cambiar nada.
+Esa diferencia es la prueba.»
+
+CUIDADO · si alguien propone una prueba imposible de observar, no descartarla;
+preguntar qué versión aproximada sí sería observable con los datos que existen.
+:::
+
+## Una rival, una prueba, un límite
+
+::: {.lead}
+«Identifica la explicación rival más fuerte de esta afirmación. Di qué
+observación distinguiría ambas interpretaciones. Propón una prueba y señala qué
+seguiría sin resolverse.»
+:::
+
+::: {.prompt}
+Dar contexto, población y evidencia disponible · no dar todavía la conclusión preferida
+:::
+
+::: {.notes}
+MINUTO · 3
+
+DECIR · «La instrucción evita pedir “critica mi trabajo”, porque eso produce una
+lista genérica. Aquí obligamos al modelo a priorizar: una rival, una prueba, un
+límite.»
+
+CLIC · leer el encargo por partes, marcando las tres exigencias
+
+ESPERAR · que alguien pregunte cuánto contexto conviene dar
+
+SI NADIE HABLA · «Yo añadiría población, mecanismo y qué datos existen. No
+añadiría todavía mi conclusión preferida: si se la doy, el modelo tiende a
+construir objeciones que ya sé responder.»
+:::
+
+## Ejercicio: una objeción que pueda perder
+
+1. Escribe una afirmación que hoy defenderías.
+2. Pide la explicación rival más fuerte y la observación que las separaría.
+3. Conserva una sola objeción y escribe qué verías bajo cada explicación.
+
+::: {.lead}
+Sin caso propio: viajes más largos junto a menor estabilidad laboral.
+:::
+
+::: {.prompt}
+9 min · trabajo individual y en silencio · aviso a los 4 y al último minuto
+:::
+
+::: {.notes}
+MINUTO · 9
+
+DECIR · «No hace falta compartir información confidencial: pueden abstraer la
+pregunta. Quien no tenga un caso a mano usa el de movilidad, que ya conocemos.»
+
+CLIC · los tres pasos antes de iniciar el tiempo; la línea del caso de respaldo
+queda visible durante todo el ejercicio
+
+ESPERAR · trabajo silencioso; avisar cuando falten cuatro minutos y cuando
+falte uno
+
+SI NADIE HABLA · no aplica durante el trabajo. Circular y hacer una sola
+pregunta a quien esté trancado: «¿qué observaría usted si su explicación fuera
+falsa?»
+
+FALLA MÁS COMÚN · el paso 3. La gente escribe la objeción y se detiene. Insistir
+en las dos predicciones; sin ellas la lámina siguiente no tiene qué auditar.
+:::
+
+## El intercambio: cuatro preguntas
+
+::: {.quad}
+- **¿Qué parte del argumento queda en riesgo?** — específica
+- **¿Encaja con el contexto y la evidencia?** — plausible
+- **¿Qué observación separa las explicaciones?** — discriminable
+- **¿Qué cambiarías mañana?** — accionable
+:::
+
+::: {.prompt}
+6 min · pasa solo la objeción cuya tercera pregunta tiene respuesta
+:::
+
+::: {.notes}
+MINUTO · 6
+
+DECIR · «Formen parejas. Cada persona lee su objeción y la otra hace estas
+cuatro preguntas en este orden. No opinen sobre si la objeción es interesante:
+solo verifiquen si responde las cuatro.»
+
+CLIC · las cuatro preguntas juntas, sin revelarlas de a una; van a estar en
+pantalla durante todo el intercambio
+
+ESPERAR · tres minutos por persona; avisar el cambio
+
+SI NADIE HABLA · no aplica; si una pareja termina antes, pedirle que intente
+refutar la tercera respuesta en lugar de aceptarla
+
+CRITERIO DE APROBACIÓN · la tercera pregunta es la única eliminatoria. Una
+objeción específica, plausible y accionable que no genera una observación
+distinta sigue siendo una advertencia, no una prueba. Decirlo con esas palabras
+al cerrar el intercambio.
+:::
+
+## Una oración que alguien más auditó
+
+::: {.completions}
+- «Una explicación alternativa es ___. La separaríamos observando ___. Aun así,
+  no podremos concluir ___.»
+- «Si esa objeción fuera cierta, cambiaríamos ___ antes de publicar.»
+:::
+
+::: {.prompt}
+Limitación · acción · frontera de la conclusión
+:::
+
+::: {.notes}
+MINUTO · 5
+
+DECIR · «Escriban una de las dos oraciones con lo que sobrevivió al
+intercambio. Esto es el producto del bloque: no una captura de pantalla, sino
+una frase que podría entrar tal cual en la sección de limitaciones o en un plan
+de robustez.»
+
+CLIC · la primera oración, dar dos minutos, luego la segunda
+
+ESPERAR · dos voluntarios leen en voz alta; pedir que el resto identifique qué
+observación separa las explicaciones en cada caso
+
+SI NADIE HABLA · leer una propia con el caso de movilidad: «Una explicación
+alternativa es que el tipo de empleo produzca a la vez trayectos largos e
+inestabilidad. La separaríamos observando qué pasa con la estabilidad cuando el
+trayecto se acorta sin que cambie el empleo. Aun así, no podremos concluir que
+acortar el viaje mejore la estabilidad en otra población.»
+
+TRANSICIÓN · «Acabamos de hacer a mano un procedimiento con reglas explícitas.
+La pregunta del siguiente bloque es qué pasa cuando ese procedimiento se
+delega.»
+:::
+
+{{< include partials/agents-detailed.qmd >}}

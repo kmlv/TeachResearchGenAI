@@ -286,6 +286,39 @@ código. El agente auditor se presenta desde un mini-repo ya preparado: se
 ejecuta una afirmación y se inspecciona la traza, sin programarlo completo en
 vivo.
 
+## Módulo breve adicional: Lean como verificador matemático — 20 min
+
+Este módulo vive en un slideshow de Quarto separado para poder dictarse o
+reutilizarse de manera autónoma. Pertenece a razonamiento y crítica: por una
+vez, la máquina revisa un paso escrito por la persona. No sustituye la
+validación empírica ni metodológica.
+
+| Min. | Lámina / acción | Resultado |
+|---:|---|---|
+| 2.5 | Del salto verbal al contrato | Entender por qué “suena bien” no equivale a “se sigue” y separar supuestos de conclusión. |
+| 2 | Lean, núcleo y Mathlib | Distinguir lenguaje, verificador y biblioteca matemática. |
+| 2.5 | Primer teorema verde | Leer objetos, supuesto, conclusión y táctica en `PrimerPaso.lean`. |
+| 3 | Persona, agente, Mathlib y Lean | Separar responsabilidades y elegir Lean Web, VS Code o repositorio. |
+| 2 | Incidencia como contrato | Formular el caso antes de mostrar código. |
+| 3 | Rechazo y contraejemplo | Distinguir prueba fallida de refutación verificada. |
+| 1.5 | Reparar cambia el enunciado | Ver que el supuesto común, no la elocuencia, hace el trabajo. |
+| 1.5 | Mezcla entre extremos | Entender por qué un peso debe permanecer en $[0,1]$. |
+| 1.5 | Valor esperado en *Disentangling* | Conectar el puente didáctico con el lema real `expected_mix`. |
+| 0.5 | Límites y transferencia | Formular una afirmación propia como contrato revisable. |
+
+El slideshow independiente vive en
+`course/slides/lean-verificacion-matematica.qmd`. El primer archivo es
+`course/exercises/lean_verification_demo/PrimerPaso.lean`; después se ejecutan
+`IncidenciaRojo.lean`, `Incidencia.lean`, `MezclaEntreExtremos.lean` y
+`PuenteDisentangling.lean`. Deben estar precargados; no se descargan
+dependencias en la sala. El paquete contiene además una práctica de
+inyectividad.
+
+La frase de cierre del módulo es: **Lean verifica el paso, no el mundo.** Quedan
+fuera cuatro juicios: que los supuestos sean ciertos, que la traducción formal
+diga lo que quisimos decir, que los datos respalden el modelo y que la pregunta
+valga la pena.
+
 ## Decisiones ya resueltas
 
 Las preguntas sobre público, duración, equipos, lenguaje de código y caso

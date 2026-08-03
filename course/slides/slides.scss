@@ -613,6 +613,58 @@ $hairline: #ececec; // hairlines
   font-size: 24px;
 }
 
+// ─── Lean verification demo ────────────────────────────────────────────────
+// One readable code object, sized for projection. The code is intentionally
+// monochrome: the logical structure, not syntax colouring, is the visual job.
+
+.reveal .lean-code {
+  width: 1120px;
+  margin: 0;
+}
+
+.reveal .lean-code pre {
+  box-sizing: border-box;
+  width: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 22px 28px;
+  overflow: visible;
+  border: 0;
+  border-left: 3px solid $accent;
+  border-radius: 0;
+  background: $hairline;
+  box-shadow: none;
+}
+
+.reveal .lean-code div.sourceCode {
+  overflow-x: visible;
+}
+
+.reveal .lean-code pre code {
+  max-height: none;
+  padding: 0;
+  overflow: visible;
+  background: transparent;
+  color: $ink;
+  font-size: 28px;
+  line-height: 1.42;
+  white-space: pre;
+}
+
+.reveal .lean-error {
+  max-width: 1120px;
+  margin-top: 28px;
+  color: $accent;
+  font-family: $font-family-monospace;
+  font-size: 27px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.reveal .lean-error p {
+  margin: 0;
+}
+
 // ─── Emphasis and secondary text ────────────────────────────────────────────
 
 // The one closing sentence that should land on its own.

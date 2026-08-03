@@ -1,0 +1,2 @@
+point_id,demand,response_type,response_text,evidence_line,evidence_quote,change_file
+R1-01,Define population and estimand,change,We clarify the cohort and associational estimand.,M001,We study whether longer daily commutes reduce employment stability among urban workers.,changes/R1-01.diff

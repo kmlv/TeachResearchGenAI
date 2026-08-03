@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Descubrimiento y cribado · clip de tres minutos</title>
+
+<!--
+  Clip determinista de descubrimiento y cribado (bloque de literatura).
+
+  Autónomo y sin red: no hace búsquedas, no llama a ninguna API, no pide
+  cuenta y no carga nada de un CDN. Todo el contenido vive en clip-data.js;
+  este archivo solo lo dibuja y lo mueve en el tiempo.
+
+  Geometría: el escenario mide 1600 x 900, las mismas unidades de autoría del
+  deck, y se escala entero a la ventana. Los valores del eje (150), la regla
+  (210), la zona de contenido (270..790) y la banda inferior vienen de
+  course/slides/slides.scss, así que el clip cae sobre la misma retícula que
+  las láminas aunque no comparta hoja de estilo.
+
+  Teclado: espacio o K reproduce y pausa, flechas avanzan y retroceden un
+  paso, R reinicia. Los eventos se detienen aquí para no mover el deck si el
+  clip se incrusta en una lámina.
+-->
+
+<style>
+  :root {
+    --tinta: #1a1a1a;
+    --acento: #0c2a4a;
+    --quieto: #555;
+    --marca: #b0b0b0;
+    --linea: #ececec;
+    --sans: "Inter", "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: #fff;
+    color: var(--tinta);
+    font-family: var(--sans);
+    letter-spacing: 0;
+  }
+
+  .marco { position: fixed; inset: 0; overflow: hidden; }
+
+  .escenario {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1600px;
+    height: 900px;
+    transform-origin: 0 0;
+  }
+
+  /* ── Banda superior: el título y la regla no se mueven nunca ────────────── */
+
+  .titulo {
+    position: absolute;
+    left: 150px;
+    top: 79px;
+    margin: 0;
+    max-width: 900px;
+    font-size: 54px;
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--acento);
+  }
+
+  .sello {
+    position: absolute;
+    right: 150px;
+    top: 88px;
+    width: 540px;
+    text-align: right;
+    font-size: 20px;
+    line-height: 1.4;
+    color: var(--quieto);
+  }
+
+  .sello.aviso { color: var(--acento); font-weight: 600; }
+
+  .regla {
+    position: absolute;
+    left: 150px;
+    top: 210px;
+    width: 1300px;
+    height: 1px;
+    background: var(--linea);
+  }
+
+  /* ── Zona de contenido: 270..790, sin centrar verticalmente ─────────────── */
+
+  .zona {
+    position: absolute;
+    left: 150px;
+    top: 270px;
+    width: 1300px;
+    height: 520px;
+  }
+
+  @keyframes aparece {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  .zona > * { animation: aparece 0.18s ease-out both; }
+  .entra { animation: aparece 0.18s ease-out both; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .zona > *, .entra { animation: none; }
+  }
+
+  .etiqueta {
+    margin: 0 0 24px;
+    font-size: 22px;
+    line-height: 1.4;
+    color: var(--quieto);
+  }
+
+  .lead {
+    max-width: 950px;
+    margin: 0;
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--acento);
+  }
+
+  .lead.grande { max-width: 1200px; font-size: 44px; line-height: 1.35; }
+
+  .nota {
+    max-width: 1000px;
+    margin: 26px 0 0;
+    font-size: 22px;
+    line-height: 1.45;
+    color: var(--quieto);
+  }
+
+  /* ── Criterios ──────────────────────────────────────────────────────────── */
+
+  .criterios { list-style: none; margin: 0; padding: 0; }
+
+  .criterios li {
+    margin: 0 0 26px;
+    font-size: 32px;
+    line-height: 1.3;
+    color: var(--tinta);
+  }
+
+  .criterios .clave {
+    display: inline-block;
+    width: 62px;
+    color: var(--marca);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .criterios .nombre { font-weight: 600; color: var(--acento); }
+
+  /* ── Consulta ───────────────────────────────────────────────────────────── */
+
+  .consulta {
+    margin: 0;
+    padding: 22px 26px;
+    border: 1px solid var(--linea);
+    background: transparent;
+    font-family: var(--mono);
+    font-size: 24px;
+    line-height: 1.5;
+    color: var(--tinta);
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+
+  .campos { display: flex; gap: 90px; margin-top: 36px; }
+
+  .campo span {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 20px;
+    color: var(--quieto);
+  }
+
+  .campo b {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--tinta);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .campo b.pendiente { color: var(--marca); font-weight: 400; }
+
+  /* ── Lista de candidatos ────────────────────────────────────────────────── */
+
+  .lista { list-style: none; margin: 0; padding: 0; }
+
+  .lista li {
+    display: grid;
+    grid-template-columns: 44px 1fr auto;
+    align-items: baseline;
+    column-gap: 16px;
+    margin: 0 0 16px;
+  }
+
+  .lista li.oculto { visibility: hidden; }
+
+  .lista .num {
+    font-size: 20px;
+    color: var(--marca);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .lista .cita { font-size: 28px; line-height: 1.3; color: var(--tinta); }
+  .lista .venue { font-size: 20px; color: var(--quieto); text-align: right; }
+
+  /* ── Tarjeta de decisión ────────────────────────────────────────────────── */
+
+  .tarjeta .cita {
+    max-width: 1180px;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--tinta);
+  }
+
+  .tarjeta .fuente { margin-top: 8px; font-size: 20px; color: var(--quieto); }
+
+  .marcas { list-style: none; margin: 28px 0 0; padding: 0; }
+
+  .marcas li {
+    display: grid;
+    grid-template-columns: 40px 250px 1fr;
+    column-gap: 16px;
+    align-items: baseline;
+    margin: 0 0 12px;
+    font-size: 24px;
+    line-height: 1.3;
+    color: var(--quieto);
+  }
+
+  .marcas .sig { color: var(--marca); font-weight: 600; }
+  .marcas li.decisivo { color: var(--tinta); }
+  .marcas li.decisivo .sig { color: var(--acento); }
+
+  .veredicto {
+    margin: 28px 0 0;
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--acento);
+  }
+
+  /* ── Recuento y límites ─────────────────────────────────────────────────── */
+
+  .cuenta { list-style: none; margin: 0; padding: 0; max-width: 900px; }
+
+  .cuenta li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0 0 18px;
+    padding: 0 0 14px;
+    border-bottom: 1px solid var(--linea);
+    font-size: 30px;
+    color: var(--tinta);
+  }
+
+  .cuenta b {
+    font-size: 34px;
+    font-weight: 600;
+    color: var(--acento);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .quad {
+    display: grid;
+    grid-template-columns: repeat(2, 500px);
+    column-gap: 90px;
+    row-gap: 36px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .quad li {
+    position: relative;
+    font-size: 32px;
+    line-height: 1.3;
+    color: var(--tinta);
+  }
+
+  .quad li::before {
+    content: "";
+    position: absolute;
+    left: -34px;
+    top: 0.62em;
+    width: 18px;
+    height: 2px;
+    background: var(--marca);
+  }
+
+  /* ── Banda inferior: capítulos a la izquierda, mandos a la derecha ──────── */
+
+  .pie {
+    position: absolute;
+    left: 150px;
+    right: 150px;
+    bottom: 74px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 40px;
+  }
+
+  .capitulos { display: flex; align-items: baseline; gap: 28px; }
+  .mandos { display: flex; align-items: baseline; gap: 16px; }
+
+  .capitulos button, .mandos button {
+    appearance: none;
+    border: 0;
+    border-bottom: 1px solid var(--marca);
+    border-radius: 0;
+    padding: 2px 3px 3px;
+    background: transparent;
+    color: var(--quieto);
+    font: inherit;
+    font-size: 20px;
+    line-height: 1.2;
+    cursor: pointer;
+  }
+
+  .capitulos button { border-bottom-color: transparent; font-size: 22px; }
+
+  .capitulos button:hover,
+  .capitulos button:focus-visible,
+  .capitulos button.is-active,
+  .mandos button:hover,
+  .mandos button:focus-visible {
+    border-bottom-color: var(--acento);
+    color: var(--acento);
+    outline: none;
+  }
+
+  .mandos button.is-disabled {
+    border-bottom-color: var(--linea);
+    color: var(--marca);
+    cursor: default;
+    opacity: 0.55;
+  }
+
+  .mandos button.is-disabled:hover,
+  .mandos button.is-disabled:focus-visible {
+    border-bottom-color: var(--marca);
+    color: var(--marca);
+  }
+
+  .reloj {
+    min-width: 104px;
+    color: var(--tinta);
+    font-size: 20px;
+    line-height: 1.2;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .progreso {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 1600px;
+    height: 2px;
+  }
+
+  .progreso span { display: block; width: 0; height: 100%; background: var(--acento); }
+
+  .oculto-visual {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
+</head>
+
+<body>
+<div class="marco">
+  <div class="escenario" id="escenario">
+    <h1 class="titulo" id="titulo">Descubrimiento y cribado</h1>
+    <div class="sello" id="sello"></div>
+    <div class="regla"></div>
+
+    <div class="zona" id="zona" aria-live="polite"></div>
+
+    <div class="pie">
+      <div class="capitulos" id="capitulos" role="group" aria-label="Capítulos del clip"></div>
+      <div class="mandos" role="group" aria-label="Controles del clip">
+        <button type="button" id="b-play">Reproducir</button>
+        <button type="button" id="b-prev" aria-label="Paso anterior">‹ Paso</button>
+        <button type="button" id="b-next" aria-label="Paso siguiente">Paso ›</button>
+        <button type="button" id="b-reset" aria-label="Reiniciar el clip">Reiniciar</button>
+        <span class="reloj"><span id="t-act">0:00</span> / <span id="t-tot">3:00</span></span>
+      </div>
+    </div>
+
+    <div class="progreso"><span id="progreso-fill"></span></div>
+  </div>
+</div>
+
+<p class="oculto-visual">
+  Espacio o K reproduce y pausa. Las flechas izquierda y derecha avanzan y
+  retroceden un paso. La tecla R reinicia el clip.
+</p>
+
+<script src="clip-data.js"></script>
+<script>
+(() => {
+  const D = window.CLIP_DATA;
+  const zona = document.getElementById("zona");
+  const sello = document.getElementById("sello");
+
+  if (!D || !Array.isArray(D.pasos) || !D.pasos.length) {
+    zona.textContent = "No se cargó clip-data.js: el clip no puede dibujarse.";
+    return;
+  }
+
+  const pasos = D.pasos;
+  const total = pasos.reduce((suma, p) => suma + p.dur, 0);
+  const acumulado = pasos.map((_, i) =>
+    pasos.slice(0, i).reduce((suma, p) => suma + p.dur, 0));
+  const porId = Object.fromEntries(D.registros.map((r) => [r.id, r]));
+
+  const esc = (valor) => String(valor === undefined || valor === null ? "" : valor)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+
+  const reloj = (segundos) => {
+    const t = Math.max(0, Math.round(segundos));
+    return `${Math.floor(t / 60)}:${String(t % 60).padStart(2, "0")}`;
+  };
+
+  const cita = (r) => `${esc(r.autores)} (${esc(r.anio)}) — ${esc(r.corto)}`;
+
+  // ── Aviso de verificación ────────────────────────────────────────────────
+  // Mientras un registro siga sin comprobarse, o mientras la consulta no se
+  // haya ejecutado de verdad, el clip lo dice en pantalla. Es más barato
+  // arreglarlo en el ensayo que descubrirlo en la sala.
+
+  const sinVerificar = D.registros.filter((r) => !r.verificado).length;
+  const pendientes = [];
+  if (sinVerificar) pendientes.push(`${sinVerificar} registros sin comprobar`);
+  if (!D.meta.consultaEjecutada) pendientes.push("consulta sin ejecutar");
+
+  if (pendientes.length) {
+    sello.className = "sello aviso";
+    sello.innerHTML = `Borrador · ${esc(pendientes.join(" · "))}<br>No proyectar en clase hasta comprobar`;
+  } else {
+    sello.className = "sello";
+    sello.innerHTML = `Grabación determinista · sin búsqueda en vivo<br>Registros comprobados el ${esc(D.meta.verificadoEl)}`;
+  }
+
+  // ── Vistas ───────────────────────────────────────────────────────────────
+
+  const marca = { si: "✓", no: "✕", "?": "?", na: "—" };
+  const nombreCriterio = (clave) => {
+    const c = D.criterios.find((x) => x.clave === clave);
+    return c ? `${c.clave} ${c.nombre}` : clave;
+  };
+
+  const vistas = {
+    pregunta: () => `
+      <p class="etiqueta">La pregunta que trajimos</p>
+      <p class="lead grande">«${esc(D.meta.pregunta)}»</p>
+      <p class="nota">${esc(D.meta.contexto)}</p>`,
+
+    criterios: () => `
+      <p class="etiqueta">Criterios de inclusión, escritos antes de buscar</p>
+      <ul class="criterios">
+        ${D.criterios.map((c) => `
+          <li><span class="clave">${esc(c.clave)}</span><span class="nombre">${esc(c.nombre)}</span> — ${esc(c.texto)}</li>`).join("")}
+      </ul>
+      <p class="nota">Ámbito: ${esc(D.ambito)}</p>`,
+
+    consulta: () => {
+      const ok = D.meta.consultaEjecutada;
+      const campo = (etiqueta, valor) => `
+        <div class="campo"><span>${esc(etiqueta)}</span><b class="${ok && valor ? "" : "pendiente"}">${esc(ok && valor ? valor : "pendiente")}</b></div>`;
+      return `
+        <p class="etiqueta">La consulta, tal como se ejecutó</p>
+        <pre class="consulta">${esc(D.meta.consulta)}</pre>
+        <div class="campos">
+          ${campo("Fuente", D.meta.fuente)}
+          ${campo("Fecha", D.meta.fechaConsulta)}
+          ${campo("Resultados", D.meta.resultadosTotales)}
+        </div>`;
+    },
+
+    candidatos: () => `
+      <p class="etiqueta">Ocho registros, elegidos a mano para la clase — no son los ocho primeros</p>
+      <ul class="lista">
+        ${D.registros.map((r, i) => `
+          <li class="oculto">
+            <span class="num">${i + 1}</span>
+            <span class="cita">${cita(r)}</span>
+            <span class="venue">${esc(r.venue)}</span>
+          </li>`).join("")}
+      </ul>`,
+
+    decision: (paso) => {
+      const d = D.decisiones[paso.indice];
+      const r = porId[d.registro];
+      return `
+        <p class="etiqueta">Decisión ${paso.indice + 1} de ${D.decisiones.length}</p>
+        <div class="tarjeta">
+          <div class="cita">${esc(r.autores)} (${esc(r.anio)}) — ${esc(r.titulo)}</div>
+          <div class="fuente">${esc(r.venue)} · doi ${esc(r.doi)}</div>
+          <ul class="marcas">
+            ${d.marcas.map((m) => `
+              <li class="${m.decisivo ? "decisivo" : ""}">
+                <span class="sig" aria-hidden="true">${marca[m.valor] || "?"}</span>
+                <span>${esc(nombreCriterio(m.clave))}</span>
+                <span>${esc(m.nota)}</span>
+              </li>`).join("")}
+          </ul>
+          <p class="veredicto">${esc(d.veredicto)}</p>
+          <p class="nota">${esc(d.nota)}</p>
+        </div>`;
+    },
+
+    resultado: () => `
+      <p class="etiqueta">Lo que queda por escrito</p>
+      <ul class="cuenta">
+        ${D.resultado.filas.map((f) => `
+          <li><span>${esc(f.etiqueta)}</span><b>${esc(f.valor)}</b></li>`).join("")}
+      </ul>
+      <p class="lead">${esc(D.resultado.lead)}</p>`,
+
+    limites: () => `
+      <p class="etiqueta">Lo que este clip no hizo</p>
+      <ul class="quad">
+        ${D.limites.map((l) => `<li>${esc(l)}</li>`).join("")}
+      </ul>`,
+
+    cierre: () => `
+      <p class="lead grande">${esc(D.cierre.lead)}</p>
+      <p class="nota">${esc(D.cierre.puente)}</p>`,
+  };
+
+  // ── Capítulos ────────────────────────────────────────────────────────────
+
+  const capitulos = pasos
+    .map((p, i) => ({ i, nombre: p.capitulo }))
+    .filter((c) => c.nombre);
+
+  const barraCapitulos = document.getElementById("capitulos");
+  barraCapitulos.innerHTML = capitulos.map((c) =>
+    `<button type="button" data-paso="${c.i}">${esc(c.nombre)}</button>`).join("");
+  const botonesCapitulo = [...barraCapitulos.querySelectorAll("button")];
+
+  // ── Motor de tiempo ──────────────────────────────────────────────────────
+
+  const bPlay = document.getElementById("b-play");
+  const bPrev = document.getElementById("b-prev");
+  const bNext = document.getElementById("b-next");
+  const bReset = document.getElementById("b-reset");
+  const tAct = document.getElementById("t-act");
+  const relleno = document.getElementById("progreso-fill");
+
+  document.getElementById("t-tot").textContent = reloj(total);
+
+  let idx = 0;
+  let dentro = 0;
+  let corriendo = false;
+  let ultimo = 0;
+  let firma = "";
+  let revelados = 0;
+
+  const disponible = (boton, si) => {
+    boton.classList.toggle("is-disabled", !si);
+    boton.setAttribute("aria-disabled", si ? "false" : "true");
+  };
+
+  const firmaDe = (p) => p.vista + (p.indice === undefined ? "" : `:${p.indice}`);
+
+  const revela = (n) => {
+    const filas = [...zona.querySelectorAll(".lista li")];
+    filas.forEach((fila, i) => {
+      const visible = i < n;
+      fila.classList.toggle("oculto", !visible);
+      if (visible && i >= revelados) {
+        fila.classList.remove("entra");
+        void fila.offsetWidth;
+        fila.classList.add("entra");
+      }
+    });
+    revelados = n;
+  };
+
+  const pinta = () => {
+    const p = pasos[idx];
+    const nueva = firmaDe(p);
+
+    if (nueva !== firma) {
+      zona.innerHTML = vistas[p.vista](p);
+      firma = nueva;
+      if (p.vista === "candidatos") revelados = 0;
+    }
+
+    if (p.vista === "candidatos") revela(p.revelar);
+
+    const transcurrido = Math.min(total, acumulado[idx] + dentro);
+    tAct.textContent = reloj(transcurrido);
+    relleno.style.width = `${(transcurrido / total) * 100}%`;
+
+    const activo = capitulos.reduce((mejor, c) => (c.i <= idx ? c.i : mejor), capitulos[0].i);
+    botonesCapitulo.forEach((boton) => {
+      const es = Number(boton.dataset.paso) === activo;
+      boton.classList.toggle("is-active", es);
+      boton.setAttribute("aria-current", es ? "true" : "false");
+    });
+
+    bPlay.textContent = corriendo ? "Pausa" : "Reproducir";
+    bPlay.setAttribute("aria-label", corriendo ? "Pausar el clip" : "Reproducir el clip");
+    disponible(bPrev, idx > 0);
+    disponible(bNext, idx < pasos.length - 1);
+  };
+
+  const latido = (ahora) => {
+    if (!corriendo) return;
+    dentro += (ahora - ultimo) / 1000;
+    ultimo = ahora;
+
+    while (corriendo && dentro >= pasos[idx].dur) {
+      if (idx === pasos.length - 1) {
+        dentro = pasos[idx].dur;
+        corriendo = false;
+        break;
+      }
+      dentro -= pasos[idx].dur;
+      idx += 1;
+    }
+
+    pinta();
+    if (corriendo) requestAnimationFrame(latido);
+  };
+
+  const reproducir = () => {
+    if (corriendo) return;
+    if (idx === pasos.length - 1 && dentro >= pasos[idx].dur) reiniciar();
+    corriendo = true;
+    ultimo = performance.now();
+    requestAnimationFrame(latido);
+    pinta();
+  };
+
+  const pausar = () => { corriendo = false; pinta(); };
+
+  const ir = (destino) => {
+    idx = Math.min(Math.max(destino, 0), pasos.length - 1);
+    dentro = 0;
+    if (pasos[idx].vista === "candidatos") revelados = 0;
+    if (corriendo) ultimo = performance.now();
+    pinta();
+  };
+
+  const reiniciar = () => { corriendo = false; ir(0); };
+
+  bPlay.addEventListener("click", () => (corriendo ? pausar() : reproducir()));
+  bPrev.addEventListener("click", () => { if (idx > 0) ir(idx - 1); });
+  bNext.addEventListener("click", () => { if (idx < pasos.length - 1) ir(idx + 1); });
+  bReset.addEventListener("click", reiniciar);
+  botonesCapitulo.forEach((boton) =>
+    boton.addEventListener("click", () => ir(Number(boton.dataset.paso))));
+
+  document.addEventListener("keydown", (evento) => {
+    const teclas = [" ", "Spacebar", "k", "K", "r", "R", "ArrowRight", "ArrowLeft", "Home"];
+    if (!teclas.includes(evento.key)) return;
+    if (evento.target instanceof HTMLButtonElement
+        && (evento.key === " " || evento.key === "Spacebar")) return;
+    evento.preventDefault();
+    evento.stopPropagation();
+    if (evento.key === "ArrowRight") { if (idx < pasos.length - 1) ir(idx + 1); return; }
+    if (evento.key === "ArrowLeft") { if (idx > 0) ir(idx - 1); return; }
+    if (evento.key === "r" || evento.key === "R" || evento.key === "Home") { reiniciar(); return; }
+    if (corriendo) pausar(); else reproducir();
+  });
+
+  document.addEventListener("visibilitychange", () => { if (document.hidden) pausar(); });
+
+  // Control desde la lámina que lo incruste, si alguna vez hace falta:
+  // iframe.contentWindow.postMessage({ clip: "play" }, "*")
+  window.addEventListener("message", (evento) => {
+    const orden = evento.data && evento.data.clip;
+    if (orden === "play") reproducir();
+    if (orden === "pause") pausar();
+    if (orden === "restart") reiniciar();
+  });
+
+  window.CLIP = { reproducir, pausar, reiniciar, ir, pasos: pasos.length, total };
+
+  // ── Escalado del escenario ───────────────────────────────────────────────
+
+  const escenario = document.getElementById("escenario");
+  const encaja = () => {
+    const s = Math.min(window.innerWidth / 1600, window.innerHeight / 900);
+    const x = (window.innerWidth - 1600 * s) / 2;
+    const y = (window.innerHeight - 900 * s) / 2;
+    escenario.style.transform = `translate(${x}px, ${y}px) scale(${s})`;
+  };
+
+  window.addEventListener("resize", encaja);
+  encaja();
+  pinta();
+})();
+</script>
+</body>
+</html>

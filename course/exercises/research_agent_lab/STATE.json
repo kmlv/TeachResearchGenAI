@@ -1,0 +1,7 @@
+{
+  "status": "not_started",
+  "last_completed_point": null,
+  "next_point": "R1-01",
+  "allowed_action": "inventory",
+  "pending_human_decision": null
+}

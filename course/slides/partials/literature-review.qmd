@@ -1,0 +1,527 @@
+## Hoy producirán una mini-revisión trazable
+
+::: {.quad}
+- Buscar con una pregunta explícita
+- Cribar con criterios previos
+- Extraer con pasaje y localizador
+- Sintetizar solo lo verificado
+:::
+
+::: {.lead}
+El producto no es una respuesta: es una cadena de evidencia que otra persona puede revisar.
+:::
+
+::: {.notes}
+MINUTO · 0–1
+
+DECIR · «Esta sección no les enseñará a presionar un botón de Elicit. Les
+enseñará un flujo que funciona con herramientas abiertas, gratuitas o ya
+disponibles y con el asistente que tengan. Al final tendrán una mini-revisión y
+una carpeta reutilizable.»
+
+CLIC · ninguno
+
+ESPERAR · nada; es el contrato de aprendizaje
+
+SI NADIE HABLA · no aplica
+:::
+
+## El flujo termina en archivos, no en una conversación
+
+::: {.map}
+- `question.md` · pregunta y alcance
+- `protocol.md` · criterios antes de buscar
+- `search_log.csv` · consulta, plataforma y fecha
+- `candidates.csv` · decisiones de cribado
+- `evidence.csv` · pasaje, localizador y verificación
+- `synthesis.md` · afirmaciones desde filas aprobadas
+:::
+
+::: {.prompt}
+Si la interfaz desaparece mañana, el rastro permanece.
+:::
+
+::: {.notes}
+MINUTO · 1–3
+
+DECIR · «Una revisión no es una larga conversación con un modelo. Es una
+secuencia de decisiones. Cada una queda en un archivo pequeño que puede
+reabrirse, compararse y corregirse.»
+
+SEÑALAR · seis, uno por archivo
+
+ESPERAR · alguien reconoce CSV o Markdown como formatos simples
+
+SI NADIE HABLA · «No hace falta saber programar: ambos formatos se abren como
+texto o tabla.»
+
+[Sources]
+- PRISMA 2020, transparencia del flujo de identificación y selección:
+  https://www.prisma-statement.org/prisma-2020
+[/Sources]
+:::
+
+## Una herramienta accesible por etapa basta
+
+::: {.map}
+- Descubrir · Semantic Scholar + ResearchRabbit
+- Organizar · Zotero
+- Cribar · CSV; Rayyan o ASReview si el corpus crece
+- Extraer y sintetizar · ChatGPT, Claude, Codex o Claude Code
+:::
+
+::: {.lead}
+Elicit compra integración. El flujo modular conserva las mismas decisiones.
+:::
+
+::: {.notes}
+MINUTO · 3–5
+
+DECIR · «No instalen todo. Para una revisión breve, Semantic Scholar y
+ResearchRabbit ayudan a descubrir; Zotero organiza; una tabla basta para un
+cribado pequeño. Rayyan o ASReview sirven cuando la escala crece. El asistente
+entra después para proponer estructura, no para decidir qué es evidencia.
+Varias opciones son gratuitas o abiertas; ChatGPT, Claude, Codex y Claude Code
+son rutas sin costo adicional solo para quien ya tenga acceso, y sus cuotas
+pueden variar.»
+
+SEÑALAR · cuatro etapas; después la línea sobre Elicit
+
+ESPERAR · preguntas sobre Google Scholar o una suscripción institucional
+
+SI NADIE HABLA · «Si su biblioteca ofrece Scopus o Web of Science, úsenlos;
+lo importante es registrar la base, la consulta y la fecha.»
+
+Elicit se menciona una vez: reduce traspasos y ofrece extracción tabular, pero
+no elimina la verificación. No abrirlo ni hacer una comparación de precios.
+
+[Sources]
+- Semantic Scholar: https://www.semanticscholar.org/
+- ResearchRabbit: https://www.researchrabbit.ai/
+- Zotero: https://www.zotero.org/
+- Rayyan: https://www.rayyan.ai/
+- ASReview: https://asreview.nl/
+- Elicit: https://elicit.com/
+[/Sources]
+:::
+
+## Primero mira cómo se construye el corpus
+
+- Pregunta y criterios antes de los resultados
+- Consulta y fecha registradas
+- Incluir, excluir o separar con una razón
+
+[Abrir el clip de descubrimiento y cribado](../exercises/literature_review/discovery-screening-clip.html)
+
+::: {.prompt}
+Observe el rastro: no juzgue todavía la interfaz.
+:::
+
+::: {.notes}
+MINUTO · 5–8
+
+DECIR · «Este clip dura tres minutos. No muestra una búsqueda exhaustiva; muestra
+qué información debe sobrevivir a cualquier búsqueda.»
+
+CLIC · abrir el clip; reproducirlo completo
+
+ESPERAR · que la sala note consulta, criterios y tres tipos de decisión
+
+SI FALLA EL CLIP · narrar: consulta fechada; ocho candidatos curados; un
+incluido, un excluido por población equivocada y un registro separado por
+advertencia editorial
+
+[Sources]
+- Metadatos y procedencia documentados en:
+  ../exercises/literature_review/README.md
+[/Sources]
+:::
+
+## El mismo método funciona en chat o carpeta
+
+::: {.quad}
+- **ChatGPT o Claude** · proyecto + archivos subidos
+- **Codex app** · proyecto local conectado a la carpeta
+- **Codex en VS Code** · archivos, cambios y diff en el editor
+- **Claude Code** · la misma carpeta desde terminal o escritorio
+:::
+
+::: {.lead}
+Cambian los controles. No cambian los archivos ni las barreras humanas.
+:::
+
+::: {.notes}
+MINUTO · 8–10
+
+DECIR · «Quien no quiere terminal usa un proyecto de ChatGPT o Claude, pega
+PROJECT-INSTRUCTIONS.md y sube los archivos. Quien quiere un flujo reproducible
+abre la carpeta con Codex o Claude Code: el agente puede editar tablas,
+ejecutar una validación y mostrar el diff. La lógica es idéntica.»
+
+SEÑALAR · cuatro superficies
+
+ESPERAR · manos: quién prefiere chat y quién trabaja en VS Code
+
+SI NADIE HABLA · «La práctica de hoy funciona en chat. La carpeta local es el
+camino para continuar después.»
+
+[Sources]
+- OpenAI, proyectos y carpetas locales:
+  https://learn.chatgpt.com/docs/projects#use-local-projects-for-folders-and-codebases
+- Anthropic, proyectos de Claude:
+  https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects
+- Claude Code, inicio:
+  https://code.claude.com/docs/en/getting-started
+[/Sources]
+:::
+
+## La carpeta es el método portátil
+
+::: {.lean-code}
+```text
+pregunta → protocolo → búsqueda → candidatos
+                            ↓
+síntesis ← evidencia verificada ← extracción
+```
+:::
+
+[Descargar workspace](../exercises/literature_review/starter_workspace.zip) ·
+[Abrir guía paso a paso](../exercises/literature_review/workflow-guide.html)
+
+::: {.prompt}
+Manual, chat o agente: siempre deja los mismos seis artefactos.
+:::
+
+::: {.notes}
+MINUTO · 10–12
+
+DECIR · «Esta carpeta ya contiene la pregunta, el protocolo y los candidatos
+del ejemplo de IA y persuasión. `papers/` está vacío por derechos de autor: para
+extraer, añadan textos obtenidos legalmente. Pueden usar la carpeta manualmente,
+subirla a un proyecto o abrirla con un agente.»
+
+CLIC · ninguno
+
+ESPERAR · que abran la guía o descarguen el paquete solo si quieren seguir
+
+SI FALLA EL ENLACE · mostrar el árbol desde la guía impresa o continuar; la
+práctica no depende de la descarga
+:::
+
+## Codex y Claude Code empiezan igual
+
+::: {.lean-code}
+```text
+$ cd starter_workspace
+$ codex                 # o: claude
+
+Lee las reglas, la pregunta y el protocolo.
+No edites todavía. Propón una sola acción siguiente.
+```
+:::
+
+::: {.prompt}
+Primero comprender · después proponer · al final editar
+:::
+
+::: {.notes}
+MINUTO · 12–14
+
+DECIR · «En Codex la carpeta trae AGENTS.md. En Claude Code, CLAUDE.md importa
+esas mismas reglas. La primera petición prohíbe editar: obliga al agente a
+mostrar qué entendió antes de tocar una decisión.»
+
+SEÑALAR · comando; después solicitud inicial
+
+ESPERAR · nada; es una demostración conceptual, no una instalación en vivo
+
+SI ALGUIEN NO TIENE CLI · «La misma solicitud se pega en el proyecto de
+ChatGPT o Claude después de subir los archivos.»
+
+[Sources]
+- OpenAI, AGENTS.md:
+  https://learn.chatgpt.com/docs/agent-configuration/agents-md
+- Anthropic, CLAUDE.md e importación de AGENTS.md:
+  https://code.claude.com/docs/en/memory#agentsmd
+[/Sources]
+:::
+
+## Las reglas limitan la autonomía útil
+
+::: {.rules}
+- No cambiar la pregunta ni el protocolo sin permiso.
+- No inventar metadatos, citas ni localizadores.
+- No marcar una fila como verificada.
+- Detenerse ante evidencia insuficiente o una decisión incierta.
+:::
+
+::: {.lead}
+El agente propone. El archivo conserva quién decidió.
+:::
+
+::: {.notes}
+MINUTO · 14–16
+
+DECIR · «Estas reglas viven en AGENTS.md, CLAUDE.md y una versión portátil para
+las instrucciones de proyectos de chat. Son recordatorios persistentes, no una
+garantía técnica. Por eso se revisa el diff y las columnas de la IA están
+separadas de las columnas humanas.»
+
+SEÑALAR · cuatro reglas
+
+ESPERAR · alguien pregunta si el agente puede incumplirlas
+
+SI NADIE HABLA · «Sí. Las instrucciones reducen errores; la revisión y el
+validador hacen visibles algunos incumplimientos.»
+
+[Sources]
+- OpenAI, las instrucciones como guía del proyecto:
+  https://learn.chatgpt.com/docs/agent-configuration/agents-md
+- Anthropic, CLAUDE.md es contexto y no configuración forzosa:
+  https://code.claude.com/docs/en/memory
+[/Sources]
+:::
+
+## Cuatro solicitudes, cuatro productos
+
+::: {.map}
+- Cribar · decisión propuesta + criterio aplicado
+- Extraer · pasaje exacto + localizador
+- Auditar · texto / interpretación / exceso
+- Sintetizar · solo filas con `human_verified=yes`
+:::
+
+::: {.prompt}
+No pida «hazme una revisión». Pida el siguiente artefacto verificable.
+:::
+
+::: {.notes}
+MINUTO · 16–18
+
+DECIR · «El prompt largo no es la innovación. La innovación es pedir un
+producto acotado en cada etapa y no permitir que el modelo salte al resumen.»
+
+SEÑALAR · cuatro solicitudes
+
+ESPERAR · nada
+
+SI NADIE HABLA · no aplica
+:::
+
+## Cribar no es resumir
+
+::: {.lean-code}
+```text
+Aplica protocol.md a las filas pendientes.
+Propón include, exclude, uncertain o editorial_flag.
+Usa solo los metadatos disponibles.
+No cambies las columnas humanas.
+Si el título no basta, usa uncertain.
+```
+:::
+
+::: {.lead}
+Una razón escrita vale más que una clasificación silenciosa.
+:::
+
+::: {.notes}
+MINUTO · 18–20
+
+DECIR · «Observen tres límites: solo filas pendientes, solo metadatos y una
+salida incierta cuando el título no alcanza. El agente no tiene permiso para
+rellenar la decisión humana.»
+
+CLIC · ninguno
+
+ESPERAR · pedir: «¿Cuál línea evita más errores?»; respuesta probable:
+`Si el título no basta, usa uncertain`
+
+SI NADIE HABLA · señalar esa línea y continuar
+:::
+
+## Extraer primero; sintetizar después
+
+::: {.quad}
+- **Extracción** · diseño, población, resultado, pasaje y localizador
+- **Falta evidencia** · `NO ENCONTRADO`
+- **Verificación** · una persona abre la fuente
+- **Síntesis** · solo filas marcadas `human_verified=yes`
+:::
+
+::: {.prompt}
+La síntesis hereda los límites de la matriz que la alimenta.
+:::
+
+::: {.notes}
+MINUTO · 20–22
+
+DECIR · «El asistente puede proponer una extracción muy rápido. La parte lenta
+es comprobar que el pasaje existe, que el localizador sirve y que el diseño
+permite el verbo usado. Solo después se permite sintetizar.»
+
+SEÑALAR · cuatro pasos
+
+ESPERAR · nada
+
+SI NADIE HABLA · no aplica
+:::
+
+## Ahora practicarán con un corpus congelado
+
+- Cuatro pasajes sobre Juntos y educación
+- Tres afirmaciones para auditar
+- Una fila verificada por pareja
+
+[Abrir la práctica](../exercises/literature_review/participant-packet.html)
+
+::: {.lead}
+La búsqueda ya ocurrió. Ustedes harán extracción, auditoría y síntesis.
+:::
+
+::: {.notes}
+MINUTO · 22–23
+
+DECIR · «Para que la red y las cuentas no controlen la clase, el corpus está
+congelado. Aquí no buscamos fuentes nuevas. Cada pareja comprobará una sola
+afirmación a fondo.»
+
+CLIC · abrir la práctica
+
+ESPERAR · formar parejas y asignar A1, A2 o A3
+
+SI FALTA UN ASISTENTE · entregar la matriz de respaldo; el aprendizaje central
+es auditar, no generar la primera tabla
+:::
+
+## Primero: propuesta, no respuesta
+
+::: {.lean-code}
+```text
+Para A1–A3 devuelve:
+veredicto · fuente · pasaje · localizador
+qué permite concluir · qué no permite concluir
+
+Usa solo los cuatro pasajes.
+Si falta evidencia: NO ENCONTRADO.
+No sintetices todavía.
+```
+:::
+
+::: {.prompt}
+Copien el prompt · todavía no defiendan la tabla
+:::
+
+::: {.notes}
+MINUTO · 23–26
+
+DECIR · «Peguen los cuatro pasajes y esta solicitud en ChatGPT o Claude. La
+tabla que salga es provisional. Si trabajan con Codex o Claude Code, la misma
+petición puede llenar una propuesta en evidence.csv.»
+
+CLIC · ninguno
+
+ESPERAR · una tabla de tres filas, posiblemente con inferencias excesivas
+
+SI EL MODELO BUSCA AFUERA · detenerlo y repetir «usa solo los cuatro pasajes»
+:::
+
+## Auditen una afirmación, no las tres
+
+::: {.rules}
+- ¿Es el mismo programa y país?
+- ¿Existe el pasaje y el localizador?
+- ¿Coincide el resultado medido?
+- ¿El diseño permite ese verbo?
+:::
+
+::: {.lead}
+Corrijan la fila y preparen una frase de justificación.
+:::
+
+::: {.notes}
+MINUTO · 26–32
+
+DECIR · «A1, A2 o A3: solo una. Primero abran la fuente o lean el pasaje;
+después decidan el veredicto. `NO ENCONTRADO` es un resultado válido.»
+
+SEÑALAR · cuatro comprobaciones
+
+ESPERAR · A1 respaldada; A2 contradicha; A3 contradicha
+
+SI UNA PAREJA TERMINA RÁPIDO · pedir que identifique la palabra exacta que
+excede el diseño o cambia el resultado
+:::
+
+## Tres errores sobreviven a una cita auténtica
+
+- Panamá no es Perú.
+- Asistencia no equivale a aprendizaje.
+- Un pasaje verdadero no demuestra causalidad.
+
+::: {.prompt}
+Primero la evidencia · después el veredicto
+:::
+
+::: {.notes}
+MINUTO · 32–33.5
+
+DECIR · «A3 usa una fuente real y un programa realmente llamado Juntos, pero
+es otro país y otro programa. A2 usa una frase real sobre asistencia, pero
+cambia el resultado y la fuerza causal. La autenticidad de la cita no basta.»
+
+SEÑALAR · tres errores
+
+ESPERAR · recoger una justificación breve por afirmación
+
+SI FALTA TIEMPO · resolver A3 y A2 en plenario; dejar A1 como contraste
+:::
+
+## La mini-síntesis tiene tres oraciones
+
+::: {.completions}
+- La evidencia verificada permite decir que ___
+- Todavía no permite afirmar que ___
+- Para avanzar necesitaríamos ___
+:::
+
+::: {.prompt}
+Use únicamente la matriz corregida.
+:::
+
+::: {.notes}
+MINUTO · 33.5–34.5
+
+DECIR · «Ahora sí pueden pedir ayuda para redactar. Peguen únicamente las filas
+verificadas. La herramienta puede mejorar la forma; no puede ampliar el corpus
+en este paso.»
+
+SEÑALAR · tres frases
+
+ESPERAR · una síntesis prudente que distinga asistencia, aprendizaje y causalidad
+
+SI NADIE HABLA · leer la mini-síntesis de la clave sin mostrar toda la respuesta
+:::
+
+## Salen con un flujo, no con una marca
+
+[Guía completa](../exercises/literature_review/workflow-guide.html) ·
+[Workspace descargable](../exercises/literature_review/starter_workspace.zip) ·
+[Práctica](../exercises/literature_review/participant-packet.html)
+
+::: {.lead}
+La herramienta acelera. El protocolo delimita. La evidencia y ustedes deciden.
+:::
+
+::: {.notes}
+MINUTO · 34.5–35
+
+DECIR · «Si mañana usan Elicit, Rayyan, Codex o Claude Code, pidan siempre los
+mismos artefactos y mantengan las mismas barreras. Ese es el aprendizaje
+transferible.»
+
+CLIC · ninguno
+
+ESPERAR · nada; cierre
+
+SI NADIE HABLA · no aplica
+:::

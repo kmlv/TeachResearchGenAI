@@ -1,0 +1,34 @@
+{
+  "seed": 20260802,
+  "student_rows_full": 716,
+  "student_rows_inner_merge": 561,
+  "student_rows_lost": 155,
+  "overall_match_rate": 0.7835195530726257,
+  "households_expected": 360,
+  "households_auxiliary": 280,
+  "attendance_full": {
+    "0": 0.801909307875895,
+    "1": 0.8787878787878788
+  },
+  "attendance_inner_merge": {
+    "0": 0.8091168091168092,
+    "1": 0.8666666666666667
+  },
+  "descriptive_gap_full": 0.0768785709119838,
+  "descriptive_gap_inner_merge": 0.05754985754985753,
+  "match_rate_by_zone": {
+    "rural": 0.6821515892420538,
+    "urbana": 0.9185667752442996
+  },
+  "match_rate_by_district": {
+    "Distrito_A": 0.9837837837837838,
+    "Distrito_B": 0.819672131147541,
+    "Distrito_C": 0.734375,
+    "Distrito_D": 0.6666666666666666,
+    "Distrito_E": 0.6503496503496503
+  },
+  "students_by_zone": {
+    "urbana": 307,
+    "rural": 409
+  }
+}

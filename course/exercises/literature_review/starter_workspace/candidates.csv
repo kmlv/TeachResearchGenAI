@@ -1,0 +1,9 @@
+record_id,title,year,doi,source,ai_proposal,ai_reason,human_decision,human_reason,human_checked
+r1,"The potential of generative AI for personalized persuasion at scale",2024,10.1038/s41598-024-53755-0,Scientific Reports,pending,,,,no
+r2,"Evaluating the persuasive influence of political microtargeting with large language models",2024,10.1073/pnas.2403116121,PNAS,pending,,,,no
+r3,"On the conversational persuasiveness of GPT-4",2025,10.1038/s41562-025-02194-6,Nature Human Behaviour,pending,,,,no
+r4,"LLM-generated messages can persuade humans on policy issues",2025,10.1038/s41467-025-61345-5,Nature Communications,include,"Human participants; LLM messages; post-exposure policy support",include,"Matches population, intervention, comparator and outcome",yes
+r5,"The levers of political persuasion with conversational artificial intelligence",2025,10.1126/science.aea3884,Science,pending,,,,no
+r6,"Durably reducing conspiracy beliefs through dialogues with AI",2024,10.1126/science.adq1814,Science,editorial_flag,"Scope fits but an Editorial Expression of Concern was published in 2026",editorial_flag,"Keep separate until editorial status is resolved",yes
+r7,"The Persuasive Power of Large Language Models",2024,10.1609/icwsm.v18i1.31304,ICWSM,exclude,"Persuasion occurs between models; humans judge arguments",exclude,"No human attitude or behavior change after exposure",yes
+r8,"Impact of Artificial Intelligence–Generated Content Labels On Perceived Accuracy, Message Credibility, and Sharing Intentions for Misinformation: Web-Based, Randomized, Controlled Experiment",2024,10.2196/60024,JMIR Formative Research,pending,,,,no

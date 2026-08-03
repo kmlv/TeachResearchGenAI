@@ -1,0 +1,7 @@
+{
+  "status": "waiting_for_human",
+  "last_completed_point": "R1-01",
+  "next_point": "R1-02",
+  "allowed_action": "wait",
+  "pending_human_decision": "R1-01"
+}

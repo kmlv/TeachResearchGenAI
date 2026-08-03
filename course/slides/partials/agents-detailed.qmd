@@ -1,0 +1,509 @@
+## Agentes {.divider}
+
+::: {.notes}
+BLOQUE · 45 minutos · dieciséis láminas
+
+REPARTO · 10 minutos de conceptos con ejemplos y contraejemplos; 29 para
+construir y observar un agente útil; 4 de transferencia; 2 de cierre.
+
+CASO · manuscrito sintético de movilidad y dos informes de referee. La segunda
+objeción retoma la hipótesis rival que la sala escribió en el bloque anterior.
+
+PRODUCTO · ledger por punto, diffs propuestos, aprobaciones humanas y una carta
+ensamblada solo desde cambios demostrables.
+:::
+
+## Un prompt responde; un workflow ejecuta una secuencia
+
+::: {.quad}
+- **Prompt · sí** — «Reescribe este párrafo de limitaciones en 80 palabras.»
+- **Prompt · no basta** — «Lee el manuscrito y dime qué opinas» no define una
+  salida verificable.
+- **Workflow · sí** — extraer cada punto, abrir una fila y preparar un borrador,
+  siempre en ese orden.
+- **Workflow · no es agente** — un `if` con veinte ramas sigue siendo una
+  secuencia escrita por usted.
+:::
+
+::: {.lead}
+La cantidad de llamadas no importa. Importa quién eligió la siguiente acción.
+:::
+
+::: {.notes}
+MINUTO · 3
+
+DECIR · «Un workflow puede tener condicionales y llamar un modelo veinte veces.
+Sigue siendo workflow si nosotros escribimos la secuencia y las ramas.»
+
+CLIC · ninguno
+
+ESPERAR · que la sala clasifique una macro que responde catorce puntos
+
+SI NADIE HABLA · «Si abre cada punto, resume y concatena, es workflow. Si el
+sistema decide consultar el plan porque una exigencia amenaza el estimando,
+aparece una decisión agentiva.»
+:::
+
+## Un loop repite; una herramienta ejecuta una acción
+
+::: {.quad}
+- **Loop · sí** — para cada punto, repetir hasta que no queden campos vacíos.
+- **Loop · no sirve** — «repítelo hasta que quede bien» no tiene parada
+  verificable.
+- **Tool · sí** — `leer_manuscrito(archivo, lineas)` devuelve texto exacto.
+- **Tool · no es** — escribir «tienes acceso al manuscrito» es una promesa, no
+  una función.
+:::
+
+::: {.lead}
+El loop necesita estado y salida. La herramienta necesita argumentos, retorno y
+comportamiento ante fallos.
+:::
+
+::: {.notes}
+MINUTO · 3
+
+DECIR · «El loop dice qué se repite. La herramienta define una capacidad
+acotada. Ninguna de las dos decide por sí sola qué conviene hacer.»
+
+CLIC · ninguno
+
+ESPERAR · una parada que otra persona pueda comprobar
+
+SI NADIE HABLA · «Se detiene cuando cada ID del informe tiene una fila completa
+o un bloqueo explícito. Eso se puede contar.»
+
+[Sources]
+- OpenAI, `Define tools`: https://developers.openai.com/plugins/plan/tools
+[/Sources]
+:::
+
+## Una skill conserva el método; un agente decide cómo aplicarlo
+
+::: {.quad}
+- **Skill · sí** — `SKILL.md`, reglas de la revista, plantilla y validador para
+  responder referees.
+- **Skill · no es** — pegar las mismas instrucciones en cada mensaje.
+- **Agente · sí** — el punto 3 contradice el plan; decide abrir el plan antes de
+  redactar.
+- **Agente · no es** — llamar el modelo catorce veces en orden fijo.
+:::
+
+::: {.lead}
+La skill enseña un procedimiento reutilizable. El agente lo aplica al estado que
+encuentra.
+:::
+
+::: {.notes}
+MINUTO · 2
+
+DECIR · «Una skill no actúa sola. Empaqueta cuándo usar un método, qué recursos
+leer, qué pasos seguir y qué salida producir.»
+
+CLIC · ninguno
+
+ESPERAR · que alguien nombre un procedimiento que hoy conserva como prompt
+
+SI NADIE HABLA · «Responder informes de referee es buen candidato: cambian los
+puntos, pero el ledger, los gates y la prueba de la carta se repiten.»
+
+[Sources]
+- OpenAI, `Build skills`: https://learn.chatgpt.com/docs/build-skills
+- OpenAI, `Skills`: https://developers.openai.com/plugins/concepts/skills
+[/Sources]
+:::
+
+## Un subagente devuelve un artefacto; varios agentes requieren arbitraje
+
+::: {.quad}
+- **Subagente · sí** — solo lee el manuscrito y devuelve la lista de anclajes que
+  no coinciden.
+- **Subagente · no es** — otra ventana donde usted pega el resultado a mano.
+- **Multiagente · útil** — uno propone, otro intenta refutar y usted arbitra.
+- **Multiagente · débil** — preguntar lo mismo a dos modelos y elegir el texto
+  que más gustó.
+:::
+
+::: {.lead}
+Delegar contexto no delega autoridad: cada encargo necesita producto, límites y
+regla de aceptación.
+:::
+
+::: {.notes}
+MINUTO · 2
+
+DECIR · «El subagente recibe una tarea menor y devuelve un artefacto, no el
+control. Varios agentes solo ayudan si sus productos pueden compararse y existe
+una regla de integración.»
+
+CLIC · ninguno
+
+ESPERAR · una tarea que sí pueda correr en paralelo
+
+SI NADIE HABLA · «Verificar anclajes y revisar riesgos éticos pueden separarse.
+Editar el mismo párrafo en paralelo probablemente no.»
+
+[Sources]
+- OpenAI, `Subagents`: https://learn.chatgpt.com/docs/agent-configuration/subagents
+[/Sources]
+:::
+
+## El agente útil responde al referee con pruebas de cambio
+
+Viajes largos aparecen junto a menor estabilidad laboral; una explicación rival
+atribuye ambos al tipo de empleo.
+
+::: {.completions}
+- un manuscrito sintético
+- dos informes con seis puntos y un plan registrado
+- una objeción escrita antes por la sala
+:::
+
+::: {.lead}
+El agente no redacta una carta libre. Produce una fila y un diff —o justifica
+`no_change`— por punto.
+:::
+
+::: {.notes}
+MINUTO · 3
+
+DECIR · «La segunda objeción de referee es la que ustedes acaban de formular.
+Ahora delegamos la respuesta sin delegar la firma.»
+
+CLIC · ninguno
+
+ESPERAR · que alguien diga qué afirmación de una carta teme no poder comprobar
+
+SI NADIE HABLA · «“Agregamos una prueba de robustez”. El agente debe demostrar
+en qué diff ocurrió y qué línea del manuscrito nuevo la contiene.»
+:::
+
+## La carpeta separa fuente, propuesta, aprobación y carta
+
+::: {.lean-code}
+```text
+research_agent_lab/
+├── case/             manuscrito, informes y plan · solo lectura
+├── .agents/skills/   método reutilizable
+├── pending.csv       propuestas del agente
+├── approvals.csv     escrito solo por la persona
+├── changes/          un diff por propuesta
+└── letter/           se ensambla solo si valida
+```
+:::
+
+::: {.lead}
+Cerrar el chat no borra el trabajo: el estado vive en la carpeta.
+:::
+
+::: {.notes}
+MINUTO · 3
+
+DECIR · «Conversar produce texto. Operar un proceso produce estado: qué punto se
+leyó, qué cambio se propone, quién lo aprobó y qué falta para ensamblar.»
+
+CLIC · ninguno; señalar `case/`, después `pending.csv`, después `letter/`
+
+ESPERAR · que alguien identifique por qué la carta no es un archivo libre
+
+SI NADIE HABLA · «Porque solo se ensambla desde filas aprobadas y ancladas a un
+cambio real.»
+:::
+
+## El contrato vive antes del primer turno
+
+::: {.quad}
+- **Objetivo** — cubrir cada punto con respuesta y cambio demostrable
+- **Autoridad** — leer fuentes; escribir propuestas y diffs
+- **Presupuesto** — seis puntos, dos validaciones, una ronda de revisión
+- **Gate** — solo la persona aprueba o declara que no habrá cambio
+:::
+
+::: {.prompt}
+Codex lee `AGENTS.md` · Claude Code recibe reglas equivalentes en `CLAUDE.md`
+:::
+
+::: {.notes}
+MINUTO · 3
+
+DECIR · «No comenzamos con “hazme un agente”. Primero escribimos autoridad,
+presupuesto, verificación y finalización.»
+
+CLIC · ninguno
+
+ESPERAR · que la sala identifique una decisión indelegable
+
+SI NADIE HABLA · «Aceptar que la identificación no permite una afirmación
+causal. El agente puede mostrar la tensión; la persona decide el alcance.»
+
+[Sources]
+- OpenAI, `AGENTS.md`: https://learn.chatgpt.com/docs/agent-configuration/agents-md
+- Anthropic, `Claude Code memory`: https://code.claude.com/docs/en/memory
+[/Sources]
+:::
+
+## Skill y tools forman capas distintas
+
+::: {.quad}
+- **Skill** — inventariar, anclar, proponer, esperar y ensamblar
+- **Leer** — recuperar líneas exactas de manuscrito e informes
+- **Proponer** — crear una fila y un diff, nunca una aprobación
+- **Validar** — cobertura, anclaje, cambio real, gate y ensamblaje
+:::
+
+::: {.lead}
+La skill explica el método. Las tools hacen acciones. El contrato limita ambas.
+:::
+
+::: {.notes}
+MINUTO · 3
+
+DECIR · «La skill no contiene las respuestas. Contiene el procedimiento. Las
+tools separan lectura, propuesta y validación para que una frase plausible no
+se convierta automáticamente en cambio oficial.»
+
+CLIC · ninguno
+
+ESPERAR · que alguien pregunte por qué no hay tool `aprobar`
+
+SI NADIE HABLA · «Porque esa acción pertenece a la interfaz humana. El agente
+puede preparar la fila; no puede abrir el gate.»
+
+[Sources]
+- OpenAI, `Best practices`: https://learn.chatgpt.com/guides/best-practices
+- Anthropic, `Claude Code CLI`: https://code.claude.com/docs/en/cli-reference
+[/Sources]
+:::
+
+## El loop deja un checkpoint después de cada punto
+
+::: {.lean-code}
+```text
+leer punto → localizar pasaje → proponer respuesta y diff
+     ↓              ↓                    ↓
+ STATE.json      evidence_line       pending.csv
+     ↓
+validar → esperar decisión → aplicar aprobado → validar otra vez
+```
+:::
+
+::: {.lead}
+La próxima acción sale del estado; no de recordar la conversación.
+:::
+
+::: {.notes}
+MINUTO · 3
+
+DECIR · «Un agente serio debe poder interrumpirse. Cada punto actualiza estado,
+traza y próxima acción permitida.»
+
+CLIC · ninguno
+
+ESPERAR · que la sala señale dónde entra la persona
+
+SI NADIE HABLA · «Entre validar y aplicar. Si `approvals.csv` no contiene el
+punto, el loop no puede avanzar.»
+:::
+
+## Cinco validadores pueden bloquear la carta
+
+::: {.completions}
+- cada punto aparece exactamente una vez
+- cada línea citada existe y coincide
+- cada respuesta atendida tiene un diff real
+- el agente no alteró las aprobaciones humanas
+- la carta solo usa filas aprobadas o sin cambio declarado
+:::
+
+::: {.lead}
+Ninguna comprobación llama al modelo.
+:::
+
+::: {.notes}
+MINUTO · 3
+
+DECIR · «La falla importante no es que la prosa suene rara. Es que la carta diga
+“agregamos X” y el manuscrito no contenga X.»
+
+CLIC · ninguno
+
+ESPERAR · que la sala elija el validador más valioso
+
+SI NADIE HABLA · «Anclaje y cambio real: convierten una afirmación de la carta
+en algo que otra persona puede verificar.»
+
+CUIDADO · la interfaz exige terminal interactiva y confirmación del ID; el hash
+es un tripwire pedagógico, no una frontera de seguridad del sistema operativo.
+
+[Sources]
+- `course/exercises/research_agent_lab/scripts/validate_case.py`.
+[/Sources]
+:::
+
+## Proponer no autoriza editar
+
+::: {.quad}
+- **Pendiente** — punto, exigencia, respuesta propuesta y evidencia
+- **Cambio** — diff separado que todavía no se aplica
+- **Aprobación** — aceptar, rechazar o declarar sin cambio
+- **Ledger oficial** — recibe solo decisiones humanas registradas
+:::
+
+::: {.lead}
+La persona opera el gate; el agente observa el resultado.
+:::
+
+::: {.notes}
+MINUTO · 3
+
+DECIR · «En la demo una persona acepta o rechaza una propuesta en la terminal.
+El gate no es una frase en las notas; ocurre.»
+
+CLIC · ninguno
+
+ESPERAR · que alguien diga qué necesita ver antes de aprobar
+
+SI NADIE HABLA · «El punto original, el pasaje anclado y el diff. Aprobar solo
+la carta no demuestra que el manuscrito cambió.»
+:::
+
+## Reanudar comienza leyendo estado, no todo el chat
+
+::: {.lean-code}
+```text
+Lee STATE.json, las últimas filas de TRACE.csv,
+pending.csv y approvals.csv.
+
+Resume: último punto completo, pruebas, decisiones pendientes
+y próxima acción permitida. No edites. Espera confirmación.
+```
+:::
+
+::: {.prompt}
+Una conversación nueva puede continuar sin inventar qué ocurrió antes
+:::
+
+::: {.notes}
+MINUTO · 2
+
+DECIR · «Éste es el money moment: cerramos la sesión y abrimos otra. Si el
+agente necesita el chat anterior para saber dónde quedó, la arquitectura falló.»
+
+CLIC · ninguno
+
+ESPERAR · nada; pasar al producto
+
+SI NADIE HABLA · no aplica
+:::
+
+## El producto final es más que una carta
+
+::: {.completions}
+- seis puntos cubiertos
+- evidencia de línea para cada afirmación
+- un diff por cambio propuesto
+- decisión humana por punto
+- carta ensamblada y validador verde
+:::
+
+::: {.lead}
+La prosa es el último artefacto. El ledger y los diffs son la evidencia.
+:::
+
+::: {.notes}
+MINUTO · 3
+
+DECIR · «Esto sí se puede enviar o archivar: no porque el agente redactó bien,
+sino porque cada frase sobre un cambio tiene trazabilidad.»
+
+CLIC · ninguno
+
+ESPERAR · que alguien elija qué revisaría primero
+
+SI NADIE HABLA · «El ledger: revela qué puntos siguen abiertos antes de leer una
+carta pulida que podría ocultarlos.»
+:::
+
+## Cinco encargos construyen el agente en Codex o Claude Code
+
+::: {.rules}
+- Leer contrato, manuscrito e informes; explicar límites sin editar
+- Inventariar todos los puntos y crear estado persistente
+- Proponer respuesta, anclaje y diff; no aplicar
+- Ejecutar validadores; detenerse en el gate
+- Aplicar solo lo aprobado y ensamblar la carta si todo pasa
+:::
+
+::: {.prompt}
+La demo termina en el paso 4 · [abrir laboratorio](../exercises/research_agent_lab/README.md)
+:::
+
+::: {.notes}
+MINUTO · 3
+
+DECIR · «Los prompts completos están en el laboratorio. Funcionan con Codex o
+Claude Code sobre la misma carpeta. En clase demostramos que el agente sabe
+llegar al gate, interrumpirse y reanudar.»
+
+CLIC · ninguno
+
+ESPERAR · que alguien pregunte dónde aparece el modelo
+
+SI NADIE HABLA · «En interpretar exigencias, proponer respuestas y priorizar.
+Cobertura, anclaje y ensamblaje son mecánicos; el gate depende del contrato y de
+que la persona ejecute el comando interactivo.»
+:::
+
+## Diseña un agente para un artefacto que ya produces
+
+1. Nombra el documento final y sus fuentes.
+2. Escribe dos comprobaciones mecánicas.
+3. Nombra una decisión que el agente nunca puede tomar.
+4. Define estado, checkpoint y próxima acción permitida.
+5. Decide qué evidencia acompaña cada afirmación del producto.
+
+::: {.prompt}
+4 min · si el producto es solo «un resumen», todavía no hay agente útil
+:::
+
+::: {.notes}
+MINUTO · 4
+
+DECIR · «No diseñen una personalidad. Diseñen un trabajo que deja un artefacto
+real y puede fallar de forma visible.»
+
+CLIC · ninguno
+
+ESPERAR · dos minutos individual y dos en parejas
+
+SI NADIE HABLA · ofrecer el caso: respuesta a comité de ética; producto: ledger
+de observaciones, cambios propuestos, aprobaciones y versión final
+:::
+
+## Qué hace confiable al agente
+
+::: {.quad}
+- Ejemplos que separan conceptos, no ocho definiciones aisladas
+- Archivos persistentes, no memoria conversacional
+- Validadores y permisos fuera del modelo
+- Gates y decisiones que siguen siendo humanas
+:::
+
+::: {.lead}
+Un agente útil no es el que hace más. Es el que prepara una decisión mejor y
+sabe dónde termina su autoridad.
+:::
+
+::: {.notes}
+MINUTO · 2
+
+DECIR · «La prueba no es que produzca texto. Es que podamos cerrar la sesión,
+reconstruir el trabajo, verificar cada cambio y rechazar una propuesta sin
+perder el proyecto.»
+
+CLIC · ninguno
+
+ESPERAR · nada; cierre
+
+SI NADIE HABLA · no aplica
+:::

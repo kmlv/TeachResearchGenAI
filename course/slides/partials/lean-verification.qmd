@@ -1,0 +1,605 @@
+## El problema no es calcular
+
+Una explicación puede usar palabras correctas y esconder un paso que no se
+sigue.
+
+::: {.lead}
+«Suena razonable» y «está demostrado» no significan lo mismo.
+:::
+
+::: {.prompt}
+Lean entra cuando necesitamos revisar la consecuencia, no el estilo
+:::
+
+::: {.notes}
+**MINUTO ·** 0:00–1:00
+
+**DECIR ·** «No vamos a aprender un lenguaje completo en veinte minutos.
+Vamos a aprender para qué sirve y a reconocer una prueba que una máquina sí
+puede comprobar.»
+
+**CLIC ·** ninguno.
+
+**ESPERAR ·** que alguien mencione supuestos implícitos, álgebra o una
+generalización apresurada.
+
+**SI NADIE HABLA ·** «Una frase puede ser impecable y aun así pasar de más
+casos a mayor incidencia sin justificar la división por la población.»
+
+**TRANSICIÓN ·** «Para comprobar un paso, primero hay que separar sus piezas.»
+:::
+
+## Un teorema es un contrato
+
+::: {.lead}
+Si se cumplen estos **supuestos**, entonces debe seguir esta **conclusión**.
+:::
+
+Una prueba es una cadena de pasos que conecta ambos lados sin añadir una
+premisa escondida.
+
+::: {.prompt}
+Supuestos → pasos permitidos → conclusión
+:::
+
+::: {.notes}
+**MINUTO ·** 1:00–2:30
+
+**DECIR ·** «Aquí “teorema” no significa algo grandioso. Es cualquier contrato
+del tipo: si aceptamos A, B y C, entonces D tiene que seguir.»
+
+**CLIC ·** señalar primero “supuestos” y después “conclusión”.
+
+**ESPERAR ·** una reformulación como «las condiciones de entrada y lo que
+prometemos a la salida».
+
+**SI NADIE HABLA ·** usar: «si todos los hogares fueron asignados al azar,
+entonces la asignación es independiente de sus características previas».
+
+**TRANSICIÓN ·** «Lean convierte ese contrato en algo que una computadora puede
+leer sin completar nada por intuición.»
+:::
+
+## Lean comprueba el contrato
+
+**Lean** es un lenguaje para escribir objetos, supuestos, conclusiones y
+pruebas con precisión.
+
+::: {.lead}
+Su núcleo recibe el contrato y una prueba candidata. Devuelve ✓ o un error.
+:::
+
+No es una IA, no interpreta intenciones y no premia una explicación
+convincente.
+
+::: {.prompt}
+Núcleo = la parte pequeña que acepta únicamente pasos formalmente válidos
+:::
+
+::: {.notes}
+**MINUTO ·** 2:30–3:30
+
+**DECIR ·** «Lean también es un lenguaje de programación. Hoy usamos su papel
+de verificador interactivo. “Interactivo” significa que escribimos, Lean
+responde y corregimos.»
+
+**CLIC ·** ninguno.
+
+**ESPERAR ·** la pregunta «¿entonces Lean busca la prueba?».
+
+**SI NADIE HABLA ·** aclarar de todos modos: «Puede haber automatización que
+ayude a buscarla, pero la aceptación final la hace el núcleo.»
+
+**TRANSICIÓN ·** «Lean pone la lógica; todavía necesitamos una biblioteca de
+matemáticas.»
+
+[Sources]
+- Lean Language Reference, descripción general y núcleo verificador:
+  https://lean-lang.org/doc/reference/latest/
+- Lean FAQ, verificador y lenguaje de programación:
+  https://lean-lang.org/faq
+[/Sources]
+:::
+
+## Mathlib evita empezar desde cero
+
+**Mathlib** es una biblioteca comunitaria de matemáticas ya formalizadas para
+Lean.
+
+::: {.quad}
+- Números reales `ℝ`
+- Álgebra y desigualdades
+- Sumas finitas
+- Tácticas de prueba
+:::
+
+::: {.lead}
+`import Mathlib` permite reutilizar resultados que también fueron verificados.
+:::
+
+::: {.notes}
+**MINUTO ·** 3:30–4:30
+
+**DECIR ·** «Lean es el idioma y el inspector. Mathlib es la biblioteca: define
+los números y conserva miles de resultados que no queremos reconstruir.»
+
+**CLIC ·** recorrer los cuatro ejemplos.
+
+**ESPERAR ·** que alguien compare Mathlib con una biblioteca de software.
+
+**SI NADIE HABLA ·** ofrecer esa comparación, añadiendo: «con la diferencia de
+que aquí los teoremas vienen acompañados de pruebas comprobadas».
+
+**TRANSICIÓN ·** «Veamos una oración completa antes de mirar un caso difícil.»
+
+[Sources]
+- Mathlib 4, documentación de la biblioteca:
+  https://leanprover-community.github.io/mathlib4_docs/Mathlib
+- The mathlib Community, *The Lean Mathematical Library*:
+  https://leanprover-community.github.io/papers/mathlib-paper.pdf
+[/Sources]
+:::
+
+## Un primer ejemplo que sí pasa
+
+::: {.lean-code}
+```lean
+theorem sumar_mismo_conserva_orden (x y c : ℝ)
+    (h : x < y) : x + c < y + c := by
+  linarith
+```
+:::
+
+En castellano: si $x<y$, sumar el mismo número a ambos lados conserva el orden.
+
+::: {.prompt}
+Verde · `PrimerPaso.lean` fue aceptado por Lean
+:::
+
+::: {.notes}
+**MINUTO ·** 4:30–6:00
+
+**DECIR ·** «No lean símbolos sueltos. Lean la oración: para cualesquiera tres
+números reales, si x es menor que y, entonces x más c es menor que y más c.»
+
+**CLIC ·** señalar objetos, supuesto, conclusión y las dos líneas de prueba.
+
+**ESPERAR ·** que la sala pueda repetir la oración sin mirar el código.
+
+**SI NADIE HABLA ·** repetirla lentamente y pedir solo: «¿cuál es el supuesto?».
+
+**TRANSICIÓN ·** «La palabra extraña es `linarith`; su papel importa.»
+
+[Sources]
+- Demo reproducible del taller, `PrimerPaso.lean`.
+[/Sources]
+:::
+
+## La táctica ayuda; el núcleo decide
+
+`linarith` es una **táctica** de Mathlib: busca pasos de aritmética lineal y
+construye una prueba candidata.
+
+::: {.lead}
+La táctica puede intentar. El núcleo todavía debe comprobar el resultado.
+:::
+
+Si la táctica falla, no sabemos todavía que el enunciado sea falso. Si Lean
+acepta una prueba, sí sabemos que la conclusión se deriva del contrato escrito.
+
+::: {.prompt}
+Buscar una prueba ≠ comprobar una prueba
+:::
+
+::: {.notes}
+**MINUTO ·** 6:00–7:00
+
+**DECIR ·** «Una táctica se parece a un procedimiento especializado. Puede no
+encontrar una prueba existente. El núcleo tiene otra tarea: revisar una prueba
+que ya fue construida.»
+
+**CLIC ·** ninguno.
+
+**ESPERAR ·** que alguien distinga “no encontré” de “es falso”.
+
+**SI NADIE HABLA ·** decir: «Un buscador sin resultados no demuestra que el
+artículo no exista. Aquí ocurre la misma distinción.»
+
+**TRANSICIÓN ·** «Esa separación permite usar IA sin entregarle la decisión
+final.»
+
+[Sources]
+- Lean Language Reference, tácticas y núcleo:
+  https://lean-lang.org/doc/reference/latest/
+[/Sources]
+:::
+
+## Tres papeles, tres responsabilidades
+
+::: {.quad}
+- **Persona** — decide qué quiere afirmar
+- **Agente** — traduce, busca y corrige código
+- **Mathlib** — aporta resultados reutilizables
+- **Lean** — acepta o rechaza la prueba formal
+:::
+
+::: {.lead}
+Ninguna aceptación corrige un enunciado que tradujo mal la pregunta.
+:::
+
+::: {.notes}
+**MINUTO ·** 7:00–8:00
+
+**DECIR ·** «Codex o Claude Code pueden ser muy útiles porque trabajan en la
+carpeta, editan el archivo y ejecutan Lean. Pero no sustituyen ni a la persona
+que fija el significado ni al verificador.»
+
+**CLIC ·** cuatro papeles, en orden.
+
+**ESPERAR ·** que la audiencia nombre a la persona como responsable de los
+supuestos.
+
+**SI NADIE HABLA ·** preguntar directamente: «¿quién decide si “población
+comparable” describe nuestros datos?».
+
+**TRANSICIÓN ·** «Ahora el flujo de trabajo queda en cinco acciones.»
+:::
+
+## El ciclo con Codex o Claude Code
+
+1. Escriba la afirmación en castellano.
+2. Pida separar objetos, supuestos y conclusión.
+3. El agente crea o edita el archivo `.lean`.
+4. El agente ejecuta Lean y responde al error.
+5. Usted revisa la traducción y conserva solo código verde.
+
+::: {.prompt}
+El agente reduce la barrera de entrada · Lean conserva el estándar de prueba
+:::
+
+::: {.notes}
+**MINUTO ·** 8:00–9:00
+
+**DECIR ·** «La ventaja práctica no es que el modelo se vuelva infalible. Es
+que puede repetir en segundos el ciclo editar, ejecutar, leer el error y volver
+a editar.»
+
+**CLIC ·** los cinco pasos en orden.
+
+**ESPERAR ·** que alguien identifique los pasos humanos: uno, dos y cinco.
+
+**SI NADIE HABLA ·** nombrarlos explícitamente.
+
+**TRANSICIÓN ·** «El mismo archivo se puede ejecutar de tres maneras.»
+
+[Sources]
+- OpenAI, *Codex best practices*, contexto, edición y validación:
+  https://learn.chatgpt.com/guides/best-practices.md
+- Anthropic, Claude Code CLI y herramientas:
+  https://docs.anthropic.com/en/docs/claude-code/cli-usage
+[/Sources]
+:::
+
+## Cómo se usa en la práctica
+
+- **Lean Web** — pegar un ejemplo corto, sin instalación.
+- **VS Code + Lean 4** — ver la meta y los errores mientras escribe.
+- **Repositorio + Lake** — fijar versiones y verificar todo con un comando.
+
+::: {.lean-code}
+```bash
+./verificar.sh
+```
+:::
+
+::: {.prompt}
+Hoy: mirar el demo · después: descargar la carpeta y repetirlo
+:::
+
+::: {.notes}
+**MINUTO ·** 9:00–10:00
+
+**DECIR ·** «Lean Web sirve para probar. VS Code sirve para aprender porque
+muestra el estado de la prueba. El repositorio sirve para investigación porque
+fija Lean, Mathlib y el conjunto de archivos que deben pasar.»
+
+**CLIC ·** ninguno.
+
+**ESPERAR ·** preguntas de instalación; remitirlas al README entregable.
+
+**SI NADIE HABLA ·** mostrar únicamente `./verificar.sh`; no instalar nada en
+vivo.
+
+**TRANSICIÓN ·** «Con las piezas claras, probemos una afirmación que suena
+razonable.»
+
+[Sources]
+- Instalación oficial de Lean:
+  https://lean-lang.org/install/
+- Lean Web con Mathlib:
+  https://live.lean-lang.org/?from=mathlib
+[/Sources]
+:::
+
+## ¿Más casos implica mayor incidencia?
+
+El grupo A tiene más casos que B y también más población que B.
+
+::: {.lead}
+«Entonces A tiene mayor incidencia que B.»
+:::
+
+::: {.prompt}
+Antes de ver Lean: ¿se sigue necesariamente?
+:::
+
+::: {.notes}
+**MINUTO ·** 10:00–11:00
+
+**DECIR ·** leer la afirmación y pedir pulgar arriba o abajo. No corregir aún.
+
+**CLIC ·** ninguno.
+
+**ESPERAR ·** una división de la sala.
+
+**SI NADIE HABLA ·** votar primero: «Yo digo que sí; ahora intentemos hacerme
+responsable de esa afirmación.»
+
+**TRANSICIÓN ·** «Antes del código, construimos el contrato.»
+:::
+
+## Primero, el contrato en castellano
+
+::: {.quad}
+- **Objetos** — casos A, casos B, población A, población B
+- **Supuestos** — poblaciones positivas; A tiene más casos y población
+- **Conclusión** — tasa B < tasa A
+- **Prueba ofrecida** — A tiene más casos
+:::
+
+::: {.lead}
+La prueba ofrecida compara conteos. La conclusión compara cocientes.
+:::
+
+::: {.notes}
+**MINUTO ·** 11:00–12:00
+
+**DECIR ·** «Formalizar no es poner símbolos a una frase. Es descubrir cuáles
+son los objetos, qué aceptamos y qué prometemos demostrar.»
+
+**CLIC ·** revelar los cuatro cuadrantes.
+
+**ESPERAR ·** que alguien vea el cambio de conteos a tasas.
+
+**SI NADIE HABLA ·** señalar las palabras “conteos” y “cocientes”.
+
+**TRANSICIÓN ·** «Lean convierte exactamente ese desacuerdo en un error.»
+:::
+
+## Lean rechaza el paso, no la redacción
+
+::: {.lean-code}
+```lean
+theorem incidencia_mayor (casosA casosB pobA pobB : ℝ)
+    (hA : 0 < pobA) (hB : 0 < pobB)
+    (hcasos : casosB < casosA) (hpob : pobB < pobA) :
+    casosB / pobB < casosA / pobA := by
+  exact hcasos
+```
+:::
+
+::: {.lean-error}
+type mismatch · una comparación de casos no prueba una comparación de tasas
+:::
+
+::: {.prompt}
+Rojo · ejecutar `IncidenciaRojo.lean`
+:::
+
+::: {.notes}
+**MINUTO ·** 12:00–13:30
+
+**DECIR ·** «`exact hcasos` significa: ofrezco el supuesto sobre casos como la
+prueba completa. En Lean una prueba es un objeto, y el enunciado que demuestra
+es su tipo. Lean responde que el objeto ofrecido demuestra una desigualdad entre
+conteos, no la desigualdad entre tasas que prometimos.»
+
+**CLIC ·** ejecutar el archivo rojo y leer solo las dos expresiones que el error
+contrasta.
+
+**ESPERAR ·** que alguien diga «no son la misma desigualdad».
+
+**SI NADIE HABLA ·** leerlas en castellano, sin explicar más sintaxis.
+
+**TRANSICIÓN ·** «Un error no demuestra falsedad. Para eso necesitamos un
+contraejemplo.»
+
+[Sources]
+- Demo reproducible del taller, `IncidenciaRojo.lean`.
+[/Sources]
+:::
+
+## Un caso basta para refutar “siempre”
+
+- A — 2 casos entre 100 personas — 2 %
+- B — 1 caso entre 10 personas — 10 %
+
+A tiene más casos y más población. B tiene mayor incidencia.
+
+::: {.lead}
+Lean también acepta la prueba de este contraejemplo.
+:::
+
+::: {.prompt}
+Verde · `incidencia_mayor_es_falsa`
+:::
+
+::: {.notes}
+**MINUTO ·** 13:30–15:00
+
+**DECIR ·** «La primera ejecución solo rechazó nuestra prueba. Esta segunda
+hace algo más fuerte: muestra valores que cumplen los supuestos y contradicen
+la conclusión universal.»
+
+**CLIC ·** mostrar `Incidencia.lean` verde.
+
+**ESPERAR ·** que alguien explique por qué un solo caso alcanza.
+
+**SI NADIE HABLA ·** «La afirmación decía para todos. Encontramos uno que no.»
+
+**TRANSICIÓN ·** «Reparar el teorema significa cambiar el contrato.»
+
+[Sources]
+- Demo reproducible del taller, `Incidencia.lean`.
+[/Sources]
+:::
+
+## La reparación hace visible un supuesto
+
+::: {.lean-code}
+```lean
+theorem incidencia_comparable (casosA casosB pob : ℝ)
+    (hpob : 0 < pob) (hcasos : casosB < casosA) :
+    casosB / pob < casosA / pob := by
+  gcongr
+```
+:::
+
+Ahora ambos grupos usan el mismo denominador positivo.
+
+::: {.lead}
+Lean verificó la consecuencia. No verificó que las poblaciones fueran comparables.
+:::
+
+::: {.notes}
+**MINUTO ·** 15:00–16:30
+
+**DECIR ·** «No encontramos una prueba más elocuente. Escribimos otro teorema.
+El supuesto común hace el trabajo matemático y obliga a discutir si describe el
+mundo. `gcongr` es otra táctica de Mathlib, como `linarith`; ayuda con
+desigualdades y Lean comprueba la prueba que construye.»
+
+**CLIC ·** señalar que `pobA` y `pobB` se convirtieron en `pob`.
+
+**ESPERAR ·** una objeción sobre poblaciones desiguales.
+
+**SI NADIE HABLA ·** decir: «Si difieren, hay que comparar las tasas; no existe
+este atajo.»
+
+**TRANSICIÓN ·** «Ahora usemos la misma disciplina en un resultado de mezclas.»
+
+[Sources]
+- Demo reproducible del taller, `Incidencia.lean`.
+[/Sources]
+:::
+
+## Otro ejemplo: una mezcla queda entre los extremos
+
+Si $x\le y$ y $0\le a\le1$, entonces:
+
+::: {.lead}
+$$x\le ax+(1-a)y\le y$$
+:::
+
+Los supuestos sobre $a$ dicen que es un peso, no una extrapolación.
+
+::: {.prompt}
+Verde · `MezclaEntreExtremos.lean` · quitar un supuesto cambia el resultado
+:::
+
+::: {.notes}
+**MINUTO ·** 16:30–18:00
+
+**DECIR ·** «En la fórmula, 25 % es el peso de x. Por eso la mezcla queda a tres
+cuartas partes del camino desde x hacia y: el otro 75 % pesa sobre y. Lean
+comprueba que nunca sale del intervalo, pero necesita saber que el peso está
+entre cero y uno. El archivo usa `nlinarith`, otra táctica de Mathlib que busca
+consecuencias de igualdades, desigualdades y productos; el núcleo vuelve a
+comprobar la prueba resultante.»
+
+**CLIC ·** preguntar qué ocurre con `a = 2`.
+
+**ESPERAR ·** «es extrapolación» o un ejemplo numérico fuera del intervalo.
+
+**SI NADIE HABLA ·** usar `x=0`, `y=10`, `a=2`: la expresión vale -10.
+
+**TRANSICIÓN ·** «Ese pequeño teorema prepara el lenguaje de loterías del
+proyecto real.»
+
+[Sources]
+- Demo reproducible del taller, `MezclaEntreExtremos.lean`.
+[/Sources]
+:::
+
+## De la mezcla al proyecto *Disentangling*
+
+Para loterías finitas $P$ y $Q$, utilidad $u$ y peso $a$:
+
+::: {.lead}
+$$E_u[aP+(1-a)Q]=aE_u[P]+(1-a)E_u[Q]$$
+:::
+
+La formalización real representa loterías, restringe $a$ a $[0,1]$ y verifica
+que el valor esperado se distribuye sobre la mezcla.
+
+::: {.prompt}
+Demo legible: `PuenteDisentangling.lean` · origen: lema `expected_mix`
+:::
+
+::: {.notes}
+**MINUTO ·** 18:00–19:30
+
+**DECIR ·** «El ejemplo didáctico usa funciones reales para que podamos leerlo.
+El archivo real usa un tipo `Lottery`, un espacio finito de resultados y dos
+pruebas de que el peso está entre cero y uno.»
+
+**CLIC ·** mostrar primero la fórmula y después, solo si hay tiempo, la firma
+del lema real.
+
+**ESPERAR ·** que la audiencia reconozca la linealidad del valor esperado.
+
+**SI NADIE HABLA ·** «Calcular primero la mezcla o calcular dos valores
+esperados y mezclarlos produce el mismo número.»
+
+**TRANSICIÓN ·** «Lean verificó esa igualdad dentro del modelo escrito. El
+cierre es recordar lo que quedó fuera.»
+
+[Sources]
+- Demo reproducible del taller, `PuenteDisentangling.lean`.
+- Proyecto *Disentangling*,
+  `verification/lean/disent_spine/Independence.lean`, lema `expected_mix`.
+[/Sources]
+:::
+
+## Lean verifica el paso, no el mundo
+
+::: {.quad}
+- ¿Los supuestos son ciertos?
+- ¿La traducción expresa la pregunta?
+- ¿Los datos respaldan el modelo?
+- ¿La pregunta vale la pena?
+:::
+
+::: {.lead}
+Lean no responde esas cuatro preguntas. Nosotros sí debemos hacerlo.
+:::
+
+::: {.prompt}
+Salida · escriba un paso propio como objetos + supuestos + conclusión
+:::
+
+::: {.notes}
+**MINUTO ·** 19:30–20:00
+
+**DECIR ·** «El valor de Lean no es reemplazar juicio sustantivo. Es impedir
+que un paso formalmente inválido se esconda detrás de una explicación fluida.»
+
+**CLIC ·** ninguno.
+
+**ESPERAR ·** nada; es un cierre.
+
+**SI NADIE HABLA ·** no aplica.
+
+**TRANSICIÓN ·** «La carpeta entregable contiene los archivos verdes, el rojo,
+el verificador y un prompt para reproducir este ciclo con Codex o Claude Code.»
+:::
