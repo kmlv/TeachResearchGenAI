@@ -159,64 +159,71 @@ Los cuatro elementos aparecen juntos; el cierre se revela con un clic, cuando
 la sala ya los ha leído.
 :::
 
-## El avance requiere resistencia intelectual
+## Dos conversaciones, dos avances
 
-<!-- Tabla de tres columnas leída por filas: etapa, diálogo 1, diálogo 2. El
-     orden de la lista es el orden de lectura. -->
+::: {.dialogue-summary}
+::: {.dialogue-path}
+### Capacidades para realizar una tarea
 
-::: {.trace}
-- El mismo arco
-- Capacidades productivas
-- Dimensionalidad y automatización
-- Punto de partida
-- La IA agrupa destrezas físicas, capacidades cognitivas y socioemocionales
-- La intuición de dos dimensiones: una informacional y otra física
-- Objeción
-- «Esa frontera ya ha fallado»: describir capacidades sin depender de quién las ejecuta hoy
-- «No lo concluyas porque es mi intuición»: refutar una dimensión y cortar la deriva ontológica
-- Exigencia formal
-- Pruebas de estrés —creatividad, liderazgo, enseñanza— y una regla de parada económica
-- «Una dimensión» solo es sustantiva si impone un orden común y un solo factor
-- Resultado acotado
-- Las tareas son vectores de capacidades; información frente a acción física, todavía hipótesis
-- El cruce de ventajas rompe el rango uno: al menos dos direcciones, no exactamente dos
+**Pregunta central**
+¿Qué capacidades requiere una tarea, sin importar si las aporta una persona o
+una máquina?
+
+**Comenzamos con**
+Dos listas separadas: lo que aportan las personas y lo que aportan las
+máquinas.
+
+**Llegamos a**
+Describir cada tarea como una combinación de capacidades. La posible
+separación entre tareas mentales y físicas quedó como una hipótesis por
+probar.
+:::
+
+::: {.dialogue-path}
+### ¿Una escala o varias?
+
+**Pregunta central**
+¿Podemos ordenar todas las tecnologías en una sola escala, de menor a mayor
+capacidad para automatizar?
+
+**Comenzamos con**
+La sospecha de que una sola escala no alcanzaba.
+
+**Llegamos a**
+Comparar tecnologías que funcionan bien en actividades distintas. Si sus
+ventajas cambian según la actividad, una sola escala no basta; todavía queda
+averiguar cuántas hacen falta.
+:::
 :::
 
 ::: {.prompt}
-La IA fue útil como adversario formal, no como oráculo
+La conversación no cerró la respuesta; hizo investigable la pregunta
 :::
 
 ::: {.notes}
 **Tiempo:** 3 minutos.
 
-**Decir:** «Estas son dos conversaciones reales sobre dos problemas distintos.
-Leídas en paralelo, siguen el mismo arco».
+**Decir:** «Estas son dos conversaciones reales. En ninguna comenzamos con una
+pregunta perfectamente formulada, y en ninguna terminamos con una respuesta
+definitiva».
 
-Recorrer las filas, no las columnas. La fila decisiva es la segunda: en ambos
-casos el investigador rechaza la primera respuesta. En el primer diálogo,
-porque la frontera entre lo humano y lo automatizable ya falló muchas veces y
-no puede sostener una taxonomía. En el segundo, porque la IA estaba a punto de
-confirmar la intuición del investigador en lugar de atacarla, y además se
-estaba yendo hacia una ontología general de la economía.
+Recorrer primero la columna izquierda. La conversación comenzó intentando
+clasificar habilidades humanas. La objeción fue que esa clasificación depende
+de lo que las máquinas pueden hacer hoy y envejece cuando cambia la tecnología.
+El avance fue separar la tarea, las capacidades que requiere y quién puede
+aportarlas.
 
-Dos precisiones si alguien pregunta:
+Después recorrer la columna derecha. La conversación comenzó con la intuición
+de que dos dimensiones podían ser mejores que una. Para evitar confirmar esa
+intuición por comodidad, la pregunta cambió: primero había que encontrar una
+forma de mostrar que una sola dimensión no basta. Los ejemplos de tecnologías
+fuertes en actividades distintas proporcionaron una prueba posible. El límite
+es importante: rechazar una dimensión no demuestra que existan exactamente
+dos.
 
-- **Regla de parada** (columna izquierda): descender hasta el nivel más
-  fundamental que todavía preserve distinciones con costos, tecnologías y
-  medición diferenciables; más abajo solo hay física.
-- **Rango uno** (columna derecha): si una sola dimensión explicara los efectos,
-  toda tecnología afectaría a las actividades con el mismo perfil relativo.
-  Una IA que mejora mucho el diagnóstico por imágenes y poco la manipulación
-  de objetos frágiles, junto a una robótica que hace lo contrario, rompe esa
-  proporcionalidad.
-
-Ninguna de las dos conversaciones termina en una respuesta: terminan en una
-hipótesis mejor formulada y todavía refutable. Ése es el resultado que
-queremos.
-
-**Transición:** «Ahora escuchemos las dos conversaciones completas. El
-razonamiento cambia varias veces y las correcciones no llegan en un orden tan
-limpio como esta tabla».
+**Transición:** «Ahora escuchemos cómo se produjeron esos cambios. Las
+conversaciones no avanzan en línea recta: hay propuestas, objeciones y nuevas
+formulaciones».
 
 [Sources]
 - Kristian López Vargas, «Del inventario de habilidades a una teoría de

@@ -420,53 +420,46 @@ $hairline: #ececec; // hairlines
   text-wrap: balance;
 }
 
-// ─── The trace (El avance requiere resistencia intelectual) ─────────────────
-// Two real conversations set side by side against the arc they share, so the
-// claim in the heading is read as evidence rather than asserted. Same idea as
-// the map and the quad — one flat list laid out on an explicit grid — with a
-// narrower left column carrying the stage names. Flow is left row-major, so
-// the order of the list in the source is the reading order of the table.
-//
-// This is the one slide the room reads instead of glancing at, so the cells
-// are set below body size. They are still the deck's only dense block: the
-// two slides that follow return to a single object each.
+// ─── Two dialogue paths ─────────────────────────────────────────────────────
+// The technical comparison table was replaced by two plain-language stories:
+// central question, starting point, and result. The visual distinction is only
+// a top rule and spacing; the prose does the explanatory work.
 
-.reveal .trace ul {
+.reveal .dialogue-summary {
   display: grid;
-  grid-template-columns: 260px 460px 460px;
-  column-gap: 60px;
-  row-gap: 14px;
+  grid-template-columns: repeat(2, 540px);
+  column-gap: 80px;
   max-width: $frame;
   margin: 0;
 }
 
-.reveal .trace li {
-  margin: 0;
-  font-size: 23px;
-  line-height: 1.25;
+.reveal .dialogue-path {
+  padding-top: 16px;
+  border-top: 3px solid $accent;
+}
+
+.reveal .dialogue-path h3 {
+  margin: 0 0 18px;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: $accent;
+}
+
+.reveal .dialogue-path p {
+  max-width: none;
+  margin: 0 0 15px;
+  font-size: 24px;
+  line-height: 1.3;
   color: $ink;
-  text-wrap: pretty;
 }
 
-// No hanging dash: the grid already delimits every cell.
-.reveal .trace li::before {
-  display: none;
-}
-
-// The stage column — the arc both conversations share.
-.reveal .trace li:nth-child(3n + 1) {
+.reveal .dialogue-path strong {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 19px;
   font-weight: 600;
   color: $quiet;
-}
-
-// The header row — the two conversations, closed by the deck's hairline. Set
-// after the stage rule so the first cell reads as a header, not as a stage.
-.reveal .trace li:nth-child(-n + 3) {
-  padding-bottom: 10px;
-  border-bottom: 1px solid $hairline;
-  font-size: 22px;
-  font-weight: 600;
-  color: $accent;
 }
 
 // ─── Long-form dialogue audio ──────────────────────────────────────────────
