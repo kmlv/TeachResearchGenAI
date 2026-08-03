@@ -9,6 +9,7 @@ project:
     - materiales.qmd
     - pages/propuesta.qmd
     - pages/herramientas.qmd
+    - course/slides/ia-generativa-investigacion-ciencias-sociales.qmd
   # Explicit deny-list for copied resources. Quarto copies non-source files
   # from the project directory into the output tree; these directories must
   # never travel with the site.

@@ -21,7 +21,7 @@ format:
     center: false
     incremental: false
     highlight-style: github
-    embed-resources: true
+    embed-resources: false
     include-after-body: dialogue-audio.html
 ---
 
@@ -46,6 +46,24 @@ relevantes de la investigación.
 ::: {.notes}
 Abrir con la pregunta y dejar que respondan brevemente; sirve para calibrar el
 nivel del grupo antes de entrar en materia.
+:::
+
+## Todo parte de un solo enlace
+
+Presentación, guía, código, datos y audios:
+
+::: {.materials-link}
+[kmlv.github.io/TeachResearchGenAI/materiales.html](https://kmlv.github.io/TeachResearchGenAI/materiales.html)
+:::
+
+::: {.prompt}
+Guárdalo ahora · los enlaces de cada ejercicio estarán también en su lámina
+:::
+
+::: {.notes}
+Esta es la dirección que se comparte antes de la clase. Pedir que la abran o la
+guarden. La página seguirá siendo el índice canónico aunque cambien los archivos
+o se añadan nuevos insumos.
 :::
 
 ## Generar insumos es ahora mucho más barato
@@ -149,7 +167,7 @@ la sala ya los ha leído.
 <span data-dialogue-duration>—</span>
 :::
 
-<audio controls preload="metadata" src="../../deliverables/dialogue-01-capacidades-productivas.mp3"></audio>
+<audio controls preload="metadata" src="https://github.com/kmlv/TeachResearchGenAI/releases/download/materials-v0.1.0/dialogue-01-capacidades-productivas.mp3"></audio>
 
 ::: {.dialogue-chapters aria-label="Capítulos del diálogo"}
 <button type="button" data-turn="2">Pregunta</button>
@@ -193,7 +211,7 @@ que permanecen abiertas.
 <span data-dialogue-duration>—</span>
 :::
 
-<audio controls preload="metadata" src="../../deliverables/dialogue-02-hipotesis-refutable.mp3"></audio>
+<audio controls preload="metadata" src="https://github.com/kmlv/TeachResearchGenAI/releases/download/materials-v0.1.0/dialogue-02-hipotesis-refutable.mp3"></audio>
 
 ::: {.dialogue-chapters aria-label="Capítulos del diálogo"}
 <button type="button" data-turn="1">Intuición</button>

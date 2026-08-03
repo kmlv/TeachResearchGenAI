@@ -313,6 +313,28 @@ $hairline: #ececec; // hairlines
   color: $ink;
 }
 
+// ─── Participant materials ─────────────────────────────────────────────────
+// The public URL is treated as the slide's single object, not as a button or
+// card. This keeps it legible in the room and easy to transcribe if needed.
+
+.reveal .materials-link {
+  margin-top: 34px;
+}
+
+.reveal .materials-link p {
+  margin: 0;
+}
+
+.reveal .materials-link a {
+  display: inline-block;
+  color: $accent;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.35;
+  text-decoration: none;
+  border-bottom: 2px solid $accent;
+}
+
 // ─── Rules slide ────────────────────────────────────────────────────────────
 // Four imperatives as the centrepiece, with the numerals in a hanging column
 // left of the text axis — the one place the axis is crossed, and it is
