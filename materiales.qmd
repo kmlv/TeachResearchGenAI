@@ -9,12 +9,11 @@ Materiales para abrir, practicar y reutilizar las secciones del taller.
 
 ## Presentaciones
 
-- [Presentación general](course/slides/ia-generativa-investigacion-ciencias-sociales.qmd)
-- [Cinco agentes debaten una pregunta de investigación](course/slides/debate-multiagente-pregunta-investigacion.qmd)
-- [Revisión de literatura con IA](course/slides/literature-review-35min.qmd)
-- [Razonamiento adversarial y agentes verificables](course/slides/razonamiento-agentes.qmd)
-- [Auditar un análisis de datos con Jupyter y Codex](course/slides/analisis-datos-codex-jupyter.qmd)
-- [Lean como verificador matemático](course/slides/lean-verificacion-matematica.qmd)
+- [01 · Presentación introductoria](course/slides/ia-generativa-investigacion-ciencias-sociales.qmd)
+- [02 · Revisión de literatura con IA](course/slides/literature-review-35min.qmd)
+- [03 · Razonamiento adversarial y agentes verificables](course/slides/razonamiento-agentes.qmd)
+- [04 · Auditar un análisis de datos con Jupyter y Codex](course/slides/analisis-datos-codex-jupyter.qmd)
+- [05 · Lean como verificador matemático](course/slides/lean-verificacion-matematica.qmd)
 
 ## Guías y prácticas
 

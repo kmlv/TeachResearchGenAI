@@ -420,6 +420,55 @@ $hairline: #ececec; // hairlines
   text-wrap: balance;
 }
 
+// ─── The trace (El avance requiere resistencia intelectual) ─────────────────
+// Two real conversations set side by side against the arc they share, so the
+// claim in the heading is read as evidence rather than asserted. Same idea as
+// the map and the quad — one flat list laid out on an explicit grid — with a
+// narrower left column carrying the stage names. Flow is left row-major, so
+// the order of the list in the source is the reading order of the table.
+//
+// This is the one slide the room reads instead of glancing at, so the cells
+// are set below body size. They are still the deck's only dense block: the
+// two slides that follow return to a single object each.
+
+.reveal .trace ul {
+  display: grid;
+  grid-template-columns: 260px 460px 460px;
+  column-gap: 60px;
+  row-gap: 14px;
+  max-width: $frame;
+  margin: 0;
+}
+
+.reveal .trace li {
+  margin: 0;
+  font-size: 23px;
+  line-height: 1.25;
+  color: $ink;
+  text-wrap: pretty;
+}
+
+// No hanging dash: the grid already delimits every cell.
+.reveal .trace li::before {
+  display: none;
+}
+
+// The stage column — the arc both conversations share.
+.reveal .trace li:nth-child(3n + 1) {
+  font-weight: 600;
+  color: $quiet;
+}
+
+// The header row — the two conversations, closed by the deck's hairline. Set
+// after the stage rule so the first cell reads as a header, not as a stage.
+.reveal .trace li:nth-child(-n + 3) {
+  padding-bottom: 10px;
+  border-bottom: 1px solid $hairline;
+  font-size: 22px;
+  font-weight: 600;
+  color: $accent;
+}
+
 // ─── Long-form dialogue audio ──────────────────────────────────────────────
 // Two full conversations live on one slide each. The native audio control is
 // kept intact for reliability; the transcript window shows one current turn
