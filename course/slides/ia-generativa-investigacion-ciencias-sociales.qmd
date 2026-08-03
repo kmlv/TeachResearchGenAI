@@ -35,7 +35,7 @@ relevantes de la investigación.
 - Literatura
 - Razonamiento y crítica
 - Análisis de datos y código
-- Agentes
+- Trabajo con asistentes
 - Comunicación
 :::
 
