@@ -26,7 +26,7 @@ format:
 
 ## Sol abre con una anomalía
 
-**Sol-high**
+**Sol-high · agente de razonamiento**
 
 ::: {.lead}
 «¿Cuándo una mejora en la regularidad del transporte cambia —o no— la forma de
@@ -95,8 +95,8 @@ TRANSICIÓN · «Fable cambia ahora la variable que parecía más clara.»
 no permite cumplir la siguiente obligación.»
 
 ::: {.lead .fragment}
-No midamos solo frecuencia. Midamos la posibilidad efectiva de abordar y
-completar la cadena a tiempo.
+No midamos solo frecuencia. Midamos la variabilidad de la espera y registremos
+cuándo un vehículo lleno o una cadena horaria vuelve inútil una espera más corta.
 :::
 
 ::: {.notes}
@@ -301,13 +301,13 @@ TRANSICIÓN · «Después de los descartes, la pregunta ya no es la misma.»
 ## La pregunta cambia después del debate
 
 ::: {.lead}
-«¿Cuándo poder abordar a tiempo se asocia con seguir usando, abandonar o cambiar
-el transporte público durante una cadena de cuidado?»
+«¿Cuándo la variabilidad de la espera se asocia con seguir usando, abandonar o
+cambiar de modo de transporte público durante una cadena de cuidado?»
 :::
 
 ::: {.quad .fragment}
 - **Unidad** — cadena recurrente
-- **Exposición** — abordaje efectivo
+- **Exposición** — variabilidad de la espera
 - **Principal** — uso, abandono o cambio de modo
 - **Intermedio** — cadena completada a tiempo
 :::
@@ -338,7 +338,7 @@ TRANSICIÓN · «Todavía falta acordar cómo comenzar.»
 
 ::: {.quad}
 - **Sol-high** — reconstruir 12–15 cadenas contrastantes
-- **Fable 5** — localizar puntos de quiebre horarios y de abordaje
+- **Fable 5** — localizar quiebres horarios y vehículos llenos
 - **Gemini** — reclutar dentro y fuera del sistema
 - **Terra** — conservar un resultado y un periodo cortos
 :::

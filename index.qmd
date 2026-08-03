@@ -2,40 +2,21 @@
 title: "IA generativa para la investigación económica y social"
 subtitle: "Taller de cuatro horas — Kristian Lopez Vargas"
 pagetitle: "Inicio"
+toc: false
 ---
 
-Este sitio reúne la presentación, los insumos y el material de trabajo del
-taller.
+Este sitio reúne las secciones y materiales del taller. Cada sección deja una
+pregunta, práctica o procedimiento reutilizable.
 
-## La idea
+## Secciones
 
-El taller no recorre un catálogo de aplicaciones, sino una investigación
-completa. Cada bloque hace avanzar el mismo caso y termina en una acción que el
-participante puede repetir en su propio proyecto.
+- [Presentación general](course/slides/ia-generativa-investigacion-ciencias-sociales.qmd)
+- [Cinco agentes debaten una pregunta de investigación](course/slides/debate-multiagente-pregunta-investigacion.qmd)
+- [Revisión de literatura con IA](course/slides/literature-review-35min.qmd)
+- [Razonamiento adversarial y agentes verificables](course/slides/razonamiento-agentes.qmd)
+- [Auditar un análisis de datos con Jupyter y Codex](course/slides/analisis-datos-codex-jupyter.qmd)
+- [Lean como verificador matemático](course/slides/lean-verificacion-matematica.qmd)
 
-Son cuatro horas docentes, con los descansos aparte, para un grupo pequeño de
-investigadores sociales —economistas, antropólogos, psicólogos, sociólogos,
-geógrafos— con acceso desigual a herramientas de IA.
+## Materiales y taller
 
-Cuatro reglas atraviesan toda la clase: verificar las fuentes, conservar el
-juicio científico, proteger los datos y documentar el uso material de IA.
-
-## Documentos
-
-[Materiales para la clase](materiales.qmd)
-:   Punto de entrada para la presentación, la guía de preparación, el código,
-    los audios y los paquetes descargables.
-
-[Propuesta del taller](pages/propuesta.qmd)
-:   Versión consolidada: recomendación central, resultados de aprendizaje, caso
-    conductor, cronograma de 240 minutos bloque por bloque, arquitectura de
-    demos y preparación previa.
-
-[Panorama de herramientas](pages/herramientas.qmd)
-:   Revisión del mercado de herramientas de revisión de literatura en 2026, con
-    precios contrastados contra la fuente primaria y recomendaciones por perfil.
-
-## Estado
-
-La propuesta y los primeros materiales ya están disponibles. La presentación
-seguirá creciendo por bloques a medida que se apruebe el contenido de la clase.
+[Materiales de la clase](materiales.qmd) · [Propuesta](pages/propuesta.qmd) · [Panorama de herramientas](pages/herramientas.qmd)

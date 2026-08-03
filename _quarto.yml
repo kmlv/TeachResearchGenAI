@@ -10,6 +10,13 @@ project:
     - pages/propuesta.qmd
     - pages/herramientas.qmd
     - course/slides/ia-generativa-investigacion-ciencias-sociales.qmd
+    - course/slides/literature-review-35min.qmd
+    - course/slides/analisis-datos-codex-jupyter.qmd
+    - course/slides/lean-verificacion-matematica.qmd
+    - course/slides/razonamiento-agentes.qmd
+    - course/slides/debate-multiagente-pregunta-investigacion.qmd
+    - course/exercises/literature_review/workflow-guide.qmd
+    - course/exercises/literature_review/participant-packet.qmd
   # Explicit deny-list for copied resources. Quarto copies non-source files
   # from the project directory into the output tree; these directories must
   # never travel with the site.
@@ -17,7 +24,16 @@ project:
     - "!coord/**"
     - "!inputs/**"
     - "!deliverables/**"
+    - "!.git/**"
     - "!.github/**"
+    - "!.quarto/**"
+    - "!**/.lake/**"
+    - "!**/.venv/**"
+    - "course/exercises/literature_review/discovery-screening-clip.html"
+    - "course/exercises/literature_review/clip-data.js"
+    - "course/exercises/literature_review/starter_workspace/**"
+    - "course/exercises/literature_review/starter_workspace.zip"
+    - "course/exercises/research_agent_lab/**"
 
 website:
   title: "IA generativa para la investigación"

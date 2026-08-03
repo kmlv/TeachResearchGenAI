@@ -5,48 +5,32 @@ pagetitle: "Materiales para la clase"
 toc: false
 ---
 
-Esta es la página que conviene guardar y compartir antes de la clase. Reúne los
-insumos públicos en un solo lugar; no hace falta recibir ni sincronizar una
-carpeta.
+Materiales para abrir, practicar y reutilizar las secciones del taller.
 
-## Para comenzar
+## Presentaciones
 
-[Presentación](course/slides/ia-generativa-investigacion-ciencias-sociales.html)
-:   Versión web de las láminas. Los enlaces y reproductores se abren desde la
-    propia presentación.
+- [Presentación general](course/slides/ia-generativa-investigacion-ciencias-sociales.qmd)
+- [Cinco agentes debaten una pregunta de investigación](course/slides/debate-multiagente-pregunta-investigacion.qmd)
+- [Revisión de literatura con IA](course/slides/literature-review-35min.qmd)
+- [Razonamiento adversarial y agentes verificables](course/slides/razonamiento-agentes.qmd)
+- [Auditar un análisis de datos con Jupyter y Codex](course/slides/analisis-datos-codex-jupyter.qmd)
+- [Lean como verificador matemático](course/slides/lean-verificacion-matematica.qmd)
 
-[Guía de Jupyter, VS Code y Codex](materials/guides/guia-demo-jupyter-vscode-codex.pdf)
-:   Preparación breve para seguir los ejemplos de código en una laptop.
+## Guías y prácticas
 
-[Descargar todo](https://github.com/kmlv/TeachResearchGenAI/releases/download/materials-v0.1.0/materiales-clase-v0.1.0.zip)
-:   Un solo archivo comprimido con la guía y el ejemplo reproducible disponible
-    en esta versión.
+- [Guía y workspace de revisión](course/exercises/literature_review/workflow-guide.qmd) — protocolo y carpeta de trabajo
+- [Práctica de literatura: Juntos y educación](course/exercises/literature_review/participant-packet.qmd) — corpus para practicar
+- [Guía de Jupyter, VS Code y Codex](materials/guides/guia-demo-jupyter-vscode-codex.pdf) — preparación técnica
+- [Demo reproducible de auditoría de datos](https://github.com/kmlv/TeachResearchGenAI/tree/main/course/exercises/data_audit_demo) — notebooks y validadores
+- [Demo de verificación en Lean](https://github.com/kmlv/TeachResearchGenAI/tree/main/course/exercises/lean_verification_demo) — archivos reproducibles
+- [Laboratorio de respuesta a referees](https://github.com/kmlv/TeachResearchGenAI/tree/main/course/exercises/research_agent_lab) — caso y revisión humana
+- [Auditor de evidencia](https://github.com/kmlv/TeachResearchGenAI/tree/main/examples/evidence_auditor) — trazas y citas
 
-## Ejemplo reproducible
+## Descargas y audios
 
-[Auditor de evidencia](https://github.com/kmlv/TeachResearchGenAI/tree/main/examples/evidence_auditor)
-:   Mini-repositorio en Python para inspeccionar evidencia, reconstruir citas y
-    dejar la conclusión bajo revisión humana. Incluye trazas grabadas y funciona
-    sin una clave de API.
-
-## Diálogos de ideación
-
-- [Capacidades productivas — audio completo](https://github.com/kmlv/TeachResearchGenAI/releases/download/materials-v0.1.0/dialogue-01-capacidades-productivas.mp3)
-- [De una intuición a una hipótesis refutable — audio completo](https://github.com/kmlv/TeachResearchGenAI/releases/download/materials-v0.1.0/dialogue-02-hipotesis-refutable.mp3)
+- [Descargar materiales](https://github.com/kmlv/TeachResearchGenAI/releases/download/materials-v0.1.0/materiales-clase-v0.1.0.zip)
+- [Capacidades productivas — audio](https://github.com/kmlv/TeachResearchGenAI/releases/download/materials-v0.1.0/dialogue-01-capacidades-productivas.mp3)
+- [De una intuición a una hipótesis refutable — audio](https://github.com/kmlv/TeachResearchGenAI/releases/download/materials-v0.1.0/dialogue-02-hipotesis-refutable.mp3)
 
 Los audios son recreaciones editadas de conversaciones reales. Kristian y la IA
 están representados por voces neurales distintas; no se utiliza clonación de voz.
-
-## Cómo se organizarán los próximos insumos
-
-- Los notebooks, prompts, código y datos pequeños se versionarán en este
-  repositorio.
-- Los audios, paquetes y archivos grandes se publicarán como activos de una
-  versión, con un enlace estable.
-- Los datos externos permanecerán en su fuente oficial cuando su licencia o
-  tamaño desaconsejen redistribuirlos.
-- No se publicarán datos privados, restringidos o identificables.
-
-Cada ejercicio de la presentación enlazará directamente al insumo que necesita.
-Esta página seguirá siendo el índice canónico aunque cambien o se añadan
-materiales.
