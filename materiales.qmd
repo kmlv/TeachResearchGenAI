@@ -1,0 +1,52 @@
+---
+title: "Materiales"
+subtitle: "IA generativa e investigación en ciencias sociales"
+pagetitle: "Materiales para la clase"
+toc: false
+---
+
+Esta es la página que conviene guardar y compartir antes de la clase. Reúne los
+insumos públicos en un solo lugar; no hace falta recibir ni sincronizar una
+carpeta.
+
+## Para comenzar
+
+[Presentación](course/slides/ia-generativa-investigacion-ciencias-sociales.html)
+:   Versión web de las láminas. Los enlaces y reproductores se abren desde la
+    propia presentación.
+
+[Guía de Jupyter, VS Code y Codex](materials/guides/guia-demo-jupyter-vscode-codex.pdf)
+:   Preparación breve para seguir los ejemplos de código en una laptop.
+
+[Descargar todo](https://github.com/kmlv/TeachResearchGenAI/releases/download/materials-v0.1.0/materiales-clase-v0.1.0.zip)
+:   Un solo archivo comprimido con la guía y el ejemplo reproducible disponible
+    en esta versión.
+
+## Ejemplo reproducible
+
+[Auditor de evidencia](https://github.com/kmlv/TeachResearchGenAI/tree/main/examples/evidence_auditor)
+:   Mini-repositorio en Python para inspeccionar evidencia, reconstruir citas y
+    dejar la conclusión bajo revisión humana. Incluye trazas grabadas y funciona
+    sin una clave de API.
+
+## Diálogos de ideación
+
+- [Capacidades productivas — audio completo](https://github.com/kmlv/TeachResearchGenAI/releases/download/materials-v0.1.0/dialogue-01-capacidades-productivas.mp3)
+- [De una intuición a una hipótesis refutable — audio completo](https://github.com/kmlv/TeachResearchGenAI/releases/download/materials-v0.1.0/dialogue-02-hipotesis-refutable.mp3)
+
+Los audios son recreaciones editadas de conversaciones reales. Kristian y la IA
+están representados por voces neurales distintas; no se utiliza clonación de voz.
+
+## Cómo se organizarán los próximos insumos
+
+- Los notebooks, prompts, código y datos pequeños se versionarán en este
+  repositorio.
+- Los audios, paquetes y archivos grandes se publicarán como activos de una
+  versión, con un enlace estable.
+- Los datos externos permanecerán en su fuente oficial cuando su licencia o
+  tamaño desaconsejen redistribuirlos.
+- No se publicarán datos privados, restringidos o identificables.
+
+Cada ejercicio de la presentación enlazará directamente al insumo que necesita.
+Esta página seguirá siendo el índice canónico aunque cambien o se añadan
+materiales.

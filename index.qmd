@@ -1,0 +1,41 @@
+---
+title: "IA generativa para la investigación económica y social"
+subtitle: "Taller de cuatro horas — Kristian Lopez Vargas"
+pagetitle: "Inicio"
+---
+
+Este sitio reúne la presentación, los insumos y el material de trabajo del
+taller.
+
+## La idea
+
+El taller no recorre un catálogo de aplicaciones, sino una investigación
+completa. Cada bloque hace avanzar el mismo caso y termina en una acción que el
+participante puede repetir en su propio proyecto.
+
+Son cuatro horas docentes, con los descansos aparte, para un grupo pequeño de
+investigadores sociales —economistas, antropólogos, psicólogos, sociólogos,
+geógrafos— con acceso desigual a herramientas de IA.
+
+Cuatro reglas atraviesan toda la clase: verificar las fuentes, conservar el
+juicio científico, proteger los datos y documentar el uso material de IA.
+
+## Documentos
+
+[Materiales para la clase](materiales.qmd)
+:   Punto de entrada para la presentación, la guía de preparación, el código,
+    los audios y los paquetes descargables.
+
+[Propuesta del taller](pages/propuesta.qmd)
+:   Versión consolidada: recomendación central, resultados de aprendizaje, caso
+    conductor, cronograma de 240 minutos bloque por bloque, arquitectura de
+    demos y preparación previa.
+
+[Panorama de herramientas](pages/herramientas.qmd)
+:   Revisión del mercado de herramientas de revisión de literatura en 2026, con
+    precios contrastados contra la fuente primaria y recomendaciones por perfil.
+
+## Estado
+
+La propuesta y los primeros materiales ya están disponibles. La presentación
+seguirá creciendo por bloques a medida que se apruebe el contenido de la clase.

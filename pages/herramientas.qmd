@@ -1,0 +1,6 @@
+---
+pagetitle: "Panorama de herramientas"
+description: "Panorama 2026 de herramientas de revisión de literatura asistida por IA, con precios contrastados contra la fuente primaria."
+---
+
+{{< include ../deliverables/literature-review-tools-landscape-opus.md >}}

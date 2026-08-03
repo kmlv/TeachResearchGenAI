@@ -1,0 +1,227 @@
+---
+title: "IA generativa e investigación en ciencias sociales"
+author:
+  - name: "Kristian López Vargas"
+    affiliation: "Profesor asociado de economía, Universidad de California, Santa Cruz"
+lang: es
+format:
+  revealjs:
+    theme: [default, slides.scss]
+    width: 1600
+    height: 900
+    margin: 0.04
+    slide-number: c/t
+    progress: true
+    controls: false
+    menu: false
+    transition: none
+    background-transition: none
+    hash: true
+    history: false
+    center: false
+    incremental: false
+    highlight-style: github
+    embed-resources: true
+    include-after-body: dialogue-audio.html
+---
+
+## Objetivo
+
+Repensar cómo usamos herramientas de IA generativa en algunos aspectos
+relevantes de la investigación.
+
+::: {.map}
+- Preguntas y diseño
+- Literatura
+- Razonamiento y crítica
+- Análisis de datos y código
+- Agentes
+- Comunicación
+:::
+
+::: {.prompt}
+¿En cuáles de estos ámbitos ya estás usando IA?
+:::
+
+::: {.notes}
+Abrir con la pregunta y dejar que respondan brevemente; sirve para calibrar el
+nivel del grupo antes de entrar en materia.
+:::
+
+## Generar insumos es ahora mucho más barato
+
+Ideas, argumentos, investigación preliminar, código y borradores se producen
+hoy en cantidades mucho mayores.
+
+::: {.lead}
+El trabajo se desplaza: aprender más rápido, deliberar, revisar y decidir.
+:::
+
+::: {.notes}
+El punto es el cambio de costo relativo, no la calidad de las herramientas.
+:::
+
+## La tentación es avanzar sin comprender
+
+Producir más rápido no significa entender mejor.
+
+El riesgo es entregar —con nuestra firma— ideas, análisis o textos que no hemos
+comprendido, evaluado y aprobado plenamente.
+
+::: {.notes}
+Enfatizar la firma: la responsabilidad no se delega en la herramienta.
+:::
+
+## Cuatro reglas
+
+::: {.rules}
+- Verificar las fuentes
+- Ejercer el juicio científico
+- Proteger los datos
+- Documentar el uso de IA
+:::
+
+::: {.notes}
+Enunciarlas sin desarrollarlas; se retoman a lo largo del taller.
+:::
+
+## Aplicación
+
+::: {.completions}
+::: {.incremental}
+- La IA podría ayudarme a ___.
+- Comprobaría el resultado mediante ___.
+- No delegaría ___.
+:::
+:::
+
+::: {.prompt}
+Un voluntario · conversación breve
+:::
+
+::: {.notes}
+Pedir un voluntario que tenga entre manos una tarea de investigación real y en
+curso. Los tres enunciados guían la conversación con esa persona; no son un
+ejercicio obligatorio para toda la sala. Avanzar uno por uno, dejando que el
+caso concreto los complete.
+
+Si nadie se ofrece, usar un ejemplo breve de respaldo: una encuesta sobre
+movilidad urbana. La IA podría ayudar a redactar variantes de las preguntas;
+el resultado se comprobaría pilotando el cuestionario con unas pocas personas;
+no se delegaría la decisión de qué se mide.
+:::
+
+## Ampliar antes de decidir
+
+Antes de pedir una respuesta, usemos la IA para ampliar lo que vale la pena
+considerar:
+
+::: {.quad}
+- Preguntas y explicaciones rivales
+- Supuestos detrás de cada una
+- Evidencia que permitiría distinguirlas
+- Límites de lo que podríamos concluir
+:::
+
+::: {.lead .fragment}
+Después comparamos, descartamos y decidimos.
+:::
+
+::: {.notes}
+Transición desde la diapositiva anterior: «Ya vimos dónde podría ayudarnos la
+IA en un caso concreto. Ahora veamos cómo usarla sin saltar prematuramente a
+una respuesta.»
+
+El puente: la diapositiva anterior identifica dónde entra la IA en un caso real
+y dónde no; esta dice cómo usarla en la etapa de pregunta y diseño —ampliar el
+espacio de alternativas antes de cerrarlo—. La demostración concreta viene
+después.
+
+Los cuatro elementos aparecen juntos; el cierre se revela con un clic, cuando
+la sala ya los ha leído.
+:::
+
+## La primera respuesta no bastó
+
+::: {.dialogue-player data-track="capacidades"}
+::: {.dialogue-meta}
+<span>Capacidades productivas · diálogo completo</span>
+<span data-dialogue-duration>—</span>
+:::
+
+<audio controls preload="metadata" src="../../deliverables/dialogue-01-capacidades-productivas.mp3"></audio>
+
+::: {.dialogue-chapters aria-label="Capítulos del diálogo"}
+<button type="button" data-turn="2">Pregunta</button>
+<button type="button" data-turn="6">Neutralidad</button>
+<button type="button" data-turn="23">Pruebas de estrés</button>
+<button type="button" data-turn="60">Resultado</button>
+:::
+
+::: {.dialogue-window aria-live="polite"}
+<div class="dialogue-speaker" data-dialogue-speaker>Kristian · IA</div>
+<div class="dialogue-utterance" data-dialogue-utterance>Pulsa reproducir para seguir la conversación.</div>
+<div class="dialogue-next" data-dialogue-next>También puedes entrar directamente por uno de los capítulos.</div>
+<div class="dialogue-position" data-dialogue-position>—</div>
+:::
+:::
+
+::: {.prompt}
+Recreación editada y condensada de una conversación real · voces sintéticas
+:::
+
+::: {.notes}
+El audio conserva casi completa la reconstrucción condensada. Puede escucharse
+de corrido o recorrerse mediante los cuatro puntos de entrada. La línea visible
+sigue automáticamente el turno que se está reproduciendo.
+
+No presentar la conversación como una respuesta exitosa de la IA: el valor
+está en la objeción a la primera taxonomía, las pruebas de estrés y las preguntas
+que permanecen abiertas.
+
+[Sources]
+- Kristian López Vargas, «Del inventario de habilidades a una teoría de
+  capacidades productivas» (recreación condensada proporcionada para el taller).
+[/Sources]
+:::
+
+## Una intuición no es una hipótesis
+
+::: {.dialogue-player data-track="hipotesis"}
+::: {.dialogue-meta}
+<span>Dimensionalidad y automatización · diálogo completo</span>
+<span data-dialogue-duration>—</span>
+:::
+
+<audio controls preload="metadata" src="../../deliverables/dialogue-02-hipotesis-refutable.mp3"></audio>
+
+::: {.dialogue-chapters aria-label="Capítulos del diálogo"}
+<button type="button" data-turn="1">Intuición</button>
+<button type="button" data-turn="13">Una dimensión</button>
+<button type="button" data-turn="38">Rango</button>
+<button type="button" data-turn="64">Al menos dos</button>
+:::
+
+::: {.dialogue-window aria-live="polite"}
+<div class="dialogue-speaker" data-dialogue-speaker>Kristian · IA</div>
+<div class="dialogue-utterance" data-dialogue-utterance>Pulsa reproducir para seguir la conversación.</div>
+<div class="dialogue-next" data-dialogue-next>También puedes entrar directamente por uno de los capítulos.</div>
+<div class="dialogue-position" data-dialogue-position>—</div>
+:::
+:::
+
+::: {.prompt}
+Recreación editada y condensada de una conversación real · voces sintéticas
+:::
+
+::: {.notes}
+La conversación preserva el desvío inicial y la corrección que devuelve el
+problema a una hipótesis atacable. El cierre deliberadamente no afirma que haya
+exactamente dos dimensiones: rechazar una dimensión solo establece que hacen
+falta al menos dos.
+
+[Sources]
+- Kristian López Vargas, «De la intuición de dos dimensiones a una hipótesis
+  refutable» (recreación condensada proporcionada para el taller).
+[/Sources]
+:::

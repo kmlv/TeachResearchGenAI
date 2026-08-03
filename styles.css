@@ -1,0 +1,145 @@
+/* Layout, responsive and print rules, adapted from the ExperimentalEconomics site. */
+
+p {
+  margin-bottom: 0.9em;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+.page-footer {
+  color: #888;
+  font-size: 0.82rem;
+}
+
+.quarto-title-meta,
+.subtitle {
+  color: #666;
+}
+
+.nav-footer {
+  border-top: 0.5px solid #ececec;
+}
+
+.navbar {
+  border-bottom: 0.5px solid #ececec;
+}
+
+.sidebar {
+  border-right: 0.5px solid #ececec;
+}
+
+.margin-caption,
+.figure-caption {
+  color: #555;
+  font-size: 0.78rem;
+}
+
+/* Definition lists are used on the landing page to index the documents. */
+dl dt {
+  font-weight: 500;
+  margin-top: 0.9rem;
+}
+
+dl dd {
+  color: #555;
+  margin-left: 0;
+  padding-left: 1rem;
+  border-left: 2px solid #ececec;
+}
+
+@media (max-width: 991px) {
+  #quarto-content,
+  body.nav-sidebar #quarto-content,
+  body.nav-fixed #quarto-content,
+  main.content,
+  #quarto-document-content,
+  .quarto-title-block {
+    max-width: 100% !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: hidden;
+  }
+
+  main.content,
+  .quarto-title-block {
+    padding-left: 1.15rem !important;
+    padding-right: 1.15rem !important;
+  }
+
+  .column-margin,
+  aside {
+    display: block !important;
+    float: none !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0.8rem 0 !important;
+    padding-left: 0.8rem;
+    border-left: 1px solid #ececec;
+    font-size: 0.88rem;
+  }
+
+  img,
+  svg,
+  canvas,
+  table,
+  pre,
+  div.sourceCode {
+    max-width: 100% !important;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+@media print {
+  .navbar,
+  #quarto-sidebar,
+  #TOC,
+  .page-navigation,
+  .page-footer {
+    display: none !important;
+  }
+
+  body {
+    font-size: 11pt;
+    color: #111;
+    background: #fff;
+    padding-top: 0;
+  }
+
+  main,
+  main.content,
+  #quarto-content,
+  #quarto-document-content {
+    max-width: none !important;
+    width: auto !important;
+    margin: 0 !important;
+  }
+
+  .column-margin,
+  aside {
+    display: block !important;
+    float: none !important;
+    width: auto !important;
+    margin: 0.8rem 0 !important;
+    padding-left: 0.8rem;
+    border-left: 1px solid #ececec;
+    color: #444;
+    font-size: 9.5pt;
+  }
+
+  details {
+    display: block;
+    border: 1px solid #ececec;
+    padding: 0.5rem;
+  }
+
+  details > summary {
+    font-weight: 500;
+  }
+}

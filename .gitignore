@@ -1,0 +1,71 @@
+# Quarto build output. The site is deployed as a GitHub Pages artifact built by
+# CI, so the rendered tree is never committed.
+/_site/
+/.quarto/
+*_files/
+**/*.quarto_ipynb
+
+# Rendered copies and visual-QA intermediates. Source files stay versioned;
+# Quarto and CI regenerate the public HTML.
+/course/slides/*.html
+!/course/slides/dialogue-audio.html
+/tmp/
+/output/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+*.code-workspace
+
+# Local agent tooling. The agent instruction files point at `coord/`, which is
+# not published; shipping the pointers without the protocol they reference is
+# worse than shipping neither.
+.claude/
+/AGENTS.md
+/CLAUDE.md
+
+# Local secrets and caches. None of these exist today; they are here so that a
+# later notebook or script cannot quietly add one to the candidate set.
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---------------------------------------------------------------------------
+# Repository privacy.
+#
+# The site is public, and so is the repository that builds it. The render
+# allow-list in `_quarto.yml` keeps `_site/` clean, but it says nothing about
+# what `git push` uploads. Everything below stays local; the site build needs
+# exactly two documents from `deliverables/`, and those are re-added by name.
+# ---------------------------------------------------------------------------
+
+# Agent coordination surface: threads, claims, journals, wake logs, trace.
+/coord/
+
+# Original sources: briefs and transcripts, unedited.
+/inputs/
+
+# Working documents and audio artifacts. Ignore the directory wholesale, then
+# re-include only what `pages/` includes at render time. Adding a page means
+# adding its document here as well as to `render:` in `_quarto.yml`.
+/deliverables/*
+!/deliverables/consolidated-class-outline.md
+!/deliverables/literature-review-tools-landscape-opus.md
+
+# Audio artifacts never belong in the repository, wherever they are generated.
+*.mp3
+*.audio.json
+*.player.html
+
+# Release bundles are assembled locally and uploaded as immutable assets.
+/dist/

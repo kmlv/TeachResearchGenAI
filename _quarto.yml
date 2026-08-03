@@ -1,0 +1,70 @@
+project:
+  type: website
+  output-dir: _site
+  execute-dir: project
+  # Explicit allow-list. Nothing renders unless it is named here, so coord/,
+  # inputs/, deliverables/ and internal drafts cannot be published by accident.
+  render:
+    - index.qmd
+    - materiales.qmd
+    - pages/propuesta.qmd
+    - pages/herramientas.qmd
+  # Explicit deny-list for copied resources. Quarto copies non-source files
+  # from the project directory into the output tree; these directories must
+  # never travel with the site.
+  resources:
+    - "!coord/**"
+    - "!inputs/**"
+    - "!deliverables/**"
+    - "!.github/**"
+
+website:
+  title: "IA generativa para la investigación"
+  description: "Taller de cuatro horas sobre IA generativa aplicada a la investigación económica y social."
+  site-url: https://kmlv.github.io/TeachResearchGenAI
+  repo-url: https://github.com/kmlv/TeachResearchGenAI
+  navbar:
+    background: light
+    pinned: true
+    left:
+      - text: Inicio
+        href: index.qmd
+      - text: Propuesta
+        href: pages/propuesta.qmd
+      - text: Herramientas
+        href: pages/herramientas.qmd
+      - text: Materiales
+        href: materiales.qmd
+    right:
+      - icon: github
+        href: https://github.com/kmlv/TeachResearchGenAI
+  page-footer:
+    left: "© 2026 Kristian Lopez Vargas"
+    right: "Hecho con [Quarto](https://quarto.org)"
+
+lang: es
+
+format:
+  html:
+    theme: [cosmo, custom.scss]
+    css: styles.css
+    toc: true
+    toc-location: right
+    toc-title: "En esta página"
+    toc-depth: 3
+    number-sections: false
+    code-copy: true
+    code-overflow: wrap
+    fig-cap-location: bottom
+    html-math-method: katex
+    back-to-top-navigation: true
+    page-layout: article
+    mainfont: "Inter"
+    monofont: "JetBrains Mono"
+    linkcolor: "#0c2a4a"
+    highlight-style: github
+    grid:
+      sidebar-width: 0px
+      body-width: 820px
+      margin-width: 230px
+      gutter-width: 1.4em

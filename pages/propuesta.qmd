@@ -1,0 +1,6 @@
+---
+pagetitle: "Propuesta del taller"
+description: "Propuesta consolidada del taller de cuatro horas sobre IA generativa para la investigación económica y social."
+---
+
+{{< include ../deliverables/consolidated-class-outline.md >}}

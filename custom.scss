@@ -1,0 +1,202 @@
+/* Restrained editorial theme, adapted from the ExperimentalEconomics site. */
+
+/*-- scss:defaults --*/
+
+$font-family-sans-serif: "Inter", "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !default;
+$font-family-monospace: "JetBrains Mono", "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !default;
+$font-size-root: 16px !default;
+$line-height-base: 1.65 !default;
+
+$body-color: #1a1a1a !default;
+$body-bg: #ffffff !default;
+$link-color: #0c2a4a !default;
+$link-hover-color: #185fa5 !default;
+
+$headings-font-weight: 500 !default;
+$headings-color: #0a0a0a !default;
+
+$border-color: #ececec !default;
+$code-block-bg: #fafafa !default;
+$code-block-border-color: #ececec !default;
+
+/*-- scss:rules --*/
+
+body {
+  background: #ffffff;
+  color: #1a1a1a;
+  /* Push content below the pinned navbar. */
+  padding-top: 60px;
+}
+
+/* Navbar styling — Bootstrap's fixed-top class handles position; we just style. */
+#quarto-header.fixed-top,
+.navbar.fixed-top {
+  border-bottom: 1px solid #ececec;
+  backdrop-filter: saturate(180%) blur(8px);
+  background: rgba(255, 255, 255, 0.92) !important;
+}
+
+/* Right TOC fixed — guarantees it stays visible regardless of grid/flex parent
+   issues. Brute-force fix because position: sticky is broken by Quarto's
+   body { display: flex }. */
+#quarto-margin-sidebar.margin-sidebar,
+.sidebar.margin-sidebar {
+  position: fixed !important;
+  top: 80px !important;
+  right: max(1rem, calc((100vw - 1280px) / 2)) !important;
+  width: 230px !important;
+  max-height: calc(100vh - 100px) !important;
+  overflow-y: auto !important;
+  transition: none !important;
+  will-change: auto !important;
+  z-index: 5;
+}
+
+/* Disable the headroom (navbar hide-on-scroll) animation that interferes. */
+#quarto-header.headroom {
+  transform: none !important;
+  transition: none !important;
+}
+
+html,
+body,
+p,
+li,
+td,
+th,
+input,
+button,
+select,
+textarea,
+.navbar,
+.sidebar,
+.toc-actions,
+.quarto-title,
+.content {
+  font-family: "Inter", "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Inter", "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.quarto-title .title {
+  font-weight: 500;
+}
+
+.sidebar nav[role="doc-toc"] ul > li > a.active,
+.sidebar-item-text.active,
+.sidebar-item-container .active {
+  color: #0c2a4a;
+  font-weight: 500;
+  background: transparent;
+  border-left: 2px solid #0c2a4a;
+  padding-left: 8px;
+}
+
+.sidebar nav[role="doc-toc"] ul > li > a,
+.sidebar-item-text {
+  font-size: 0.78rem;
+}
+
+#TOC,
+.toc-active a {
+  font-size: 0.82rem;
+  color: #555;
+}
+
+#TOC > ul {
+  border-left: none;
+}
+
+#TOC a.active {
+  color: #0c2a4a;
+  font-weight: 500;
+}
+
+pre.sourceCode,
+div.sourceCode {
+  background: #fafafa !important;
+  border: 0.5px solid #ececec;
+  border-radius: 4px;
+}
+
+pre.sourceCode code {
+  font-size: 0.82rem;
+}
+
+.cell-output,
+.cell-output-display {
+  border: 0;
+}
+
+.column-margin,
+aside {
+  font-size: 0.78rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.column-margin strong,
+aside strong {
+  color: #333;
+  font-weight: 500;
+}
+
+.callout {
+  border-left-width: 2px !important;
+  border-radius: 4px;
+  background: #fafafa;
+  box-shadow: none;
+  border-top: 0.5px solid #ececec;
+  border-right: 0.5px solid #ececec;
+  border-bottom: 0.5px solid #ececec;
+}
+
+.callout-title {
+  font-weight: 500;
+  background: transparent !important;
+}
+
+.callout-icon-container,
+.callout-icon {
+  display: none !important;
+}
+
+.callout-note {
+  border-left-color: #0c2a4a;
+}
+
+.callout-warning {
+  border-left-color: #8a5a00;
+}
+
+.callout-tip {
+  border-left-color: #386641;
+}
+
+blockquote {
+  border-left: 2px solid #ececec;
+  color: #555;
+  font-size: 0.95rem;
+  padding-left: 1rem;
+}
+
+table {
+  font-size: 0.92rem;
+}
+
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+  border-color: #ececec;
+}
+
+.table > :not(caption) > * > * {
+  border-bottom-color: #ececec;
+}
