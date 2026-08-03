@@ -159,7 +159,7 @@ Los cuatro elementos aparecen juntos; el cierre se revela con un clic, cuando
 la sala ya los ha leído.
 :::
 
-## Una pregunta encierra varias decisiones
+## Simulación: diseñemos un estudio
 
 Un equipo multidisciplinario parte de esta pregunta:
 
@@ -169,61 +169,225 @@ bienestar en Lima?»
 :::
 
 ::: {.prompt}
-¿Qué tendríamos que decidir antes de investigarla?
+Desde tu disciplina, ¿qué explicación propondrías?
 :::
 
 ::: {.notes}
-No corregir la pregunta todavía. Pedir dos o tres respuestas breves de la sala:
-«¿para quién?», «¿qué resultado?», «¿comparado con qué?». La pregunta ya acota
-un ámbito, pero todavía encierra decisiones que no conviene dejar implícitas.
+**Tiempo:** 2 minutos.
+
+**Decir:** «Vamos a simular una reunión de diseño. La pregunta no pertenece a
+nadie de esta sala, así que podemos criticarla sin defender territorio. Desde
+tu disciplina, ¿por qué podría existir esta relación?»
+
+Recoger dos o tres explicaciones breves. No corregirlas ni pedir todavía una
+pregunta perfecta.
+
+**Esperar:** tiempo y costo del viaje, accesibilidad espacial, estrés,
+seguridad, cuidado.
+
+**Si nadie habla:** «¿Un economista y un psicólogo explicarían esta relación de
+la misma manera? ¿Qué miraría cada uno?»
+
+**Transición:** «Veamos cuatro explicaciones posibles. No son resultados: son
+propuestas que todavía podrían estar equivocadas».
 :::
 
-## El desacuerdo es el insumo
+## La misma pregunta admite varias explicaciones
 
+::: {.incremental}
 - **Economía** — el tiempo de viaje reduce los empleos factibles
 - **Geografía** — el lugar de origen condiciona qué empleos son accesibles
 - **Psicología** — la incertidumbre puede importar tanto como la duración
 - **Antropología** — cuidado y seguridad delimitan los trayectos posibles
-
-::: {.lead .fragment}
-IA: «Faltan tres decisiones: población, resultados y mecanismos. ¿Cuál fijamos
-primero?»
 :::
 
 ::: {.prompt}
-Simulación · la IA organiza; el equipo elige
+¿Cuáles compiten? ¿Cuáles pueden coexistir?
 :::
 
 ::: {.notes}
-Leer las cuatro intervenciones como explicaciones candidatas, no como hallazgos.
-Todas miran la misma pregunta desde mecanismos distintos y pueden coexistir.
+**Tiempo:** 2 minutos.
 
-Revelar al final la única intervención de la IA. No responde ni elige una
-disciplina: hace visibles tres decisiones que el equipo debe tomar.
+Antes de cada clic, pedir una explicación desde esa disciplina. Revelar después
+la línea preparada: sirve como confirmación o como respaldo si la sala no
+propone una.
+
+**Decir:** «Todas intentan explicar el mismo objeto, pero no necesariamente se
+excluyen. ¿Cuáles compiten y cuáles podrían operar al mismo tiempo?»
+
+**Esperar:** acceso y localización se superponen; estrés y cuidado pueden
+coexistir con ambos.
+
+**Si nadie habla:** «No tenemos que elegir todavía. Basta notar que algunas
+explicaciones compiten y otras pueden coexistir».
+
+**Transición:** «Ahora sí podemos darle a la IA una tarea precisa».
 :::
 
-## El equipo decide qué conservar
+## Esta es la tarea que damos a la IA
+
+::: {.lead}
+«Organiza estas explicaciones sin decidir cuál es correcta. Señala:»
+:::
+
+::: {.quad}
+- Qué decisiones faltan
+- Qué mecanismos pueden coexistir
+- Qué evidencia ayudaría a distinguirlos
+- Qué no podríamos concluir
+:::
+
+::: {.prompt}
+Antes de revelar la respuesta: ¿qué debería devolver?
+:::
+
+::: {.notes}
+**Tiempo:** 1 minuto.
+
+**Decir:** «Este es el prompt completo. No le pedimos una respuesta ni una
+pregunta final. Le pedimos que organice el desacuerdo y que no decida por el
+equipo».
+
+Pedir una predicción breve sobre la respuesta esperada.
+
+**Esperar:** decisiones sobre población, medición, resultado, evidencia y
+límites.
+
+**Si nadie habla:** «Yo esperaría una lista de decisiones pendientes, no un
+veredicto».
+
+**Transición:** «Veamos la respuesta, pero no la aceptemos todavía».
+:::
+
+## La respuesta también se revisa
+
+Respuesta simulada y condensada:
+
+- Falta fijar la población, cómo mediremos movilidad y el resultado principal.
+- Los mecanismos pueden coexistir.
+- Harían falta datos de trayectos, empleo y entrevistas.
+
+::: {.lead .fragment}
+IA: «La movilidad reduce oportunidades».
+:::
+
+::: {.prompt}
+¿Qué acierta? ¿Qué simplifica? ¿Qué frase no firmarías?
+:::
+
+::: {.notes}
+**Tiempo:** 2 minutos.
+
+Leer primero las tres líneas. Hacer clic para revelar la última frase y pedir
+una objeción concreta.
+
+**Decir:** «La respuesta ordena bien varias decisiones. Pero ¿qué frase no
+firmarían todavía?»
+
+**Esperar:** «reduce» afirma causalidad; falta definir una comparación; la
+evidencia propuesta sigue siendo genérica.
+
+**Si nadie habla:** «Yo no firmaría “reduce”. Sin una comparación creíble,
+todavía solo podemos hablar de una relación o una asociación».
+
+**Transición:** «Corregimos la síntesis y recuperamos la decisión».
+:::
+
+## El equipo fija el alcance
+
+::: {.quad}
+- **Población** — trabajadores de bajos ingresos en Lima
+- **Movilidad** — duración e incertidumbre del viaje al trabajo
+- **Resultado principal** — estabilidad laboral
+- **Fuera por ahora** — bienestar en sentido amplio
+:::
+
+::: {.lead .fragment}
+Los mecanismos siguen abiertos: acceso, puntualidad, estrés, cuidado y
+seguridad.
+:::
+
+::: {.prompt}
+¿Cambiarías alguna decisión?
+:::
+
+::: {.notes}
+**Tiempo:** 2 minutos.
+
+**Decir:** «La IA hizo visibles las decisiones; ahora las toma el equipo. Para
+continuar con la simulación, fijamos estas cuatro».
+
+Leer los cuatro cuadrantes y preguntar si alguien cambiaría uno. Hacer clic al
+final para aclarar que acotar el estudio no prueba ni elimina los mecanismos.
+
+**Esperar:** otra población, incluir bienestar, medir costo o seguridad.
+
+**Si nadie habla:** «La decisión más costosa es dejar fuera el bienestar
+general. Ganamos foco y perdemos alcance».
+
+**Transición:** «Con esas decisiones podemos escribir un producto provisional».
+:::
+
+## Un diseño provisional y honesto
 
 ::: {.quad}
 - **Pregunta** — Entre trabajadores de bajos ingresos en Lima, ¿cómo se asocian
-  los viajes largos e inciertos con la estabilidad laboral?
-- **Mecanismos por contrastar** — acceso, puntualidad, estrés y cuidado
+  la duración y la incertidumbre del viaje con la estabilidad laboral?
+- **Mecanismos por contrastar** — acceso, puntualidad, estrés, cuidado y
+  seguridad
 - **Evidencia** — diarios de viaje, historia laboral y entrevistas
-- **Límite** — sin una comparación creíble, solo describimos asociaciones
+- **Límite** — sin una comparación creíble, no podemos atribuir efectos
 :::
 
 ::: {.prompt}
-¿Qué cambiarías antes de salir de la sala?
+¿Qué objeción harías antes de analizar los datos?
 :::
 
 ::: {.notes}
-Esta cuadrícula es el resultado provisional de la conversación: una pregunta
-acotada, mecanismos que todavía pueden coexistir, evidencia complementaria y
-el límite inferencial escrito desde el comienzo.
+**Tiempo:** 2 minutos.
 
-Pedir una objeción o ajuste. Cerrar: «Esta fue una simulación breve. Ahora
-veremos dos conversaciones reales en las que el razonamiento cambia varias
-veces».
+**Decir:** «Cada cuadrante tiene un origen. La población, la movilidad y el
+resultado vienen de nuestras decisiones. Los mecanismos vienen del desacuerdo.
+La evidencia responde a lo que tendríamos que observar. Y el límite corrige la
+frase que no quisimos firmar».
+
+Pedir una objeción antes de pasar a los datos.
+
+**Esperar:** sesgo de selección, medición de incertidumbre, diarios incompletos,
+causalidad inversa.
+
+**Si nadie habla:** «Una objeción: los diarios de viaje podrían seleccionar a
+quienes tienen tiempo y disposición para completarlos».
+
+**Transición:** «El resultado es provisional, pero ya sabemos quién responde
+por cada decisión».
+:::
+
+## Quién firma el resultado
+
+::: {.quad}
+- **IA** — organizó alternativas e hizo visibles omisiones
+- **Equipo** — corrigió, eligió y escribió el límite
+:::
+
+::: {.lead}
+La responsabilidad no se delegó.
+:::
+
+::: {.prompt}
+Ahora: dos conversaciones reales
+:::
+
+::: {.notes}
+**Tiempo:** 1 minuto.
+
+**Decir:** «La herramienta organizó alternativas e hizo visibles omisiones. No
+fijó la población, no eligió el resultado y no escribió el límite causal. Esa
+responsabilidad siguió siendo del equipo».
+
+**Transición:** «Esta fue una simulación controlada. Lo que sigue son dos
+conversaciones reales, donde el razonamiento cambia varias veces y las
+correcciones no llegan en un orden tan limpio».
 :::
 
 ## La primera respuesta no bastó
