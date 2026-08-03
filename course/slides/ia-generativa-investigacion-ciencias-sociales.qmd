@@ -124,9 +124,9 @@ ejercicio obligatorio para toda la sala. Avanzar uno por uno, dejando que el
 caso concreto los complete.
 
 Si nadie se ofrece, usar un ejemplo breve de respaldo: una encuesta sobre
-movilidad urbana. La IA podría ayudar a redactar variantes de las preguntas;
-el resultado se comprobaría pilotando el cuestionario con unas pocas personas;
-no se delegaría la decisión de qué se mide.
+confianza institucional. La IA podría ayudar a redactar variantes de las
+preguntas; el resultado se comprobaría pilotando el cuestionario con unas pocas
+personas; no se delegaría la decisión de qué se mide.
 :::
 
 ## Ampliar antes de decidir
@@ -157,6 +157,73 @@ después.
 
 Los cuatro elementos aparecen juntos; el cierre se revela con un clic, cuando
 la sala ya los ha leído.
+:::
+
+## Una pregunta encierra varias decisiones
+
+Un equipo multidisciplinario parte de esta pregunta:
+
+::: {.lead}
+«¿Cómo se relaciona la movilidad cotidiana con el acceso al empleo y el
+bienestar en Lima?»
+:::
+
+::: {.prompt}
+¿Qué tendríamos que decidir antes de investigarla?
+:::
+
+::: {.notes}
+No corregir la pregunta todavía. Pedir dos o tres respuestas breves de la sala:
+«¿para quién?», «¿qué resultado?», «¿comparado con qué?». La pregunta ya acota
+un ámbito, pero todavía encierra decisiones que no conviene dejar implícitas.
+:::
+
+## El desacuerdo es el insumo
+
+- **Economía** — el tiempo de viaje reduce los empleos factibles
+- **Geografía** — el lugar de origen condiciona qué empleos son accesibles
+- **Psicología** — la incertidumbre puede importar tanto como la duración
+- **Antropología** — cuidado y seguridad delimitan los trayectos posibles
+
+::: {.lead .fragment}
+IA: «Faltan tres decisiones: población, resultados y mecanismos. ¿Cuál fijamos
+primero?»
+:::
+
+::: {.prompt}
+Simulación · la IA organiza; el equipo elige
+:::
+
+::: {.notes}
+Leer las cuatro intervenciones como explicaciones candidatas, no como hallazgos.
+Todas miran la misma pregunta desde mecanismos distintos y pueden coexistir.
+
+Revelar al final la única intervención de la IA. No responde ni elige una
+disciplina: hace visibles tres decisiones que el equipo debe tomar.
+:::
+
+## El equipo decide qué conservar
+
+::: {.quad}
+- **Pregunta** — Entre trabajadores de bajos ingresos en Lima, ¿cómo se asocian
+  los viajes largos e inciertos con la estabilidad laboral?
+- **Mecanismos por contrastar** — acceso, puntualidad, estrés y cuidado
+- **Evidencia** — diarios de viaje, historia laboral y entrevistas
+- **Límite** — sin una comparación creíble, solo describimos asociaciones
+:::
+
+::: {.prompt}
+¿Qué cambiarías antes de salir de la sala?
+:::
+
+::: {.notes}
+Esta cuadrícula es el resultado provisional de la conversación: una pregunta
+acotada, mecanismos que todavía pueden coexistir, evidencia complementaria y
+el límite inferencial escrito desde el comienzo.
+
+Pedir una objeción o ajuste. Cerrar: «Esta fue una simulación breve. Ahora
+veremos dos conversaciones reales en las que el razonamiento cambia varias
+veces».
 :::
 
 ## La primera respuesta no bastó
