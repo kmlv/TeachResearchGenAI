@@ -317,3 +317,120 @@ falta al menos dos.
   refutable» (recreación condensada proporcionada para el taller).
 [/Sources]
 :::
+
+## Cada interfaz cumple una función distinta
+
+::: {.tool-roles}
+::: {.tool-role}
+<p class="tool-label">ChatGPT y Claude</p>
+
+Conversar con la IA, explorar preguntas, contrastar argumentos y trabajar con
+materiales compartidos.
+:::
+
+::: {.tool-role}
+<p class="tool-label">Codex y Claude Code</p>
+
+Trabajar directamente sobre un proyecto: leer archivos, proponer cambios,
+ejecutar comandos y comprobar resultados.
+:::
+
+::: {.tool-role}
+<p class="tool-label">Visual Studio Code</p>
+
+Reunir texto, código, notebooks, cambios y extensiones en un mismo espacio de
+trabajo.
+:::
+
+::: {.tool-role}
+<p class="tool-label">Terminal</p>
+
+Ejecutar instrucciones reproducibles y observar exactamente qué ocurrió.
+:::
+:::
+
+::: {.prompt}
+Es mi configuración actual; no es un requisito para trabajar con IA
+:::
+
+::: {.notes}
+**Decir:** «Distingo conversación de acción sobre archivos. ChatGPT y la
+aplicación de Claude son especialmente cómodos para conversar y trabajar con
+materiales compartidos. Codex y Claude Code pueden actuar sobre una carpeta:
+leen archivos, editan, ejecutan y muestran evidencia del resultado».
+
+VS Code es el lugar donde esas piezas se encuentran. La terminal no es otro
+lenguaje ni una herramienta exclusiva de programadores: es una interfaz para
+pedir una operación precisa y conservar su salida.
+
+No presentar esta configuración como la única ruta ni como requisito para el
+taller. La idea transferible es mantener una carpeta reconocible, revisar los
+cambios y ejecutar comprobaciones.
+
+[Sources]
+- Inventario local verificado el 3 de agosto de 2026: aplicaciones ChatGPT,
+  Claude y Visual Studio Code; CLI `codex`, `claude`, `quarto`, `lean`, `lake`,
+  `git` y `gh` disponibles en el sistema.
+- Fuentes del repositorio: `course/slides/partials/literature-review.qmd` y
+  `course/slides/analisis-datos-codex-jupyter.qmd`.
+[/Sources]
+:::
+
+## VS Code reúne las piezas del flujo
+
+::: {.extension-groups}
+::: {.extension-group}
+<p class="tool-label">Asistentes</p>
+
+**Codex** y **Claude Code** trabajan sobre la carpeta abierta sin salir del
+editor.
+
+<p class="tool-label">Código y datos</p>
+
+**Python + Pylance** ayudan a escribir y revisar código; **Jupyter** ejecuta el
+análisis por celdas y conserva texto, código y resultados.
+:::
+
+::: {.extension-group}
+<p class="tool-label">Verificación y publicación</p>
+
+**Lean 4** muestra metas y errores de una prueba formal; **Quarto** genera
+presentaciones y documentos; **LaTeX Workshop** compila y previsualiza PDF.
+
+<p class="tool-label">Historial y automatización</p>
+
+**GitLens** ayuda a entender cambios; **GitHub Actions** muestra si la versión
+publicada pasó sus comprobaciones.
+:::
+:::
+
+::: {.prompt}
+Extensiones verificadas en la instalación local · 3 de agosto de 2026
+:::
+
+::: {.notes}
+**Decir:** «Ésta no es una lista de recomendaciones universales. Son las
+extensiones principales que efectivamente encuentro instaladas en mi VS Code y
+que corresponden al flujo que acabamos de ver».
+
+La extensión que podía recordarse simplemente como “Workshop” es **LaTeX
+Workshop**. **Lean 4** aparece entre las extensiones incorporadas hoy, junto con
+Even Better TOML. Esta lámina omite extensiones auxiliares de visualización de
+Markdown, CSV, Excel y contenedores para mantener el mapa legible.
+
+Precisar si surge la pregunta: Jupyter es la interfaz de notebooks; Python es el
+lenguaje y el kernel que ejecuta el código. Lean 4 tiene un propósito distinto:
+comprueba pruebas formales, no resultados empíricos. Quarto toma archivos de
+texto y código y produce, entre otros formatos, estas láminas.
+
+[Sources]
+- Inventario local de VS Code: salida de
+  `Visual Studio Code.app/Contents/Resources/app/bin/code --list-extensions
+  --show-versions`, verificada el 3 de agosto de 2026.
+- Manifiestos locales de las extensiones `openai.chatgpt`,
+  `anthropic.claude-code`, `leanprover.lean4`, `ms-toolsai.jupyter`,
+  `ms-python.python`, `ms-python.vscode-pylance`, `quarto.quarto`,
+  `james-yu.latex-workshop`, `eamodio.gitlens` y
+  `github.vscode-github-actions`.
+[/Sources]
+:::

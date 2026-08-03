@@ -462,6 +462,56 @@ $hairline: #ececec; // hairlines
   color: $quiet;
 }
 
+// ─── Kristian's working stack ─────────────────────────────────────────────
+// Two flat comparisons close the introductory deck. Thin rules and generous
+// spacing establish hierarchy without turning the tool list into a dashboard.
+
+.reveal .tool-roles,
+.reveal .extension-groups {
+  display: grid;
+  grid-template-columns: repeat(2, 540px);
+  column-gap: 80px;
+  max-width: $frame;
+  margin: 0;
+}
+
+.reveal .tool-roles {
+  row-gap: 34px;
+}
+
+.reveal .tool-role,
+.reveal .extension-group {
+  padding-top: 14px;
+  border-top: 2px solid $accent;
+}
+
+.reveal .tool-role .tool-label,
+.reveal .extension-group .tool-label {
+  margin: 0 0 8px;
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: $accent;
+}
+
+.reveal .tool-role p,
+.reveal .extension-group p {
+  max-width: none;
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.35;
+  color: $ink;
+}
+
+.reveal .extension-group .tool-label:not(:first-child) {
+  margin-top: 32px;
+}
+
+.reveal .extension-group strong {
+  font-weight: 600;
+  color: $accent;
+}
+
 // ─── Long-form dialogue audio ──────────────────────────────────────────────
 // Two full conversations live on one slide each. The native audio control is
 // kept intact for reliability; the transcript window shows one current turn
