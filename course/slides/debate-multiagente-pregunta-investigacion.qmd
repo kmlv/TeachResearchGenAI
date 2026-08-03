@@ -1,0 +1,398 @@
+---
+title: "Cinco agentes debaten una pregunta de investigación"
+author:
+  - name: "Kristian López Vargas"
+    affiliation: "Profesor asociado de economía, Universidad de California, Santa Cruz"
+lang: es
+format:
+  revealjs:
+    theme: [default, slides.scss]
+    width: 1600
+    height: 900
+    margin: 0.04
+    slide-number: c/t
+    progress: true
+    controls: false
+    menu: false
+    transition: none
+    background-transition: none
+    hash: true
+    history: false
+    center: false
+    incremental: false
+    highlight-style: github
+    embed-resources: false
+---
+
+## Sol abre con una anomalía
+
+**Sol-high**
+
+::: {.lead}
+«¿Cuándo una mejora en la regularidad del transporte cambia —o no— la forma de
+viajar de quienes encadenan tareas de cuidado en Lima?»
+:::
+
+::: {.fragment}
+Si el servicio mejora y la conducta no cambia, la excepción puede enseñarnos
+más que el promedio.
+:::
+
+::: {.notes}
+MINUTO · 2
+
+DECIR · «Esta conversación ocurrió entre cinco agentes. Conservamos el
+desacuerdo y abreviamos las intervenciones para poder leerlas juntos.»
+
+CLIC · revelar la segunda intervención de Sol
+
+ESPERAR · que la sala identifique al menos una razón por la que una mejora del
+servicio podría no cambiar la conducta
+
+SI NADIE HABLA · «Seguridad, transbordos, horarios de colegios o la necesidad de
+viajar con otra persona pueden volver irrelevante una mejora promedio.»
+
+TRANSICIÓN · «Terra no acepta todavía la unidad de análisis.»
+:::
+
+## Terra obliga a observar una decisión
+
+**Terra**
+
+«“Quienes cuidan” sigue siendo demasiado amplio. Observemos una cadena
+recurrente: origen, acompañamiento, transbordos y destino.»
+
+::: {.lead .fragment}
+**Sol-high** · «Acepto. Perdemos alcance general, pero ganamos una decisión que
+podemos observar.»
+:::
+
+::: {.prompt}
+La primera concesión cambia qué contará como evidencia
+:::
+
+::: {.notes}
+MINUTO · 2
+
+DECIR · leer la objeción de Terra y pedir una respuesta antes del clic
+
+CLIC · revelar la concesión de Sol
+
+ESPERAR · que alguien nombre la ganancia: una secuencia concreta puede
+reconstruirse, cronometrarse y compararse
+
+SI NADIE HABLA · «La pregunta se hace más estrecha, pero también más
+investigable.»
+
+TRANSICIÓN · «Fable cambia ahora la variable que parecía más clara.»
+:::
+
+## Fable cambia el significado de regularidad
+
+**Fable 5**
+
+«Un vehículo cada cinco minutos no ayuda si llega lleno, no admite un coche o
+no permite cumplir la siguiente obligación.»
+
+::: {.lead .fragment}
+No midamos solo frecuencia. Midamos la posibilidad efectiva de abordar y
+completar la cadena a tiempo.
+:::
+
+::: {.notes}
+MINUTO · 2
+
+DECIR · «La objeción no añade otra variable decorativa. Cambia lo que significa
+la exposición central del estudio.»
+
+CLIC · revelar la reformulación de Fable
+
+ESPERAR · ejemplos de viaje lleno, acompañante, carga, último tramo u horario
+rígido
+
+SI NADIE HABLA · «La regularidad del vehículo y la regularidad experimentada
+por la persona no son necesariamente la misma cosa.»
+
+TRANSICIÓN · «Gemini mira quién desaparecería de nuestros datos.»
+:::
+
+## Gemini cambia la muestra
+
+**Gemini · agy**
+
+«Si reclutamos únicamente en buses o paraderos, solo veremos a quienes todavía
+usan el sistema.»
+
+::: {.lead .fragment}
+**Sol-high** · «Busquemos también antiguos usuarios y usuarios potenciales, por
+ejemplo desde escuelas, centros de salud u hogares.»
+:::
+
+::: {.prompt}
+La muestra cambia porque cambió la pregunta
+:::
+
+::: {.notes}
+MINUTO · 2
+
+DECIR · «Gemini no propone un control estadístico. Señala una población que el
+diseño habría borrado antes de comenzar.»
+
+CLIC · revelar la respuesta de Sol
+
+ESPERAR · que la sala note que el abandono del sistema es parte del resultado y
+no puede observarse solo dentro del sistema
+
+SI NADIE HABLA · «Quienes ya no viajan son precisamente quienes más necesitamos
+encontrar.»
+
+TRANSICIÓN · «Opus pregunta si estamos intentando responder tres preguntas a la
+vez.»
+:::
+
+## Opus rompe la pregunta antes de salvarla
+
+**Opus 5**
+
+::: {.incremental}
+- «Regularidad: ¿frecuencia, puntualidad o variabilidad de la espera?»
+- «Viaje de cuidado: todavía tenemos que construir esa categoría.»
+- «Uso: ¿viajes, modo, horario o quién del hogar realiza el trayecto?»
+:::
+
+::: {.lead .fragment}
+Para preguntar «cuándo», primero hay que decidir qué observaríamos para decir
+«sí».
+:::
+
+::: {.notes}
+MINUTO · 2
+
+DECIR · «Opus no intenta responder la pregunta. La desarma término por término
+y muestra que todavía no sabemos cuál es el resultado.»
+
+CLIC · revelar los tres términos y luego la objeción
+
+ESPERAR · cuál de las tres ambigüedades cambiaría más el diseño
+
+SI NADIE HABLA · «“Uso” parece sencillo, pero cambiar la hora, el modo o la
+persona que viaja son respuestas conductuales distintas.»
+
+TRANSICIÓN · «Después de romperla, Opus conserva tres preguntas que sí pueden
+investigarse.»
+:::
+
+## Opus separa tres preguntas
+
+**Opus 5**
+
+::: {.incremental}
+- «¿Qué restricciones vuelven inviable la cadena?»
+- «¿Cuándo la incertidumbre coincide con cambiar o abandonar el modo?»
+- «¿Una mejora operativa concreta provoca ese cambio?»
+:::
+
+::: {.lead .fragment}
+Cada pregunta admite evidencia distinta y autoriza una conclusión distinta.
+:::
+
+::: {.notes}
+MINUTO · 2
+
+DECIR · «La apertura produjo tres preguntas, no una. Opus evita mezclarlas en
+una sola estimación y advierte que la pregunta causal solo existe si encontramos
+un cambio operativo defendible.»
+
+CLIC · revelar una pregunta por vez y luego la conclusión
+
+ESPERAR · cualitativo para restricciones; seguimiento para asociaciones;
+comparación creíble para efectos
+
+SI NADIE HABLA · leer las tres como exploración, patrón y efecto
+
+TRANSICIÓN · «El consejo discute cuál debe ser el resultado principal.»
+:::
+
+## El resultado también se negocia
+
+::: {.quad}
+- **Terra** — completar la cadena sin retraso
+- **Gemini** — continuar, abandonar o cambiar de modo
+- **Fable 5** — cruzar una ventana horaria crítica
+- **Sol-high** — dejar bienestar y autonomía como resultados posteriores
+:::
+
+::: {.lead .fragment}
+**Opus 5** · «Elijan uno como resultado principal; los demás pueden explicar
+por qué cambia.»
+:::
+
+::: {.notes}
+MINUTO · 2
+
+DECIR · «Ninguna propuesta es absurda. El problema es intentar tratarlas todas
+como resultados principales en el mismo primer estudio.»
+
+CLIC · revelar el criterio de Opus
+
+ESPERAR · que la sala elija entre completar la cadena y cambiar de modo
+
+SI NADIE HABLA · «Conservaría cambio de modo como resultado principal y
+completar a tiempo como resultado intermedio.»
+
+TRANSICIÓN · «Con ese orden, los diseños dejan de parecer sustitutos.»
+:::
+
+## Tres caminos, tres preguntas
+
+::: {.incremental}
+- **Reconstruir mecanismos** — trayectos comentados e entrevistas breves
+- **Medir patrones** — seguimiento corto de cadenas recurrentes
+- **Evaluar un cambio** — comparación alrededor de una mejora operativa
+:::
+
+::: {.lead .fragment}
+**Terra** · «No elijamos el diseño más fuerte en abstracto. Elijamos el más
+fuerte que los datos realmente permiten.»
+:::
+
+::: {.notes}
+MINUTO · 2
+
+DECIR · pedir que la sala asigne cada camino a una de las tres preguntas de
+Opus antes de revelar la frase de Terra
+
+CLIC · tres caminos y luego la réplica
+
+ESPERAR · mecanismos ↔ exploración; seguimiento ↔ asociación; comparación ↔
+efecto
+
+SI NADIE HABLA · «Un diseño más complejo no compensa una intervención que no
+existe o datos a los que no podemos acceder.»
+
+TRANSICIÓN · «El consejo usa esa regla para descartar atajos.»
+:::
+
+## El consejo descarta cuatro atajos
+
+::: {.rules}
+- **Sol-high** — no entrevistar solo a quienes siguen usando el sistema
+- **Terra** — no comenzar con toda Lima ni con muchos resultados
+- **Fable 5** — no acumular mecanismos sin una predicción observable
+- **Opus 5** — no prometer causalidad antes de verificar la comparación
+:::
+
+::: {.notes}
+MINUTO · 2
+
+DECIR · «Abrir ángulos también sirve para eliminar. Aquí cada agente renuncia a
+una parte de su primera intuición.»
+
+CLIC · revelar los cuatro descartes
+
+ESPERAR · cuál descarte ahorra más tiempo o evita el error más costoso
+
+SI NADIE HABLA · «Verificar primero si existe una comparación creíble evita
+diseñar durante semanas una evaluación causal imposible.»
+
+TRANSICIÓN · «Después de los descartes, la pregunta ya no es la misma.»
+:::
+
+## La pregunta cambia después del debate
+
+::: {.lead}
+«¿Cuándo poder abordar a tiempo se asocia con seguir usando, abandonar o cambiar
+el transporte público durante una cadena de cuidado?»
+:::
+
+::: {.quad .fragment}
+- **Unidad** — cadena recurrente
+- **Exposición** — abordaje efectivo
+- **Principal** — uso, abandono o cambio de modo
+- **Intermedio** — cadena completada a tiempo
+:::
+
+::: {.prompt}
+Un corredor de Lima · asociación, no efecto
+:::
+
+::: {.notes}
+MINUTO · 2
+
+DECIR · leer la pregunta original y esta nueva en secuencia. No presentarla como
+la pregunta perfecta: es la mejor pregunta para el primer estudio que el
+consejo cree poder ejecutar.
+
+CLIC · revelar las cuatro decisiones que cambiaron
+
+ESPERAR · que alguien identifique cuál provino de cada agente
+
+SI NADIE HABLA · Terra acotó la unidad y exigió un resultado principal; Fable
+redefinió la exposición; Gemini cambió el reclutamiento; Opus limitó la
+inferencia; Sol conservó el mecanismo de cuidado
+
+TRANSICIÓN · «Todavía falta acordar cómo comenzar.»
+:::
+
+## La primera fase busca aprender barato
+
+::: {.quad}
+- **Sol-high** — reconstruir 12–15 cadenas contrastantes
+- **Fable 5** — localizar puntos de quiebre horarios y de abordaje
+- **Gemini** — reclutar dentro y fuera del sistema
+- **Terra** — conservar un resultado y un periodo cortos
+:::
+
+::: {.lead .fragment}
+**Opus 5** · «El producto es un mapa de mecanismos y un piloto medible, no una
+respuesta causal prematura.»
+:::
+
+::: {.notes}
+MINUTO · 2
+
+DECIR · «La primera fase no intenta publicar el resultado final. Reduce
+incertidumbre sobre población, medición y mecanismos antes de gastar en una
+evaluación.»
+
+CLIC · revelar las cuatro contribuciones y luego el producto
+
+ESPERAR · que la sala cuestione si 12–15 cadenas bastan; responder que bastan
+para probar instrumentos y descubrir fallas, no para estimar prevalencias
+
+SI NADIE HABLA · «La eficiencia viene de decidir temprano qué no funciona.»
+
+TRANSICIÓN · «La última ronda decide cuándo vale la pena escalar.»
+:::
+
+## La última ronda decide si escalar
+
+::: {.incremental}
+- **Gemini** — «¿La exposición varía y podemos medirla?»
+- **Terra** — «¿El seguimiento retiene también a quienes cambian o abandonan?»
+- **Fable 5** — «¿Aparecen condiciones de borde que produzcan predicciones?»
+- **Sol-high** — «¿Los mecanismos justifican una comparación más costosa?»
+- **Opus 5** — «¿Existe un cambio operativo que permita hablar de efectos?»
+:::
+
+::: {.prompt}
+¿Qué condición exigirías antes de pasar a la siguiente fase?
+:::
+
+::: {.notes}
+MINUTO · 2
+
+DECIR · revelar una condición por agente. La conversación no termina con una
+respuesta unánime, sino con una regla compartida para decidir el siguiente
+paso.
+
+CLIC · cinco condiciones
+
+ESPERAR · una condición adicional de la sala
+
+SI NADIE HABLA · «Yo exigiría comprobar primero que la variación observada no
+sea solo error de medición.»
+
+CIERRE · «La diversidad de perspectivas no hizo la pregunta más grande. La hizo
+más precisa, más investigable y más fácil de secuenciar.»
+:::
