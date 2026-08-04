@@ -20,6 +20,24 @@ puede revisar sin haber estado en la sesión.
 Python 3.9 o superior. Nada más: solo biblioteca estándar, sin red y sin
 instalar dependencias.
 
+## Paso previo: de la estrategia a los candidatos
+
+La carpeta [`discovery/`](discovery/README.md) enseña el eslabón anterior al
+cribado: escribir una estrategia, consultar OpenAlex, conservar la respuesta,
+normalizar metadatos y documentar duplicados. Funciona igual desde Codex
+Desktop o desde la terminal integrada de VS Code.
+
+```bash
+cd discovery
+python3 scripts/test_discovery.py
+python3 scripts/search_openalex.py --offline  # reproducible, sin red
+python3 scripts/search_openalex.py            # intenta OpenAlex; fallback visible
+```
+
+Ese paso produce candidatos, no decisiones. Nunca modifica `case/`, y
+`case/candidates.csv` permanece congelado para que el demo central siga siendo
+idéntico y comprobable en todas las aulas.
+
 ## La carpeta separa cinco cosas
 
 ```text

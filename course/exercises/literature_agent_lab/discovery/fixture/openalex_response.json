@@ -1,0 +1,4091 @@
+{
+  "_fixture_provenance": {
+    "aviso": "CAPTURA REAL MINIMIZADA; NO ES LA RESPUESTA CRUDA",
+    "captured_utc": "2026-08-04T04:05:28Z",
+    "strategy_id": "SD-01",
+    "source": "https://api.openalex.org/works",
+    "transformacion": "Una respuesta por query_id. Se conservaron solo metadatos; el texto del abstract se redujo a presencia/ausencia. Las respuestas crudas solo viven en output/raw/ y no se versionan."
+  },
+  "responses": {
+    "Q1": {
+      "meta": {
+        "count": 8335,
+        "db_response_time_ms": 187,
+        "page": 1,
+        "per_page": 25,
+        "groups_count": null,
+        "x_query": {
+          "oql": "works where date >= (2023-01-01)\n  and full text has (large language model persuasion attitudes beliefs)\n  and date <= (2026-12-31)\n  and type is (article)",
+          "oqo": {
+            "get_rows": "works",
+            "filter_rows": [
+              {
+                "column_id": "from_publication_date",
+                "value": "2023-01-01"
+              },
+              {
+                "column_id": "fulltext.search",
+                "value": "large language model persuasion attitudes beliefs",
+                "operator": "has"
+              },
+              {
+                "column_id": "to_publication_date",
+                "value": "2026-12-31"
+              },
+              {
+                "column_id": "type",
+                "value": "article"
+              }
+            ]
+          },
+          "url": "/works?filter=from_publication_date:2023-01-01,fulltext.search:large language model persuasion attitudes beliefs,to_publication_date:2026-12-31,type:article&per_page=25&page=1"
+        },
+        "cost_usd": 0.001
+      },
+      "results": [
+        {
+          "id": "https://openalex.org/W4389636360",
+          "doi": "https://doi.org/10.1162/coli_a_00502",
+          "display_name": "Can Large Language Models Transform Computational Social Science?",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Caleb Ziems"
+              }
+            },
+            {
+              "author": {
+                "display_name": "William A. Held"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Omar Ahmed Shaikh"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jiaao Chen"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Zhehao Zhang"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Diyi Yang"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Computational Linguistics"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4399426804",
+          "doi": "https://doi.org/10.1073/pnas.2403116121",
+          "display_name": "Evaluating the persuasive influence of political microtargeting with large language models",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Kobi Hackenburg"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Helen Margetts"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Proceedings of the National Academy of Sciences"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4365999098",
+          "doi": "https://doi.org/10.1145/3579592",
+          "display_name": "Working With AI to Persuade: Examining a Large Language Model's Ability to Generate Pro-Vaccination Messages",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Elise Karinshak"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Xun Liu"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Joon Sung Park"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jeffrey T. Hancock"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Proceedings of the ACM on Human-Computer Interaction"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4410030884",
+          "doi": "https://doi.org/10.1073/pnas.2412815122",
+          "display_name": "Testing theories of political persuasion using AI",
+          "publication_year": 2025,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Lisa P. Argyle"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Ethan C. Busby"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Joshua R. Gubler"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Alex Lyman"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Justin Olcott"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jackson Pond"
+              }
+            },
+            {
+              "author": {
+                "display_name": "David Wingate"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Proceedings of the National Academy of Sciences"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4402961932",
+          "doi": "https://doi.org/10.1111/ejed.12770",
+          "display_name": "Modelling Generative <scp>AI</scp> Acceptance, Perceived Teachers' Enthusiasm and Self‐Efficacy to English as a Foreign Language Learners' Well‐Being in the Digital Era",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Fangwei Huang"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Yongliang Wang"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Haijing Zhang"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "European Journal of Education"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4378193711",
+          "doi": "https://doi.org/10.1080/09588221.2023.2215279",
+          "display_name": "Informal Digital Learning of English and willingness to communicate in a second language: self-efficacy beliefs as a mediator",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Artem Zadorozhnyy"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Ju Seong Lee"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Computer Assisted Language Learning"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4401390644",
+          "doi": "https://doi.org/10.1098/rsos.240197",
+          "display_name": "Do large language models have a legal duty to tell the truth?",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Sandra Wachter"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Brent Mittelstadt"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Chris Russell"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Royal Society Open Science"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4408224376",
+          "doi": "https://doi.org/10.1073/pnas.2413443122",
+          "display_name": "Scaling language model size yields diminishing returns for single-message political persuasion",
+          "publication_year": 2025,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Kobi Hackenburg"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Ben M Tappin"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Paul Röttger"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Scott A. Hale"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jonathan Bright"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Helen Margetts"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Proceedings of the National Academy of Sciences"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4417076749",
+          "doi": "https://doi.org/10.1126/science.aea3884",
+          "display_name": "The levers of political persuasion with conversational artificial intelligence",
+          "publication_year": 2025,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Kobi Hackenburg"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Ben M Tappin"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Luke Hewitt"
+              }
+            },
+            {
+              "author": {
+                "display_name": "E. Dale Saunders"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Stewart Black"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Hause Lin"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Catherine Fist"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Helen Margetts"
+              }
+            },
+            {
+              "author": {
+                "display_name": "David G. Rand"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Christopher Summerfield"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Science"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4379233156",
+          "doi": "https://doi.org/10.1111/spc3.12755",
+          "display_name": "Language and persuasion: A discursive psychological approach",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Bogdana Humă"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Social and Personality Psychology Compass"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4403136535",
+          "doi": "https://doi.org/10.1080/10447318.2024.2401249",
+          "display_name": "Attitude Towards AI: Potential Influence of Conspiracy Belief, XAI Experience and Locus of Control",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Areej Babiker"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Sameha Alshakhsi"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Dena Al‐Thani"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Christian Montag"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Raian Ali"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "International Journal of Human-Computer Interaction"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4392921825",
+          "doi": "https://doi.org/10.1016/j.heliyon.2024.e28347",
+          "display_name": "Impulse buying behavior during livestreaming: Moderating effects of scarcity persuasion and price perception",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Zhitan Feng"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Abdullah Al Mamun"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Mohammad Masukujjaman"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Mengling Wu"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Qing Yang"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Heliyon"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4410580254",
+          "doi": "https://doi.org/10.1007/s10508-025-03161-y",
+          "display_name": "The Dual Pathways Hypothesis of Incel Harm: A Model of Harmful Attitudes and Beliefs Among Involuntary Celibates",
+          "publication_year": 2025,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "William Costello"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Joe Whittaker"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Andrew G. Thomas"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Archives of Sexual Behavior"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4322007770",
+          "doi": "https://doi.org/10.1007/s12369-022-00952-4",
+          "display_name": "On the Role of Beliefs and Trust for the Intention to Use Service Robots: An Integrated Trustworthiness Beliefs Model for Robot Acceptance",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Johannes Kraus"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Linda Miller"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Marielène Klumpp"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Franziska Babel"
+              }
+            },
+            {
+              "author": {
+                "display_name": "David Scholz"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Julia Merger"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Martin Baumann"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "International Journal of Social Robotics"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4415222261",
+          "doi": "https://doi.org/10.1093/pnasnexus/pgaf325",
+          "display_name": "Dialogues with large language models reduce conspiracy beliefs even when the AI is perceived as human",
+          "publication_year": 2025,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Esther Boissin"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Thomas H. Costello"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Daniel Spinoza-Martín"
+              }
+            },
+            {
+              "author": {
+                "display_name": "David G. Rand"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Gordon Pennycook"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "PNAS Nexus"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4391058497",
+          "doi": "https://doi.org/10.1098/rstb.2023.0027",
+          "display_name": "Modelling social norms: an integration of the norm-utility approach with beliefs dynamics",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Sergey Gavrilets"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Denis Tverskoi"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Ángel Sánchez"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Philosophical Transactions of the Royal Society B Biological Sciences"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4385621286",
+          "doi": "https://doi.org/10.1093/migration/mnad018",
+          "display_name": "Emotions: functions and significance for attitudes, behaviour, and communication",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "James Dennison"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Migration Studies"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4387311045",
+          "doi": "https://doi.org/10.1177/00222429231207636",
+          "display_name": "How High-Arousal Language Shapes Micro- Versus Macro-Influencers’ Impact",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Giovanni Luca Cascio Rizzo"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Francisco Villarroel Ordenes"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Rumen Pozharliev"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Matteo De Angelis"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Michele Costabile"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Journal of Marketing"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4385783535",
+          "doi": "https://doi.org/10.1007/s43039-023-00077-0",
+          "display_name": "Developing persuasive systems for marketing: the interplay of persuasion techniques, customer traits and persuasive message design",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Annye Braca"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Pierpaolo Dondio"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Italian Journal of Marketing"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4396610915",
+          "doi": "https://doi.org/10.1038/s44159-024-00305-0",
+          "display_name": "Determinants of behaviour and their efficacy as targets of behavioural change interventions",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Dolores Albarracín"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Bita Fayaz-Farkhad"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Javier A. Granados Samayoa"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Nature Reviews Psychology"
+            }
+          },
+          "abstract_inverted_index": null
+        },
+        {
+          "id": "https://openalex.org/W4385325063",
+          "doi": "https://doi.org/10.1038/s41586-023-06297-w",
+          "display_name": "Like-minded sources on Facebook are prevalent but not polarizing",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Brendan Nyhan"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jaime E. Settle"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Emily Thorson"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Magdalena Wojcieszak"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Pablo Barberá"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Annie Y. Chen"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Hunt Allcott"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Taylor Brown"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Adriana Crespo-Tenorio"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Drew Dimmery"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Deen Freelon"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Matthew Gentzkow"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Sandra González‐Bailón"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Andrew M. Guess"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Edward H. Kennedy"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Young Mie Kim"
+              }
+            },
+            {
+              "author": {
+                "display_name": "David Lazer"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Neil Malhotra"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Devra Moehler"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jennifer Pan"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Daniel Robert Thomas"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Rebekah Tromble"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Carlos Velasco Rivera"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Arjun Wilkins"
+              }
+            },
+            {
+              "author": {
+                "display_name": "B.S. Xiong"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Chad Kiewiet de Jonge"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Annie Franco"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Winter Mason"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Natalie Jomini Stroud"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Joshua A. Tucker"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Nature"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4387579102",
+          "doi": "https://doi.org/10.1080/02650487.2023.2264045",
+          "display_name": "Consumers’ persuasion knowledge of algorithms in social media advertising: identifying consumer groups based on awareness, appropriateness, and coping ability",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Hilde Voorveld"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Corine S. Meppelink"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Sophie C. Boerman"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "International Journal of Advertising"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4403081981",
+          "doi": "https://doi.org/10.3389/fcomm.2024.1457433",
+          "display_name": "Decoding persuasion: a survey on ML and NLP methods for the study of online persuasion",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Davide Bassi"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Søren Fomsgaard"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Martín Pereira-Fariña"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Frontiers in Communication"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4407084049",
+          "doi": "https://doi.org/10.1038/s41598-025-86510-0",
+          "display_name": "AI language model rivals expert ethicist in perceived moral expertise",
+          "publication_year": 2025,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Danica Dillion"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Debanjan Mondal"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Niket Tandon"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Kurt Gray"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Scientific Reports"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4406071401",
+          "doi": "https://doi.org/10.1016/j.caeai.2024.100358",
+          "display_name": "Attitudes, perceptions and AI self-efficacy in K-12 education",
+          "publication_year": 2025,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Nina Bergdahl"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jeanette Sjöberg"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Computers and Education Artificial Intelligence"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        }
+      ]
+    },
+    "Q2": {
+      "meta": {
+        "count": 633,
+        "db_response_time_ms": 108,
+        "page": 1,
+        "per_page": 25,
+        "groups_count": null,
+        "x_query": {
+          "oql": "works where date >= (2023-01-01)\n  and full text has (conversational AI persuasion randomized experiment)\n  and date <= (2026-12-31)\n  and type is (article)",
+          "oqo": {
+            "get_rows": "works",
+            "filter_rows": [
+              {
+                "column_id": "from_publication_date",
+                "value": "2023-01-01"
+              },
+              {
+                "column_id": "fulltext.search",
+                "value": "conversational AI persuasion randomized experiment",
+                "operator": "has"
+              },
+              {
+                "column_id": "to_publication_date",
+                "value": "2026-12-31"
+              },
+              {
+                "column_id": "type",
+                "value": "article"
+              }
+            ]
+          },
+          "url": "/works?filter=from_publication_date:2023-01-01,fulltext.search:conversational AI persuasion randomized experiment,to_publication_date:2026-12-31,type:article&per_page=25&page=1"
+        },
+        "cost_usd": 0.001
+      },
+      "results": [
+        {
+          "id": "https://openalex.org/W4360620450",
+          "doi": "https://doi.org/10.1016/j.ijinfomgt.2023.102642",
+          "display_name": "Opinion Paper: “So what if ChatGPT wrote it?” Multidisciplinary perspectives on opportunities, challenges and implications of generative conversational AI for research, practice and policy",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Yogesh K. Dwivedi"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Nir Kshetri"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Laurie Hughes"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Emma Slade"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Anand Jeyaraj"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Arpan Kumar Kar"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Abdullah M. Baabdullah"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Alex Koohang"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Vishnupriya Raghavan"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Manju Ahuja"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Hanaa Albanna"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Mousa Ahmad Albashrawi"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Adil S. Al-Busaidi"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Janarthanan Balakrishnan"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Yves Barlette"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Sriparna Basu"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Indranil Bose"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Laurence Brooks"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Dimitrios Buhalis"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Lemuria Carter"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Soumyadeb Chowdhury"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Tom Crick"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Scott W. Cunningham"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Gareth H. Davies"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Robert M. Davison"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Rahul Dé"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Denis Dennehy"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Yanqing Duan"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Rameshwar Dubey"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Rohita Dwivedi"
+              }
+            },
+            {
+              "author": {
+                "display_name": "John S. Edwards"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Carlos Flavián"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Robin Gauld"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Varun Grover"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Mei‐Chih Hu"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Marijn Janssen"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Paul Jones"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Iris Junglas"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Sangeeta Khorana"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Sascha Kraus"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Kai R. Larsen"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Paul Latreille"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Sven Laumer"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Tegwen Malik"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Abbas Mardani"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Marcello Mariani"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Sunil Mithas"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Emmanuel Mogaji"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jeretta Horn Nord"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Siobhán O’Connor"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Fevzi Okumus"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Margherita Pagani"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Neeraj Pandey"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Savvas Papagiannidis"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Ilias O. Pappas"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Nishith Pathak"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jan Pries‐Heje"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Ramakrishnan Raman"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Nripendra P. Rana"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Sven‐Volker Rehm"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Samuel Ribeiro‐Navarrete"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Alexander Richter"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Frantz Rowe"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Suprateek Sarker"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Bernd Carsten Stahl"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Manoj Tiwari"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Wil van der Aalst"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Viswanath Venkatesh"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Giampaolo Viglia"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Michael Wade"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Paul Walton"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jochen Wirtz"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Ryan Wright"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "International Journal of Information Management"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4385452929",
+          "doi": "https://doi.org/10.1109/access.2023.3300381",
+          "display_name": "From ChatGPT to ThreatGPT: Impact of Generative AI in Cybersecurity and Privacy",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Maanak Gupta"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Charankumar Akiri"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Kshitiz Aryal"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Eli Parker"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Lopamudra Praharaj"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "IEEE Access"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4377988415",
+          "doi": "https://doi.org/10.1007/s12525-023-00633-8",
+          "display_name": "AI-based chatbots in conversational commerce and their effects on product and price perceptions",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Justina Sidlauskiene"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Yannick Joye"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Viltė Auruškevičienė"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Electronic Markets"
+            }
+          },
+          "abstract_inverted_index": null
+        },
+        {
+          "id": "https://openalex.org/W4410496075",
+          "doi": "https://doi.org/10.1038/s41562-025-02194-6",
+          "display_name": "On the conversational persuasiveness of GPT-4",
+          "publication_year": 2025,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Francesco Salvi"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Manoel Horta Ribeiro"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Riccardo Gallotti"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Robert West"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Nature Human Behaviour"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4417076749",
+          "doi": "https://doi.org/10.1126/science.aea3884",
+          "display_name": "The levers of political persuasion with conversational artificial intelligence",
+          "publication_year": 2025,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Kobi Hackenburg"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Ben M Tappin"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Luke Hewitt"
+              }
+            },
+            {
+              "author": {
+                "display_name": "E. Dale Saunders"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Stewart Black"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Hause Lin"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Catherine Fist"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Helen Margetts"
+              }
+            },
+            {
+              "author": {
+                "display_name": "David G. Rand"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Christopher Summerfield"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Science"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4396796749",
+          "doi": "https://doi.org/10.1016/j.patter.2024.100988",
+          "display_name": "AI deception: A survey of examples, risks, and potential solutions",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Peter S. Park"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Simon Goldstein"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Aidan O’Gara"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Michael Chen"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Dan Hendrycks"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Patterns"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4387809804",
+          "doi": "https://doi.org/10.3390/healthcare11202776",
+          "display_name": "Leveraging Generative AI and Large Language Models: A Comprehensive Roadmap for Healthcare Integration",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Ping Yu"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Hua Xu"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Xia Hu"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Chao Deng"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Healthcare"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4393169119",
+          "doi": "https://doi.org/10.2196/56114",
+          "display_name": "Evaluating the Potential and Pitfalls of AI-Powered Conversational Agents as Humanlike Virtual Health Carers in the Remote Management of Noncommunicable Diseases: Scoping Review",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Sadia Azmin Anisha"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Arkendu Sen"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Chris Bain"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Journal of Medical Internet Research"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4410030884",
+          "doi": "https://doi.org/10.1073/pnas.2412815122",
+          "display_name": "Testing theories of political persuasion using AI",
+          "publication_year": 2025,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Lisa P. Argyle"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Ethan C. Busby"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Joshua R. Gubler"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Alex Lyman"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Justin Olcott"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jackson Pond"
+              }
+            },
+            {
+              "author": {
+                "display_name": "David Wingate"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Proceedings of the National Academy of Sciences"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4402439645",
+          "doi": "https://doi.org/10.1080/02650487.2024.2401319",
+          "display_name": "Effect of disclosing AI-generated content on prosocial advertising evaluation",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Tae Hyun Baek"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jungkeun Kim"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jungkeun Kim"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jeong Hyun Kim"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jeong Hyun Kim"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "International Journal of Advertising"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4387299971",
+          "doi": "https://doi.org/10.1073/pnas.2311627120",
+          "display_name": "Leveraging AI for democratic discourse: Chat interventions can improve online political conversations at scale",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Lisa P. Argyle"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Christopher A. Bail"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Ethan C. Busby"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Joshua R. Gubler"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Thomas Noble Howe"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Christopher Rytting"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Taylor Sorensen"
+              }
+            },
+            {
+              "author": {
+                "display_name": "David Wingate"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Proceedings of the National Academy of Sciences"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4417076522",
+          "doi": "https://doi.org/10.1038/s41586-025-09771-9",
+          "display_name": "Persuading voters using human–artificial intelligence dialogues",
+          "publication_year": 2025,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Hause Lin"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Gabriela Czarnek"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Benjamin Lewis"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Joshua P. White"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Adam J. Berinsky"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Thomas H. Costello"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Gordon Pennycook"
+              }
+            },
+            {
+              "author": {
+                "display_name": "David G. Rand"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Nature"
+            }
+          },
+          "abstract_inverted_index": null
+        },
+        {
+          "id": "https://openalex.org/W4386580390",
+          "doi": "https://doi.org/10.1016/j.ijinfomgt.2023.102700",
+          "display_name": "The ethics of ChatGPT – Exploring the ethical issues of an emerging technology",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Bernd Carsten Stahl"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Damian Eke"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "International Journal of Information Management"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4415222261",
+          "doi": "https://doi.org/10.1093/pnasnexus/pgaf325",
+          "display_name": "Dialogues with large language models reduce conspiracy beliefs even when the AI is perceived as human",
+          "publication_year": 2025,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Esther Boissin"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Thomas H. Costello"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Daniel Spinoza-Martín"
+              }
+            },
+            {
+              "author": {
+                "display_name": "David G. Rand"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Gordon Pennycook"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "PNAS Nexus"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4389201667",
+          "doi": "https://doi.org/10.1177/00472875231212996",
+          "display_name": "When ChatGPT Gives Incorrect Answers: The Impact of Inaccurate Information by Generative AI on Tourism Decision-Making",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Jeong Hyun Kim"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jeong Hyun Kim"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jungkeun Kim"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jungkeun Kim"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jooyoung Park"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Changju Kim"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jihoon Jhang"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Brian King"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Journal of Travel Research"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4389561397",
+          "doi": "https://doi.org/10.1145/3637216",
+          "display_name": "Explicit Knowledge Graph Reasoning for Conversational Recommendation",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Xuhui Ren"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Tong Chen"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Quoc Viet Hung Nguyen"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Lizhen Cui"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Zi Huang"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Hongzhi Yin"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "ACM Transactions on Intelligent Systems and Technology"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4407762039",
+          "doi": "https://doi.org/10.1073/pnas.2421982122",
+          "display_name": "Listen for a change? A longitudinal field experiment on listening’s potential to enhance persuasion",
+          "publication_year": 2025,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Erik Santoro"
+              }
+            },
+            {
+              "author": {
+                "display_name": "David Broockman"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Joshua Kalla"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Roni Porat"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Proceedings of the National Academy of Sciences"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4405400963",
+          "doi": "https://doi.org/10.1080/02650487.2024.2431440",
+          "display_name": "How does persuasion knowledge differ between humanlike virtual influencers and human influencers?",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Lotte M. Willemsen"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Iris Withuis"
+              }
+            },
+            {
+              "author": {
+                "display_name": "M.K. Brom"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Sophie C. Boerman"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "International Journal of Advertising"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4389200521",
+          "doi": "https://doi.org/10.1007/s11747-023-00987-7",
+          "display_name": "How speaking versus writing to conversational agents shapes consumers’ choice and choice satisfaction",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "David W. Schindler"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Tobias Maiberger"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Nicole Koschate‐Fischer"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Wayne D. Hoyer"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Journal of the Academy of Marketing Science"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4400732698",
+          "doi": "https://doi.org/10.1287/msom.2023.0093",
+          "display_name": "Physician Adoption of AI Assistant",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Ting Hou"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Meng Li"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Yinliang Tan"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Huazhong Zhao"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Manufacturing & Service Operations Management"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4404199748",
+          "doi": "https://doi.org/10.1016/j.jik.2024.100597",
+          "display_name": "Is AI-based digital marketing ethical? Assessing a new data privacy paradox",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "José Ramón Saura"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Vatroslav Škare"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Đurđana Ozretić Došen"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Journal of Innovation & Knowledge"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4400985547",
+          "doi": "https://doi.org/10.1038/s41598-024-67829-6",
+          "display_name": "Conversational presentation mode increases credibility judgements during information search with ChatGPT",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Christine Anderl"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Stefanie Helene Klein"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Büsra Sarigül"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Frank M. Schneider"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Junyi Han"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Paul L. Fiedler"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Sonja Utz"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Scientific Reports"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4406573268",
+          "doi": "https://doi.org/10.1016/j.ijhm.2025.104106",
+          "display_name": "AI-generated recommendations: Roles of language style, perceived AI human-likeness, and recommendation agent",
+          "publication_year": 2025,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Tae Hyun Baek"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Hyoje Jay Kim"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jungkeun Kim"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jungkeun Kim"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "International Journal of Hospitality Management"
+            }
+          },
+          "abstract_inverted_index": null
+        },
+        {
+          "id": "https://openalex.org/W4389036041",
+          "doi": "https://doi.org/10.1080/0144929x.2023.2286528",
+          "display_name": "Psychological insights into the research and practice of embodied conversational agents, chatbots and social assistive robots: a systematic meta-review",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Keita Kiuchi"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Kouyou Otsu"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Yugo Hayashi"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Behaviour and Information Technology"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4408224376",
+          "doi": "https://doi.org/10.1073/pnas.2413443122",
+          "display_name": "Scaling language model size yields diminishing returns for single-message political persuasion",
+          "publication_year": 2025,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Kobi Hackenburg"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Ben M Tappin"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Paul Röttger"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Scott A. Hale"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jonathan Bright"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Helen Margetts"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Proceedings of the National Academy of Sciences"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        }
+      ]
+    },
+    "Q3": {
+      "meta": {
+        "count": 10982,
+        "db_response_time_ms": 345,
+        "page": 1,
+        "per_page": 25,
+        "groups_count": null,
+        "x_query": {
+          "oql": "works where date >= (2023-01-01)\n  and full text has (AI-generated message attitude change experiment)\n  and date <= (2026-12-31)\n  and type is (article)",
+          "oqo": {
+            "get_rows": "works",
+            "filter_rows": [
+              {
+                "column_id": "from_publication_date",
+                "value": "2023-01-01"
+              },
+              {
+                "column_id": "fulltext.search",
+                "value": "AI-generated message attitude change experiment",
+                "operator": "has"
+              },
+              {
+                "column_id": "to_publication_date",
+                "value": "2026-12-31"
+              },
+              {
+                "column_id": "type",
+                "value": "article"
+              }
+            ]
+          },
+          "url": "/works?filter=from_publication_date:2023-01-01,fulltext.search:AI-generated message attitude change experiment,to_publication_date:2026-12-31,type:article&per_page=25&page=1"
+        },
+        "cost_usd": 0.001
+      },
+      "results": [
+        {
+          "id": "https://openalex.org/W4360620450",
+          "doi": "https://doi.org/10.1016/j.ijinfomgt.2023.102642",
+          "display_name": "Opinion Paper: “So what if ChatGPT wrote it?” Multidisciplinary perspectives on opportunities, challenges and implications of generative conversational AI for research, practice and policy",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Yogesh K. Dwivedi"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Nir Kshetri"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Laurie Hughes"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Emma Slade"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Anand Jeyaraj"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Arpan Kumar Kar"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Abdullah M. Baabdullah"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Alex Koohang"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Vishnupriya Raghavan"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Manju Ahuja"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Hanaa Albanna"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Mousa Ahmad Albashrawi"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Adil S. Al-Busaidi"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Janarthanan Balakrishnan"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Yves Barlette"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Sriparna Basu"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Indranil Bose"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Laurence Brooks"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Dimitrios Buhalis"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Lemuria Carter"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Soumyadeb Chowdhury"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Tom Crick"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Scott W. Cunningham"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Gareth H. Davies"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Robert M. Davison"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Rahul Dé"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Denis Dennehy"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Yanqing Duan"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Rameshwar Dubey"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Rohita Dwivedi"
+              }
+            },
+            {
+              "author": {
+                "display_name": "John S. Edwards"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Carlos Flavián"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Robin Gauld"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Varun Grover"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Mei‐Chih Hu"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Marijn Janssen"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Paul Jones"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Iris Junglas"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Sangeeta Khorana"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Sascha Kraus"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Kai R. Larsen"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Paul Latreille"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Sven Laumer"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Tegwen Malik"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Abbas Mardani"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Marcello Mariani"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Sunil Mithas"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Emmanuel Mogaji"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jeretta Horn Nord"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Siobhán O’Connor"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Fevzi Okumus"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Margherita Pagani"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Neeraj Pandey"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Savvas Papagiannidis"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Ilias O. Pappas"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Nishith Pathak"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jan Pries‐Heje"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Ramakrishnan Raman"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Nripendra P. Rana"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Sven‐Volker Rehm"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Samuel Ribeiro‐Navarrete"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Alexander Richter"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Frantz Rowe"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Suprateek Sarker"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Bernd Carsten Stahl"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Manoj Tiwari"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Wil van der Aalst"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Viswanath Venkatesh"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Giampaolo Viglia"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Michael Wade"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Paul Walton"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jochen Wirtz"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Ryan Wright"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "International Journal of Information Management"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4323538281",
+          "doi": "https://doi.org/10.1080/00913367.2023.2183285",
+          "display_name": "Consumer Responses to AI-Generated Charitable Giving Ads",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Luis Arango"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Stephen Singaraju"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Outi Niininen"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Journal of Advertising"
+            }
+          },
+          "abstract_inverted_index": null
+        },
+        {
+          "id": "https://openalex.org/W4411873400",
+          "doi": "https://doi.org/10.1038/s41467-025-61345-5",
+          "display_name": "LLM-generated messages can persuade humans on policy issues",
+          "publication_year": 2025,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Hui Bai"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jan G. Voelkel"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Shane Muldowney"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Johannes C. Eichstaedt"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Robb Willer"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Nature Communications"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4402128637",
+          "doi": "https://doi.org/10.1080/0144929x.2024.2394886",
+          "display_name": "The promise and challenges of generative AI in education",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Michail N. Giannakos"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Roger Azevedo"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Peter Brusilovsky"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Mutlu Cukurova"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Yannis Dimitriadis"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Davinia Hernández‐Leo"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Sanna Järvelä"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Manolis Mavrikis"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Bart Rienties"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Behaviour and Information Technology"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4393306715",
+          "doi": "https://doi.org/10.1073/pnas.2319112121",
+          "display_name": "AI can help people feel heard, but an AI label diminishes this impact",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Yidan Yin"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Nan Jia"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Cheryl Wakslak"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Proceedings of the National Academy of Sciences"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4377115728",
+          "doi": "https://doi.org/10.1371/journal.pdig.0000237",
+          "display_name": "Diverse patients’ attitudes towards Artificial Intelligence (AI) in diagnosis",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Christopher T. Robertson"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Andrew Keane Woods"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Kelly Bergstrand"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jess Findley"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Cayley Balser"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Marvin J. Slepian"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "PLOS Digital Health"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4385497952",
+          "doi": "https://doi.org/10.3390/admsci13080178",
+          "display_name": "The Power of Virtual Influencers: Impact on Consumer Behaviour and Attitudes in the Age of AI",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Michael Gerlich"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Administrative Sciences"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4392153984",
+          "doi": "https://doi.org/10.1038/s41598-024-53755-0",
+          "display_name": "The potential of generative AI for personalized persuasion at scale",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Sandra Matz"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jacob D. Teeny"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Sumer S. Vaid"
+              }
+            },
+            {
+              "author": {
+                "display_name": "H. Peters"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Gabriella M. Harari"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Moran Cerf"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Scientific Reports"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4394807113",
+          "doi": "https://doi.org/10.1001/jamanetworkopen.2024.6565",
+          "display_name": "AI-Generated Draft Replies Integrated Into Health Records and Physicians’ Electronic Communication",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Ming Tai-Seale"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Sally L. Baxter"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Florin Vaida"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Amanda Walker"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Amy M. Sitapati"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Chad Osborne"
+              }
+            },
+            {
+              "author": {
+                "display_name": "J. Espinosa Díaz"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Nimit Desai"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Sophie Webb"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Gregory Polston"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Teresa Helsten"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Erin Gross"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jessica Thackaberry"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Ammar Mandvi"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Dustin Lillie"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Steve Li"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Geneen T Gin"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Suraj Achar"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Heather Hofflich"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Christopher Sharp"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Marlene Millen"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Chris Longhurst"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "JAMA Network Open"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4393993191",
+          "doi": "https://doi.org/10.3390/su16073034",
+          "display_name": "Generative AI for Customizable Learning Experiences",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Ivica Pesovski"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Ricardo Santos"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Roberto Henriques"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Vladimir Trajkovik"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Sustainability"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4389913593",
+          "doi": "https://doi.org/10.1145/3637875",
+          "display_name": "The AI Ghostwriter Effect: When Users do not Perceive Ownership of AI-Generated Text but Self-Declare as Authors",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Fiona Draxler"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Anna Werner"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Florian Lehmann"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Matthias Hoppe"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Albrecht Schmidt"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Daniel Buschek"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Robin Welsch"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "ACM Transactions on Computer-Human Interaction"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4402439645",
+          "doi": "https://doi.org/10.1080/02650487.2024.2401319",
+          "display_name": "Effect of disclosing AI-generated content on prosocial advertising evaluation",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Tae Hyun Baek"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jungkeun Kim"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jungkeun Kim"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jeong Hyun Kim"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jeong Hyun Kim"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "International Journal of Advertising"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4396781199",
+          "doi": "https://doi.org/10.1073/pnas.2314021121",
+          "display_name": "Can Generative AI improve social science?",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Christopher A. Bail"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Proceedings of the National Academy of Sciences"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4388419201",
+          "doi": "https://doi.org/10.1186/s40561-023-00276-4",
+          "display_name": "The influence of sociodemographic factors on students' attitudes toward AI-generated video content creation",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Νικόλαος Πέλλας"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Smart Learning Environments"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4381192352",
+          "doi": "https://doi.org/10.1108/jpbm-02-2022-3864",
+          "display_name": "To disclose or not disclose, is no longer the question – effect of AI-disclosed brand voice on brand authenticity and attitude",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Alexandra Kirkby"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Carsten Baumgarth"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jörg Henseler"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Journal of Product & Brand Management"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4387267058",
+          "doi": "https://doi.org/10.1038/s42256-023-00720-7",
+          "display_name": "Influencing human–AI interaction by priming beliefs about AI can increase perceived trustworthiness, empathy and effectiveness",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Pat Pataranutaporn"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Ruby Liu"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Ed Finn"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Pattie Maes"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Nature Machine Intelligence"
+            }
+          },
+          "abstract_inverted_index": null
+        },
+        {
+          "id": "https://openalex.org/W4385484319",
+          "doi": "https://doi.org/10.1002/job.2735",
+          "display_name": "A multilevel review of artificial intelligence in organizations: Implications for organizational behavior research and practice",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Sarah Bankins"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Anna Carmella Ocampo"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Mauricio Marrone"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Simon Lloyd D. Restubog"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Sang Eun Woo"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Journal of Organizational Behavior"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4393342727",
+          "doi": "https://doi.org/10.1111/bjet.13460",
+          "display_name": "AI and English language teaching: Affordances and challenges",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Helen Crompton"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Adam Edmett"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Neenaz Ichaporia"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Diane Burke"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "British Journal of Educational Technology"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4410030884",
+          "doi": "https://doi.org/10.1073/pnas.2412815122",
+          "display_name": "Testing theories of political persuasion using AI",
+          "publication_year": 2025,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Lisa P. Argyle"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Ethan C. Busby"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Joshua R. Gubler"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Alex Lyman"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Justin Olcott"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Jackson Pond"
+              }
+            },
+            {
+              "author": {
+                "display_name": "David Wingate"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Proceedings of the National Academy of Sciences"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4388194725",
+          "doi": "https://doi.org/10.1002/jcpy.1393",
+          "display_name": "Chatbots and mental health: Insights into the safety of generative <scp>AI</scp>",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Julian De Freitas"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Ahmet Kaan Uğuralp"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Zeliha Oğuz‐Uğuralp"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Stefano Puntoni"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Journal of Consumer Psychology"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4386724197",
+          "doi": "https://doi.org/10.21541/apjess.1293702",
+          "display_name": "Is ChatGPT Leading Generative AI? What is Beyond Expectations?",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Ömer Aydın"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Enis Karaarslan"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Academic Platform Journal of Engineering and Smart Systems"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4387299971",
+          "doi": "https://doi.org/10.1073/pnas.2311627120",
+          "display_name": "Leveraging AI for democratic discourse: Chat interventions can improve online political conversations at scale",
+          "publication_year": 2023,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Lisa P. Argyle"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Christopher A. Bail"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Ethan C. Busby"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Joshua R. Gubler"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Thomas Noble Howe"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Christopher Rytting"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Taylor Sorensen"
+              }
+            },
+            {
+              "author": {
+                "display_name": "David Wingate"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Proceedings of the National Academy of Sciences"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W7128529618",
+          "doi": "https://doi.org/10.1093/pnasnexus/pgag008",
+          "display_name": "Labeling messages as AI-generated does not reduce their persuasive effects",
+          "publication_year": 2026,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Isabel O. Gallegos"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Chen Shani"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Weiyan Shi"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Federico Bianchi"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Izzy Gainsburg"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Dan Jurafsky"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Robb Willer"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "PNAS Nexus"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4401359717",
+          "doi": "https://doi.org/10.1057/s41599-024-03526-z",
+          "display_name": "AI and ethics: Investigating the first policy responses of higher education institutions to the challenge of generative AI",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Attila Dabis"
+              }
+            },
+            {
+              "author": {
+                "display_name": "Csaba Csáki"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "Humanities and Social Sciences Communications"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        },
+        {
+          "id": "https://openalex.org/W4393278146",
+          "doi": "https://doi.org/10.1145/3652154",
+          "display_name": "Navigating the Complexity of Generative AI Adoption in Software Engineering",
+          "publication_year": 2024,
+          "type": "article",
+          "authorships": [
+            {
+              "author": {
+                "display_name": "Daniel Russo"
+              }
+            }
+          ],
+          "primary_location": {
+            "source": {
+              "display_name": "ACM Transactions on Software Engineering and Methodology"
+            }
+          },
+          "abstract_inverted_index": {
+            "_present": [
+              0
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+document_id,title,author,year,category,relative_path,start_page,end_page,max_pages,text_policy
+behavioral-guide-2016,Behavioral Economics Guide 2016,Alain Samson (ed.),2016,behavioral,Behavioral Economics/Behavioral Economics Guide (2016).pdf,12,,,auto
+camerer-2003,Behavioral Game Theory: Experiments in Strategic Interaction,Colin F. Camerer,2003,behavioral,Behavioral Economics/Camerer - Behavioral Game Theory (2003).pdf,25,,,ocr
+kahneman-2011,"Thinking, Fast and Slow",Daniel Kahneman,2011,behavioral,"Behavioral Economics/Kahneman - Thinking, Fast and Slow (2011).pdf",20,,,auto
+charness-pingle-2021,The Art of Experimental Economics,"Gary Charness, Mark Pingle (eds.)",2021,experimental,"Experimental Economics/Charness, Pingle - The Art of Experimental Economics (2021).pdf",18,,,auto
+friedman-cassar-2004,Economics Lab: An Intensive Course in Experimental Economics,"Daniel Friedman, Alessandra Cassar",2004,experimental,"Experimental Economics/Friedman, Cassar - Economics Lab, An Intensive Course in Experimental Economics (2004).pdf",20,,,auto
+frechette-schotter,Handbook of Experimental Economic Methodology,"Guillaume R. Fréchette, Andrew Schotter (eds.)",2015,experimental,"Experimental Economics/Handbook of Experimental Economic Methodology (Guillaume R. Fréchette, Andrew Schotter).pdf",20,,,auto
+gerber-green-2012,"Field Experiments: Design, Analysis, and Interpretation","Alan S. Gerber, Donald P. Green",2012,experimental,"Experimental Economics/Gerber, Green - Field Experiments, Design, Analysis, and Interpretation (2012).pdf",25,,,auto
+holt-2019,"Markets, Games, and Strategic Behavior (2nd ed.)",Charles A. Holt,2019,experimental,Experimental Economics/Holt 2019.pdf,1,,,ocr
+imbens-rubin-2015,"Causal Inference for Statistics, Social, and Biomedical Sciences","Guido W. Imbens, Donald B. Rubin",2015,experimental,"Experimental Economics/Imbens, Rubin - Causal Inference for Statistics, Social, and Biomedical Sciences (2015).pdf",25,,,auto
+jacquemet-lharidon-2018,Experimental Economics: Method and Applications,"Nicolas Jacquemet, Olivier L'Haridon",2018,experimental,"Experimental Economics/Jacquemet, L'Haridon - Experimental Economics - Method and Applications (2018).pdf",20,,,auto
+kagel-roth-vol1,"The Handbook of Experimental Economics, vol. 1","John H. Kagel, Alvin E. Roth (eds.)",1995,experimental,"Experimental Economics/The handbook of experimental economics (Kagel, Roth) - Enhanced.pdf",20,,,auto
+kagel-roth-vol2,"The Handbook of Experimental Economics, vol. 2","John H. Kagel, Alvin E. Roth (eds.)",2016,experimental,"Experimental Economics/The Handbook of Experimental Economics, Volume 2 .pdf",20,,,auto
+list-2026,"Experimental Economics: Theory and Practice",John A. List,2026,experimental,"Experimental Economics/List - Experimental Economics (2026)/List, John A. - Experimental Economics, Theory and Practice (2026) PROCESSED TO USE.pdf",1,,,ocr
+kockesen-ok-2007,An Introduction to Game Theory (Koçkesen and Ok),"Levent Koçkesen, Efe A. Ok",2007,game-theory,"Game Theory/Kockesen, Ok - An Introduction to Game Theory (2007).pdf",10,,,auto
+mas-colell-1995,Microeconomic Theory,"Andreu Mas-Colell, Michael D. Whinston, Jerry R. Green",1995,game-theory,"Game Theory/Mas-Colell, Whinston, Green - Microeconomic Theory (1995).pdf",25,,,ocr
+myerson-1997,Game Theory: Analysis of Conflict,Roger B. Myerson,1997,game-theory,Game Theory/Myerson - Game Theory - Analysis of Conflict (1997).pdf,20,,,auto
+osborne-2003,An Introduction to Game Theory (Osborne),Martin J. Osborne,2003,game-theory,Game Theory/Osborne - An Introduction to Game Theory (2003).pdf,20,,,auto
+osborne-rubinstein-1994,A Course in Game Theory,"Martin J. Osborne, Ariel Rubinstein",1994,game-theory,"Game Theory/Osborne, Rubinstein - A Course in Game Theory (1994).pdf",15,,,auto

@@ -9,15 +9,36 @@ Presentaciones y materiales del taller.
 ## Presentaciones
 
 1. [IA generativa e investigación en ciencias sociales](course/slides/ia-generativa-investigacion-ciencias-sociales.qmd)
-2. [Revisión de literatura con agentes](course/slides/literatura-agentes-integrados.qmd)
+2. Revisión de literatura
+   - [Revisión de literatura con agentes](course/slides/literatura-agentes-integrados.qmd)
+   - [Literatura con agentes, paso a paso](course/slides/literatura-agentes-paso-a-paso.qmd)
+   - [Una revisión guiada por un skill](course/slides/literatura-skill-guiada.qmd)
 3. [Auditar un análisis de datos con Jupyter y Codex](course/slides/analisis-datos-codex-jupyter.qmd)
 4. [Lean como verificador matemático](course/slides/lean-verificacion-matematica.qmd)
 5. [Bases de conocimiento verificables: embeddings y RAG](course/slides/bonus-embeddings-rag.qmd)
 
 ## Materiales
 
-- [Laboratorio de revisión de literatura](https://github.com/kmlv/TeachResearchGenAI/tree/main/course/exercises/literature_agent_lab)
+### Revisión de literatura
+
+- [Laboratorio de revisión con agentes](https://github.com/kmlv/TeachResearchGenAI/tree/main/course/exercises/literature_agent_lab)
+- [Laboratorio guiado por un skill](https://github.com/kmlv/TeachResearchGenAI/tree/main/course/exercises/literature_skill_lab)
+- [Guía del demo de revisión con agentes](materials/guides/guia-demo-live-literatura-agentes.pdf)
+- Guía de la revisión guiada: [web](course/guides/literatura-skill-guiada.qmd) · [PDF](materials/guides/literatura-skill-guiada.pdf)
+
+### Datos y código
+
 - [Demo de auditoría de datos](https://github.com/kmlv/TeachResearchGenAI/tree/main/course/exercises/data_audit_demo)
-- [Demo de verificación en Lean](https://github.com/kmlv/TeachResearchGenAI/tree/main/course/exercises/lean_verification_demo)
 - [Guía de Jupyter, VS Code y Codex](materials/guides/guia-demo-jupyter-vscode-codex.pdf)
+- [Guía de LaTeX, VS Code y agentes](materials/guides/guia-flujo-latex-vscode.pdf)
+
+### Verificación y bases de conocimiento
+
+- [Demo de verificación en Lean](https://github.com/kmlv/TeachResearchGenAI/tree/main/course/exercises/lean_verification_demo)
+- [Guía del demo de Lean](materials/guides/guia-live-demo-lean.pdf)
+- [Laboratorio de embeddings y RAG](https://github.com/kmlv/TeachResearchGenAI/tree/main/course/exercises/embeddings_rag_bonus)
+- [Laboratorio de respuesta a referees](https://github.com/kmlv/TeachResearchGenAI/tree/main/course/exercises/research_agent_lab)
+
+### Referencia
+
 - [Economía y cognición sintética (APE 2026)](materials/slides/economia-cognicion-sintetica-ape-2026-bcrp.pdf)

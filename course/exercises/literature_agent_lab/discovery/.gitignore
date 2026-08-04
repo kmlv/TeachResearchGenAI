@@ -1,0 +1,8 @@
+# Todo lo de output/ es regenerable: sale de search_strategy.json más la API
+# o la fixture. No se versiona, para que nadie confunda un resultado de ayer
+# con el resultado de hoy.
+output/*
+!output/README.md
+
+# La fixture SÍ se versiona. Es lo que permite dar la clase sin internet.
+!fixture/openalex_response.json

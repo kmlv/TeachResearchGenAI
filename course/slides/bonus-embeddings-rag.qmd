@@ -42,9 +42,9 @@ motivación intrínseca?
 ::: {.notes}
 **MINUTO ·** 0:00–2:00
 
-**DECIR ·** «Este bloque es opcional y está fuera del tronco de la clase. No
-vamos a construir un producto: vamos a entender qué hace un embedding, en qué
-momento empieza RAG y cuándo un grafo agrega algo que la similitud no da.»
+**DECIR ·** «Este bloque es opcional y está fuera del tronco de la clase.
+Vamos a entender qué hace un embedding y después probar un producto RAG local:
+una sola respuesta, con páginas que podamos abrir.»
 
 **CLIC ·** ninguno.
 
@@ -65,20 +65,21 @@ realmente en la carpeta.»
 
 ## Lo que hay en el estante
 
-::: {.lean-code}
+::: {.lean-code .compact-code}
 ```text
-99 - Books/                       185 PDF · 2 TXT
-  Behavioral Economics              4 PDF
-  Game Theory                       7 PDF
-  Experimental Economics          174 PDF
+carpeta sin limpiar        185 PDF + 2 TXT
+  Behavioral Economics      4 PDF
+  Game Theory                7 PDF
+  Experimental Economics  174 PDF
 
-demo curada                  20 obras · 1,262 páginas · 2,614 fragmentos
+demo       20 textos · 1,262 páginas · 2,210 pasajes
+mediano    18 libros · 8,669 páginas · 14,726 pasajes
 ```
 :::
 
 ::: {.lead}
-Dentro de esos 174 hay 100 piezas de un solo handbook, 22 capítulos sueltos de
-un mismo libro y dos descargas casi idénticas de otro.
+La carpeta exagera su tamaño: incluye 100 piezas de un handbook y 22 capítulos
+sueltos de un mismo libro.
 :::
 
 ::: {.prompt}
@@ -89,8 +90,8 @@ Un corpus no es una carpeta · es un inventario con decisiones tomadas
 **MINUTO ·** 2:00–5:00
 
 **DECIR ·** «Esta es la carpeta real, sin limpiar. De ahí seleccionamos veinte
-obras únicas: 1,262 páginas con texto y 2,614 fragmentos. Las veinte entraron
-al índice; 140 páginas necesitaron OCR.»
+textos para la demo: 1,262 páginas con texto y 2,210 pasajes recuperables. Para la extensión
+mediana seleccionamos dieciocho libros únicos y los indexamos completos.»
 
 **CLIC ·** primero el bloque de conteos, después la línea de duplicados.
 
@@ -112,12 +113,65 @@ ocupar todo el resultado y parecer consenso de la literatura.»
 - Plan del bloque, `deliverables/bonus-embeddings-rag-plan.md`, sección
   «Inventario observado».
 - Build verificado, `course/exercises/embeddings_rag_bonus/build-log.md`.
+- Build de libros enteros,
+  `course/exercises/embeddings_rag_bonus/build-log-full-books.md`.
+:::
+
+## Los libros enteros ya caben en una laptop
+
+::: {.lean-code .compact-code}
+```text
+18 libros completos · 8,669 páginas con texto
+14,726 pasajes       · 2,746 páginas pasaron por OCR
+indexar una vez      · aproximadamente 7 minutos
+```
+:::
+
+::: {.lead}
+El costo grande fue preparar el texto. Una vez limpio, construir todos los
+embeddings tomó menos de cinco minutos.
+:::
+
+::: {.prompt}
+Libro completo no significa un vector por libro · significa evidencia por pasaje
+:::
+
+::: {.notes}
+**EXTENSIÓN OPCIONAL ·** 3 minutos adicionales.
+
+**DECIR ·** «Sí se pueden indexar libros enteros. No convertimos cada libro en
+un solo vector: preservamos páginas, unimos las palabras en orden y creamos
+fragmentos que pueden cruzar un salto de página. Así la búsqueda conserva una
+cita verificable.»
+
+**EL CASO DIAGNÓSTICO ·** Holt parecía digital porque cada página tenía miles de
+caracteres, pero las palabras estaban pegadas. El primer intento produjo solo 15
+fragmentos para 683 páginas. El detector de densidad activó OCR y el libro pasó a
+1,035 fragmentos utilizables.
+
+**TRADUCIR LOS NÚMEROS ·** 14,726 no son documentos nuevos: son pasajes de
+aproximadamente 320 palabras que permiten encontrar y citar una idea dentro de
+un libro. Los siete minutos corresponden a construir el índice una vez; una
+consulta posterior tarda segundos.
+
+**NO CONFUNDIR ·** el trabajo nuevo sometió 2,637 páginas a OCR, todas sin
+fallos; 2,606 produjeron texto. Con 140 páginas útiles del piloto, el índice
+reporta 2,746 páginas «desde OCR».
+
+**TRANSICIÓN ·** «La escala no cambió el principio: la calidad se decide antes
+del vector.»
+
+[Sources]
+- Registro medido del build,
+  `course/exercises/embeddings_rag_bonus/build-log-full-books.md`.
+- Ledger y diagnóstico de Holt,
+  `course/exercises/embeddings_rag_bonus/full-books-runbook.md`, §5.1 y §6.
 :::
 
 ## Antes del vector
 
 ::: {.rules}
-1. Inventariar: ruta, hash, título, año, licencia, procedencia.
+1. Inventariar: ruta, título, autor, año y política de uso.
 2. Extraer por página, no por libro.
 3. Deduplicar por hash, por DOI, por título/autor/año y por similitud.
 4. Fragmentar para el modelo: aquí, 320 palabras con 45 de solapamiento.
@@ -135,8 +189,10 @@ ocurren antes de calcular un solo vector.»
 
 **CLIC ·** una por una.
 
-**POR QUÉ CADA UNA ·** el hash y la licencia son lo que permite decir de dónde
-salió cada cosa y qué se puede redistribuir; extraer por página es lo que hace
+**POR QUÉ CADA UNA ·** la ruta y la política de uso fijan qué entra y qué no se
+redistribuye; el build log agrega el hash para detectar cambios. La demo todavía
+no tiene un ledger de licencia y procedencia por obra: sería obligatorio antes
+de escalar a repositorios externos. Extraer por página es lo que hace
 que un resultado sea comprobable abriendo el PDF; deduplicar evita el
 falso consenso del duplicado; el solapamiento evita cortar una idea justo en
 la frontera del fragmento.
@@ -253,15 +309,15 @@ técnicos con traducción inestable rinden peor que la terminología estándar.
 
 ## Demo 1 · palabras exactas
 
-Índice lexical sobre el mismo corpus: SQLite FTS5 con puntaje BM25.
+Índice lexical sobre el mismo corpus: busca coincidencias de palabras.
 
 ::: {.lean-code}
 ```text
 consulta  "validez interna validez externa"
 
 español   0 resultados
-inglés    Generalizability and Scaling · p. 4  · 24.0643
-          Economics Lab             · p. 44 · 16.4563
+inglés    #1 Generalizability and Scaling · p. 34
+          #2 Economics Lab              · p. 44
 ```
 :::
 
@@ -303,30 +359,30 @@ con la demo y explicar el mismo contraste.
   `course/exercises/embeddings_rag_bonus/demo-results.md`.
 :::
 
-## Demo 2 · similitud semántica
+## El puntaje ordena; la página permite verificar
 
 Misma pregunta, en español, contra el índice vectorial. Cinco resultados como
 máximo, uno por documento.
 
-::: {.lean-code}
-```text
-0.7825  Generalizability and Scaling                 p. 4
-0.5746  Economics Lab                               p. 44
-0.5386  Internal Validity and Identification         p. 1
-0.5099  Thinking, Fast and Slow                     p. 61
-0.4879  Markets, Games, and Strategic Behavior      p. 74
-```
-:::
+| puesto | similitud | obra y páginas para verificar |
+| ---: | ---: | --- |
+| 1 | 0.67 | *Generalizability and Scaling*, pp. 1–2 |
+| 2 | 0.56 | *Economics Lab*, pp. 34–35 |
+| 3 | 0.54 | *Internal Validity and Identification*, pp. 1–2 |
+| 4 | 0.53 | *Experimental Economics: Method…*, p. 83 |
+| 5 | 0.49 | *Thinking, Fast and Slow*, p. 61 |
 
 ::: {.prompt}
-Cada resultado se abre en su página · si no se puede verificar, no cuenta
+0.67 no significa «67% correcto» · solo ordena cercanía para esta pregunta
 :::
 
 ::: {.notes}
 **MINUTO ·** 16:30–20:00
 
 **DECIR ·** «La misma pregunta que antes no devolvió nada útil, ahora sin
-traducir.»
+traducir. La primera columna es el puesto. La segunda mide cercanía conceptual:
+más alto significa más parecido dentro de esta búsqueda, no más verdadero. La
+tercera dice exactamente qué libro y páginas debemos abrir.»
 
 **CORRER EN VIVO ·** una de las cuatro preguntas del banco: por qué los
 incentivos monetarios pueden desplazar motivación intrínseca; qué amenazas
@@ -403,6 +459,57 @@ aparece.»
   Reordering Documents and Producing Summaries*, SIGIR.
 :::
 
+## Medir cambia la historia que contamos
+
+Doce preguntas con páginas verificadas · mismo índice para los tres métodos.
+
+| método | ¿halló algo útil entre los 3 primeros? | ¿puso lo mejor arriba? | ¿ordenó bien los 5? |
+| --- | ---: | ---: | ---: |
+| palabras exactas | 4 de 12 | 35 / 100 | 31 / 100 |
+| similitud semántica | **11 de 12** | 79 / 100 | 58 / 100 |
+| híbrido | 10 de 12 | **80 / 100** | **59 / 100** |
+
+::: {.prompt}
+No hay ganador único · semántico cubre más; híbrido ordena apenas mejor
+:::
+
+::: {.notes}
+**EXTENSIÓN OPCIONAL ·** 3 minutos adicionales.
+
+**DECIR ·** «No elegimos recuperador por intuición. Fable diseñó doce preguntas
+con cruce de idiomas, anclas técnicas y premisas tramposas; después abrimos las
+páginas y separamos esos juicios del catálogo de preguntas.»
+
+**LEER LA TABLA ·** la primera pregunta es simple: ¿aparece al menos un pasaje
+útil entre los tres primeros? La segunda premia que el mejor aparezca antes; es
+MRR expresado sobre 100. La tercera premia el orden de varios pasajes útiles; es
+nDCG@5 expresado sobre 100. Semántico acierta once de doce e híbrido diez. El
+híbrido gana por apenas uno o dos puntos en orden: una diferencia pequeña, no
+una victoria aplastante.
+
+**FALLO ÚTIL ·** G04 no acierta en ningún modo: los recuperadores no encuentran
+la página que refuta su premisa falsa. Se conserva porque una evaluación sin
+casos difíciles es decoración.
+
+**ESTADO ·** Kristian aprobó G2/G4 el 4 de agosto de 2026. Hay 57 qrels positivas
+y 58 negativas explícitas. Del pool de 123
+candidatos, 6 siguen sin juzgar; además, 38 de las 57 positivas se descubrieron
+desde los propios recuperadores y 19 se sembraron independientemente. El pooling
+puede volver optimistas las cifras absolutas y hace menos independiente la comparación.
+Los 6 candidatos sin juicio se aceptan como incompletitud documentada y solo se
+tratan como no relevantes para calcular estas métricas.
+
+**TRANSICIÓN ·** «Con el recuperador medido, recién ahora tiene sentido hablar
+de una respuesta generada.»
+
+[Sources]
+- Preguntas y qrels,
+  `course/exercises/embeddings_rag_bonus/evaluation-questions.csv` y
+  `course/exercises/embeddings_rag_bonus/evaluation-qrels.csv`.
+- Reporte reproducible,
+  `course/exercises/embeddings_rag_bonus/evaluation-report-full-books.md`.
+:::
+
 ## Cuándo empieza RAG
 
 ::: {.lean-code}
@@ -451,6 +558,60 @@ recuperación, no hay nada que auditar.»
   NLP Tasks*: https://arxiv.org/abs/2005.11401
 :::
 
+## Demo 3 · una respuesta única, todavía verificable
+
+**Pregunta:** ¿Qué es un resultado potencial?
+
+::: {.lead}
+Un resultado potencial es lo que habría ocurrido bajo un estado específico
+[1]. El resultado no observado se trata como dato faltante [2].
+:::
+
+::: {.rag-citations}
+`[1]` List (2026) · pp. 79–80<br>
+`[2]` Imbens y Rubin (2015) · p. 203<br>
+**Demo local:** `http://127.0.0.1:8000`
+:::
+
+::: {.prompt}
+Opus 5 recibió 58 palabras seleccionadas · no recibió los 18 libros
+:::
+
+::: {.notes}
+**EXTENSIÓN OPCIONAL ·** 4 minutos adicionales.
+
+**DEMO EN VIVO ·** desde `course/exercises/embeddings_rag_bonus`, ejecutar
+`.venv/bin/python scripts/serve.py --port 8000` y abrir
+`http://127.0.0.1:8000`. Escribir la pregunta visible, marcar «Redactar con
+Opus» y leer el aviso antes de responder.
+
+**QUÉ OCURRIÓ EN LA PRUEBA REAL ·** el recuperador seleccionó dos fragmentos,
+58 palabras en total. `claude-opus-5` redactó el párrafo en español. El programa
+comprobó que `[1]` y `[2]` existían entre los fragmentos enviados; después una
+persona todavía debe abrir esas páginas y juzgar si respaldan cada frase.
+
+**PRIVACIDAD ·** sin marcar la casilla, nada sale de la laptop y la respuesta es
+extractiva. Al marcarla, salen solamente los fragmentos mostrados en la pantalla;
+no salen PDFs, índice ni corpus. El servidor solo escucha en `localhost`.
+
+**MOSTRAR LA NEGATIVA ·** preguntar por la receta del ceviche: similitud 0.3504,
+debajo del umbral medido 0.5636, y el sistema se abstiene. Una pregunta demasiado
+amplia sobre Sistema 1 y Sistema 2 supera el umbral de recuperación, pero Opus
+también puede abstenerse después de leer evidencia insuficiente.
+
+**SI OPUS NO RESPONDE ·** el modo local siempre queda disponible; un timeout,
+una falla del CLI o una cita inventada activan la respuesta extractiva.
+
+**TRANSICIÓN ·** «Ya podemos recuperar y redactar. Ahora preguntemos qué tipo de
+preguntas siguen fuera del alcance de la similitud.»
+
+[Sources]
+- Implementación y salida real,
+  `course/exercises/embeddings_rag_bonus/demo-respuesta-citada.md`.
+- Contrato y pruebas,
+  `course/exercises/embeddings_rag_bonus/scripts/answer.py` y `scripts/test_core.py`.
+:::
+
 ## Knowledge graph, quizá
 
 ::: {.lead}
@@ -488,7 +649,7 @@ piloto de recuperación, nunca antes.
 **SI NADIE HABLA ·** ofrecer una: «¿qué evaluaciones de un mismo programa
 llegan a conclusiones opuestas?».
 
-**TRANSICIÓN ·** «Esto se probó con veinte obras. La pregunta interesante es
+**TRANSICIÓN ·** «Esto se probó con dieciocho libros completos. La pregunta interesante es
 qué pasa a escala peruana.»
 
 [Sources]
@@ -496,7 +657,7 @@ qué pasa a escala peruana.»
   «Decisión de alcance».
 :::
 
-## De 20 obras a 2,000 documentos peruanos
+## De 18 obras a 2,000 documentos peruanos
 
 ::: {.map}
 - ALICIA · catálogo nacional
@@ -508,7 +669,7 @@ qué pasa a escala peruana.»
 :::
 
 ::: {.lead}
-Un corpus curado de 2,000 documentos, no una descarga indiscriminada.
+Meta: 2,000 documentos curados y trazables.
 :::
 
 ::: {.prompt}

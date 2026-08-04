@@ -1,0 +1,82 @@
+{
+  "strategy_id": "SD-01",
+  "escrito_por": "humano, antes de ejecutar nada",
+  "pregunta": {
+    "archivo": "../case/question.md",
+    "texto": "Entre personas adultas, ¿los mensajes o diálogos persuasivos generados o mediados por modelos de lenguaje cambian actitudes, creencias, intenciones o conducta frente a un comparador pertinente?"
+  },
+  "esto_es": "Un registro legible de qué se buscó, dónde, con qué límites y qué quedó fuera. Se escribe antes de la búsqueda y se versiona junto con sus resultados.",
+  "esto_no_es": "No es un cribado, no es evidencia y no reemplaza a case/candidates.csv, que está congelado. Un candidato descubierto aquí no ha sido leído por nadie.",
+  "fuente": {
+    "nombre": "OpenAlex",
+    "endpoint": "https://api.openalex.org/works",
+    "documentacion": "https://docs.openalex.org/api-entities/works",
+    "autenticacion": "No requiere clave. OPENALEX_API_KEY es opcional y se lee solo del entorno; nunca se escribe en un archivo de esta carpeta.",
+    "cortesia": "OpenAlex pide un correo de contacto para el grupo de peticiones cortés. Se toma de OPENALEX_MAILTO si existe; el registro anota si hubo correo, no cuál."
+  },
+  "bloques_conceptuales": [
+    {
+      "bloque": "intervencion",
+      "terminos": ["large language model", "LLM", "generative AI", "conversational AI", "chatbot", "AI-generated message"]
+    },
+    {
+      "bloque": "mecanismo",
+      "terminos": ["persuasion", "persuasive", "attitude change", "belief change", "microtargeting"]
+    },
+    {
+      "bloque": "resultado",
+      "terminos": ["attitude", "belief", "intention", "behavior", "randomized experiment"]
+    },
+    {
+      "bloque": "poblacion",
+      "terminos": ["adults", "human participants"]
+    }
+  ],
+  "por_que_tres_consultas_y_no_una": "El parámetro `search` de OpenAlex SÍ admite booleanos: AND, OR y NOT en mayúsculas, frases entre comillas y expresiones con paréntesis; la restricción documentada es de longitud (una URL de más de ~4 KB hay que partirla). Así que tres consultas no son un rodeo por falta de sintaxis: son una decisión. Una sola cadena larga devuelve un montón indistinguible, y nadie puede decir después qué término trajo qué. Con tres familias de consulta, `candidates.csv` guarda en `query_id` cuál encontró primero cada candidato y `dedup_report.csv` muestra cuáles lo repitieron. Eso convierte la cobertura en algo que se mira, no en algo que se supone. El costo es que hace falta deduplicar, y por eso el reporte de duplicados es un producto de primera clase y no un detalle interno.",
+  "consultas": [
+    {
+      "query_id": "Q1",
+      "search": "large language model persuasion attitudes beliefs",
+      "filter": {
+        "from_publication_date": "2023-01-01",
+        "to_publication_date": "2026-12-31",
+        "type": "article"
+      },
+      "por_que": "Consulta central: intervención más mecanismo más resultado."
+    },
+    {
+      "query_id": "Q2",
+      "search": "conversational AI persuasion randomized experiment",
+      "filter": {
+        "from_publication_date": "2023-01-01",
+        "to_publication_date": "2026-12-31",
+        "type": "article"
+      },
+      "por_que": "Recupera el diálogo, no solo el mensaje de un turno, y sesga hacia diseños con comparador."
+    },
+    {
+      "query_id": "Q3",
+      "search": "AI-generated message attitude change experiment",
+      "filter": {
+        "from_publication_date": "2023-01-01",
+        "to_publication_date": "2026-12-31",
+        "type": "article"
+      },
+      "por_que": "Alcanza trabajos que no usan la palabra persuasion y sí attitude change."
+    }
+  ],
+  "limites": {
+    "per_page": 25,
+    "max_paginas_por_consulta": 1,
+    "max_registros_total": 25,
+    "timeout_segundos": 20
+  },
+  "huecos_conocidos": [
+    "Una sola base. OpenAlex no cubre igual todas las disciplinas ni todo el material no indexado.",
+    "Solo `type: article`. Deja fuera preprints, capítulos e informes, que en este tema son abundantes.",
+    "Solo inglés en los términos. Trabajo publicado en español o portugués con estos mismos diseños no aparecerá.",
+    "Una sola página por consulta. Es un tope pedagógico, no un criterio metodológico.",
+    "Sin búsqueda de citas hacia adelante ni hacia atrás."
+  ],
+  "regla_de_parada": "Esta estrategia no declara exhaustividad ni saturación. Se detiene en el tope de registros y lo deja escrito en search_log.json."
+}

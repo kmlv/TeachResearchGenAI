@@ -7,11 +7,15 @@ el objeto presentado cuenta como prueba. **Mathlib** es la biblioteca
 comunitaria de matemáticas formalizadas para Lean; aporta, entre otras cosas,
 números reales, sumas finitas, probabilidad y tácticas de prueba.
 
-Para una primera prueba, abra [Lean Web con
-Mathlib](https://live.lean-lang.org/?from=mathlib) y pegue `PrimerPaso.lean`.
-La meta no es dominar el lenguaje: es aprender a leer un contrato formal y
-observar después cómo otra afirmación se rechaza, se refuta con un
-contraejemplo y se repara haciendo explícito un supuesto.
+La ruta principal del taller usa **VS Code con la extensión Lean 4**. Abra esta
+carpeta completa en VS Code y siga [`live_demo/GUION.md`](live_demo/GUION.md).
+El demo empieza verde, produce un error de tipos comprensible, verifica un
+contraejemplo, repara el contrato y termina con una mezcla ponderada. Los cinco
+estados congelados permiten recuperar la demostración sin improvisar sintaxis.
+
+Lean Web sigue siendo útil para una prueba individual, pero no es la ruta del
+live demo: el repositorio local fija Lean y Mathlib y evita depender de la red
+durante la clase.
 
 ## Cinco palabras antes de empezar
 
@@ -24,26 +28,39 @@ contraejemplo y se repara haciendo explícito un supuesto.
 - **Formalizar:** traducir una afirmación a objetos, supuestos y conclusión sin
   depender de lo que “se entiende” por contexto.
 
-## Ruta de 20 minutos
+## Ruta de 20 minutos con live demo
 
 | Minutos | Acción |
 |---:|---|
-| 0–2:30 | Entender por qué “suena bien” no equivale a “se sigue”, y leer un teorema como contrato. |
-| 2:30–4:30 | Distinguir Lean, su núcleo y Mathlib. |
-| 4:30–7:00 | Leer y ejecutar `PrimerPaso.lean`; separar táctica de verificación. |
-| 7:00–10:00 | Repartir responsabilidades entre persona, agente, Mathlib y Lean; elegir una forma de ejecución. |
-| 10:00–12:00 | Formular el caso de incidencia como objetos, supuestos y conclusión. |
-| 12:00–15:00 | Leer el rechazo y comprobar el contraejemplo 2/100 frente a 1/10. |
-| 15:00–16:30 | Comprobar el teorema reparado y nombrar el supuesto añadido. |
-| 16:30–18:00 | Verificar que un promedio ponderado queda entre sus extremos. |
-| 18:00–19:30 | Conectar el ejemplo con `expected_mix` de *Disentangling*. |
-| 19:30–20:00 | Delimitar qué no verificó Lean y formular un paso propio. |
+| 0:00–3:30 | Entender el problema y distinguir contrato, Lean y Mathlib. |
+| 3:30–5:15 | Orientarse en VS Code y presentar la red de seguridad. |
+| 5:15–6:15 | Leer el estado verde inicial. |
+| 6:15–8:30 | Formular la trampa y leer el desajuste entre conteos y tasas. |
+| 8:30–9:15 | Probar una búsqueda con `linarith` y distinguir fallo de falsedad. |
+| 9:15–10:45 | Verificar el contraejemplo 2/100 frente a 1/10. |
+| 10:45–12:30 | Reparar el contrato con el mismo denominador positivo. |
+| 12:30–14:30 | Verificar que una mezcla con peso válido queda entre extremos. |
+| 14:30–16:30 | Distinguir los estados y conectar con *Disentangling*. |
+| 16:30–18:40 | Explicar el ciclo con agentes y cómo repetir el demo. |
+| 18:40–20:00 | Delimitar qué no verificó Lean y formular un paso propio. |
 
-El archivo debe estar pegado y procesado antes de empezar la clase. La primera
-carga de Mathlib puede tomar decenas de segundos. No descargue dependencias en
-vivo.
+La primera carga de Mathlib puede tomar decenas de segundos. Ejecute
+`lake exe cache get`, abra `live_demo/DemoEnVivo.lean` y espere a que termine de
+procesar **antes** de empezar la clase. No descargue dependencias en vivo.
 
-## Guion exacto del demo
+Preparación exacta:
+
+```bash
+lake exe cache get
+./live_demo/verificar_live_demo.sh
+./live_demo/preparar.sh 00
+```
+
+## Guion exacto del demo anterior
+
+La versión recomendada y preparada para VS Code está en
+[`live_demo/GUION.md`](live_demo/GUION.md). La secuencia siguiente conserva la
+versión anterior como referencia conceptual:
 
 1. **Empiece con un caso verde.** Ejecute `PrimerPaso.lean`, lea el teorema en
    castellano y distinga la táctica `linarith` del núcleo que comprueba la

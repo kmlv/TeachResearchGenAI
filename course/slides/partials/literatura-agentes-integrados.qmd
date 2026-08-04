@@ -1,12 +1,12 @@
 ## Literatura con agentes {.divider}
 
 ::: {.notes}
-BLOQUE · 75 minutos · veintitrés láminas enseñadas y cinco divisores sin tiempo
+BLOQUE · 75 minutos · veintiséis láminas enseñadas y seis divisores sin tiempo
 
-REPARTO · 23 minutos para construir la cadena de evidencia a mano; 12 para
-separar workflow, loop, skill y agente con ejemplos y contraejemplos; 19 para
-ver cómo el agente administra esa misma cadena; 19 de demostración en vivo;
-2 de transferencia.
+REPARTO · 20 minutos para construir la cadena de evidencia a mano; 10 para
+separar workflow, loop, skill y agente con ejemplos y contraejemplos; 8 para
+convertir una estrategia en candidatos con OpenAlex; 16 para ver cómo el agente
+administra la cadena; 19 de demostración en vivo; 2 de transferencia.
 
 CASO ÚNICO · persuasión mediada por modelos de lenguaje. No se cambia de tema
 en ningún momento: lo que la sala audita a mano en el minuto 15 es exactamente
@@ -35,7 +35,7 @@ evidencia que otra persona pueda revisar.
 :::
 
 ::: {.notes}
-MINUTO · 0–3
+MINUTO · 0–2
 
 DECIR · «Este bloque no separa "revisión de literatura" de "agentes". Son la
 misma cosa vista dos veces: primero ustedes hacen una decisión a mano y ven qué
@@ -65,7 +65,7 @@ Si la interfaz desaparece mañana, las seis decisiones siguen ahí.
 :::
 
 ::: {.notes}
-MINUTO · 3–6
+MINUTO · 2–5
 
 DECIR · «Cuando alguien dice "le pedí una revisión de literatura al modelo",
 en realidad delegó seis decisiones distintas en una sola frase. Separarlas es
@@ -99,7 +99,7 @@ validador lo dice en voz alta.
 :::
 
 ::: {.notes}
-MINUTO · 6–9
+MINUTO · 5–8
 
 DECIR · «Nuestra pregunta de hoy: ¿los mensajes persuasivos generados por
 modelos cambian actitudes en personas adultas frente a un comparador
@@ -135,7 +135,7 @@ interactiva y reteclear el identificador.
 :::
 
 ::: {.notes}
-MINUTO · 9–12
+MINUTO · 8–11
 
 DECIR · «La separación no es moral, es de archivos. Lo que propone la IA vive
 en `work/`. Lo que decidió una persona vive en `human/`. El agente no tiene
@@ -171,7 +171,7 @@ El pasaje puede ser textual, el DOI correcto y la evidencia equivocada.
 :::
 
 ::: {.notes}
-MINUTO · 12–15
+MINUTO · 11–14
 
 DECIR · «Este registro es real, está publicado y su DOI resuelve. Y aun así no
 responde nuestra pregunta, porque nuestra población son personas adultas cuyas
@@ -197,7 +197,7 @@ presentarlo; si cambió, la lámina sigue funcionando, cambia solo el ejemplo.
 [/Sources]
 :::
 
-## Auditen una fila · cinco minutos
+## Auditen una fila · cuatro minutos
 
 ::: {.lean-code}
 ```text
@@ -217,16 +217,16 @@ la IA dice «El asistente redujo la polarización de quienes
 :::
 
 ::: {.notes}
-MINUTO · 15–20
+MINUTO · 14–18
 
-DECIR · «Cinco minutos, en parejas, una sola fila. No extraigan nada nuevo: la
+DECIR · «Cuatro minutos, en parejas, una sola fila. No extraigan nada nuevo: la
 extracción ya está hecha. Apliquen las cuatro preguntas y decidan si esta fila
 entra al brief tal como está, entra corregida, o no entra.»
 
 SEÑALAR · primero el pasaje; después la interpretación de la IA; después las
 cuatro preguntas
 
-ESPERAR · tres minutos en parejas, dos de plenario. La respuesta esperada: las
+ESPERAR · dos minutos en parejas, dos de plenario. La respuesta esperada: las
 tres primeras preguntas pasan y la cuarta falla — el diseño es observacional y
 `redujo` afirma un efecto. La corrección es cambiar el verbo, no borrar la fila.
 
@@ -252,7 +252,7 @@ trabajo.
 :::
 
 ::: {.notes}
-MINUTO · 20–23
+MINUTO · 18–20
 
 DECIR · «Lo que acaban de hacer con una fila hay que hacerlo doce veces, en
 varias sesiones, con interrupciones. Ahí es donde un chat deja de alcanzar: no
@@ -269,14 +269,14 @@ está lo que ya decidieron?»
 ## Qué es un agente y qué no {.divider}
 
 ::: {.notes}
-BLOQUE · 12 minutos · cuatro láminas
+BLOQUE · 10 minutos · cuatro láminas
 
 PROPÓSITO · dar cuatro distinciones operativas, cada una con ejemplo y
 contraejemplo, usando el mismo caso de persuasión. No son definiciones de
 manual: son criterios para decidir qué construir.
 
-CUIDADO CON EL TIEMPO · tres minutos por lámina. Si se alarga el debate, cortar
-y prometer retomarlo en la demo: aparece otra vez en concreto.
+CUIDADO CON EL TIEMPO · dos o tres minutos por lámina. Si se alarga el debate,
+cortar y prometer retomarlo en la demo: aparece otra vez en concreto.
 :::
 
 ## Un prompt responde; un workflow ejecuta una secuencia {.smaller}
@@ -296,7 +296,7 @@ La cantidad de llamadas no importa. Importa quién eligió la siguiente acción.
 :::
 
 ::: {.notes}
-MINUTO · 23–26
+MINUTO · 20–23
 
 DECIR · «Un workflow puede llamar al modelo cuarenta veces y seguir siendo un
 workflow, porque la secuencia la escribimos nosotros. Eso no es un defecto: para
@@ -327,7 +327,7 @@ argumentos, retorno y comportamiento ante fallos.
 :::
 
 ::: {.notes}
-MINUTO · 26–29
+MINUTO · 23–25
 
 DECIR · «La parada de nuestro loop se puede contar: doce registros con estado
 propuesto, cuatro fuentes con fila de evidencia. Cualquiera puede verificar si
@@ -362,7 +362,7 @@ que encuentra hoy.
 :::
 
 ::: {.notes}
-MINUTO · 29–32
+MINUTO · 25–28
 
 DECIR · «Nuestra skill no contiene la respuesta ni el corpus. Contiene el
 método: anclar antes de interpretar, elegir el verbo según el diseño, detenerse
@@ -400,7 +400,7 @@ regla de aceptación.
 :::
 
 ::: {.notes}
-MINUTO · 32–35
+MINUTO · 28–30
 
 DECIR · «Verificar anclajes y revisar si el verbo excede el diseño son dos
 encargos separables: producen artefactos distintos y se pueden comparar. Editar
@@ -419,10 +419,134 @@ no son dos encargos.»
 [/Sources]
 :::
 
+## Del protocolo a los candidatos {.divider}
+
+::: {.notes}
+BLOQUE · 8 minutos · tres láminas
+
+PROPÓSITO · revelar de dónde sale `candidates.csv` sin convertir la clase en un
+curso de APIs. La búsqueda produce candidatos y un rastro reproducible; no
+produce inclusiones, evidencia ni conclusiones.
+
+RED DE SEGURIDAD · la consulta en vivo es opcional. Si la red o OpenAlex fallan,
+usar el fixture congelado con el mismo script y mostrar exactamente los mismos
+artefactos.
+:::
+
+## OpenAlex descubre; el protocolo decide
+
+::: {.quad}
+- **Entrada** · pregunta congelada + estrategia de búsqueda revisada
+- **Tool** · OpenAlex devuelve metadatos de trabajos; no verifica pertinencia
+- **Salida** · JSON crudo + candidatos normalizados + reporte de duplicados
+- **Compuerta** · una persona acepta la estrategia antes de cribar resultados
+:::
+
+::: {.lead}
+Automatizar la búsqueda no automatiza la revisión: solo hace visible y
+repetible cómo apareció la cola de candidatos.
+:::
+
+::: {.notes}
+MINUTO · 30–33
+
+DECIR · «Hasta ahora `candidates.csv` parecía haber aparecido por magia. Este
+es el eslabón que faltaba: una estrategia escrita, una consulta que podemos
+repetir y la respuesta original guardada antes de que el agente toque nada.»
+
+SEÑALAR · entrada, tool, tres salidas y compuerta, en ese orden
+
+ESPERAR · que alguien diga qué no demuestra un resultado en la primera página
+
+SI NADIE HABLA · «No demuestra pertinencia. OpenAlex ordena búsqueda textual
+con señales que incluyen citaciones; aparecer arriba no equivale a responder
+nuestra pregunta.»
+
+[Sources]
+- OpenAlex, búsqueda textual y ranking:
+  https://developers.openalex.org/guides/searching
+[/Sources]
+:::
+
+## La carpeta es la interfaz común {.smaller}
+
+::: {.quad}
+- **Codex Desktop** · abrir `discovery/`, encargar la lectura y revisar los
+  archivos y el diff
+- **VS Code** · abrir la misma carpeta, usar Codex o Claude Code y ejecutar el
+  mismo comando en la terminal integrada
+- **Agente** · propone `search_strategy.json`; no puede aprobar su propia
+  estrategia
+- **Script** · consulta, normaliza y deduplica siempre con la misma regla
+:::
+
+::: {.prompt}
+La interfaz puede cambiar. Los artefactos y el comando no.
+:::
+
+::: {.notes}
+MINUTO · 33–35
+
+DECIR · «No voy a enseñar dos workflows. En Desktop y en VS Code abrimos la
+misma carpeta y producimos los mismos archivos. Lo que cambia es dónde vemos el
+agente; lo que se puede auditar no cambia.»
+
+SEÑALAR · los dos primeros cuadrantes; después separar agente de script
+
+ESPERAR · nada; es una instrucción operativa
+
+SI ALGUIEN USA OTRA INTERFAZ · «Si puede abrir archivos y ejecutar Python, puede
+usar el laboratorio. La superficie no forma parte del método.»
+:::
+
+## Demo breve · buscar y registrar {.smaller}
+
+::: {.lean-code}
+```bash
+# terminal integrada de Codex Desktop o VS Code
+cd course/exercises/literature_agent_lab/discovery
+python3 scripts/search_openalex.py
+
+# sin red o sin tiempo
+python3 scripts/search_openalex.py --offline
+```
+:::
+
+::: {.map}
+- `output/raw/` + `output/search_log.json` · respuesta y procedencia
+- `output/candidates.csv` + `output/dedup_report.csv` · candidatos y duplicados
+:::
+
+::: {.notes}
+MINUTO · 35–38
+
+ANTES DE EJECUTAR · abrir `search_strategy.json` y pedir a la sala que lea la
+consulta. La decisión importante ocurre antes de pulsar Enter.
+
+DECIR · «La búsqueda básica funciona sin clave; el script acepta una clave solo
+desde `OPENALEX_API_KEY` si la cuenta la requiere. Nunca pegamos secretos en un
+prompt ni en una diapositiva. Hoy limitamos la salida a veinticinco registros porque
+queremos inspeccionar el recorrido, no fingir exhaustividad.»
+
+EJECUTAR · la ruta automática; si la API no responde en veinte segundos, el
+script cae a la fixture y lo declara. Abrir `output/candidates.csv`, después
+`output/dedup_report.csv` y al final `output/search_log.json`.
+
+CIERRE · «Estos son candidatos, no estudios incluidos. La siguiente sección
+enseña cómo el agente administra el cribado sin adjudicarse la decisión.»
+
+[Sources]
+- OpenAlex, quickstart, búsqueda básica y clave para búsqueda semántica:
+  https://developers.openalex.org/quickstart
+- Laboratorio reproducible:
+  ../exercises/literature_agent_lab/discovery/README.md
+[/Sources]
+:::
+
 ## El agente administra la cadena {.divider}
 
 ::: {.notes}
-BLOQUE · 19 minutos · siete láminas
+BLOQUE · 16 minutos · siete láminas
 
 PROPÓSITO · mostrar la arquitectura completa antes de encenderla. Cada lámina
 corresponde a algo que se verá funcionando en la demo, así que conviene ir
@@ -448,7 +572,7 @@ El agente no redacta un brief libre. Prepara filas y espera.
 :::
 
 ::: {.notes}
-MINUTO · 35–38
+MINUTO · 38–40
 
 DECIR · «Fíjense en el cambio de encargo. No le pedimos "una revisión". Le
 pedimos que administre una cola de decisiones y que se detenga cada vez que la
@@ -481,7 +605,7 @@ escritura.
 :::
 
 ::: {.notes}
-MINUTO · 38–41
+MINUTO · 40–43
 
 DECIR · «Esta es la lámina que conviene fotografiar. La separación no es orden
 estético: define quién puede escribir dónde, y por eso permite revisar sin leer
@@ -509,7 +633,7 @@ Codex lee `AGENTS.md` · Claude Code recibe las mismas reglas vía `CLAUDE.md`
 :::
 
 ::: {.notes}
-MINUTO · 41–44
+MINUTO · 43–45
 
 DECIR · «No empezamos con "hazme un agente". Empezamos escribiendo cuatro
 cosas: qué produce, qué puede tocar, cuánto puede gastar y cómo sabemos que
@@ -544,7 +668,7 @@ Un brief pulido puede ocultar lo que falta. El ledger no.
 :::
 
 ::: {.notes}
-MINUTO · 44–46
+MINUTO · 45–47
 
 DECIR · «Si mañana alguien cuestiona una frase del brief, esta tabla dice en
 una línea de dónde salió y quién la aceptó. Ese es todo el valor.»
@@ -572,7 +696,7 @@ decisión nueva.
 :::
 
 ::: {.notes}
-MINUTO · 46–49
+MINUTO · 47–49
 
 DECIR · «Las dos compuertas humanas exigen terminal interactiva y reteclear el
 identificador. Las otras dos son comprobaciones deterministas que se niegan a

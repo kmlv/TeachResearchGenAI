@@ -10,6 +10,8 @@ lake env lean MezclaEntreExtremos.lean
 lake env lean ExtensionInyectividad.lean
 lake env lean PuenteDisentangling.lean
 
+./live_demo/verificar_live_demo.sh
+
 set +e
 red_output="$(lake env lean IncidenciaRojo.lean 2>&1)"
 red_status=$?
@@ -26,4 +28,4 @@ if [[ "$red_output" != *"Type mismatch"* ]]; then
   exit 1
 fi
 
-echo "Lean: cinco artefactos aceptados y el rechazo deliberado verificado."
+echo "Lean: módulo base y live demo verificados; los dos rechazos deliberados conservan su diagnóstico."

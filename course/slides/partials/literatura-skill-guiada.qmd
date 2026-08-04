@@ -1,0 +1,435 @@
+## Una revisión guiada por un skill {.divider}
+
+El agente busca y prepara. La persona lee, decide y firma.
+
+::: {.notes}
+ABRIR · con la carpeta `course/exercises/literature_skill_lab/` ya abierta en
+Codex Desktop o VS Code. No abrir una terminal durante la demostración.
+:::
+
+## Hoy no aprenderán un sistema: aprenderán una idea
+
+::: {.lead}
+Una revisión puede sentirse como una conversación y aun así dejar evidencia,
+decisiones y nombres fuera del chat.
+:::
+
+Al final tendrán un brief con dos propiedades:
+
+- cada afirmación apunta a un pasaje y un localizador;
+- cada decisión dice quién la tomó.
+
+::: {.prompt}
+No es una revisión sistemática ni una herramienta para cientos de artículos.
+:::
+
+::: {.notes}
+MINUTO · 0–3
+
+DECIR · «La meta no es automatizar una revisión completa. Es experimentar, en
+una hora, cómo cambia un agente cuando le damos un método reutilizable y puntos
+claros donde debe detenerse.»
+:::
+
+## Todo el ejercicio cabe en ocho archivos
+
+::: {.lean-code}
+```text
+README.md        cómo empezar
+AGENTS.md        autoridad del agente
+CLAUDE.md        las mismas reglas en Claude Code
+FUENTES.md       tres fichas didácticas
+PROGRESO.md      pregunta, selección y decisiones
+BRIEF.md         resultado generado
+SKILL.md         el método conversacional
+scripts/flujo.py una herramienta que usa el agente
+```
+:::
+
+::: {.lead}
+Durante la práctica solo mirarán cuatro: `SKILL.md`, `FUENTES.md`,
+`PROGRESO.md` y `BRIEF.md`.
+:::
+
+::: {.notes}
+MINUTO · 3–6
+
+HACER · señalar los cuatro archivos en el panel izquierdo de VS Code. No
+explicar carpetas ocultas todavía; decir solamente dónde está el skill cuando
+llegue su turno.
+:::
+
+## Tres piezas hacen trabajos distintos
+
+::: {.map}
+- **Skill** · organiza la conversación y decide cuándo detenerse
+- **Script** · comprueba reglas mecánicas y genera el brief
+- **Persona** · juzga pertinencia, significado y lenguaje permitido
+:::
+
+::: {.lead}
+El skill no verifica. El skill **fabrica verificabilidad**.
+:::
+
+::: {.prompt}
+Una instrucción puede pedir una parada; no puede garantizar obediencia.
+:::
+
+::: {.notes}
+MINUTO · 6–9
+
+PREGUNTAR · «¿Cuál de las tres piezas puede decidir que intención declarada
+equivale a conducta real?». La respuesta correcta es ninguna automáticamente:
+la persona debe leer y decidir.
+:::
+
+## Abran la carpeta, no la terminal
+
+**HAZ CLIC** · `Archivo → Abrir carpeta…`
+
+Elijan:
+
+::: {.lean-code}
+```text
+course/exercises/literature_skill_lab/
+```
+:::
+
+**DEBERÍAS VER** · `README.md`, `FUENTES.md`, `PROGRESO.md` y `BRIEF.md`.
+
+::: {.prompt}
+SI NO APARECE · abrieron el repositorio completo, no la carpeta del ejercicio.
+:::
+
+::: {.notes}
+MINUTO · 9–12
+
+RUTA A · Codex Desktop: abrir la carpeta como proyecto local.
+
+RUTA B · VS Code: abrir la carpeta y el panel de Codex o Claude Code.
+
+No hacer que la sala teclee `cd` ni inicie el agente desde una terminal.
+:::
+
+## Invoquen el método por su nombre
+
+::: {.dialogue-window}
+<div class="dialogue-speaker">USTED</div>
+<div class="dialogue-utterance">Usa <code>$revision-guiada</code>. Guíame desde la búsqueda hasta un brief, una decisión a la vez. No decidas por mí.</div>
+<div class="dialogue-next">En Claude Code: «Usa el skill revision-guiada de esta carpeta».</div>
+<div class="dialogue-position">1 / 5</div>
+:::
+
+::: {.prompt}
+El nombre y la descripción del skill permiten que el agente lo encuentre.
+:::
+
+::: {.notes}
+MINUTO · 12–15
+
+HACER · abrir `SKILL.md` solo después de enviar el mensaje. Señalar el
+frontmatter: `name` es cómo lo invocamos; `description` ayuda al agente a
+reconocer cuándo corresponde usarlo.
+:::
+
+## El agente empieza con dos preguntas, no con una búsqueda
+
+::: {.dialogue-window}
+<div class="dialogue-speaker">AGENTE · FASE 1/5 · ENCUADRAR</div>
+<div class="dialogue-utterance">¿Qué quiere investigar y qué nombre debe quedar junto a las decisiones?</div>
+<div class="dialogue-next">Después propondré una consulta breve. No buscaré hasta que la confirme.</div>
+<div class="dialogue-position">2 / 5</div>
+:::
+
+**RESPONDA** · tema y nombre en una sola frase.
+
+::: {.notes}
+MINUTO · 15–18
+
+EJEMPLO · «Quiero saber cómo los asistentes de escritura se relacionan con
+respuestas persuasivas en adultos. Firma: Kristian.»
+
+SUBRAYAR · el agente no buscó inmediatamente. Primero convirtió una inquietud
+en una consulta que la persona puede corregir.
+:::
+
+## La búsqueda devuelve candidatos, no evidencia
+
+::: {.lean-code}
+```text
+S1  Mensajes generados por IA y credibilidad
+    Experimento con personas adultas
+
+S2  Uso de asistentes y disposición a compartir
+    Observacional; mide intención declarada
+
+S3  Evaluación automática de argumentos
+    No estudia personas
+```
+:::
+
+::: {.lead}
+El agente ejecutó la búsqueda didáctica por detrás. Ustedes no tocaron la
+terminal, pero sí ven qué encontró y por qué podría importar.
+:::
+
+::: {.notes}
+MINUTO · 18–22
+
+DECIR · «El resultado real del buscador es una lista de cosas para inspeccionar.
+El encabezado CANDIDATOS es una barrera lingüística contra la aprobación
+automática.»
+
+ACLARAR · las tres fichas son sintéticas y reproducibles. La lección es el
+flujo; no la cobertura de una base bibliográfica.
+:::
+
+## Elijan una o dos entradas: el límite es deliberado
+
+::: {.dialogue-window}
+<div class="dialogue-speaker">AGENTE · NECESITO DE TI</div>
+<div class="dialogue-utterance">¿Qué una o dos entradas quiere inspeccionar? Recomiendo S1 y S2 porque permiten comparar experimento y observación.</div>
+<div class="dialogue-next">S3 comparte vocabulario, pero su población no responde la pregunta.</div>
+<div class="dialogue-position">3 / 5</div>
+:::
+
+**RESPONDA** · `S1 y S2`.
+
+::: {.prompt}
+Más fuentes añadirían trabajo, no una idea pedagógica nueva.
+:::
+
+::: {.notes}
+MINUTO · 22–25
+
+PREGUNTAR · «¿Por qué no inspeccionamos S3?». Esperar población, no tema. El
+título parece cercano; la unidad de análisis lo excluye.
+:::
+
+## Primera entrada: el texto llega antes que la interpretación
+
+**S1 · experimento aleatorizado · 240 personas adultas**
+
+> “Los participantes asignados al mensaje generado por IA calificaron su
+> credibilidad 0,4 puntos más alta que el grupo control.”
+
+**Localizador** · Resultados, párrafo 2
+
+**Afirmación candidata** · En este experimento, el mensaje generado por IA
+elevó la credibilidad declarada.
+
+**Tensión** · mide credibilidad declarada, no conducta posterior.
+
+::: {.notes}
+MINUTO · 25–29
+
+HACER · abrir `FUENTES.md` al lado del chat y comprobar que pasaje y
+localizador coinciden literalmente. Ese gesto es la verificación humana.
+:::
+
+## Aprobar exige una frase que deja autoría
+
+::: {.dialogue-window}
+<div class="dialogue-speaker">USTED</div>
+<div class="dialogue-utterance">APROBAR S1: el pasaje y el diseño sostienen la comparación — Kristian</div>
+<div class="dialogue-next">«Sí» u «ok» no cuentan como decisión firmada.</div>
+<div class="dialogue-position">4 / 5</div>
+:::
+
+::: {.lead}
+La fricción es pequeña, pero obliga a nombrar la entrada, la razón y la persona.
+:::
+
+::: {.notes}
+MINUTO · 29–32
+
+ACLARAR · esta firma es pedagógica, no criptográfica. Sirve para hacer visible
+la autoría. El laboratorio robusto usa una compuerta interactiva más fuerte.
+:::
+
+## Segunda entrada: el pasaje contiene una trampa
+
+**S2 · observacional · 510 personas adultas**
+
+> “El uso frecuente de asistentes de escritura se asoció con mayor disposición
+> declarada a compartir mensajes políticos.”
+
+**Afirmación problemática** · Los asistentes aumentaron la conducta de
+compartir.
+
+::: {.quad}
+- **Diseño** · asociación, no efecto
+- **Resultado** · intención, no conducta
+- **Localizador** · Resultados, párrafo 4
+- **Decisión** · ustedes deben reescribir
+:::
+
+::: {.notes}
+MINUTO · 32–36
+
+ESPERAR · que la sala identifique ambos saltos antes de mostrar la respuesta.
+El script puede atrapar el lenguaje causal; solo una persona reconoce que
+disposición declarada no equivale a conducta.
+:::
+
+## La mejor decisión no siempre es aprobar o excluir
+
+::: {.dialogue-window}
+<div class="dialogue-speaker">USTED</div>
+<div class="dialogue-utterance">REESCRIBIR S2: el uso frecuente se asoció con mayor disposición declarada a compartir — Kristian</div>
+<div class="dialogue-next">La corrección humana llegará literalmente al brief.</div>
+<div class="dialogue-position">5 / 5</div>
+:::
+
+::: {.lead}
+El agente preparó la tensión. La persona eligió el verbo y el alcance.
+:::
+
+::: {.notes}
+MINUTO · 36–40
+
+DECIR · «Reescribir conserva evidencia útil sin atribuirle más de lo que
+demuestra. Es una decisión científica, no una corrección de estilo.»
+:::
+
+## El estado se ve en un documento legible
+
+::: {.lean-code}
+```text
+Estado: DECISION
+Pregunta: asistentes y persuasión en adultos
+Seleccionados: S1, S2
+
+S1  aprobar     …  Kristian
+S2  reescribir  …  Kristian
+
+Próximo paso: comprobar
+```
+:::
+
+::: {.lead}
+`PROGRESO.md` reemplaza una máquina de estados compleja. La conversación puede
+cerrarse; el trabajo no desaparece.
+:::
+
+::: {.notes}
+MINUTO · 40–43
+
+HACER · abrir `PROGRESO.md` y mostrar las filas completas. Comparar con el chat:
+el archivo contiene decisiones, no todo lo que se dijo.
+:::
+
+## El agente ejecuta la comprobación; ustedes leen el resultado
+
+::: {.lean-code}
+```text
+LISTO · decisiones completas; el brief puede generarse
+```
+:::
+
+El programa comprobó:
+
+- pregunta, consulta y selección presentes;
+- decisión, razón y nombre para cada entrada;
+- ausencia de lenguaje causal en la entrada observacional.
+
+::: {.prompt}
+No comprobó si la pregunta vale la pena ni si ustedes interpretaron bien el pasaje.
+:::
+
+::: {.notes}
+MINUTO · 43–46
+
+HACER · pedir en el chat «comprueba el progreso». No mostrar el comando salvo
+que alguien pregunte. Después preguntar qué no comprobó.
+:::
+
+## El brief se genera desde decisiones, no desde memoria
+
+::: {.map}
+- **Afirmación aprobada** · la redacción que ustedes aceptaron
+- **Pasaje exacto** · entre comillas y con localizador
+- **Diseño** · el límite metodológico
+- **Decisión y firma** · razón y nombre visibles
+:::
+
+::: {.lead}
+Si se borra el chat, el brief todavía puede reconstruirse.
+:::
+
+::: {.notes}
+MINUTO · 46–49
+
+HACER · pedir «genera el brief». Abrir `BRIEF.md` y recorrer S1, S2 y la sección
+«Qué fue comprobado».
+:::
+
+## Cierren el chat y escriban una sola palabra
+
+::: {.dialogue-window}
+<div class="dialogue-speaker">USTED · CHAT NUEVO</div>
+<div class="dialogue-utterance">Continúa.</div>
+<div class="dialogue-next">El agente debe leer PROGRESO.md, no inventar lo que ocurrió.</div>
+<div class="dialogue-position">REANUDAR</div>
+:::
+
+**DEBERÍAS VER** · pregunta, dos decisiones firmadas y `BRIEF.md` ya generado.
+
+::: {.notes}
+MINUTO · 49–52
+
+DECIR · «Esta prueba de treinta segundos distingue un workflow persistente de
+un prompt largo. El estado vive en archivos.»
+:::
+
+## Cambien una regla y cambia el comportamiento
+
+**HAZ CLIC** · `.agents/skills/revision-guiada/SKILL.md`
+
+Busquen `## Detenerse` y agreguen:
+
+::: {.lean-code}
+```text
+- la fuente mida intención,
+  pero la afirmación hable de conducta.
+```
+:::
+
+Después pregunten: **“¿Dónde te detendrías en S2 y por qué?”**
+
+::: {.lead}
+Eso es autoría: convertir criterio tácito en una regla reutilizable.
+:::
+
+::: {.notes}
+MINUTO · 52–56
+
+HACER · editar una sola línea en vivo. No construir el skill entero. Volver a
+la conversación y mostrar que ahora nombra explícitamente intención versus
+conducta.
+:::
+
+## Lo que deben llevar a su propia investigación
+
+::: {.quad}
+- **Buscar** · ¿qué consulta aprobaré antes de ejecutar?
+- **Mostrar** · ¿qué texto debe ver la persona para decidir?
+- **Detenerse** · ¿dónde sería caro equivocarse?
+- **Firmar** · ¿qué decisión debe quedar fuera del chat?
+:::
+
+::: {.lead}
+Un buen skill no reemplaza al investigador. Le trae el siguiente objeto que
+merece su atención.
+:::
+
+::: {.prompt}
+Empiecen adaptando este skill. Construir uno desde cero puede venir después.
+:::
+
+::: {.notes}
+MINUTO · 56–60
+
+CIERRE · pedir que cada persona escriba una regla de parada para su propio
+trabajo. No necesitan terminar otro archivo durante la clase.
+:::

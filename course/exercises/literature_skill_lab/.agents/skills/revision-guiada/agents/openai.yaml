@@ -1,0 +1,4 @@
+interface:
+  display_name: "Revisión guiada"
+  short_description: "De la búsqueda a un brief trazable"
+  default_prompt: "Usa $revision-guiada para acompañarme desde la búsqueda hasta un brief con decisiones humanas."

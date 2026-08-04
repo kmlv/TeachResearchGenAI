@@ -1,0 +1,1007 @@
+## Literatura con agentes, paso a paso {.divider}
+
+::: {.notes}
+BLOQUE · 75 minutos · veinticuatro láminas enseñadas y un divisor sin tiempo
+
+PARA QUIÉN · para quien nunca abrió una terminal. Cada lámina de acción trae
+las mismas cuatro cosas en el mismo orden: **HAZ CLIC**, **PEGA ESTO**,
+**DEBERÍAS VER** y, abajo, **SI NO APARECE**. Nadie tiene que inventar un
+comando ni recordar dónde estaba.
+
+CASO ÚNICO · persuasión mediada por modelos de lenguaje. No se cambia de tema
+en ningún momento.
+
+PRODUCTO · `output/review_brief.md` con tres afirmaciones, cada una con su
+pasaje, su localizador y la firma de quien la verificó.
+
+TODOS LOS COMANDOS CORREN DESDE LA RAÍZ DEL LABORATORIO · ninguna lámina pide
+`cd`. Está verificado: hasta el script de descubrimiento se invoca como
+`python3 discovery/scripts/search_openalex.py` y escribe en `discovery/output/`
+sin importar desde dónde se le llame. Si alguien se pierde, el remedio siempre
+es el mismo: volver a `course/exercises/literature_agent_lab`.
+
+SALIDAS LITERALES · lo que aparece en los bloques grises de **DEBERÍAS VER** se
+capturó corriendo el laboratorio, no se redactó. Las líneas largas están
+partidas para que quepan en la lámina; una terminal angosta las parte igual.
+
+ANTES DE EMPEZAR · correr `python3 scripts/test_lab.py` en la máquina de
+proyección. Si dice `PASS: 33 checks`, la sesión entera funciona.
+
+RELACIÓN CON EL OTRO BLOQUE · `literatura-agentes-integrados.qmd` explica por
+qué la cadena está diseñada así. Esta baraja solo la ejecuta. Se pueden dar por
+separado.
+:::
+
+## Al final tendrán un brief que otra persona puede auditar
+
+::: {.quad}
+- **Producto** · un brief con tres afirmaciones
+- **Método** · cada decisión queda en un archivo
+- **Herramienta** · VS Code, terminal y un agente
+- **Regla** · el agente propone; ustedes firman
+:::
+
+::: {.lead}
+No hace falta saber programar. Todo lo que van a escribir hoy está en estas
+láminas: se copia y se pega.
+:::
+
+::: {.notes}
+MINUTO · 0–3
+
+DECIR · «En 75 minutos van a producir un documento pequeño donde cada frase
+tiene, al lado, la cita exacta que la sostiene y el nombre de quien la aprobó.
+No vamos a pedirle a un modelo "hazme una revisión de literatura". Vamos a
+tomar seis decisiones y a dejar cada una escrita.»
+
+SEÑALAR · el cuarto cuadrante, y detenerse ahí
+
+ESPERAR · nada; es el contrato de aprendizaje del bloque
+
+DECIR AL FINAL · «Si algo sale distinto de lo que dice la lámina, sigan
+mirándola: abajo, en chico, cada lámina dice qué hacer cuando no aparece lo
+esperado.»
+:::
+
+## Abran la carpeta del laboratorio en VS Code
+
+**HAZ CLIC** · en `Archivo → Abrir carpeta…`
+
+Elijan `course/exercises/literature_agent_lab`
+
+**DEBERÍAS VER** · en el panel izquierdo:
+
+::: {.lean-code}
+```text
+case  discovery  work  human  official  output  scripts
+```
+:::
+
+::: {.prompt}
+SI NO APARECE · abrieron la carpeta equivocada. Vuelvan a entrar hasta
+`literature_agent_lab`: es la que tiene `AGENTS.md` adentro.
+:::
+
+::: {.notes}
+MINUTO · 3–6
+
+DECIR · «Abrimos la carpeta del laboratorio, no la del repositorio entero. Eso
+importa más de lo que parece: todos los comandos de hoy suponen que estamos
+parados exactamente aquí, y por eso ninguno de ustedes va a tener que escribir
+`cd` en toda la sesión.»
+
+HACER · proyectar el explorador con las siete carpetas visibles y dejarlo así
+un momento
+
+SI ALGUIEN SE ATASCA · pedirle que busque `AGENTS.md`. Si lo ve en la raíz del
+panel, está en el lugar correcto.
+
+CUIDADO · en Windows el menú dice lo mismo, pero la terminal integrada puede
+abrir PowerShell. Todos los `python3` funcionan igual; el único comando de esta
+baraja que cambia es el `cp -R` de la lámina del atajo.
+:::
+
+## Comprueben que todo funciona antes de tocar nada
+
+**PEGA ESTO** en `Terminal → Nueva terminal`:
+
+::: {.lean-code}
+```bash
+python3 scripts/test_lab.py
+```
+:::
+
+**DEBERÍAS VER** · al comienzo de una lista larga:
+
+::: {.lean-code}
+```text
+PASS: 33 checks
+```
+:::
+
+::: {.prompt}
+SI NO APARECE · `command not found` significa que falta Python 3.
+`No such file or directory` significa que la terminal no está en el
+laboratorio: ciérrenla y ábranla de nuevo.
+:::
+
+::: {.notes}
+MINUTO · 6–9
+
+DECIR · «Este comando no le pregunta nada a un modelo y no necesita internet.
+Corre 33 comprobaciones sobre esta carpeta y confirma que las barreras que
+vamos a usar hoy están puestas. Si pasa, todo lo demás va a pasar.»
+
+HACER · correrlo en vivo y dejar que la sala vea la lista completa. Leer en voz
+alta dos líneas, por ejemplo «the gate refuses to run without a terminal» y
+«a causal verb over an observational design is caught».
+
+ESPERAR · que alguien pregunte qué son esas 33 comprobaciones
+
+SI NADIE HABLA · «Son las reglas que impiden que una frase plausible se
+convierta en evidencia oficial. Las vamos a chocar una por una, a propósito.»
+:::
+
+## Siete carpetas, y cada una tiene un solo dueño
+
+::: {.map}
+- `case/` · las fuentes, congeladas
+- `discovery/` · la búsqueda, antes de cribar
+- `work/` · lo que el agente **propone**
+- `human/` · lo que una persona **decidió**
+- `official/` · el ledger, solo desde `human/`
+- `output/` · el brief, se genera
+:::
+
+::: {.prompt}
+`scripts/` es la séptima: guarda las herramientas, no los datos.
+:::
+
+::: {.notes}
+MINUTO · 9–12
+
+DECIR · «Esta es la lámina que conviene fotografiar. Un chat mezcla estas seis
+cosas en un solo hilo: la fuente, la propuesta, la decisión, el registro y el
+producto quedan revueltos, y después nadie puede separar qué dijo el modelo de
+qué aceptó una persona. Aquí cada cosa tiene su carpeta y su regla de
+escritura.»
+
+SEÑALAR · `work/` y enseguida `human/`, y decir la frase clave: «el agente
+puede escribir en la primera y no puede escribir ni un carácter en la segunda»
+
+ESPERAR · que alguien pregunte por qué `output/` está vacío
+
+SI NADIE HABLA · «Porque el brief no es un documento que se va mejorando. Es
+una consecuencia: si no hay filas aprobadas, no hay brief.»
+
+CUIDADO · decir en voz alta que esa prohibición es una instrucción más un
+tripwire, no un permiso del sistema operativo. Quien pueda editar los archivos
+puede saltársela; lo que el laboratorio garantiza es que quede visible.
+:::
+
+## Primero buscar. Buscar no es cribar
+
+**PEGA ESTO** en la terminal:
+
+::: {.lean-code}
+```bash
+python3 discovery/scripts/search_openalex.py --offline
+```
+:::
+
+**DEBERÍAS VER** · cuatro líneas; estas dos:
+
+::: {.lean-code}
+```text
+Descubrimiento desde la fixture: 75 registros vistos,
+8 duplicados, 25 candidatos.
+Ninguno de estos registros ha sido cribado.
+Descubrir no es cribar.
+```
+:::
+
+::: {.prompt}
+SI NO APARECE · quiten `--offline` solo si hay wifi. Con la bandera nunca
+falla: lee una respuesta de OpenAlex grabada de antemano.
+:::
+
+::: {.notes}
+MINUTO · 12–15
+
+DECIR · «Acaban de correr una búsqueda automatizada. La estrategia —qué
+palabras, qué años, cuántos resultados— estaba escrita de antemano en
+`discovery/search_strategy.json`, así que otra persona puede repetirla exacta.
+En un chat la consulta se improvisa, se pierde en el hilo y nadie la puede
+reproducir.»
+
+SEÑALAR · la última línea de la salida, y leerla en voz alta
+
+ESPERAR · que alguien haga la resta: 75 vistos, 8 duplicados, 25 candidatos
+
+DECIR ENTONCES · «Faltan 42, y la segunda línea de la salida los explica:
+quedaron fuera por el tope de 25 que la estrategia fijó. El tope es una
+decisión escrita, no un accidente, y que el recorte sea visible es justamente
+el punto.»
+
+[Sources]
+- La estrategia y sus tres consultas:
+  ../exercises/literature_agent_lab/discovery/README.md
+[/Sources]
+:::
+
+## Abran la lista y vean qué es un candidato
+
+**HAZ CLIC** · en `discovery/output/candidates.csv`
+
+**DEBERÍAS VER** · 25 filas con `title`, `year`, `doi` y `query_id`, la columna
+que dice qué consulta encontró cada trabajo
+
+::: {.lead}
+Nadie ha leído ninguno de estos trabajos. Un candidato es algo que existe, no
+algo que sirve.
+:::
+
+::: {.prompt}
+SI NO APARECE · el archivo se crea al correr el comando anterior. Si
+`discovery/output/` está vacía, vuelvan una lámina.
+:::
+
+::: {.notes}
+MINUTO · 15–18
+
+DECIR · «Esta tabla es la tentación del día. Tiene 25 filas con títulos que se
+ven relevantes y da la sensación de que ya hay una revisión hecha. No hay nada
+hecho: nadie leyó nada y nadie decidió nada.»
+
+SEÑALAR · la columna `query_id`. Un trabajo que solo aparece en Q3 es
+información sobre la estrategia de búsqueda, y en una consulta única esa
+información no existiría.
+
+ESPERAR · que alguien note que el resto de la sesión usa otra lista
+
+DECIR ENTONCES · «Correcto, y es a propósito. El demo trabaja sobre
+`case/candidates.csv`, doce registros congelados, para que todas las aulas vean
+exactamente lo mismo. Lo que acaban de generar es el eslabón anterior, y no
+entra solo.»
+:::
+
+## La pregunta y el protocolo se congelan antes de cribar
+
+**HAZ CLIC** · en `case/question.md` y en `case/protocol.md`
+
+**DEBERÍAS VER** · los cuatro estados permitidos del cribado:
+
+::: {.lean-code}
+```text
+include · exclude · uncertain · editorial_flag
+```
+:::
+
+::: {.lead}
+`uncertain` y `editorial_flag` no avanzan solos. Sacar un registro de ahí exige
+una decisión humana nueva.
+:::
+
+::: {.prompt}
+Los dos archivos tienen su hash en `case/FREEZE.lock`. Cambiar la pregunta a
+mitad del trabajo invalida el cribado hecho, y el validador lo dice.
+:::
+
+::: {.notes}
+MINUTO · 18–21
+
+DECIR · «Escribir los criterios antes de ver los resultados es la barrera más
+barata que existe contra decidir a favor de lo que uno ya quería concluir. Aquí
+la barrera es literal: los dos archivos están congelados con un hash, y si
+alguien los toca después, el validador se pone en rojo y nombra el archivo.»
+
+SEÑALAR · en `protocol.md`, la sección «Diseños que habilitan lenguaje causal».
+Anunciarla: «vamos a chocar con esta regla en el minuto 51.»
+
+ESPERAR · que alguien pregunte quién decide la pregunta
+
+SI NADIE HABLA · «Ustedes, antes de abrir el agente. Eso nunca fue delegable, y
+es la única parte de hoy en la que el modelo no ayuda en nada.»
+:::
+
+## El contrato del agente cabe en cuatro líneas
+
+**HAZ CLIC** · en `AGENTS.md`
+
+::: {.quad}
+- **Objetivo** · un brief con pasaje y localizador
+- **Autoridad** · leer `case/`, escribir `work/`
+- **Presupuesto** · doce registros, cuatro fuentes
+- **Terminado** · validador verde y brief generado
+:::
+
+::: {.prompt}
+Codex lee `AGENTS.md`. Claude Code lee `CLAUDE.md`, que incluye al primero.
+Quien prefiera chat sube la carpeta y pega `AGENTS.md` como instrucciones.
+:::
+
+::: {.notes}
+MINUTO · 21–24
+
+DECIR · «Antes del primer mensaje escribimos cuatro cosas: qué produce, qué
+puede tocar, cuánto puede gastar y cómo sabemos que terminó. Si no pueden
+escribir esas cuatro para su propio trabajo, todavía no hay agente que
+construir: hay una idea vaga.»
+
+SEÑALAR · la sección de autoridad, y leer en voz alta lo que **no** puede:
+escribir en `human/` ni en `official/`, ni ejecutar `scripts/review_gate.py`,
+ni editar los tres archivos de `case/`
+
+ESPERAR · que alguien pregunte qué pasa si el agente lo hace igual
+
+SI NADIE HABLA · «Puede hacerlo, y por eso existen los hashes: el
+incumplimiento aparece en la siguiente corrida del validador. La apuesta no es
+que obedezca; es que no pueda desobedecer en silencio.»
+:::
+
+## Primer encargo: entender sin editar nada {.smaller}
+
+**HAZ CLIC** · en la caja de chat del agente
+
+**PEGA ESTO**:
+
+::: {.lean-code}
+```text
+Lee AGENTS.md, case/question.md, case/protocol.md y
+case/source_packet.md. No edites nada todavía. Dime qué
+archivos puedes escribir, cuáles no, y qué te impide
+marcar una fila como verificada.
+```
+:::
+
+**DEBERÍAS VER** · que nombra `human/` como prohibido
+
+::: {.prompt}
+SI NO APARECE · si el agente empieza a editar archivos, deténganlo. No leyó el
+contrato: vuelvan a pegar el encargo y agreguen «No edites nada todavía».
+:::
+
+::: {.notes}
+MINUTO · 24–27
+
+DECIR · «El primer encargo nunca pide trabajo. Pide que el agente nos devuelva
+el contrato con sus propias palabras. Cuesta treinta segundos y ahorra media
+hora: si entendió mal su autoridad, lo descubrimos ahora y no después de que
+escribió en la carpeta equivocada.»
+
+HACER · correrlo en vivo y leer la respuesta en voz alta
+
+ESPERAR · que la sala compare la respuesta con `AGENTS.md`
+
+SI NADIE HABLA · «Fíjense si dijo que no puede ejecutar `review_gate.py`. Ese
+detalle separa un agente que leyó el contrato de uno que está adivinando.»
+
+[Sources]
+- Los cinco encargos completos:
+  ../exercises/literature_agent_lab/PROMPTS.md
+[/Sources]
+:::
+
+## Segundo encargo: cribar los doce, sin decidir
+
+**PEGA ESTO** en el chat del agente:
+
+::: {.lean-code}
+```text
+Aplica case/protocol.md a los doce registros de
+case/candidates.csv. Escribe una fila por registro en
+work/screening_pending.csv con ai_proposal y ai_reason.
+Usa solo los metadatos. Si el título no basta, propón
+uncertain. No escribas en human/ ni en official/.
+```
+:::
+
+**DEBERÍAS VER** · `work/screening_pending.csv`, con doce filas
+
+::: {.prompt}
+SI NO APARECE · pídanle «muéstrame work/screening_pending.csv». Si el archivo
+no existe, el agente contestó en el chat en vez de escribir.
+:::
+
+::: {.notes}
+MINUTO · 27–31
+
+DECIR · «Fíjense en lo que el encargo NO dice. No dice "decide cuáles sirven".
+Dice: propón, con una razón escrita, y déjalo en la carpeta de propuestas. La
+diferencia entre proponer y decidir es el módulo entero.»
+
+SEÑALAR · la última línea del encargo, la prohibición explícita
+
+HACER · abrir `work/screening_pending.csv` y mostrar la columna `ai_reason`
+
+ESPERAR · que alguien note que el agente propuso `uncertain` en algún registro
+
+SI NADIE HABLA · buscar r1. Con el título solo no se puede saber si hay
+participantes humanos y resultado posterior, así que `uncertain` es la
+respuesta correcta. Un modelo que rellena con algo plausible en vez de decir
+«no sé» es exactamente el problema que estamos evitando.
+:::
+
+## Auditen dos filas antes de firmar nada
+
+::: {.map}
+- `T2` · «Comparación de argumentos entre modelos»
+- `r7` · «The Persuasive Power of LLMs»
+- Los dos títulos encajan con la pregunta
+- En los dos, la persuasión ocurre entre modelos
+- Las personas solo califican texto
+- El protocolo los excluye por población
+:::
+
+::: {.prompt}
+Un título relevante no es un estudio pertinente. Esa distinción no la hace el
+validador: la hacen ustedes.
+:::
+
+::: {.notes}
+MINUTO · 31–34
+
+DECIR · «Estas dos filas son la trampa del ejercicio, y funciona: los títulos
+son casi perfectos para nuestra pregunta. Pero nuestra pregunta es sobre
+personas adultas que cambian de actitud, y en estos dos trabajos quien es
+persuadido es otro modelo. Las personas aparecen solo como jurado.»
+
+SEÑALAR · en `protocol.md`, el primer criterio de exclusión, y leerlo entero
+
+ESPERAR · que alguien pregunte si el agente los detectó
+
+DECIR ENTONCES · «A veces sí, y no cambia nada. Aunque los haya propuesto bien,
+la propuesta sigue en `work/` y no vale nada hasta que una persona la firme.
+Eso es lo próximo, y lo van a hacer ustedes tecleando.»
+
+CUIDADO · T1 se parece a T2 en el nombre y es lo contrario: T1 tiene adultos,
+asignación al azar y resultado posterior, así que **entra**. No confundirlos en
+vivo.
+:::
+
+## Su primera decisión: la compuerta humana
+
+**PEGA ESTO** en la terminal, con su nombre:
+
+::: {.lean-code}
+```bash
+python3 scripts/review_gate.py --kind screening --id T2 \
+  --decision exclude \
+  --reason "Población: modelos, no personas" \
+  --by "Su nombre"
+```
+:::
+
+**DEBERÍAS VER** · una pregunta, y recién después:
+
+::: {.lean-code}
+```text
+Retype T2 to record 'exclude': T2
+Recorded screening 'exclude' for T2 by Su nombre
+```
+:::
+
+::: {.prompt}
+SI NO APARECE · `A screening decision needs a written reason` significa que
+`--reason` quedó vacío. `Decision cancelled` significa que retecleó otra cosa.
+:::
+
+::: {.notes}
+MINUTO · 34–38
+
+DECIR · «Hay que reteclear el identificador. No es un capricho de diseño: es lo
+que convierte aprobar en un acto y no en un descuido. Un clic distraído no
+alcanza, y una frase del chat tampoco. Esta es la única puerta que existe hacia
+`human/`.»
+
+HACER · correrlo en vivo, teclear `T2` despacio, y dejar la salida en pantalla
+
+DECIR TAMBIÉN · «El script exige terminal interactiva. Si un agente intenta
+ejecutarlo, recibe `Human gate requires an interactive terminal` y se detiene.
+Está probado: es una de las 33 comprobaciones del minuto 6.»
+
+ESPERAR · que alguien pregunte por qué no editar el CSV a mano
+
+SI NADIE HABLA · «Porque el archivo de decisiones tiene un hash en
+`human/decisions.lock`. Editarlo a mano, arrastrarlo o pegar adentro deja el
+hash desalineado y el validador lo denuncia en la corrida siguiente. La única
+forma limpia de decidir es este comando.»
+:::
+
+## Repitan con un `include` y miren qué cambió
+
+**PEGA ESTO**, cambiando el estado y la razón:
+
+::: {.lean-code}
+```bash
+python3 scripts/review_gate.py --kind screening --id T1 \
+  --decision include \
+  --reason "Adultos, mensaje LLM, resultado posterior" \
+  --by "Su nombre"
+```
+:::
+
+**DEBERÍAS VER** · `T1` y `T2` ahora en `human/screening_decisions.csv`, y
+desaparecidos de `work/screening_pending.csv`
+
+::: {.prompt}
+La fila se mueve, no se copia. Lo pendiente y lo decidido nunca conviven.
+:::
+
+::: {.notes}
+MINUTO · 38–41
+
+DECIR · «Abran los dos archivos uno al lado del otro. La fila salió de la
+carpeta de propuestas y entró en la de decisiones, con su nombre y una marca de
+tiempo. Nadie tiene que creerles nada: está escrito.»
+
+HACER · abrir `human/screening_decisions.csv` y `work/screening_pending.csv` en
+dos pestañas y alternar entre ellas
+
+ESPERAR · que alguien pregunte cuánto falta para los doce
+
+DECIR ENTONCES · «Diez registros más, unos veinte segundos cada uno. En una
+sesión real se hacen; hoy no, porque quiero llegar a la parte que importa. En
+dos láminas nos ponemos todos en el mismo punto de un salto.»
+
+CUIDADO · si el reloj va apretado, saltar directo a la lámina del atajo. Este
+`include` es prescindible; el `exclude` de T2 no lo es.
+:::
+
+## Tercer encargo: extraer con el pasaje exacto {.smaller}
+
+**PEGA ESTO** en el chat del agente:
+
+::: {.lean-code}
+```text
+Para cada fuente de case/source_packet.md cuyo registro
+quedó en include, abre una fila en work/evidence_pending.csv.
+Copia verbatim_excerpt y locator EXACTOS de la ficha.
+Escribe ai_interpretation con el verbo que el diseño permite.
+Si el pasaje no sostiene la afirmación, escribe NO ENCONTRADO.
+```
+:::
+
+**DEBERÍAS VER** · `work/evidence_pending.csv` con su cita y su localizador
+
+::: {.prompt}
+SI NO APARECE · si el agente parafraseó la cita, la fila va a fallar en la
+lámina siguiente. Déjenla fallar: ese es el ejercicio.
+:::
+
+::: {.notes}
+MINUTO · 41–45
+
+DECIR · «"Exactos" es literal: el validador compara carácter por carácter
+contra la ficha congelada. Un pasaje aproximado no es una aproximación
+aceptable, es un error. Y fíjense en la última línea: le damos permiso
+explícito para escribir NO ENCONTRADO. Un modelo sin esa salida rellena con
+algo plausible, porque es lo único que sabe hacer.»
+
+SEÑALAR · en `case/source_packet.md`, la ficha de T3, y luego la fila EV-T3 del
+archivo que acaba de aparecer
+
+CUIDADO · recordar en voz alta que T1–T4 son fuentes **sintéticas**, escritas
+para este ejercicio: no son citas de ningún artículo real y no se atribuyen a
+nadie. Los ocho registros `r1`–`r8` sí son reales y verificables por DOI. Las
+dos capas nunca se mezclan.
+
+ESPERAR · que alguien pregunte por qué salen tres filas y no cuatro
+
+SI NADIE HABLA · «Porque T2 quedó excluido en el cribado, y lo excluyeron
+ustedes hace siete minutos. Una fuente que no pasó la puerta no llega a
+extracción.»
+:::
+
+## Atajo: pongamos a toda la sala en el mismo punto
+
+**PEGA ESTO** en la terminal:
+
+::: {.lean-code}
+```bash
+cp -R fixtures/waiting_gate/. .
+```
+:::
+
+**DEBERÍAS VER** · en `work/evidence_pending.csv`, exactamente tres filas:
+`EV-T1`, `EV-T3` y `EV-T4`, y los doce registros ya cribados en `human/`
+
+::: {.prompt}
+Esto reemplaza sus decisiones por las del facilitador. Es a propósito: de aquí
+en adelante todos vemos exactamente los mismos dos errores.
+:::
+
+::: {.notes}
+MINUTO · 45–48
+
+DECIR · «Voy a hacer trampa a la vista de todos. Esta carpeta trae cuatro
+estados de arranque grabados, y este pone el laboratorio justo donde nos
+interesa: cribado terminado y tres filas de evidencia esperando decisión. Dos
+de esas tres traen un error sembrado, y son los dos errores del día.»
+
+CUIDADO · en PowerShell el comando es
+`Copy-Item -Recurse -Force fixtures/waiting_gate/* .`
+
+DECIR TAMBIÉN · «Quien no quiera perder su trabajo puede saltarse este paso y
+seguir con sus propias filas. Las láminas que vienen describen los errores de
+la fixture, así que probablemente convenga copiarla y volver después.»
+
+ESPERAR · nada; es mecánico. Verificar que la sala llegó antes de seguir.
+
+[Sources]
+- Los cuatro estados de arranque:
+  ../exercises/literature_agent_lab/README.md
+[/Sources]
+:::
+
+## Cuarto encargo: choquen contra el validador
+
+**PEGA ESTO** en la terminal:
+
+::: {.lean-code}
+```bash
+python3 scripts/validate_review.py
+```
+:::
+
+**DEBERÍAS VER** · rojo, y tres razones distintas:
+
+::: {.lean-code}
+```text
+BLOCKED
+- causal-language: EV-T3 uses 'redujo' but T3
+  declares 'estudio observacional'
+- anchor: EV-T4 locator does not match T4
+- gate: human verification pending for EV-T1, EV-T3, EV-T4
+```
+:::
+
+::: {.prompt}
+Ninguna de las tres comprobaciones llama a un modelo. Son reglas mecánicas
+sobre archivos de texto.
+:::
+
+::: {.notes}
+MINUTO · 48–51
+
+DECIR · «Tres líneas, tres tipos de problema distintos. La primera es un verbo
+que el diseño no aguanta. La segunda es una cita mal ubicada. La tercera no es
+un error del agente: es el sistema recordándonos que nadie ha firmado todavía.
+Vamos a ver las tres en ese orden.»
+
+HACER · correrlo en vivo. Si el proyector lo permite, dejar la salida en
+pantalla durante las dos láminas siguientes.
+
+ALTERNATIVA · pedirle al agente: «Ejecuta python3 scripts/validate_review.py.
+Para cada error dime qué fila lo produce y si el arreglo te corresponde a ti o
+a mí.» Es el cuarto encargo de `PROMPTS.md` y hace el trabajo de traducción.
+
+ESPERAR · que alguien pregunte si el agente puede arreglar los tres
+
+SI NADIE HABLA · «Los dos primeros sí, y debería. El tercero no puede tocarlo
+ni aunque quiera: exige que una persona teclee.»
+:::
+
+## Error uno: el que atrapa el código
+
+**HAZ CLIC** · en la fila `EV-T3`
+
+::: {.quad}
+- **La ficha dice** · `estudio observacional`
+- **El agente escribió** · «el asistente **redujo**…»
+- **El protocolo** · solo lo aleatorizado admite causa
+- **El validador** · encuentra el verbo y se detiene
+:::
+
+::: {.lead}
+El pasaje citado es correcto. La interpretación que le colgaron encima no lo
+es.
+:::
+
+::: {.notes}
+MINUTO · 51–54
+
+DECIR · «Este es el error clásico de una revisión apurada: la cita es impecable
+y la frase que la resume convierte una correlación en un efecto. Aquí lo atrapa
+un chequeo tonto, que busca verbos de una lista de dieciséis y mira qué diseño
+declara la ficha.»
+
+SEÑALAR · la lista `CAUSAL_VERBS` en `scripts/validate_review.py` si hay tiempo
+
+CUIDADO · decirlo explícitamente: **el validador no entiende de causalidad**.
+Es léxico. Una frase causal escrita con cuidado —«se asoció con una reducción
+atribuible al uso»— pasa sin problema. Por eso la compuerta humana no sobra.
+
+ESPERAR · que alguien proponga la corrección
+
+SI NADIE HABLA · «"Quienes conversaron más veces declararon posturas más
+moderadas." Describe lo mismo sin afirmar quién causó qué.»
+:::
+
+## Error dos: el que solo atrapa una persona
+
+**HAZ CLIC** · en la fila `EV-T4`
+
+::: {.quad}
+- **Localizador falso** · dice `resumen`, no `secundarias`
+- **Eso sí lo canta el código** · `anchor: EV-T4`
+- **La fuente mide** · intención declarada de compartir
+- **El agente afirmó** · que aumentó la conducta
+:::
+
+::: {.lead}
+El segundo salto pasa todos los validadores. Ninguna regla mecánica sabe que
+intención y conducta son cosas distintas.
+:::
+
+::: {.notes}
+MINUTO · 54–57
+
+DECIR · «Esta fila trae dos fallas y solo una sale en rojo. El localizador
+equivocado lo canta el validador. El salto de "dijeron que compartirían" a
+"compartieron" no lo canta nadie: es exactamente el tipo de error que sobrevive
+a la revisión por pares y termina en un titular.»
+
+SEÑALAR · el pasaje de T4 en `case/source_packet.md`, que dice literalmente «el
+estudio no registró la conducta de compartir». La fuente se defiende sola; el
+resumen del agente la contradice.
+
+ESPERAR · que alguien diga en voz alta la diferencia entre intención y conducta
+
+SI NADIE HABLA · preguntar directo: «¿cuánta gente que dice que va a compartir
+algo lo comparte?». Sirve para instalar que la brecha es grande y conocida.
+
+DECIR AL CERRAR · «Este contraste es el argumento del módulo entero: el código
+atrapa lo mecánico para dejarles a ustedes la atención que hace falta para lo
+otro.»
+:::
+
+## Segunda compuerta: firmen una, rechacen otra {.smaller}
+
+**PEGA ESTO**, primero `EV-T1` y después `EV-T3`:
+
+::: {.lean-code}
+```bash
+python3 scripts/review_gate.py --kind evidence --id EV-T1 \
+  --decision verified --by "Su nombre"
+python3 scripts/review_gate.py --kind evidence --id EV-T3 \
+  --decision rejected --by "Su nombre" \
+  --correction "Use lenguaje asociativo"
+```
+:::
+
+**DEBERÍAS VER** · tras reteclear cada identificador:
+
+::: {.lean-code}
+```text
+Recorded evidence 'rejected' for EV-T3 by Su nombre
+```
+:::
+
+::: {.prompt}
+SI NO APARECE · esa fila ya salió de la cola. Cada identificador se decide una
+vez por vuelta.
+:::
+
+::: {.notes}
+MINUTO · 57–61
+
+DECIR · «Dos decisiones opuestas con el mismo comando. `EV-T1` entra al ledger
+oficial. `EV-T3` no: vuelve a la cola con una corrección escrita, que es una
+instrucción para quien la reescriba.»
+
+DECIR TAMBIÉN · «Lo que escriban en `--correction` es lo que queda como
+interpretación oficial cuando la fila finalmente se verifica. La redacción del
+agente no llega al ledger sin pasar por ustedes.»
+
+HACER · correr los dos en vivo, tecleando los identificadores despacio. El
+primero imprime `Recorded evidence 'verified' for EV-T1 by Su nombre`.
+
+ESPERAR · que alguien pregunte qué pasó con EV-T4
+
+SI NADIE HABLA · «Sigue esperando, y lo vamos a dejar esperando dos minutos a
+propósito, para ver algo que un chat no puede hacer.»
+:::
+
+## Cierren la sesión. El agente no pierde el hilo
+
+**PEGA ESTO** en un chat nuevo, sin historial:
+
+::: {.lean-code}
+```text
+Lee STATE.json, las últimas filas de TRACE.csv, work/ y
+human/. Resume: qué decisiones humanas ya existen, qué
+filas siguen abiertas y cuál es la próxima acción
+permitida. No edites nada.
+```
+:::
+
+**DEBERÍAS VER** · que nombra `EV-T4` como pendiente y `EV-T3` como rechazada,
+sin haber visto la conversación anterior
+
+::: {.prompt}
+El estado vive en archivos, no en el hilo. Por eso se puede interrumpir, cambiar
+de herramienta o retomar mañana.
+:::
+
+::: {.notes}
+MINUTO · 61–64
+
+DECIR · «Esta es la lámina que más gente subestima. Cierren la ventana del
+chat, cambien de modelo, vuelvan el lunes: el trabajo sigue donde estaba,
+porque nunca estuvo en la conversación. Estaba en `STATE.json`, en `TRACE.csv`
+y en las carpetas.»
+
+HACER · si es posible, cerrar literalmente el chat y abrir uno nuevo. El efecto
+en la sala vale el minuto que cuesta.
+
+ESPERAR · que alguien pregunte para qué sirve `TRACE.csv`
+
+SI NADIE HABLA · «Es el diario: una línea por evento, con hora, etapa y archivo
+tocado. Sirve para reconstruir qué pasó cuando algo salió raro, que es
+exactamente lo que un hilo de trescientos mensajes no permite hacer.»
+:::
+
+## El agente vuelve a proponer bajo el mismo identificador {.smaller}
+
+**PEGA ESTO** en el chat del agente:
+
+::: {.lean-code}
+```text
+EV-T3 fue rechazada y EV-T4 tiene el localizador
+equivocado. Vuelve a proponer las dos en
+work/evidence_pending.csv con el mismo evidence_id,
+con el localizador de la ficha y verbos que el diseño
+sostenga.
+```
+:::
+
+**DEBERÍAS VER** · el validador ya solo pide firmas:
+
+::: {.lean-code}
+```text
+BLOCKED
+- gate: human verification pending for EV-T3, EV-T4
+```
+:::
+
+::: {.notes}
+MINUTO · 64–67
+
+DECIR · «El rechazo no borra la fila: la devuelve a la cola bajo el mismo
+identificador, y la segunda decisión reemplaza a la primera. Eso deja el rastro
+de una fila que costó dos vueltas, en vez de que desaparezca y reaparezca como
+si nada hubiera pasado.»
+
+SEÑALAR · que los dos errores rojos anteriores ya no están y que lo único
+pendiente es la firma humana
+
+HACER · firmar las dos con `--decision verified --by "Su nombre"`, tecleando
+`EV-T3` y `EV-T4` cuando el comando lo pida
+
+ESPERAR · que alguien pregunte si el agente pudo haberse firmado a sí mismo
+
+SI NADIE HABLA · «No. `review_gate.py` exige terminal interactiva y el contrato
+se lo prohíbe. Y aunque se saltara el contrato, la corrida siguiente del
+validador mostraría el hash desalineado.»
+:::
+
+## El último comando: ensamblar
+
+**PEGA ESTO** en la terminal:
+
+::: {.lean-code}
+```bash
+python3 scripts/assemble_brief.py
+```
+:::
+
+**DEBERÍAS VER** · una sola línea:
+
+::: {.lean-code}
+```text
+Wrote output/review_brief.md from 3 verified ledger rows
+```
+:::
+
+::: {.prompt}
+SI NO APARECE · `Brief blocked:` y una lista significa que queda una fila
+abierta o una firma pendiente. El ensamblador se niega, y dice cuál.
+:::
+
+::: {.notes}
+MINUTO · 67–70
+
+DECIR · «Tres filas verificadas, tres afirmaciones en el brief. La cuenta no es
+casual: el ensamblador no puede escribir nada que no esté en el ledger, y al
+ledger solo se llega firmando. Si intentan correr esto con una fila abierta, se
+niega y les nombra la fila.»
+
+HACER · antes de esto, correr `python3 scripts/validate_review.py` y mostrar
+`VALID: all deterministic gates pass`. Es la primera vez en toda la sesión que
+sale verde, y la sala lo nota.
+
+ESPERAR · que alguien pregunte si se puede editar el brief después
+
+SI NADIE HABLA · «Se puede, y el validador lo atrapa: compara el archivo
+carácter por carácter contra el ledger. Corregir el brief significa corregir la
+fila y volver a firmarla.»
+:::
+
+## El brief es un subproducto, no un documento
+
+**HAZ CLIC** · en `output/review_brief.md`
+
+**DEBERÍAS VER** · tres bloques así (la redacción varía):
+
+::: {.lean-code}
+```text
+C3 · EV-T4
+El mensaje aumentó la intención declarada de compartir; el
+estudio no midió conducta, así que el brief no puede afirmar
+comportamiento.
+- Localizador · sección de resultados, medidas secundarias
+```
+:::
+
+::: {.prompt}
+Nadie escribió esa frase en un documento. Es la corrección que ustedes
+teclearon en la compuerta, colgada de la cita que la sostiene.
+:::
+
+::: {.notes}
+MINUTO · 70–73
+
+DECIR · «Miren la afirmación de EV-T4. Dice lo que la fuente permite decir y
+nombra explícitamente lo que la fuente no midió. Un brief que dijera "aumentó
+la conducta de compartir" se vería mejor y sería falso; este se ve más cauto y
+es defendible.»
+
+SEÑALAR · el aviso de fuentes sintéticas al comienzo del archivo. El
+ensamblador lo escribe siempre y no se puede quitar sin que el validador lo
+note.
+
+ESPERAR · que alguien pregunte qué haría con esto en su propio trabajo
+
+SI NADIE HABLA · «Empiecen por el pedazo más chico: una tabla de extracción con
+pasaje y localizador para las cinco fuentes que ya citan. Las compuertas se
+agregan después; el anclaje textual rinde desde el primer día.»
+:::
+
+## Cuatro reglas para llevarse
+
+::: {.rules}
+- El agente propone; una persona firma
+- Cada afirmación viaja con su pasaje, o no viaja
+- Los criterios se congelan antes de ver resultados
+- El estado vive en archivos, no en el chat
+:::
+
+::: {.lead}
+Lo mecánico lo atrapa el código. Lo que queda —intención contra conducta— es
+suyo, y ahora tienen tiempo para mirarlo.
+:::
+
+::: {.notes}
+MINUTO · 73–75
+
+DECIR · «Ninguna de estas cuatro reglas es sobre inteligencia artificial. Son
+reglas de método que existían antes y que un agente vuelve baratas de sostener:
+lo que costaba disciplina ahora cuesta un comando.»
+
+SEÑALAR · la cuarta regla, que es la que casi nadie anticipa
+
+ESPERAR · que cada persona nombre en voz alta un artefacto propio donde podría
+aplicar la segunda regla esta semana
+
+CIERRE · «La carpeta se la llevan tal cual. Corre sin internet, sin instalar
+nada y sin llamar a ningún modelo para las comprobaciones. Cambien
+`case/source_packet.md` por sus fuentes reales y el laboratorio es suyo.»
+
+[Sources]
+- El laboratorio completo:
+  ../exercises/literature_agent_lab/README.md
+- Los cinco encargos y los dos comandos humanos:
+  ../exercises/literature_agent_lab/PROMPTS.md
+[/Sources]
+:::

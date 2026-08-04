@@ -1,0 +1,344 @@
+---
+title: "Guía: una revisión de literatura conducida por un skill"
+subtitle: "De la búsqueda a un brief trazable, casi todo desde el chat"
+author: "Kristian López Vargas"
+lang: es
+format:
+  html:
+    theme: cosmo
+    toc: false
+    code-copy: false
+    page-layout: article
+    embed-resources: true
+---
+
+```{=html}
+<style>
+body { color: #102a43; }
+main { max-width: 900px; margin: 0 auto; }
+h1, h2, h3 { color: #0b2f55; }
+blockquote { border-left: 4px solid #3558b2; padding-left: 1rem; color: #334e68; }
+pre { background: #f3f5f7; border-left: 3px solid #3558b2; padding: 0.8rem; }
+.page-break { break-before: page; page-break-before: always; }
+.decision { border: 1px solid #cbd5e1; padding: 0.8rem 1rem; margin: 0.8rem 0; }
+@media print {
+  @page { size: A4; margin: 16mm 17mm 17mm 17mm; }
+  body { font-size: 10.5pt; }
+  h1 { font-size: 25pt; }
+  h2 { font-size: 18pt; margin-top: 0; }
+  h3 { font-size: 13pt; }
+  p, li { line-height: 1.35; }
+  pre { white-space: pre-wrap; font-size: 8.5pt; }
+  a { color: inherit; text-decoration: none; }
+}
+</style>
+```
+
+> **Idea central:** el agente busca, organiza y muestra. La persona lee,
+> decide y firma. El brief se genera desde decisiones registradas, no desde la
+> memoria del chat.
+
+Esta guía sirve tanto para aprender como para enseñar. El ejercicio dura
+aproximadamente 60 minutos y funciona en Codex Desktop, Codex en VS Code o
+Claude Code en VS Code. La persona no necesita manejar la terminal: el agente
+ejecuta una única herramienta detrás de la conversación.
+
+El laboratorio es deliberadamente pequeño. Contiene tres fichas sintéticas y
+se inspeccionan una o dos. Enseña la arquitectura mental; no pretende reemplazar
+una revisión sistemática, una estrategia de búsqueda exhaustiva ni una firma
+digital.
+
+## Al terminar podrá explicar
+
+1. qué aporta un skill frente a un prompt aislado;
+2. por qué búsqueda, evidencia y decisión no son lo mismo;
+3. qué debe mostrar el agente antes de pedir aprobación;
+4. qué comprueba el programa y qué sigue dependiendo de juicio humano;
+5. cómo reanudar el trabajo sin depender del historial del chat.
+
+::: {.page-break}
+:::
+
+## 1. La carpeta y sus cuatro objetos visibles
+
+Abra `course/exercises/literature_skill_lab/` como carpeta del proyecto.
+
+```text
+literature_skill_lab/
+├── README.md
+├── AGENTS.md · CLAUDE.md
+├── FUENTES.md
+├── PROGRESO.md
+├── BRIEF.md
+├── .agents/skills/revision-guiada/SKILL.md
+└── scripts/flujo.py
+```
+
+Durante la práctica solo necesita mirar cuatro archivos:
+
+- `SKILL.md`: el método reutilizable que organiza la conversación.
+- `FUENTES.md`: tres fichas congeladas con diseño, población, pasaje y
+  localizador.
+- `PROGRESO.md`: pregunta, consulta, selección y decisiones firmadas.
+- `BRIEF.md`: resultado generado desde `PROGRESO.md`.
+
+`scripts/flujo.py` es la única herramienta. El agente la usa para buscar en la
+fixture, mostrar una entrada, comprobar decisiones y ensamblar el brief. La
+persona mira los resultados en el chat; no necesita copiar comandos.
+
+### Skill, herramienta y persona
+
+| Pieza | Qué hace | Qué no puede garantizar |
+|---|---|---|
+| Skill | ordena fases, presenta evidencia y formula paradas | que el agente obedezca siempre |
+| Herramienta | comprueba campos y reglas mecánicas | que una interpretación sea científicamente correcta |
+| Persona | decide pertinencia, alcance y lenguaje | que la búsqueda sea exhaustiva |
+
+> El skill no verifica por sí solo. **Fabrica verificabilidad:** lleva el texto,
+> el localizador y la tensión al punto donde una persona puede decidir.
+
+::: {.page-break}
+:::
+
+## 2. Abrir e invocar
+
+### Codex Desktop
+
+1. Abra la carpeta `literature_skill_lab` como proyecto local.
+2. Inicie un chat dentro del proyecto.
+3. Escriba:
+
+```text
+Usa $revision-guiada. Guíame desde la búsqueda hasta un brief,
+una decisión a la vez. No decidas por mí.
+```
+
+### VS Code con Codex o Claude Code
+
+1. Use `Archivo → Abrir carpeta…` y seleccione `literature_skill_lab`.
+2. Abra el panel del agente.
+3. En Codex use el mismo mensaje con `$revision-guiada`.
+4. En Claude Code escriba:
+
+```text
+Usa el skill revision-guiada de esta carpeta. Guíame desde la
+búsqueda hasta un brief, una decisión a la vez. No decidas por mí.
+```
+
+La primera respuesta correcta debe decir `FASE 1/5 · ENCUADRAR` y preguntar
+solamente el tema y el nombre que quedará junto a las decisiones.
+
+### Si el agente empieza a trabajar sin preguntar
+
+Deténgalo y escriba:
+
+```text
+Lee SKILL.md y PROGRESO.md. No avances de fase. Dime qué dato o
+decisión humana falta ahora.
+```
+
+::: {.page-break}
+:::
+
+## 3. De una inquietud a una búsqueda visible
+
+Use un tema breve. Para la demostración:
+
+```text
+Quiero saber cómo los asistentes de escritura se relacionan con
+respuestas persuasivas en adultos. Firma: Kristian.
+```
+
+El agente propondrá una consulta. Corríjala si mezcla población, intervención o
+resultado. Solo después de su confirmación debe buscar.
+
+La salida esperada tiene tres candidatos:
+
+| ID | Entrada | Primera lectura |
+|---|---|---|
+| S1 | Mensajes generados por IA y credibilidad | experimento con personas adultas |
+| S2 | Uso de asistentes y disposición a compartir | observacional; mide intención declarada |
+| S3 | Evaluación automática de argumentos | no estudia personas |
+
+Estas filas no son evidencia. Solo significan que la búsqueda didáctica las
+recuperó. Elija `S1 y S2` para comparar dos diseños y dos tipos de error.
+
+### Qué observar como docente
+
+- El agente explica por qué cada entrada podría importar.
+- Recomienda como máximo dos.
+- Señala que S3 falla por población, no porque el título “suene técnico”.
+- Registra consulta y selección en `PROGRESO.md`.
+
+::: {.page-break}
+:::
+
+## 4. Inspeccionar una entrada dentro del chat
+
+Para cada entrada, el agente debe mostrar siempre el mismo orden:
+
+1. título, diseño y población;
+2. pasaje exacto en una cita visible;
+3. localizador;
+4. afirmación candidata;
+5. tensión metodológica;
+6. una sola decisión pendiente.
+
+### Entrada S1
+
+> “Los participantes asignados al mensaje generado por IA calificaron su
+> credibilidad 0,4 puntos más alta que el grupo control.”
+
+- Diseño: experimento aleatorizado.
+- Localizador: Resultados, párrafo 2.
+- Tensión: credibilidad declarada no es conducta posterior.
+
+Abra `FUENTES.md` junto al chat. Compare carácter por carácter el pasaje y el
+localizador. La verificación no consiste en leer la paráfrasis del agente: se
+hace contra la ficha.
+
+::: {.decision}
+**Decisión sugerida**
+`APROBAR S1: el pasaje y el diseño sostienen la comparación — Kristian`
+:::
+
+“Sí”, “ok” o “continúa” no cuentan como firma. La forma completa deja visibles
+la entrada, la razón y la persona.
+
+::: {.page-break}
+:::
+
+## 5. Reescribir es una decisión científica
+
+### Entrada S2
+
+> “El uso frecuente de asistentes de escritura se asoció con mayor disposición
+> declarada a compartir mensajes políticos.”
+
+- Diseño: observacional transversal.
+- Resultado: disposición declarada.
+- Tensión 1: asociación no implica efecto.
+- Tensión 2: intención declarada no equivale a conducta observada.
+
+Una afirmación como “los asistentes aumentaron la conducta de compartir” da
+dos saltos que la fuente no sostiene. El programa puede detectar vocabulario
+causal; solo una persona puede juzgar la diferencia entre intención y conducta.
+
+::: {.decision}
+**Decisión sugerida**
+`REESCRIBIR S2: el uso frecuente se asoció con mayor disposición declarada a compartir — Kristian`
+:::
+
+El agente debe copiar esa formulación literalmente a `PROGRESO.md`, ejecutar la
+comprobación y mostrar su resultado sin resumirlo como “todo bien”.
+
+```text
+LISTO · decisiones completas; el brief puede generarse
+```
+
+::: {.page-break}
+:::
+
+## 6. El brief y los límites de la comprobación
+
+Pida:
+
+```text
+Genera el brief desde las decisiones registradas y muéstrame qué
+comprobó el programa y qué dependió de mi juicio.
+```
+
+`BRIEF.md` debe contener, por cada entrada aceptada:
+
+- afirmación aprobada;
+- pasaje exacto y localizador;
+- diseño;
+- decisión y razón;
+- nombre de quien firmó.
+
+El programa comprueba que existen pregunta, consulta, selección, decisión,
+razón y nombre. También bloquea lenguaje causal para S2. No decide si la
+pregunta merece estudio, si la fuente es suficiente ni si la interpretación es
+sustantivamente correcta.
+
+### Prueba de persistencia
+
+Cierre el chat, abra otro y escriba:
+
+```text
+Continúa.
+```
+
+El agente debe reconstruir el estado desde `PROGRESO.md` y `BRIEF.md`. Si intenta
+adivinar qué ocurrió, pídale que lea los archivos antes de responder.
+
+::: {.page-break}
+:::
+
+## 7. El momento de autoría del skill
+
+Abra `.agents/skills/revision-guiada/SKILL.md` y busque `## Detenerse`. Agregue
+una sola regla:
+
+```text
+- la fuente mida intención, pero la afirmación hable de conducta.
+```
+
+Después pregunte al agente:
+
+```text
+Con esta regla, ¿dónde te detendrías en S2 y por qué?
+```
+
+El aprendizaje no está en escribir cincuenta líneas de configuración. Está en
+ver que una regla metodológica tácita puede convertirse en una parada
+reutilizable y cambiar el comportamiento del agente.
+
+### Qué conviene adaptar en una investigación propia
+
+- la forma de la pregunta inicial;
+- los campos que debe mostrar cada entrada;
+- los verbos permitidos por cada diseño;
+- las situaciones donde equivocarse sería caro;
+- la forma mínima de una decisión firmada.
+
+No coloque el tema, las fuentes ni los resultados de un proyecto dentro del
+skill. El skill describe el método; los archivos del caso contienen los datos.
+
+::: {.page-break}
+:::
+
+## 8. Tarjeta de facilitación y recuperación
+
+### Recorrido de 60 minutos
+
+| Minutos | Acción |
+|---|---|
+| 0–9 | promesa, archivos y diferencia skill/script/persona |
+| 9–18 | abrir carpeta, invocar y encuadrar |
+| 18–25 | búsqueda y selección de S1/S2 |
+| 25–40 | inspección, aprobación y reescritura |
+| 40–49 | progreso, comprobación y brief |
+| 49–56 | chat nuevo y edición de una regla del skill |
+| 56–60 | transferencia a la investigación propia |
+
+### Recuperación rápida
+
+- **No aparece el skill:** invoque explícitamente `$revision-guiada` en Codex;
+  en Claude Code mencione la ruta y pida leer `SKILL.md`.
+- **El agente decide por la persona:** escriba “revierte esa decisión; vuelve a
+  mostrar pasaje, localizador y opciones”.
+- **El agente muestra una paráfrasis:** abra `FUENTES.md` y pida el pasaje exacto.
+- **La comprobación dice BLOQUEADO:** no pida que “lo arregle todo”; pregunte qué
+  decisión humana falta.
+- **La clase se atrasa:** use solo S2. Contiene las dos tensiones esenciales.
+
+### Cuatro preguntas de cierre
+
+1. ¿Qué búsqueda aprobaría antes de ejecutarla?
+2. ¿Qué texto debería ver antes de decidir?
+3. ¿Dónde sería caro que el agente avanzara solo?
+4. ¿Qué decisión debe quedar registrada fuera del chat?
+
+> Un buen skill no reemplaza al investigador. Le trae el siguiente objeto que
+> merece su atención.

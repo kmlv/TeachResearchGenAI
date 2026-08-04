@@ -340,8 +340,11 @@ $hairline: #ececec; // hairlines
 // left of the text axis — the one place the axis is crossed, and it is
 // crossed by structure.
 
-.reveal .rules ul {
+.reveal .rules ul,
+.reveal .rules ol {
   counter-reset: rule;
+  list-style: none;
+  padding-left: 0;
 }
 
 .reveal .rules li {
@@ -884,6 +887,11 @@ $hairline: #ececec; // hairlines
   white-space: pre;
 }
 
+.reveal .compact-code pre code {
+  font-size: 25px;
+  line-height: 1.35;
+}
+
 .reveal .lean-error {
   max-width: 1120px;
   margin-top: 28px;
@@ -896,6 +904,27 @@ $hairline: #ececec; // hairlines
 
 .reveal .lean-error p {
   margin: 0;
+}
+
+// Compact, readable citations for the RAG demo. This deliberately uses prose
+// rather than a source-code block: the audience needs provenance, not line
+// numbers, and the smaller footprint keeps the privacy note in its meta band.
+.reveal .rag-citations {
+  box-sizing: border-box;
+  width: 1120px;
+  margin-top: 24px;
+  padding: 16px 26px;
+  border-left: 3px solid $accent;
+  background: $hairline;
+  color: $ink;
+  font-size: 27px;
+  line-height: 1.45;
+}
+
+.reveal .rag-citations p {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 // ─── Emphasis and secondary text ────────────────────────────────────────────

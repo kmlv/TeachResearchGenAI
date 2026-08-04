@@ -1,0 +1,12 @@
+.venv/
+local_index/
+model_cache/
+ocr_cache/
+preflight-report.json
+__pycache__/
+*.pyc
+
+# Whole-book corpus. Same rule as the pilot: no book text, no OCR output and no
+# vectors reach the repository, only the metadata written to build-log*.md.
+local_index_full/
+preflight-report-full-books.json

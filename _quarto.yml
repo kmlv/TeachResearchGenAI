@@ -8,9 +8,12 @@ project:
     - index.qmd
     - course/slides/ia-generativa-investigacion-ciencias-sociales.qmd
     - course/slides/literatura-agentes-integrados.qmd
+    - course/slides/literatura-agentes-paso-a-paso.qmd
+    - course/slides/literatura-skill-guiada.qmd
     - course/slides/analisis-datos-codex-jupyter.qmd
     - course/slides/lean-verificacion-matematica.qmd
     - course/slides/bonus-embeddings-rag.qmd
+    - course/guides/literatura-skill-guiada.qmd
   # Explicit deny-list for copied resources. Quarto copies non-source files
   # from the project directory into the output tree; these directories must
   # never travel with the site.
@@ -31,12 +34,15 @@ project:
     - "!**/model_cache/**"
     # Scratch directories of exercises in progress.
     - "!**/tmp/**"
+    - "!**/__pycache__/**"
     # The lab behind section 2. The deck links to it with a relative path.
     - "course/exercises/literature_agent_lab/**"
+    # OpenAlex discovery outputs are reproducible local runs, not course assets.
+    - "!course/exercises/literature_agent_lab/discovery/output/**"
 
 website:
   title: "IA generativa para la investigación"
-  description: "Taller de cuatro horas sobre IA generativa aplicada a la investigación económica y social."
+  description: "IA generativa aplicada a la investigación económica y social."
   site-url: https://kmlv.github.io/TeachResearchGenAI
   repo-url: https://github.com/kmlv/TeachResearchGenAI
   navbar:

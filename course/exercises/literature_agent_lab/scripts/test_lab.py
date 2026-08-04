@@ -37,7 +37,17 @@ def check(label: str, condition: bool, detail: str = "") -> None:
 
 
 def run(root: Path, *args: str) -> subprocess.CompletedProcess[str]:
-    return subprocess.run(args, cwd=root, text=True, capture_output=True, check=False)
+    # Test subprocesses are deliberately non-interactive. Without DEVNULL they
+    # inherit a real Codex/VS Code terminal, so review_gate.py prompts and hangs
+    # instead of proving that automation cannot approve on its own.
+    return subprocess.run(
+        args,
+        cwd=root,
+        text=True,
+        stdin=subprocess.DEVNULL,
+        capture_output=True,
+        check=False,
+    )
 
 
 def validator(root: Path) -> subprocess.CompletedProcess[str]:

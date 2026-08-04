@@ -1,0 +1,1660 @@
+{
+  "index": "local_index_full",
+  "questions": 12,
+  "positive_qrels": 57,
+  "negative_qrels": 58,
+  "pooled_positive_qrels": 38,
+  "seeded_positive_qrels": 19,
+  "status": "approved",
+  "summary": {
+    "lexical": {
+      "hit_at_3": 0.3333333333333333,
+      "mrr": 0.3541666666666667,
+      "ndcg_at_5": 0.3101061671899384
+    },
+    "dense": {
+      "hit_at_3": 0.9166666666666666,
+      "mrr": 0.7916666666666666,
+      "ndcg_at_5": 0.584419698098925
+    },
+    "hybrid": {
+      "hit_at_3": 0.8333333333333334,
+      "mrr": 0.798611111111111,
+      "ndcg_at_5": 0.5865015280963898
+    }
+  },
+  "results": [
+    {
+      "query_id": "B01",
+      "query": "¿Cuáles son las diferencias entre el Sistema 1 y el Sistema 2 en el procesamiento cognitivo?",
+      "modes": {
+        "lexical": {
+          "metrics": {
+            "hit_at_3": 0.0,
+            "reciprocal_rank": 0.0,
+            "ndcg_at_5": 0.0
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "camerer-2003",
+              "page_start": 191,
+              "page_end": 192,
+              "score": 10.327399
+            },
+            {
+              "rank": 2,
+              "document_id": "kahneman-2011",
+              "page_start": 211,
+              "page_end": 213,
+              "score": 9.497586
+            },
+            {
+              "rank": 3,
+              "document_id": "frechette-schotter",
+              "page_start": 255,
+              "page_end": 256,
+              "score": 9.062336
+            },
+            {
+              "rank": 4,
+              "document_id": "camerer-2003",
+              "page_start": 117,
+              "page_end": 118,
+              "score": 7.611842
+            },
+            {
+              "rank": 5,
+              "document_id": "charness-pingle-2021",
+              "page_start": 190,
+              "page_end": 190,
+              "score": 7.554562
+            }
+          ]
+        },
+        "dense": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 1.0,
+            "ndcg_at_5": 0.7227265726449519
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "kahneman-2011",
+              "page_start": 73,
+              "page_end": 74,
+              "score": 0.680902
+            },
+            {
+              "rank": 2,
+              "document_id": "kahneman-2011",
+              "page_start": 284,
+              "page_end": 285,
+              "score": 0.671854
+            },
+            {
+              "rank": 3,
+              "document_id": "behavioral-guide-2016",
+              "page_start": 88,
+              "page_end": 88,
+              "score": 0.546282
+            },
+            {
+              "rank": 4,
+              "document_id": "frechette-schotter",
+              "page_start": 205,
+              "page_end": 206,
+              "score": 0.537832
+            },
+            {
+              "rank": 5,
+              "document_id": "kagel-roth-vol1",
+              "page_start": 315,
+              "page_end": 315,
+              "score": 0.530437
+            }
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 1.0,
+            "ndcg_at_5": 0.48522855511632257
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "kahneman-2011",
+              "page_start": 27,
+              "page_end": 27,
+              "score": 0.025808
+            },
+            {
+              "rank": 2,
+              "document_id": "kockesen-ok-2007",
+              "page_start": 63,
+              "page_end": 64,
+              "score": 0.022349
+            },
+            {
+              "rank": 3,
+              "document_id": "camerer-2003",
+              "page_start": 128,
+              "page_end": 129,
+              "score": 0.020019
+            },
+            {
+              "rank": 4,
+              "document_id": "kahneman-2011",
+              "page_start": 73,
+              "page_end": 74,
+              "score": 0.016393
+            },
+            {
+              "rank": 5,
+              "document_id": "camerer-2003",
+              "page_start": 191,
+              "page_end": 192,
+              "score": 0.016393
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "B02",
+      "query": "¿Qué evidencia empírica se documenta sobre el 'endowment effect' en transacciones de mercado?",
+      "modes": {
+        "lexical": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 1.0,
+            "ndcg_at_5": 1.0
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "kagel-roth-vol2",
+              "page_start": 491,
+              "page_end": 492,
+              "score": 8.934667
+            },
+            {
+              "rank": 2,
+              "document_id": "charness-pingle-2021",
+              "page_start": 212,
+              "page_end": 213,
+              "score": 8.538049
+            },
+            {
+              "rank": 3,
+              "document_id": "kahneman-2011",
+              "page_start": 203,
+              "page_end": 204,
+              "score": 8.401527
+            },
+            {
+              "rank": 4,
+              "document_id": "kahneman-2011",
+              "page_start": 341,
+              "page_end": 342,
+              "score": 8.370775
+            },
+            {
+              "rank": 5,
+              "document_id": "charness-pingle-2021",
+              "page_start": 42,
+              "page_end": 42,
+              "score": 8.356055
+            }
+          ]
+        },
+        "dense": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 1.0,
+            "ndcg_at_5": 0.5531464700081437
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "kagel-roth-vol2",
+              "page_start": 489,
+              "page_end": 490,
+              "score": 0.686438
+            },
+            {
+              "rank": 2,
+              "document_id": "charness-pingle-2021",
+              "page_start": 42,
+              "page_end": 43,
+              "score": 0.658494
+            },
+            {
+              "rank": 3,
+              "document_id": "kagel-roth-vol2",
+              "page_start": 491,
+              "page_end": 492,
+              "score": 0.643942
+            },
+            {
+              "rank": 4,
+              "document_id": "kagel-roth-vol1",
+              "page_start": 82,
+              "page_end": 83,
+              "score": 0.637291
+            },
+            {
+              "rank": 5,
+              "document_id": "kagel-roth-vol1",
+              "page_start": 506,
+              "page_end": 506,
+              "score": 0.636808
+            }
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 1.0,
+            "ndcg_at_5": 0.830419897363192
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "kagel-roth-vol2",
+              "page_start": 491,
+              "page_end": 492,
+              "score": 0.032266
+            },
+            {
+              "rank": 2,
+              "document_id": "kahneman-2011",
+              "page_start": 203,
+              "page_end": 204,
+              "score": 0.030798
+            },
+            {
+              "rank": 3,
+              "document_id": "kagel-roth-vol2",
+              "page_start": 489,
+              "page_end": 490,
+              "score": 0.029727
+            },
+            {
+              "rank": 4,
+              "document_id": "charness-pingle-2021",
+              "page_start": 133,
+              "page_end": 134,
+              "score": 0.02379
+            },
+            {
+              "rank": 5,
+              "document_id": "list-2026",
+              "page_start": 268,
+              "page_end": 269,
+              "score": 0.022967
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "B03",
+      "query": "¿Cómo demuestra la economía conductual que los consumidores siempre toman decisiones perfectamente racionales?",
+      "modes": {
+        "lexical": {
+          "metrics": {
+            "hit_at_3": 0.0,
+            "reciprocal_rank": 0.25,
+            "ndcg_at_5": 0.16812753627111746
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "kagel-roth-vol1",
+              "page_start": 520,
+              "page_end": 521,
+              "score": 8.579585
+            },
+            {
+              "rank": 2,
+              "document_id": "friedman-cassar-2004",
+              "page_start": 144,
+              "page_end": 145,
+              "score": 8.506729
+            },
+            {
+              "rank": 3,
+              "document_id": "kagel-roth-vol1",
+              "page_start": 274,
+              "page_end": 277,
+              "score": 8.349128
+            },
+            {
+              "rank": 4,
+              "document_id": "list-2026",
+              "page_start": 40,
+              "page_end": 41,
+              "score": 8.267206
+            },
+            {
+              "rank": 5,
+              "document_id": "list-2026",
+              "page_start": 40,
+              "page_end": 41,
+              "score": 8.236898
+            }
+          ]
+        },
+        "dense": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 1.0,
+            "ndcg_at_5": 0.6366824387328317
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "behavioral-guide-2016",
+              "page_start": 146,
+              "page_end": 147,
+              "score": 0.702935
+            },
+            {
+              "rank": 2,
+              "document_id": "osborne-2003",
+              "page_start": 21,
+              "page_end": 21,
+              "score": 0.69048
+            },
+            {
+              "rank": 3,
+              "document_id": "mas-colell-1995",
+              "page_start": 143,
+              "page_end": 143,
+              "score": 0.687088
+            },
+            {
+              "rank": 4,
+              "document_id": "kahneman-2011",
+              "page_start": 317,
+              "page_end": 319,
+              "score": 0.680033
+            },
+            {
+              "rank": 5,
+              "document_id": "jacquemet-lharidon-2018",
+              "page_start": 449,
+              "page_end": 450,
+              "score": 0.679233
+            }
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 1.0,
+            "ndcg_at_5": 0.8048099750039491
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "behavioral-guide-2016",
+              "page_start": 33,
+              "page_end": 35,
+              "score": 0.026876
+            },
+            {
+              "rank": 2,
+              "document_id": "behavioral-guide-2016",
+              "page_start": 146,
+              "page_end": 147,
+              "score": 0.016393
+            },
+            {
+              "rank": 3,
+              "document_id": "kagel-roth-vol1",
+              "page_start": 520,
+              "page_end": 521,
+              "score": 0.016393
+            },
+            {
+              "rank": 4,
+              "document_id": "osborne-2003",
+              "page_start": 21,
+              "page_end": 21,
+              "score": 0.016129
+            },
+            {
+              "rank": 5,
+              "document_id": "friedman-cassar-2004",
+              "page_start": 144,
+              "page_end": 145,
+              "score": 0.016129
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "B04",
+      "query": "¿De qué manera la aversión a la pérdida (loss aversion) afecta la toma de decisiones bajo riesgo?",
+      "modes": {
+        "lexical": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 1.0,
+            "ndcg_at_5": 0.8687949224876582
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "jacquemet-lharidon-2018",
+              "page_start": 335,
+              "page_end": 335,
+              "score": 15.411673
+            },
+            {
+              "rank": 2,
+              "document_id": "kagel-roth-vol2",
+              "page_start": 195,
+              "page_end": 195,
+              "score": 15.391857
+            },
+            {
+              "rank": 3,
+              "document_id": "behavioral-guide-2016",
+              "page_start": 123,
+              "page_end": 123,
+              "score": 15.317455
+            },
+            {
+              "rank": 4,
+              "document_id": "kagel-roth-vol2",
+              "page_start": 684,
+              "page_end": 685,
+              "score": 14.935932
+            },
+            {
+              "rank": 5,
+              "document_id": "jacquemet-lharidon-2018",
+              "page_start": 333,
+              "page_end": 334,
+              "score": 14.833816
+            }
+          ]
+        },
+        "dense": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 1.0,
+            "ndcg_at_5": 0.7227265726449519
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "kahneman-2011",
+              "page_start": 305,
+              "page_end": 306,
+              "score": 0.786376
+            },
+            {
+              "rank": 2,
+              "document_id": "kahneman-2011",
+              "page_start": 309,
+              "page_end": 310,
+              "score": 0.782445
+            },
+            {
+              "rank": 3,
+              "document_id": "kagel-roth-vol2",
+              "page_start": 684,
+              "page_end": 685,
+              "score": 0.781682
+            },
+            {
+              "rank": 4,
+              "document_id": "mas-colell-1995",
+              "page_start": 173,
+              "page_end": 174,
+              "score": 0.735676
+            },
+            {
+              "rank": 5,
+              "document_id": "behavioral-guide-2016",
+              "page_start": 130,
+              "page_end": 131,
+              "score": 0.726124
+            }
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 1.0,
+            "ndcg_at_5": 0.7860137352654724
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "kahneman-2011",
+              "page_start": 194,
+              "page_end": 195,
+              "score": 0.028446
+            },
+            {
+              "rank": 2,
+              "document_id": "kahneman-2011",
+              "page_start": 194,
+              "page_end": 194,
+              "score": 0.028039
+            },
+            {
+              "rank": 3,
+              "document_id": "kagel-roth-vol2",
+              "page_start": 684,
+              "page_end": 685,
+              "score": 0.027119
+            },
+            {
+              "rank": 4,
+              "document_id": "kagel-roth-vol2",
+              "page_start": 195,
+              "page_end": 195,
+              "score": 0.026767
+            },
+            {
+              "rank": 5,
+              "document_id": "jacquemet-lharidon-2018",
+              "page_start": 148,
+              "page_end": 149,
+              "score": 0.025253
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "E01",
+      "query": "¿Cuáles son las ventajas metodológicas de la asignación aleatoria en ensayos de campo?",
+      "modes": {
+        "lexical": {
+          "metrics": {
+            "hit_at_3": 0.0,
+            "reciprocal_rank": 0.0,
+            "ndcg_at_5": 0.0
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "camerer-2003",
+              "page_start": 191,
+              "page_end": 192,
+              "score": 10.327399
+            },
+            {
+              "rank": 2,
+              "document_id": "kahneman-2011",
+              "page_start": 211,
+              "page_end": 213,
+              "score": 9.497586
+            },
+            {
+              "rank": 3,
+              "document_id": "camerer-2003",
+              "page_start": 117,
+              "page_end": 118,
+              "score": 7.611842
+            },
+            {
+              "rank": 4,
+              "document_id": "charness-pingle-2021",
+              "page_start": 190,
+              "page_end": 190,
+              "score": 7.554562
+            },
+            {
+              "rank": 5,
+              "document_id": "mas-colell-1995",
+              "page_start": 881,
+              "page_end": 881,
+              "score": 7.554562
+            }
+          ]
+        },
+        "dense": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 1.0,
+            "ndcg_at_5": 1.0
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "gerber-green-2012",
+              "page_start": 36,
+              "page_end": 37,
+              "score": 0.767765
+            },
+            {
+              "rank": 2,
+              "document_id": "gerber-green-2012",
+              "page_start": 89,
+              "page_end": 89,
+              "score": 0.748766
+            },
+            {
+              "rank": 3,
+              "document_id": "friedman-cassar-2004",
+              "page_start": 68,
+              "page_end": 69,
+              "score": 0.744538
+            },
+            {
+              "rank": 4,
+              "document_id": "imbens-rubin-2015",
+              "page_start": 209,
+              "page_end": 209,
+              "score": 0.730755
+            },
+            {
+              "rank": 5,
+              "document_id": "list-2026",
+              "page_start": 191,
+              "page_end": 192,
+              "score": 0.722519
+            }
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 1.0,
+            "ndcg_at_5": 0.639945385422766
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "gerber-green-2012",
+              "page_start": 36,
+              "page_end": 37,
+              "score": 0.016393
+            },
+            {
+              "rank": 2,
+              "document_id": "camerer-2003",
+              "page_start": 191,
+              "page_end": 192,
+              "score": 0.016393
+            },
+            {
+              "rank": 3,
+              "document_id": "gerber-green-2012",
+              "page_start": 89,
+              "page_end": 89,
+              "score": 0.016129
+            },
+            {
+              "rank": 4,
+              "document_id": "kahneman-2011",
+              "page_start": 211,
+              "page_end": 213,
+              "score": 0.016129
+            },
+            {
+              "rank": 5,
+              "document_id": "friedman-cassar-2004",
+              "page_start": 68,
+              "page_end": 69,
+              "score": 0.015873
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "E02",
+      "query": "¿Qué recomiendan Imbens y Rubin para el diseño de experimentos de laboratorio con estudiantes de pregrado?",
+      "modes": {
+        "lexical": {
+          "metrics": {
+            "hit_at_3": 0.0,
+            "reciprocal_rank": 0.0,
+            "ndcg_at_5": 0.0
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "imbens-rubin-2015",
+              "page_start": 452,
+              "page_end": 452,
+              "score": 17.948347
+            },
+            {
+              "rank": 2,
+              "document_id": "imbens-rubin-2015",
+              "page_start": 561,
+              "page_end": 561,
+              "score": 17.289462
+            },
+            {
+              "rank": 3,
+              "document_id": "gerber-green-2012",
+              "page_start": 240,
+              "page_end": 240,
+              "score": 15.985952
+            },
+            {
+              "rank": 4,
+              "document_id": "list-2026",
+              "page_start": 221,
+              "page_end": 222,
+              "score": 12.036926
+            },
+            {
+              "rank": 5,
+              "document_id": "list-2026",
+              "page_start": 419,
+              "page_end": 420,
+              "score": 11.316977
+            }
+          ]
+        },
+        "dense": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 0.5,
+            "ndcg_at_5": 0.49818925746641285
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "frechette-schotter",
+              "page_start": 414,
+              "page_end": 415,
+              "score": 0.678963
+            },
+            {
+              "rank": 2,
+              "document_id": "frechette-schotter",
+              "page_start": 232,
+              "page_end": 233,
+              "score": 0.66909
+            },
+            {
+              "rank": 3,
+              "document_id": "jacquemet-lharidon-2018",
+              "page_start": 214,
+              "page_end": 215,
+              "score": 0.667373
+            },
+            {
+              "rank": 4,
+              "document_id": "list-2026",
+              "page_start": 44,
+              "page_end": 45,
+              "score": 0.664754
+            },
+            {
+              "rank": 5,
+              "document_id": "imbens-rubin-2015",
+              "page_start": 77,
+              "page_end": 77,
+              "score": 0.658426
+            }
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_3": 0.0,
+            "reciprocal_rank": 0.25,
+            "ndcg_at_5": 0.20210734650054757
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "imbens-rubin-2015",
+              "page_start": 77,
+              "page_end": 77,
+              "score": 0.025053
+            },
+            {
+              "rank": 2,
+              "document_id": "frechette-schotter",
+              "page_start": 414,
+              "page_end": 415,
+              "score": 0.016393
+            },
+            {
+              "rank": 3,
+              "document_id": "imbens-rubin-2015",
+              "page_start": 452,
+              "page_end": 452,
+              "score": 0.016393
+            },
+            {
+              "rank": 4,
+              "document_id": "frechette-schotter",
+              "page_start": 232,
+              "page_end": 233,
+              "score": 0.016129
+            },
+            {
+              "rank": 5,
+              "document_id": "jacquemet-lharidon-2018",
+              "page_start": 214,
+              "page_end": 215,
+              "score": 0.015873
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "E03",
+      "query": "¿Cuáles son los supuestos principales —incluida SUTVA— detrás del framework 'potential outcomes'?",
+      "modes": {
+        "lexical": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 1.0,
+            "ndcg_at_5": 1.0
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "list-2026",
+              "page_start": 343,
+              "page_end": 344,
+              "score": 18.304512
+            },
+            {
+              "rank": 2,
+              "document_id": "imbens-rubin-2015",
+              "page_start": 34,
+              "page_end": 35,
+              "score": 17.607298
+            },
+            {
+              "rank": 3,
+              "document_id": "list-2026",
+              "page_start": 81,
+              "page_end": 81,
+              "score": 17.028952
+            },
+            {
+              "rank": 4,
+              "document_id": "gerber-green-2012",
+              "page_start": 31,
+              "page_end": 31,
+              "score": 12.133919
+            },
+            {
+              "rank": 5,
+              "document_id": "gerber-green-2012",
+              "page_start": 28,
+              "page_end": 29,
+              "score": 12.105463
+            }
+          ]
+        },
+        "dense": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 0.5,
+            "ndcg_at_5": 0.21398626473452756
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "imbens-rubin-2015",
+              "page_start": 483,
+              "page_end": 483,
+              "score": 0.668757
+            },
+            {
+              "rank": 2,
+              "document_id": "list-2026",
+              "page_start": 134,
+              "page_end": 134,
+              "score": 0.659589
+            },
+            {
+              "rank": 3,
+              "document_id": "jacquemet-lharidon-2018",
+              "page_start": 146,
+              "page_end": 147,
+              "score": 0.65196
+            },
+            {
+              "rank": 4,
+              "document_id": "list-2026",
+              "page_start": 680,
+              "page_end": 681,
+              "score": 0.65137
+            },
+            {
+              "rank": 5,
+              "document_id": "imbens-rubin-2015",
+              "page_start": 482,
+              "page_end": 483,
+              "score": 0.640208
+            }
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 1.0,
+            "ndcg_at_5": 0.8687949224876582
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "list-2026",
+              "page_start": 134,
+              "page_end": 134,
+              "score": 0.028324
+            },
+            {
+              "rank": 2,
+              "document_id": "list-2026",
+              "page_start": 339,
+              "page_end": 344,
+              "score": 0.026036
+            },
+            {
+              "rank": 3,
+              "document_id": "gerber-green-2012",
+              "page_start": 31,
+              "page_end": 31,
+              "score": 0.022252
+            },
+            {
+              "rank": 4,
+              "document_id": "gerber-green-2012",
+              "page_start": 29,
+              "page_end": 29,
+              "score": 0.017698
+            },
+            {
+              "rank": 5,
+              "document_id": "imbens-rubin-2015",
+              "page_start": 483,
+              "page_end": 483,
+              "score": 0.016393
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "E04",
+      "query": "¿Por qué se recomienda el pago con incentivos monetarios contingentes al desempeño en economía experimental?",
+      "modes": {
+        "lexical": {
+          "metrics": {
+            "hit_at_3": 0.0,
+            "reciprocal_rank": 0.0,
+            "ndcg_at_5": 0.0
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "mas-colell-1995",
+              "page_start": 803,
+              "page_end": 804,
+              "score": 11.546328
+            },
+            {
+              "rank": 2,
+              "document_id": "mas-colell-1995",
+              "page_start": 803,
+              "page_end": 803,
+              "score": 10.08679
+            },
+            {
+              "rank": 3,
+              "document_id": "list-2026",
+              "page_start": 40,
+              "page_end": 41,
+              "score": 9.609558
+            },
+            {
+              "rank": 4,
+              "document_id": "list-2026",
+              "page_start": 40,
+              "page_end": 41,
+              "score": 9.206761
+            },
+            {
+              "rank": 5,
+              "document_id": "charness-pingle-2021",
+              "page_start": 85,
+              "page_end": 86,
+              "score": 9.030576
+            }
+          ]
+        },
+        "dense": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 1.0,
+            "ndcg_at_5": 0.830419897363192
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "list-2026",
+              "page_start": 695,
+              "page_end": 695,
+              "score": 0.773328
+            },
+            {
+              "rank": 2,
+              "document_id": "kagel-roth-vol1",
+              "page_start": 113,
+              "page_end": 113,
+              "score": 0.771943
+            },
+            {
+              "rank": 3,
+              "document_id": "holt-2019",
+              "page_start": 329,
+              "page_end": 330,
+              "score": 0.706483
+            },
+            {
+              "rank": 4,
+              "document_id": "jacquemet-lharidon-2018",
+              "page_start": 169,
+              "page_end": 170,
+              "score": 0.695713
+            },
+            {
+              "rank": 5,
+              "document_id": "jacquemet-lharidon-2018",
+              "page_start": 158,
+              "page_end": 158,
+              "score": 0.686659
+            }
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 1.0,
+            "ndcg_at_5": 0.5087403079104241
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "list-2026",
+              "page_start": 695,
+              "page_end": 695,
+              "score": 0.016393
+            },
+            {
+              "rank": 2,
+              "document_id": "mas-colell-1995",
+              "page_start": 803,
+              "page_end": 804,
+              "score": 0.016393
+            },
+            {
+              "rank": 3,
+              "document_id": "kagel-roth-vol1",
+              "page_start": 113,
+              "page_end": 113,
+              "score": 0.016129
+            },
+            {
+              "rank": 4,
+              "document_id": "mas-colell-1995",
+              "page_start": 803,
+              "page_end": 803,
+              "score": 0.016129
+            },
+            {
+              "rank": 5,
+              "document_id": "holt-2019",
+              "page_start": 329,
+              "page_end": 330,
+              "score": 0.015873
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "G01",
+      "query": "¿Qué condiciones deben cumplirse para un equilibrio perfecto en subjuegos?",
+      "modes": {
+        "lexical": {
+          "metrics": {
+            "hit_at_3": 0.0,
+            "reciprocal_rank": 0.0,
+            "ndcg_at_5": 0.0
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "kagel-roth-vol1",
+              "page_start": 274,
+              "page_end": 277,
+              "score": 8.349128
+            },
+            {
+              "rank": 2,
+              "document_id": "list-2026",
+              "page_start": 40,
+              "page_end": 41,
+              "score": 8.267206
+            },
+            {
+              "rank": 3,
+              "document_id": "list-2026",
+              "page_start": 40,
+              "page_end": 41,
+              "score": 8.236898
+            }
+          ]
+        },
+        "dense": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 0.5,
+            "ndcg_at_5": 0.38685280723454163
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "osborne-rubinstein-1994",
+              "page_start": 143,
+              "page_end": 144,
+              "score": 0.663445
+            },
+            {
+              "rank": 2,
+              "document_id": "osborne-rubinstein-1994",
+              "page_start": 169,
+              "page_end": 169,
+              "score": 0.647468
+            },
+            {
+              "rank": 3,
+              "document_id": "friedman-cassar-2004",
+              "page_start": 124,
+              "page_end": 125,
+              "score": 0.641652
+            },
+            {
+              "rank": 4,
+              "document_id": "osborne-2003",
+              "page_start": 512,
+              "page_end": 512,
+              "score": 0.640517
+            },
+            {
+              "rank": 5,
+              "document_id": "mas-colell-1995",
+              "page_start": 866,
+              "page_end": 867,
+              "score": 0.632292
+            }
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 0.3333333333333333,
+            "ndcg_at_5": 0.3065735963827292
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "osborne-rubinstein-1994",
+              "page_start": 143,
+              "page_end": 144,
+              "score": 0.016393
+            },
+            {
+              "rank": 2,
+              "document_id": "kagel-roth-vol1",
+              "page_start": 274,
+              "page_end": 277,
+              "score": 0.016393
+            },
+            {
+              "rank": 3,
+              "document_id": "osborne-rubinstein-1994",
+              "page_start": 169,
+              "page_end": 169,
+              "score": 0.016129
+            },
+            {
+              "rank": 4,
+              "document_id": "list-2026",
+              "page_start": 40,
+              "page_end": 41,
+              "score": 0.016129
+            },
+            {
+              "rank": 5,
+              "document_id": "friedman-cassar-2004",
+              "page_start": 124,
+              "page_end": 125,
+              "score": 0.015873
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "G02",
+      "query": "¿Cómo se resuelve analíticamente un juego de negociación de ofertas alternadas infinito?",
+      "modes": {
+        "lexical": {
+          "metrics": {
+            "hit_at_3": 0.0,
+            "reciprocal_rank": 0.0,
+            "ndcg_at_5": 0.0
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "friedman-cassar-2004",
+              "page_start": 144,
+              "page_end": 145,
+              "score": 17.013457
+            },
+            {
+              "rank": 2,
+              "document_id": "kagel-roth-vol2",
+              "page_start": 498,
+              "page_end": 499,
+              "score": 8.675112
+            },
+            {
+              "rank": 3,
+              "document_id": "kagel-roth-vol1",
+              "page_start": 520,
+              "page_end": 521,
+              "score": 8.579585
+            }
+          ]
+        },
+        "dense": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 1.0,
+            "ndcg_at_5": 0.8318724637288826
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "camerer-2003",
+              "page_start": 81,
+              "page_end": 82,
+              "score": 0.807338
+            },
+            {
+              "rank": 2,
+              "document_id": "osborne-rubinstein-1994",
+              "page_start": 143,
+              "page_end": 144,
+              "score": 0.737337
+            },
+            {
+              "rank": 3,
+              "document_id": "myerson-1997",
+              "page_start": 412,
+              "page_end": 413,
+              "score": 0.737055
+            },
+            {
+              "rank": 4,
+              "document_id": "myerson-1997",
+              "page_start": 512,
+              "page_end": 513,
+              "score": 0.718469
+            },
+            {
+              "rank": 5,
+              "document_id": "camerer-2003",
+              "page_start": 41,
+              "page_end": 41,
+              "score": 0.697211
+            }
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 1.0,
+            "ndcg_at_5": 0.7365896932159578
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "camerer-2003",
+              "page_start": 81,
+              "page_end": 82,
+              "score": 0.016393
+            },
+            {
+              "rank": 2,
+              "document_id": "friedman-cassar-2004",
+              "page_start": 144,
+              "page_end": 145,
+              "score": 0.016393
+            },
+            {
+              "rank": 3,
+              "document_id": "osborne-rubinstein-1994",
+              "page_start": 143,
+              "page_end": 144,
+              "score": 0.016129
+            },
+            {
+              "rank": 4,
+              "document_id": "kagel-roth-vol2",
+              "page_start": 498,
+              "page_end": 499,
+              "score": 0.016129
+            },
+            {
+              "rank": 5,
+              "document_id": "myerson-1997",
+              "page_start": 412,
+              "page_end": 413,
+              "score": 0.015873
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "G03",
+      "query": "¿Bajo qué circunstancias ocurre una falla de mercado debido a 'adverse selection'?",
+      "modes": {
+        "lexical": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 1.0,
+            "ndcg_at_5": 0.6843515475204855
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "myerson-1997",
+              "page_start": 281,
+              "page_end": 281,
+              "score": 13.905686
+            },
+            {
+              "rank": 2,
+              "document_id": "mas-colell-1995",
+              "page_start": 460,
+              "page_end": 461,
+              "score": 12.963778
+            },
+            {
+              "rank": 3,
+              "document_id": "mas-colell-1995",
+              "page_start": 460,
+              "page_end": 460,
+              "score": 12.952351
+            },
+            {
+              "rank": 4,
+              "document_id": "charness-pingle-2021",
+              "page_start": 96,
+              "page_end": 96,
+              "score": 12.550024
+            },
+            {
+              "rank": 5,
+              "document_id": "kagel-roth-vol1",
+              "page_start": 596,
+              "page_end": 597,
+              "score": 12.323481
+            }
+          ]
+        },
+        "dense": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 1.0,
+            "ndcg_at_5": 0.6164336326286644
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "mas-colell-1995",
+              "page_start": 460,
+              "page_end": 461,
+              "score": 0.714405
+            },
+            {
+              "rank": 2,
+              "document_id": "charness-pingle-2021",
+              "page_start": 140,
+              "page_end": 141,
+              "score": 0.691478
+            },
+            {
+              "rank": 3,
+              "document_id": "kagel-roth-vol1",
+              "page_start": 600,
+              "page_end": 601,
+              "score": 0.689936
+            },
+            {
+              "rank": 4,
+              "document_id": "mas-colell-1995",
+              "page_start": 465,
+              "page_end": 466,
+              "score": 0.687237
+            },
+            {
+              "rank": 5,
+              "document_id": "kagel-roth-vol1",
+              "page_start": 577,
+              "page_end": 578,
+              "score": 0.686769
+            }
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_3": 1.0,
+            "reciprocal_rank": 1.0,
+            "ndcg_at_5": 0.8687949224876582
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "mas-colell-1995",
+              "page_start": 460,
+              "page_end": 461,
+              "score": 0.032522
+            },
+            {
+              "rank": 2,
+              "document_id": "mas-colell-1995",
+              "page_start": 465,
+              "page_end": 466,
+              "score": 0.030777
+            },
+            {
+              "rank": 3,
+              "document_id": "kagel-roth-vol1",
+              "page_start": 577,
+              "page_end": 578,
+              "score": 0.028372
+            },
+            {
+              "rank": 4,
+              "document_id": "kagel-roth-vol1",
+              "page_start": 597,
+              "page_end": 597,
+              "score": 0.028309
+            },
+            {
+              "rank": 5,
+              "document_id": "frechette-schotter",
+              "page_start": 367,
+              "page_end": 368,
+              "score": 0.026121
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "G04",
+      "query": "¿Cómo demuestra Mas-Colell que todos los juegos de suma cero en tiempo discreto tienen al menos un equilibrio en estrategias puras?",
+      "modes": {
+        "lexical": {
+          "metrics": {
+            "hit_at_3": 0.0,
+            "reciprocal_rank": 0.0,
+            "ndcg_at_5": 0.0
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "mas-colell-1995",
+              "page_start": 661,
+              "page_end": 661,
+              "score": 20.82617
+            },
+            {
+              "rank": 2,
+              "document_id": "mas-colell-1995",
+              "page_start": 143,
+              "page_end": 143,
+              "score": 18.397572
+            },
+            {
+              "rank": 3,
+              "document_id": "osborne-rubinstein-1994",
+              "page_start": 313,
+              "page_end": 314,
+              "score": 16.063778
+            },
+            {
+              "rank": 4,
+              "document_id": "osborne-rubinstein-1994",
+              "page_start": 344,
+              "page_end": 345,
+              "score": 16.009759
+            },
+            {
+              "rank": 5,
+              "document_id": "kagel-roth-vol2",
+              "page_start": 724,
+              "page_end": 724,
+              "score": 11.867737
+            }
+          ]
+        },
+        "dense": {
+          "metrics": {
+            "hit_at_3": 0.0,
+            "reciprocal_rank": 0.0,
+            "ndcg_at_5": 0.0
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "myerson-1997",
+              "page_start": 328,
+              "page_end": 329,
+              "score": 0.743103
+            },
+            {
+              "rank": 2,
+              "document_id": "myerson-1997",
+              "page_start": 373,
+              "page_end": 374,
+              "score": 0.734893
+            },
+            {
+              "rank": 3,
+              "document_id": "kagel-roth-vol1",
+              "page_start": 33,
+              "page_end": 34,
+              "score": 0.733829
+            },
+            {
+              "rank": 4,
+              "document_id": "osborne-2003",
+              "page_start": 151,
+              "page_end": 152,
+              "score": 0.713651
+            },
+            {
+              "rank": 5,
+              "document_id": "osborne-rubinstein-1994",
+              "page_start": 114,
+              "page_end": 114,
+              "score": 0.693973
+            }
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_3": 0.0,
+            "reciprocal_rank": 0.0,
+            "ndcg_at_5": 0.0
+          },
+          "results": [
+            {
+              "rank": 1,
+              "document_id": "myerson-1997",
+              "page_start": 328,
+              "page_end": 329,
+              "score": 0.016393
+            },
+            {
+              "rank": 2,
+              "document_id": "mas-colell-1995",
+              "page_start": 661,
+              "page_end": 661,
+              "score": 0.016393
+            },
+            {
+              "rank": 3,
+              "document_id": "myerson-1997",
+              "page_start": 373,
+              "page_end": 374,
+              "score": 0.016129
+            },
+            {
+              "rank": 4,
+              "document_id": "mas-colell-1995",
+              "page_start": 143,
+              "page_end": 143,
+              "score": 0.016129
+            },
+            {
+              "rank": 5,
+              "document_id": "kagel-roth-vol1",
+              "page_start": 33,
+              "page_end": 34,
+              "score": 0.015873
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "pool_candidates": 123,
+  "pool_positive": 57,
+  "pool_negative": 60,
+  "pool_unjudged": 6
+}

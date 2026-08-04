@@ -1,0 +1,23 @@
+{
+  "index": "local_index_full",
+  "mode": "dense",
+  "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "answerable": {
+    "count": 12,
+    "min": 0.6634,
+    "median": 0.7144,
+    "max": 0.8073
+  },
+  "unanswerable": {
+    "count": 8,
+    "min": 0.3504,
+    "median": 0.4029,
+    "max": 0.4638
+  },
+  "min_top_score": 0.5636,
+  "gap": 0.1996,
+  "separable": true,
+  "measured_on": "2026-08-04",
+  "questions": 12,
+  "controls": 8
+}

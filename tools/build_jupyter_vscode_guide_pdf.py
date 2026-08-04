@@ -336,6 +336,10 @@ def build_story(markdown: str):
         if not line.strip():
             flush_all()
             continue
+        if line == "<!-- pagebreak -->":
+            flush_all()
+            story.append(PageBreak())
+            continue
         if line == "---":
             flush_all()
             story.append(HRFlowable(width="100%", thickness=0.8, color=RULE, spaceBefore=5, spaceAfter=8))
