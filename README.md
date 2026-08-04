@@ -7,7 +7,7 @@ Sitio público: <https://kmlv.github.io/TeachResearchGenAI>
 
 El punto de entrada para quienes participan en la clase es la portada del
 sitio. Es una sola página con dos bloques, presentaciones y materiales, desde
-la que se llega a las cuatro secciones, a los laboratorios y a la guía técnica
+la que se llega a las cinco secciones, a los laboratorios y a la guía técnica
 sin compartir carpetas.
 
 ## Estructura
@@ -16,7 +16,7 @@ sin compartir carpetas.
 |---|---|---|---|
 | `index.qmd` | Portada del sitio y única página normal que se publica. | Sí | Sí |
 | `materiales.qmd`, `pages/` | Páginas anteriores del sitio. Fuera de la lista de render mientras la portada las reemplaza. | Sí | No |
-| `course/slides/` | Fuente Quarto de las presentaciones y componentes del reproductor. | Sí | Las cuatro secciones vigentes |
+| `course/slides/` | Fuente Quarto de las presentaciones y componentes del reproductor. | Sí | Las cinco secciones vigentes |
 | `course/exercises/` | Laboratorios y demos reproducibles. | Sí | Mediante enlaces al repositorio |
 | `materials/` | Archivos pequeños y documentación pública. | Sí | Sí |
 | `examples/` | Ejemplos reproducibles de la clase. | Sí | Mediante enlaces al repositorio |
@@ -51,13 +51,14 @@ misma localmente.
 Publicar es una decisión explícita, no un efecto secundario. `_quarto.yml`
 declara una lista blanca de render: solo se publica lo que está nombrado ahí.
 
-El sitio publica únicamente los cinco archivos nombrados en la lista `render:`:
+El sitio publica únicamente los seis archivos nombrados en la lista `render:`:
 
 - `index.qmd`
 - `course/slides/ia-generativa-investigacion-ciencias-sociales.qmd`
 - `course/slides/literatura-agentes-integrados.qmd`
 - `course/slides/analisis-datos-codex-jupyter.qmd`
 - `course/slides/lean-verificacion-matematica.qmd`
+- `course/slides/bonus-embeddings-rag.qmd`
 
 `materiales.qmd`, `pages/propuesta.qmd` y `pages/herramientas.qmd` siguen en el
 repositorio pero salieron de la lista: la portada las reemplaza. Quedan fuera,

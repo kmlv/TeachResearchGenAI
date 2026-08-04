@@ -1,0 +1,601 @@
+---
+title: "Bonus · del estante local a una base de conocimiento verificable"
+author:
+  - name: "Kristian López Vargas"
+    affiliation: "Profesor asociado de economía, Universidad de California, Santa Cruz"
+lang: es
+format:
+  revealjs:
+    theme: [default, slides.scss]
+    width: 1600
+    height: 900
+    margin: 0.04
+    slide-number: c/t
+    progress: true
+    controls: false
+    menu: false
+    transition: none
+    background-transition: none
+    hash: true
+    history: false
+    center: false
+    incremental: false
+    highlight-style: github
+    embed-resources: false
+---
+
+## Encontrar ideas, no palabras
+
+En el disco hay una biblioteca real de economía experimental, del
+comportamiento y de inferencia causal. La pregunta que abre este bloque es
+práctica.
+
+::: {.lead}
+¿Dónde discuten estos libros que un incentivo monetario puede desplazar la
+motivación intrínseca?
+:::
+
+::: {.prompt}
+`Ctrl+F` encuentra la cadena · nosotros necesitamos el pasaje
+:::
+
+::: {.notes}
+**MINUTO ·** 0:00–2:00
+
+**DECIR ·** «Este bloque es opcional y está fuera del tronco de la clase. No
+vamos a construir un producto: vamos a entender qué hace un embedding, en qué
+momento empieza RAG y cuándo un grafo agrega algo que la similitud no da.»
+
+**CLIC ·** ninguno.
+
+**ESPERAR ·** que alguien note que la frase de la pregunta probablemente no
+aparece literal en ningún libro; los autores dirán *crowding out*,
+*motivation crowding* o *incentives may backfire*.
+
+**SI NADIE HABLA ·** decirlo en voz alta: «Ninguno de estos libros contiene la
+oración que acabo de leer. Contienen la idea, con otras palabras y en otro
+idioma.»
+
+**TRANSICIÓN ·** «Antes de resolver la búsqueda, hay que mirar qué hay
+realmente en la carpeta.»
+
+[Sources]
+- Plan del bloque, `deliverables/bonus-embeddings-rag-plan.md`.
+:::
+
+## Lo que hay en el estante
+
+::: {.lean-code}
+```text
+99 - Books/                       185 PDF · 2 TXT
+  Behavioral Economics              4 PDF
+  Game Theory                       7 PDF
+  Experimental Economics          174 PDF
+
+demo curada                  20 obras · 1,262 páginas · 2,614 fragmentos
+```
+:::
+
+::: {.lead}
+Dentro de esos 174 hay 100 piezas de un solo handbook, 22 capítulos sueltos de
+un mismo libro y dos descargas casi idénticas de otro.
+:::
+
+::: {.prompt}
+Un corpus no es una carpeta · es un inventario con decisiones tomadas
+:::
+
+::: {.notes}
+**MINUTO ·** 2:00–5:00
+
+**DECIR ·** «Esta es la carpeta real, sin limpiar. De ahí seleccionamos veinte
+obras únicas: 1,262 páginas con texto y 2,614 fragmentos. Las veinte entraron
+al índice; 140 páginas necesitaron OCR.»
+
+**CLIC ·** primero el bloque de conteos, después la línea de duplicados.
+
+**DETALLE SI SE PIDE ·** el paquete de 100 son artículos `sdarticle*.pdf` del
+*Handbook of Experimental Economics Results*; los 22 capítulos son de List
+(2026), que además está tres veces como volumen completo; el *Handbook of
+Experimental Methodology* (2025) aparece dos veces con 17 PDF cada vez.
+
+**ESPERAR ·** la reacción de que «entonces buscar sobre 185 archivos daría
+resultados repetidos».
+
+**SI NADIE HABLA ·** «Si indexo esta carpeta tal cual, una sola obra puede
+ocupar todo el resultado y parecer consenso de la literatura.»
+
+**TRANSICIÓN ·** «Por eso el primer trabajo no es vectorial, es de archivo.»
+
+[Sources]
+- Inventario de la biblioteca local `99 - Books`, 3 de agosto de 2026.
+- Plan del bloque, `deliverables/bonus-embeddings-rag-plan.md`, sección
+  «Inventario observado».
+- Build verificado, `course/exercises/embeddings_rag_bonus/build-log.md`.
+:::
+
+## Antes del vector
+
+::: {.rules}
+1. Inventariar: ruta, hash, título, año, licencia, procedencia.
+2. Extraer por página, no por libro.
+3. Deduplicar por hash, por DOI, por título/autor/año y por similitud.
+4. Fragmentar para el modelo: aquí, 320 palabras con 45 de solapamiento.
+:::
+
+::: {.prompt}
+La página es la unidad que permite verificar después
+:::
+
+::: {.notes}
+**MINUTO ·** 5:00–8:00
+
+**DECIR ·** «Las cuatro decisiones que más determinan la calidad de la búsqueda
+ocurren antes de calcular un solo vector.»
+
+**CLIC ·** una por una.
+
+**POR QUÉ CADA UNA ·** el hash y la licencia son lo que permite decir de dónde
+salió cada cosa y qué se puede redistribuir; extraer por página es lo que hace
+que un resultado sea comprobable abriendo el PDF; deduplicar evita el
+falso consenso del duplicado; el solapamiento evita cortar una idea justo en
+la frontera del fragmento.
+
+**ESPERAR ·** una pregunta sobre el tamaño del fragmento.
+
+**SI NADIE HABLA ·** «El tamaño no es sagrado. Este modelo trunca a 512
+tokens; la demo usa 320 palabras y 45 de solapamiento. Con otro modelo se
+ajusta midiendo, no opinando.»
+
+**TRANSICIÓN ·** «Con los fragmentos listos, recién ahora aparece el
+embedding.»
+
+[Sources]
+- Conversación recuperada `Embeddings para codificación`, resumida en
+  `deliverables/bonus-embeddings-rag-plan.md`.
+- OAI-PMH, protocolo para cosechar metadatos:
+  https://www.openarchives.org/OAI/openarchivesprotocol.html
+:::
+
+## Un embedding sin mística
+
+::: {.lean-code}
+```text
+"un pago puede desplazar la motivación intrínseca"
+  ->  [0.031, -0.118, 0.204, ... ]      384 números
+```
+:::
+
+::: {.lead}
+Un embedding es una coordenada. Dos textos con coordenadas cercanas se usan en
+contextos parecidos.
+:::
+
+::: {.prompt}
+Cercanía ≠ verdad · cercanía ≠ consenso · cercanía ≠ causalidad
+:::
+
+::: {.notes}
+**MINUTO ·** 8:00–11:00
+
+**DECIR ·** «El modelo convierte un texto en una lista de números. Nada más.
+Lo interesante es que esa lista queda cerca de la de otros textos que se usan
+de forma parecida, aunque no compartan ni una palabra.»
+
+**CLIC ·** primero el bloque, después la línea de límites.
+
+**ESPERAR ·** la pregunta de qué significan las dimensiones.
+
+**SI NADIE HABLA ·** responderla igual: «Ninguna dimensión tiene un nombre
+interpretable. No hay un eje "incentivos". El espacio se aprendió, no se
+diseñó.»
+
+**INSISTIR ·** dos frases pueden quedar cerca por ser opuestas sobre el mismo
+tema. «Los incentivos aumentan el esfuerzo» y «los incentivos reducen el
+esfuerzo» son vecinas semánticas. Un recuperador que devuelve la segunda no
+está equivocado: está haciendo su trabajo, y la interpretación sigue siendo
+nuestra.
+
+**TRANSICIÓN ·** «Si la coordenada captura uso y no palabras, debería cruzar
+idiomas. Vamos a probarlo.»
+
+[Sources]
+- Modelo usado en la demo,
+  `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2`:
+  https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+- FastEmbed, límite de 512 tokens del modelo:
+  https://qdrant.github.io/fastembed/examples/Supported_Models/
+:::
+
+## El experimento bilingüe
+
+La pregunta se escribe en español. Los libros están en inglés. No hay
+traducción en el camino.
+
+::: {.lean-code}
+```text
+modelo   paraphrase-multilingual-MiniLM-L12-v2
+salida   384 dimensiones · artefacto ~0.22 GB
+red      solo la primera descarga; luego offline
+```
+:::
+
+::: {.prompt}
+Un solo espacio para los dos idiomas · sin API y sin costo por consulta
+:::
+
+::: {.notes}
+**MINUTO ·** 11:00–13:00
+
+**DECIR ·** «Un modelo multilingüe coloca "motivación intrínseca" e "intrinsic
+motivation" en la misma región del espacio. Por eso una pregunta en español
+puede recuperar un pasaje en inglés sin traducir nada.»
+
+**CLIC ·** el bloque técnico, y solo si la sala lo pide.
+
+**ESPERAR ·** «¿esto corre en mi laptop?».
+
+**SI NADIE HABLA ·** contestarlo: «Sí. El artefacto pesa unos 0.22 GB, se baja
+una vez y después la búsqueda no toca la red. Nada de esto necesita una clave
+de API ni sube los libros a ningún servidor.»
+
+**LÍMITE HONESTO ·** el cruce de idiomas es bueno, no perfecto. Términos
+técnicos con traducción inestable rinden peor que la terminología estándar.
+
+**TRANSICIÓN ·** «Primero veamos qué hace la búsqueda que ya conocemos.»
+
+[Sources]
+- FastEmbed, catálogo de modelos y tamaños de artefacto:
+  https://github.com/qdrant/fastembed
+- Ficha del modelo multilingüe:
+  https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+:::
+
+## Demo 1 · palabras exactas
+
+Índice lexical sobre el mismo corpus: SQLite FTS5 con puntaje BM25.
+
+::: {.lean-code}
+```text
+consulta  "validez interna validez externa"
+
+español   0 resultados
+inglés    Generalizability and Scaling · p. 4  · 24.0643
+          Economics Lab             · p. 44 · 16.4563
+```
+:::
+
+::: {.prompt}
+Rápido, exacto y literal · encuentra la cadena, no la idea
+:::
+
+::: {.notes}
+**MINUTO ·** 13:00–16:30
+
+**DECIR ·** «BM25 es una búsqueda de texto muy buena y muy vieja. Premia los
+términos raros y penaliza los documentos largos. No sabe nada de significado.»
+
+**CORRER EN VIVO ·** la consulta en español sobre el índice lexical. El
+resultado esperado es pobre: los libros están en inglés.
+
+**SEGUNDA CORRIDA ·** repetir en inglés,
+`internal validity external validity generalizability`, y mostrar que ahora sí
+devuelve resultados razonables.
+
+**EL PUNTO ·** la búsqueda lexical no es mala. Es literal. Falla exactamente
+donde el vocabulario del lector no coincide con el del autor, y ese es el caso
+normal en una biblioteca bilingüe.
+
+**ESPERAR ·** que alguien proponga «entonces traduzco la consulta».
+
+**SI NADIE HABLA ·** «Traducir es una solución válida y frágil: hay que
+acertarle al término técnico que el autor usó.»
+
+**FALLBACK ·** si el índice no responde, mostrar la salida congelada guardada
+con la demo y explicar el mismo contraste.
+
+**TRANSICIÓN ·** «Ahora la misma pregunta, en español, contra los vectores.»
+
+[Sources]
+- SQLite FTS5, búsqueda de texto completo y función `bm25()`:
+  https://www.sqlite.org/fts5.html
+- Salidas reales congeladas de la demo,
+  `course/exercises/embeddings_rag_bonus/demo-results.md`.
+:::
+
+## Demo 2 · similitud semántica
+
+Misma pregunta, en español, contra el índice vectorial. Cinco resultados como
+máximo, uno por documento.
+
+::: {.lean-code}
+```text
+0.7825  Generalizability and Scaling                 p. 4
+0.5746  Economics Lab                               p. 44
+0.5386  Internal Validity and Identification         p. 1
+0.5099  Thinking, Fast and Slow                     p. 61
+0.4879  Markets, Games, and Strategic Behavior      p. 74
+```
+:::
+
+::: {.prompt}
+Cada resultado se abre en su página · si no se puede verificar, no cuenta
+:::
+
+::: {.notes}
+**MINUTO ·** 16:30–20:00
+
+**DECIR ·** «La misma pregunta que antes no devolvió nada útil, ahora sin
+traducir.»
+
+**CORRER EN VIVO ·** una de las cuatro preguntas del banco: por qué los
+incentivos monetarios pueden desplazar motivación intrínseca; qué amenazas
+aparecen cuando los participantes adivinan la hipótesis; cómo distinguir
+validez interna de externa; qué cambia entre interacción repetida y juego de
+una sola vez.
+
+**HACER EL GESTO CLAVE ·** abrir el PDF del primer resultado en la página
+citada y leer dos líneas en voz alta. Este gesto es el bloque entero: la
+recuperación se juzga verificándola, no admirándola.
+
+**ESPERAR ·** que la sala evalúe si el pasaje realmente responde.
+
+**BUSCAR UN FALSO POSITIVO ·** mostrar deliberadamente un resultado con
+puntaje alto que no responde la pregunta. Es la mejor lámina del bloque:
+demuestra que el puntaje ordena, no valida.
+
+**SI NADIE HABLA ·** preguntar directo: «¿Este pasaje respondería la pregunta
+en un párrafo de un paper de ustedes, sí o no?»
+
+**TRANSICIÓN ·** «Ninguno de los dos métodos gana solo. Se combinan.»
+
+[Sources]
+- Banco de preguntas y reglas de salida,
+  `deliverables/bonus-embeddings-rag-plan.md`, sección «Demo mediana».
+- Índice real y resultados congelados,
+  `course/exercises/embeddings_rag_bonus/demo-results.md`.
+:::
+
+## La búsqueda híbrida
+
+::: {.quad}
+- Lexical: términos exactos, nombres, siglas
+- Vectorial: la idea con otras palabras
+- Filtros: año, obra, método, idioma
+- Diversidad: tope por documento
+:::
+
+::: {.lead}
+Se fusionan los dos rankings y después se reordena. La diversidad no es
+estética: evita que una obra hable por toda la literatura.
+:::
+
+::: {.prompt}
+Recuperar de más y filtrar bien · antes que recuperar poco y confiar
+:::
+
+::: {.notes}
+**MINUTO ·** 20:00–23:00
+
+**DECIR ·** «En producción casi nadie usa solo vectores. Se combinan las dos
+listas, normalmente por posición y no por puntaje, porque los puntajes de BM25
+y de coseno no viven en la misma escala.»
+
+**CLIC ·** los cuatro ingredientes y luego la línea de fusión.
+
+**DETALLE SI SE PIDE ·** la fusión por rango recíproco suma `1/(k + posición)`
+de cada lista; el reordenamiento por diversidad penaliza un candidato que se
+parece demasiado a lo ya seleccionado.
+
+**ESPERAR ·** la pregunta de cuánto pesa cada método.
+
+**SI NADIE HABLA ·** «No se decide opinando. Se arma un banco pequeño de
+preguntas con respuesta conocida y se mide Recall@k. "Suena bien" no es una
+métrica.»
+
+**TRANSICIÓN ·** «Hasta aquí no hubo ningún modelo generativo. Recién ahora
+aparece.»
+
+[Sources]
+- Cormack, Clarke y Buettcher (2009), *Reciprocal Rank Fusion Outperforms
+  Condorcet and Individual Rank Learning Methods*, SIGIR.
+- Carbonell y Goldstein (1998), *The Use of MMR, Diversity-Based Reranking for
+  Reordering Documents and Producing Summaries*, SIGIR.
+:::
+
+## Cuándo empieza RAG
+
+::: {.lean-code}
+```text
+pregunta -> recuperador -> evidencia -> LLM -> respuesta
+                                               con citas
+```
+:::
+
+::: {.lead}
+El recuperador arma la evidencia. El modelo redacta sobre esa evidencia y debe
+poder decir que no alcanza.
+:::
+
+::: {.prompt}
+Todo lo anterior funciona sin LLM · RAG solo agrega la redacción final
+:::
+
+::: {.notes}
+**MINUTO ·** 23:00–26:00
+
+**DECIR ·** «RAG no es un tipo de base de datos. Es el patrón de poner
+evidencia recuperada dentro del prompt para que el modelo responda sobre ella
+en lugar de sobre su memoria.»
+
+**CLIC ·** la cadena y después la condición de abstención.
+
+**LAS TRES CONDICIONES ·** que cada afirmación cite documento y página; que la
+cita apunte a un fragmento que efectivamente se le pasó; y que el modelo tenga
+permiso explícito de responder «la evidencia recuperada no alcanza».
+
+**EL RIESGO REAL ·** si el recuperador trae basura, RAG produce una respuesta
+fluida, citada y equivocada. La cita no prueba que el pasaje respalde la
+afirmación; solo prueba que el pasaje estaba en la mesa.
+
+**ESPERAR ·** «¿entonces por qué usarlo?».
+
+**SI NADIE HABLA ·** «Porque convierte cinco pasajes en un párrafo con
+referencias verificables, y porque lo verificable se puede auditar. Sin
+recuperación, no hay nada que auditar.»
+
+**TRANSICIÓN ·** «Queda una pieza que la similitud no cubre.»
+
+[Sources]
+- Lewis et al. (2020), *Retrieval-Augmented Generation for Knowledge-Intensive
+  NLP Tasks*: https://arxiv.org/abs/2005.11401
+:::
+
+## Knowledge graph, quizá
+
+::: {.lead}
+«¿Qué autores usaron ENAHO con diferencias en diferencias para estudiar empleo
+femenino?»
+:::
+
+Esa pregunta no es de parecido: es de relaciones explícitas entre autor,
+dataset, método y población. Un vector no las guarda.
+
+::: {.prompt}
+Regla · el grafo se justifica cuando la relación, y no el tema, es la respuesta
+:::
+
+::: {.notes}
+**MINUTO ·** 26:00–28:30
+
+**DECIR ·** «Un grafo guarda entidades y aristas con nombre: documento, autor,
+método, dataset, política, población. La similitud semántica encuentra textos
+que hablan de ENAHO; el grafo responde quién la usó con qué método.»
+
+**CLIC ·** la pregunta primero; dejar tres segundos antes de explicar.
+
+**LA REGLA DE DECISIÓN ·** si la pregunta se responde con «textos parecidos a
+esto», basta la búsqueda híbrida. Si se responde con «qué se conecta con qué»,
+y esa conexión hay que contarla, filtrarla o recorrerla, entonces el grafo
+paga su costo.
+
+**EL COSTO ·** el grafo no es gratis: exige extracción estructurada, un
+esquema de entidades y desambiguación de nombres de autor. Se hace después del
+piloto de recuperación, nunca antes.
+
+**ESPERAR ·** una pregunta de la sala que sea claramente relacional.
+
+**SI NADIE HABLA ·** ofrecer una: «¿qué evaluaciones de un mismo programa
+llegan a conclusiones opuestas?».
+
+**TRANSICIÓN ·** «Esto se probó con veinte obras. La pregunta interesante es
+qué pasa a escala peruana.»
+
+[Sources]
+- Plan del bloque, `deliverables/bonus-embeddings-rag-plan.md`, sección
+  «Decisión de alcance».
+:::
+
+## De 20 obras a 2,000 documentos peruanos
+
+::: {.map}
+- ALICIA · catálogo nacional
+- RENATI · tesis
+- SciELO Perú · revistas
+- INEI · encuestas y metodologías
+- BCRP y MEF · series y documentos
+- Sectores · normas y evaluaciones
+:::
+
+::: {.lead}
+Un corpus curado de 2,000 documentos, no una descarga indiscriminada.
+:::
+
+::: {.prompt}
+Descubrir en el catálogo · descargar en el repositorio de origen · guardar la licencia
+:::
+
+::: {.notes}
+**MINUTO ·** 28:30–31:00
+
+**DECIR ·** «El mismo pipeline escala, pero la parte difícil deja de ser
+técnica. Es de procedencia y de derechos.»
+
+**CLIC ·** recorrer las dos columnas de arriba a abajo.
+
+**LA SEPARACIÓN QUE MÁS IMPORTA ·** documentos y datos no van por el mismo
+camino. Cuestionarios, diccionarios de variables, fichas técnicas y
+metodologías son texto y se indexan semánticamente. Los microdatos de la
+ENAHO, millones de filas, se consultan con SQL sobre Parquet o DuckDB.
+Convertir filas en embeddings es caro, impreciso y responde peor que un
+`GROUP BY`.
+
+**LÍMITE LEGAL ·** acceso abierto no equivale a permiso de redistribución.
+Metadatos por OAI-PMH cuando el repositorio lo ofrece; PDF solo cuando acceso,
+licencia y reglas del servidor lo permiten; siempre guardar URL de origen,
+licencia y hash.
+
+**ESPERAR ·** una pregunta sobre RENATI.
+
+**SI NADIE HABLA ·** aclarar: «La estrategia no depende de raspar RENATI. Se
+descubre en el catálogo y se descarga en el repositorio institucional que
+publicó la tesis.»
+
+**TRANSICIÓN ·** «Cierro con la parte evaluable, que no es saber los nombres
+de las herramientas.»
+
+[Sources]
+- ALICIA, CONCYTEC: https://alicia.concytec.gob.pe
+- RENATI, SUNEDU: https://renati.sunedu.gob.pe
+- SciELO Perú: https://www.scielo.org.pe
+- INEI, microdatos y documentación: https://www.inei.gob.pe
+- Conversación recuperada `Fuentes de investigación Perú`, resumida en
+  `deliverables/bonus-embeddings-rag-plan.md`.
+:::
+
+## Cierre · elegir el tipo de recuperación
+
+::: {.rules}
+1. «¿Qué textos discuten spillovers entre unidades?»
+2. «¿Cuál fue el desempleo de Lima en 2024?»
+3. «¿Qué autores usaron ENAHO y diferencias en diferencias?»
+:::
+
+::: {.lead}
+Lo evaluable no es recordar herramientas. Es reconocer qué pregunta pide
+búsqueda semántica, cuál pide una base estructurada y cuál pide relaciones.
+:::
+
+::: {.notes}
+**MINUTO ·** 31:00–34:00
+
+**DECIR ·** «Tres preguntas. Clasifíquenlas antes de que yo diga nada.»
+
+**CLIC ·** una por una, con pausa real.
+
+**RESPUESTAS ·** la primera es búsqueda híbrida, y RAG si además queremos el
+párrafo redactado con citas. La segunda no es un problema de embeddings: es
+una consulta a datos estructurados, y usar recuperación semántica aquí es el
+error más caro del bloque. La tercera necesita filtros sobre metadatos o un
+grafo ligero; la similitud sola devolvería textos que mencionan ENAHO sin
+distinguir quién la usó.
+
+**ESPERAR ·** desacuerdo sobre la tercera. Es la que separa a quien entendió
+la regla.
+
+**SI NADIE HABLA ·** votar a mano alzada pregunta por pregunta.
+
+**CRITERIOS DE ÉXITO DEL BLOQUE ·** el 100% de los resultados mostrados
+conservó documento y página; ninguna obra dominó el top-k; se verificó al
+menos un acierto y un falso positivo abriendo el PDF; y nadie salió creyendo
+que la cercanía vectorial es evidencia.
+
+**CIERRE ·** «Los embeddings representan similitud. El recuperador selecciona
+evidencia. RAG agrega redacción. El grafo conserva relaciones. No compiten:
+responden preguntas distintas, y elegir mal el tipo de recuperación es un
+error de método, no de software.»
+
+[Sources]
+- Ejercicio de transferencia y criterios de éxito,
+  `deliverables/bonus-embeddings-rag-plan.md`.
+:::

@@ -10,6 +10,7 @@ project:
     - course/slides/literatura-agentes-integrados.qmd
     - course/slides/analisis-datos-codex-jupyter.qmd
     - course/slides/lean-verificacion-matematica.qmd
+    - course/slides/bonus-embeddings-rag.qmd
   # Explicit deny-list for copied resources. Quarto copies non-source files
   # from the project directory into the output tree; these directories must
   # never travel with the site.
