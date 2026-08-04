@@ -19,5 +19,3 @@ Presentaciones y materiales del taller.
 - [Demo de auditoría de datos](https://github.com/kmlv/TeachResearchGenAI/tree/main/course/exercises/data_audit_demo)
 - [Demo de verificación en Lean](https://github.com/kmlv/TeachResearchGenAI/tree/main/course/exercises/lean_verification_demo)
 - [Guía de Jupyter, VS Code y Codex](materials/guides/guia-demo-jupyter-vscode-codex.pdf)
-- [Capacidades productivas](https://github.com/kmlv/TeachResearchGenAI/releases/download/materials-v0.1.0/dialogue-01-capacidades-productivas.mp3)
-  y [De una intuición a una hipótesis refutable](https://github.com/kmlv/TeachResearchGenAI/releases/download/materials-v0.1.0/dialogue-02-hipotesis-refutable.mp3)
