@@ -50,10 +50,10 @@ nivel del grupo antes de entrar en materia.
 
 ## Todo parte de un solo enlace
 
-Presentación, guía, código, datos y audios:
+Presentaciones y materiales:
 
 ::: {.materials-link}
-[kmlv.github.io/TeachResearchGenAI/materiales.html](https://kmlv.github.io/TeachResearchGenAI/materiales.html)
+[kmlv.github.io/TeachResearchGenAI](https://kmlv.github.io/TeachResearchGenAI/)
 :::
 
 ::: {.prompt}

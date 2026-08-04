@@ -274,7 +274,7 @@ a editar.»
 
 [Sources]
 - OpenAI, *Codex best practices*, contexto, edición y validación:
-  https://learn.chatgpt.com/guides/best-practices.md
+  https://learn.chatgpt.com/guides/best-practices
 - Anthropic, Claude Code CLI y herramientas:
   https://docs.anthropic.com/en/docs/claude-code/cli-usage
 [/Sources]
