@@ -1,0 +1,3 @@
+evidence_id,source_id,verdict,human_correction,reviewer,timestamp
+EV-T1,T1,verified,,Facilitador,2026-08-03T12:20:00+00:00
+EV-T3,T3,rejected,"El diseno es observacional: no se puede escribir que el asistente redujo la polarizacion",Facilitador,2026-08-03T12:24:00+00:00

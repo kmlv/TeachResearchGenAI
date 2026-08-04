@@ -6,16 +6,10 @@ project:
   # inputs/, deliverables/ and internal drafts cannot be published by accident.
   render:
     - index.qmd
-    - materiales.qmd
-    - pages/propuesta.qmd
-    - pages/herramientas.qmd
     - course/slides/ia-generativa-investigacion-ciencias-sociales.qmd
-    - course/slides/literature-review-35min.qmd
+    - course/slides/literatura-agentes-integrados.qmd
     - course/slides/analisis-datos-codex-jupyter.qmd
     - course/slides/lean-verificacion-matematica.qmd
-    - course/slides/razonamiento-agentes.qmd
-    - course/exercises/literature_review/workflow-guide.qmd
-    - course/exercises/literature_review/participant-packet.qmd
   # Explicit deny-list for copied resources. Quarto copies non-source files
   # from the project directory into the output tree; these directories must
   # never travel with the site.
@@ -28,11 +22,16 @@ project:
     - "!.quarto/**"
     - "!**/.lake/**"
     - "!**/.venv/**"
-    - "course/exercises/literature_review/discovery-screening-clip.html"
-    - "course/exercises/literature_review/clip-data.js"
-    - "course/exercises/literature_review/starter_workspace/**"
-    - "course/exercises/literature_review/starter_workspace.zip"
-    - "course/exercises/research_agent_lab/**"
+    # Local build artefacts of the embeddings bonus. `ocr_cache/` holds text
+    # recognised from books the course does not redistribute, and the index is
+    # tens of megabytes; neither may travel with the site.
+    - "!**/local_index*/**"
+    - "!**/ocr_cache/**"
+    - "!**/model_cache/**"
+    # Scratch directories of exercises in progress.
+    - "!**/tmp/**"
+    # The lab behind section 2. The deck links to it with a relative path.
+    - "course/exercises/literature_agent_lab/**"
 
 website:
   title: "IA generativa para la investigación"
@@ -42,15 +41,6 @@ website:
   navbar:
     background: light
     pinned: true
-    left:
-      - text: Inicio
-        href: index.qmd
-      - text: Propuesta
-        href: pages/propuesta.qmd
-      - text: Herramientas
-        href: pages/herramientas.qmd
-      - text: Materiales
-        href: materiales.qmd
     right:
       - icon: github
         href: https://github.com/kmlv/TeachResearchGenAI

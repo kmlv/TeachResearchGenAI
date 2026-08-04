@@ -1,0 +1,8 @@
+{
+  "status": "ready_to_assemble",
+  "stage": "synthesis",
+  "last_completed_item": "EV-T4",
+  "next_item": null,
+  "allowed_action": "assemble_brief",
+  "pending_human_decision": null
+}

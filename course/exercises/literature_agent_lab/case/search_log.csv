@@ -1,0 +1,3 @@
+search_id,platform,query,date_utc,filters,results_count,export_file,notes
+S01,Semantic Scholar,"\"large language model\" persuasion human attitudes beliefs intentions behavior",2026-08-02,"relevance; 2023-2026",452,candidates.csv,"Eight records were curated for teaching; they are not the first eight results"
+S02,Frozen teaching packet,"n/a - no live search",2026-08-03,"n/a",4,source_packet.md,"Four synthetic training sources for the extraction stage; see the banner in source_packet.md"

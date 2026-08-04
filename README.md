@@ -5,19 +5,19 @@ Material del taller **IA generativa para la investigación económica y social**
 
 Sitio público: <https://kmlv.github.io/TeachResearchGenAI>
 
-El punto de entrada para quienes participan en la clase es
-<https://kmlv.github.io/TeachResearchGenAI/materiales.html>. Desde allí se
-accede a la presentación, la guía, el código y los archivos descargables sin
-compartir carpetas.
+El punto de entrada para quienes participan en la clase es la portada del
+sitio. Es una sola página con dos bloques, presentaciones y materiales, desde
+la que se llega a las cuatro secciones, a los laboratorios y a la guía técnica
+sin compartir carpetas.
 
 ## Estructura
 
 | Ruta | Qué contiene | Se versiona | Se publica |
 |---|---|---|---|
-| `index.qmd` | Portada del sitio. | Sí | Sí |
-| `materiales.qmd` | Índice estable de insumos para participantes. | Sí | Sí |
-| `pages/` | Páginas del sitio. Cada una incluye un documento de `deliverables/`. | Sí | Sí |
-| `course/slides/` | Fuente Quarto de la presentación y componentes del reproductor. | Sí | Sí |
+| `index.qmd` | Portada del sitio y única página normal que se publica. | Sí | Sí |
+| `materiales.qmd`, `pages/` | Páginas anteriores del sitio. Fuera de la lista de render mientras la portada las reemplaza. | Sí | No |
+| `course/slides/` | Fuente Quarto de las presentaciones y componentes del reproductor. | Sí | Las cuatro secciones vigentes |
+| `course/exercises/` | Laboratorios y demos reproducibles. | Sí | Mediante enlaces al repositorio |
 | `materials/` | Archivos pequeños y documentación pública. | Sí | Sí |
 | `examples/` | Ejemplos reproducibles de la clase. | Sí | Mediante enlaces al repositorio |
 | `deliverables/` | Documentos de trabajo y artefactos de audio. | Solo los dos documentos que el sitio incluye | Solo dentro de una página |
@@ -51,20 +51,23 @@ misma localmente.
 Publicar es una decisión explícita, no un efecto secundario. `_quarto.yml`
 declara una lista blanca de render: solo se publica lo que está nombrado ahí.
 
-El sitio publica únicamente los archivos nombrados en la lista `render:`:
+El sitio publica únicamente los cinco archivos nombrados en la lista `render:`:
 
-- `materiales.qmd`
-- `deliverables/consolidated-class-outline.md` → `pages/propuesta.qmd`
-- `deliverables/literature-review-tools-landscape-opus.md` → `pages/herramientas.qmd`
+- `index.qmd`
 - `course/slides/ia-generativa-investigacion-ciencias-sociales.qmd`
+- `course/slides/literatura-agentes-integrados.qmd`
+- `course/slides/analisis-datos-codex-jupyter.qmd`
+- `course/slides/lean-verificacion-matematica.qmd`
 
-Quedan fuera, deliberadamente: las revisiones internas, las fuentes originales,
-los archivos temporales, los entornos locales y los audios de trabajo. Los
-activos grandes aprobados para participantes se publican en una versión de
-GitHub, no en el historial del repositorio.
+`materiales.qmd`, `pages/propuesta.qmd` y `pages/herramientas.qmd` siguen en el
+repositorio pero salieron de la lista: la portada las reemplaza. Quedan fuera,
+deliberadamente: las revisiones internas, las fuentes originales, los archivos
+temporales, los entornos locales, los índices y cachés de los laboratorios y los
+audios de trabajo. Los activos grandes aprobados para participantes se publican
+en una versión de GitHub, no en el historial del repositorio.
 
-Para publicar una página nueva hay que añadirla a `pages/` **y** a la lista
-`render:` de `_quarto.yml`. Si no está en la lista, no se publica.
+Para publicar una página nueva hay que añadirla a la lista `render:` de
+`_quarto.yml`. Si no está en la lista, no se publica.
 
 ### Dos barreras distintas
 

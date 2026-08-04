@@ -1,21 +1,36 @@
 ---
 title: "IA generativa para la investigación económica y social"
 subtitle: "Taller de cuatro horas — Kristian Lopez Vargas"
-pagetitle: "Inicio"
+pagetitle: "IA generativa para la investigación"
 toc: false
 ---
 
-Este sitio reúne las secciones y materiales del taller. Cada sección deja una
-pregunta, práctica o procedimiento reutilizable.
+Presentaciones y materiales del taller.
 
-## Secciones
+## Presentaciones
 
-- [01 · Presentación introductoria](course/slides/ia-generativa-investigacion-ciencias-sociales.qmd)
-- [02 · Revisión de literatura con IA](course/slides/literature-review-35min.qmd)
-- [03 · Razonamiento adversarial y agentes verificables](course/slides/razonamiento-agentes.qmd)
-- [04 · Auditar un análisis de datos con Jupyter y Codex](course/slides/analisis-datos-codex-jupyter.qmd)
-- [05 · Lean como verificador matemático](course/slides/lean-verificacion-matematica.qmd)
+1. [IA generativa e investigación en ciencias sociales](course/slides/ia-generativa-investigacion-ciencias-sociales.qmd)
+   — qué cambia y qué no en el trabajo de investigar.
+2. [Revisión de literatura con agentes](course/slides/literatura-agentes-integrados.qmd)
+   — de la pregunta al cribado, con las decisiones registradas.
+3. [Auditar un análisis de datos con Jupyter y Codex](course/slides/analisis-datos-codex-jupyter.qmd)
+   — encontrar y documentar lo que un cruce de tablas descartó en silencio.
+4. [Lean como verificador matemático](course/slides/lean-verificacion-matematica.qmd)
+   — cuando la máquina no opina sobre la demostración: la comprueba.
 
-## Materiales y taller
+## Materiales
 
-[Materiales de la clase](materiales.qmd) · [Propuesta](pages/propuesta.qmd) · [Panorama de herramientas](pages/herramientas.qmd)
+- [Laboratorio de revisión de literatura](https://github.com/kmlv/TeachResearchGenAI/tree/main/course/exercises/literature_agent_lab)
+  — el caso, el protocolo y el validador de la sección 2.
+- [Demo de auditoría de datos](https://github.com/kmlv/TeachResearchGenAI/tree/main/course/exercises/data_audit_demo)
+  — los notebooks y los datos sintéticos de la sección 3.
+- [Demo de verificación en Lean](https://github.com/kmlv/TeachResearchGenAI/tree/main/course/exercises/lean_verification_demo)
+  — los archivos que compilan en la sección 4.
+- [Guía de Jupyter, VS Code y Codex](materials/guides/guia-demo-jupyter-vscode-codex.pdf)
+  — preparación técnica, para leer antes del taller.
+- [Capacidades productivas](https://github.com/kmlv/TeachResearchGenAI/releases/download/materials-v0.1.0/dialogue-01-capacidades-productivas.mp3)
+  y [De una intuición a una hipótesis refutable](https://github.com/kmlv/TeachResearchGenAI/releases/download/materials-v0.1.0/dialogue-02-hipotesis-refutable.mp3)
+  — dos diálogos en audio que acompañan la sección 1.
+
+Los audios son recreaciones editadas de conversaciones reales. Kristian y la IA
+están representados por voces neurales distintas; no se utiliza clonación de voz.

@@ -1,0 +1,8 @@
+{
+  "status": "revision_required",
+  "stage": "evidence",
+  "last_completed_item": "EV-T1",
+  "next_item": "EV-T3",
+  "allowed_action": "repropose_rejected_row",
+  "pending_human_decision": ["EV-T4"]
+}

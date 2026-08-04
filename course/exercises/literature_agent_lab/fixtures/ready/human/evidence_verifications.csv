@@ -1,0 +1,4 @@
+evidence_id,source_id,verdict,human_correction,reviewer,timestamp
+EV-T1,T1,verified,,Facilitador,2026-08-03T12:20:00+00:00
+EV-T3,T3,verified,"Quienes conversaron más veces declararon posturas más moderadas; el diseño observacional no permite atribuir ese cambio al asistente.",Facilitador,2026-08-03T12:31:00+00:00
+EV-T4,T4,verified,"El mensaje aumentó la intención declarada de compartir; el estudio no midió conducta, así que el brief no puede afirmar comportamiento.",Facilitador,2026-08-03T12:34:00+00:00

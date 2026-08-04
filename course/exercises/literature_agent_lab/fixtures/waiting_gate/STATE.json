@@ -1,0 +1,8 @@
+{
+  "status": "waiting_gate",
+  "stage": "evidence",
+  "last_completed_item": "T4",
+  "next_item": null,
+  "allowed_action": "wait_for_human_verification",
+  "pending_human_decision": ["EV-T1", "EV-T3", "EV-T4"]
+}

@@ -1,0 +1,867 @@
+## Literatura con agentes {.divider}
+
+::: {.notes}
+BLOQUE · 75 minutos · veintitrés láminas enseñadas y cinco divisores sin tiempo
+
+REPARTO · 23 minutos para construir la cadena de evidencia a mano; 12 para
+separar workflow, loop, skill y agente con ejemplos y contraejemplos; 19 para
+ver cómo el agente administra esa misma cadena; 19 de demostración en vivo;
+2 de transferencia.
+
+CASO ÚNICO · persuasión mediada por modelos de lenguaje. No se cambia de tema
+en ningún momento: lo que la sala audita a mano en el minuto 15 es exactamente
+lo que el agente escala en el minuto 54.
+
+PRODUCTO · un brief de evidencia ensamblado solo desde filas verificadas, y un
+contrato que la persona asistente puede reutilizar en su propio trabajo.
+
+ANTES DE EMPEZAR · abrir `course/exercises/literature_agent_lab/` en una
+terminal y correr `python3 scripts/test_lab.py`. Si las 33 comprobaciones pasan,
+la demo funcionará.
+:::
+
+## Hoy saldrán con un brief y con un contrato
+
+::: {.quad}
+- **Producto** · un brief de evidencia con pasaje y localizador por afirmación
+- **Método** · seis decisiones registradas en archivos, no una conversación
+- **Contrato** · qué puede hacer un agente y dónde termina su autoridad
+- **Transferencia** · el mismo esquema para el artefacto que ya producen
+:::
+
+::: {.lead}
+Un agente no sirve para responder más rápido. Sirve para sostener una cadena de
+evidencia que otra persona pueda revisar.
+:::
+
+::: {.notes}
+MINUTO · 0–3
+
+DECIR · «Este bloque no separa "revisión de literatura" de "agentes". Son la
+misma cosa vista dos veces: primero ustedes hacen una decisión a mano y ven qué
+cuesta; después vemos cómo un agente sostiene esa misma decisión doce veces sin
+perder el rastro.»
+
+SEÑALAR · los cuatro cuadrantes, en orden
+
+ESPERAR · nada; es el contrato de aprendizaje del bloque
+
+SI NADIE HABLA · no aplica
+:::
+
+## Una revisión son seis decisiones, no una respuesta
+
+::: {.map}
+- `question.md` · qué se pregunta y con qué alcance
+- `protocol.md` · qué entra y qué sale, escrito antes
+- `candidates.csv` · qué registros existen
+- `evidence` · qué pasaje sostiene qué afirmación
+- `human` · quién decidió y por qué
+- `brief` · qué se puede afirmar hoy
+:::
+
+::: {.prompt}
+Si la interfaz desaparece mañana, las seis decisiones siguen ahí.
+:::
+
+::: {.notes}
+MINUTO · 3–6
+
+DECIR · «Cuando alguien dice "le pedí una revisión de literatura al modelo",
+en realidad delegó seis decisiones distintas en una sola frase. Separarlas es
+lo que permite revisar, corregir y reanudar.»
+
+SEÑALAR · los seis archivos, uno por uno
+
+ESPERAR · que alguien note que ninguno es un chat
+
+SI NADIE HABLA · «Ninguno de los seis es una conversación. Todos son archivos
+pequeños que se abren como texto o tabla.»
+
+[Sources]
+- PRISMA 2020, transparencia del flujo de identificación y selección:
+  https://www.prisma-statement.org/prisma-2020
+[/Sources]
+:::
+
+## Congelar la pregunta antes de mirar resultados
+
+::: {.rules}
+- Población · personas adultas expuestas al tratamiento
+- Intervención · mensaje o diálogo persuasivo generado por un LLM
+- Comparador · mensaje humano, mensaje genérico o control
+- Resultado · actitud, creencia, intención o conducta posterior
+:::
+
+::: {.lead}
+Congelado significa con hash: si la pregunta cambia a mitad del trabajo, el
+validador lo dice en voz alta.
+:::
+
+::: {.notes}
+MINUTO · 6–9
+
+DECIR · «Nuestra pregunta de hoy: ¿los mensajes persuasivos generados por
+modelos cambian actitudes en personas adultas frente a un comparador
+pertinente? Está escrita antes de ver un solo resultado, y su hash está
+guardado. Ajustar la pregunta después de ver qué encontramos tiene nombre, y no
+es un ajuste.»
+
+SEÑALAR · los cuatro elementos; después la línea sobre el hash
+
+ESPERAR · que alguien pregunte qué pasa si la pregunta sí debe cambiar
+
+SI NADIE HABLA · «Sí puede cambiar. Pero entonces el cribado anterior deja de
+valer, y eso debe ser una decisión visible y no un ajuste silencioso.»
+
+[Sources]
+- Pregunta y protocolo congelados:
+  ../exercises/literature_agent_lab/case/question.md
+[/Sources]
+:::
+
+## La IA propone; la firma nunca se delega
+
+::: {.quad}
+- **La IA propone** · un estado de cribado y una razón
+- **La IA ancla** · un pasaje textual y un localizador
+- **La persona decide** · incluir, excluir, dudar o marcar
+- **La persona verifica** · abre la fuente y firma la fila
+:::
+
+::: {.lead}
+La columna que dice `verified` solo la escribe un comando que exige terminal
+interactiva y reteclear el identificador.
+:::
+
+::: {.notes}
+MINUTO · 9–12
+
+DECIR · «La separación no es moral, es de archivos. Lo que propone la IA vive
+en `work/`. Lo que decidió una persona vive en `human/`. El agente no tiene
+permiso de escritura sobre la segunda carpeta, y además hay un hash que delata
+si alguien la editó por fuera.»
+
+SEÑALAR · las dos primeras viñetas; después las dos últimas
+
+ESPERAR · que alguien pregunte si el agente puede incumplirlo igual
+
+SI NADIE HABLA · «Puede intentarlo: las reglas son instrucciones, no permisos
+del sistema. Por eso además hay hash y validador: no impiden, hacen visible.»
+
+[Sources]
+- Contrato y autoridad del agente:
+  ../exercises/literature_agent_lab/AGENTS.md
+[/Sources]
+:::
+
+## Una cita auténtica puede ser evidencia falsa
+
+::: {.quad}
+- **Registro real** · «The Persuasive Power of Large Language Models», ICWSM 2024
+- **Suena perfecto** · el título contiene exactamente nuestra pregunta
+- **No sirve** · la persuasión ocurre entre modelos; las personas solo
+  califican texto
+- **Segundo caso** · un registro con advertencia editorial queda separado,
+  no borrado
+:::
+
+::: {.prompt}
+El pasaje puede ser textual, el DOI correcto y la evidencia equivocada.
+:::
+
+::: {.notes}
+MINUTO · 12–15
+
+DECIR · «Este registro es real, está publicado y su DOI resuelve. Y aun así no
+responde nuestra pregunta, porque nuestra población son personas adultas cuyas
+actitudes cambian, no modelos que se convencen entre sí. Ninguna verificación
+de cita habría detectado esto: solo el protocolo lo detecta.»
+
+SEÑALAR · la tercera viñeta; después la cuarta
+
+ESPERAR · que alguien proponga otra forma de "cita correcta pero evidencia
+equivocada": otro país, otra población, otro resultado medido
+
+SI NADIE HABLA · «Otro programa con el mismo nombre en otro país. Sucede más de
+lo que parece.»
+
+ANTES DE CLASE · el registro marcado `editorial_flag` viene del corpus
+verificado del taller. Confirme su estatus editorial actual antes de
+presentarlo; si cambió, la lámina sigue funcionando, cambia solo el ejemplo.
+
+[Sources]
+- Registro ICWSM 2024: https://doi.org/10.1609/icwsm.v18i1.31304
+- Corpus y razones de cribado:
+  ../exercises/literature_agent_lab/case/candidates.csv
+[/Sources]
+:::
+
+## Auditen una fila · cinco minutos
+
+::: {.lean-code}
+```text
+fuente     T3 · estudio observacional · adultos
+pasaje     «Quienes conversaron más veces con el asistente
+            declararon posturas más moderadas…»
+la IA dice «El asistente redujo la polarización de quienes
+            conversaron con él más veces.»
+```
+:::
+
+::: {.rules}
+- ¿El pasaje existe y dice eso?
+- ¿La población es la del protocolo?
+- ¿El resultado medido es el que se afirma?
+- ¿El diseño permite ese verbo?
+:::
+
+::: {.notes}
+MINUTO · 15–20
+
+DECIR · «Cinco minutos, en parejas, una sola fila. No extraigan nada nuevo: la
+extracción ya está hecha. Apliquen las cuatro preguntas y decidan si esta fila
+entra al brief tal como está, entra corregida, o no entra.»
+
+SEÑALAR · primero el pasaje; después la interpretación de la IA; después las
+cuatro preguntas
+
+ESPERAR · tres minutos en parejas, dos de plenario. La respuesta esperada: las
+tres primeras preguntas pasan y la cuarta falla — el diseño es observacional y
+`redujo` afirma un efecto. La corrección es cambiar el verbo, no borrar la fila.
+
+SI NADIE LLEGA · preguntar solo: «¿quién eligió conversar más veces con el
+asistente?». Basta para que aparezca la selección.
+
+SI UNA PAREJA TERMINA RÁPIDO · pedir que escriba la frase corregida en voz alta
+y que diga qué se pierde al escribirla bien.
+:::
+
+## Un prompt aislado pierde el estado
+
+::: {.quad}
+- **Turno 1** · el modelo cribó ocho registros y propuso razones
+- **Turno 40** · ya no recuerda cuál quedó incierto ni por qué
+- **Sesión nueva** · empieza de cero, o peor, inventa lo que ya había
+- **La sala** · acaba de auditar una fila; ahora faltan once decisiones más
+:::
+
+::: {.lead}
+El problema no es la calidad de la respuesta. Es que no hay dónde quedó el
+trabajo.
+:::
+
+::: {.notes}
+MINUTO · 20–23
+
+DECIR · «Lo que acaban de hacer con una fila hay que hacerlo doce veces, en
+varias sesiones, con interrupciones. Ahí es donde un chat deja de alcanzar: no
+porque escriba mal, sino porque su único estado es el hilo de la conversación.»
+
+SEÑALAR · la tercera viñeta
+
+ESPERAR · que alguien cuente una sesión larga que tuvo que reiniciar
+
+SI NADIE HABLA · «Pregunta concreta: si cierran el chat ahora, ¿en qué archivo
+está lo que ya decidieron?»
+:::
+
+## Qué es un agente y qué no {.divider}
+
+::: {.notes}
+BLOQUE · 12 minutos · cuatro láminas
+
+PROPÓSITO · dar cuatro distinciones operativas, cada una con ejemplo y
+contraejemplo, usando el mismo caso de persuasión. No son definiciones de
+manual: son criterios para decidir qué construir.
+
+CUIDADO CON EL TIEMPO · tres minutos por lámina. Si se alarga el debate, cortar
+y prometer retomarlo en la demo: aparece otra vez en concreto.
+:::
+
+## Un prompt responde; un workflow ejecuta una secuencia {.smaller}
+
+::: {.quad}
+- **Prompt · sí** — «Reescribe esta interpretación sin verbo causal, en 30
+  palabras.»
+- **Prompt · no basta** — «Hazme una revisión sobre persuasión con IA» no
+  define una salida verificable.
+- **Workflow · sí** — para cada registro: leer metadatos, proponer estado y
+  escribir la razón, siempre en ese orden.
+- **Workflow · no es agente** — un `if` con veinte ramas sigue siendo su secuencia.
+:::
+
+::: {.lead}
+La cantidad de llamadas no importa. Importa quién eligió la siguiente acción.
+:::
+
+::: {.notes}
+MINUTO · 23–26
+
+DECIR · «Un workflow puede llamar al modelo cuarenta veces y seguir siendo un
+workflow, porque la secuencia la escribimos nosotros. Eso no es un defecto: para
+cribar doce registros con el mismo criterio, un workflow es lo correcto.»
+
+SEÑALAR · el tercer cuadrante; después el cuarto
+
+ESPERAR · que la sala clasifique esto: un script que recorre los doce registros
+y propone estado. Respuesta: workflow.
+
+SI NADIE HABLA · «Es workflow. Se vuelve agentivo cuando el sistema decide
+abrir el protocolo porque un registro no encaja en ninguna categoría prevista.»
+:::
+
+## Un loop repite; una herramienta ejecuta una acción
+
+::: {.quad}
+- **Loop · sí** — repetir por registro hasta que ninguno quede sin estado propuesto.
+- **Loop · no sirve** — «repítelo hasta que quede bien» no tiene parada verificable.
+- **Tool · sí** — `leer_ficha(source_id)` devuelve diseño, población y pasaje
+  exactos.
+- **Tool · no es** — escribir «tienes acceso al paquete de fuentes» es una promesa.
+:::
+
+::: {.lead}
+El loop necesita estado y condición de parada. La herramienta necesita
+argumentos, retorno y comportamiento ante fallos.
+:::
+
+::: {.notes}
+MINUTO · 26–29
+
+DECIR · «La parada de nuestro loop se puede contar: doce registros con estado
+propuesto, cuatro fuentes con fila de evidencia. Cualquiera puede verificar si
+terminó sin preguntarle al modelo.»
+
+SEÑALAR · las dos primeras viñetas; después las dos últimas
+
+ESPERAR · una condición de parada que otra persona pueda comprobar
+
+SI NADIE HABLA · «"Hasta que el validador pase" es una buena parada. "Hasta que
+esté completo" no lo es.»
+
+[Sources]
+- OpenAI, `Define tools`: https://developers.openai.com/plugins/plan/tools
+[/Sources]
+:::
+
+## Una skill conserva el método; un agente decide cómo aplicarlo
+
+::: {.quad}
+- **Skill · sí** — `SKILL.md` con el procedimiento: inventariar, anclar,
+  elegir el verbo, detenerse.
+- **Skill · no es** — pegar las mismas instrucciones al inicio de cada mensaje.
+- **Agente · sí** — el pasaje no sostiene la afirmación; decide detenerse y
+  preguntar.
+- **Agente · no es** — llamar al modelo doce veces en orden fijo.
+:::
+
+::: {.lead}
+La skill enseña un procedimiento reutilizable. El agente lo aplica al estado
+que encuentra hoy.
+:::
+
+::: {.notes}
+MINUTO · 29–32
+
+DECIR · «Nuestra skill no contiene la respuesta ni el corpus. Contiene el
+método: anclar antes de interpretar, elegir el verbo según el diseño, detenerse
+en la compuerta. Sirve igual mañana con otro tema.»
+
+SEÑALAR · el primer cuadrante; después el tercero
+
+ESPERAR · que alguien nombre un procedimiento que hoy guarda como prompt largo
+
+SI NADIE HABLA · «Extraer datos de artículos es buen candidato: cambian las
+fuentes, pero el anclaje, la compuerta y la regla del verbo se repiten.»
+
+[Sources]
+- OpenAI, `Build skills`: https://learn.chatgpt.com/docs/build-skills
+- Skill del laboratorio:
+  ../exercises/literature_agent_lab/.agents/skills/literature-evidence/SKILL.md
+[/Sources]
+:::
+
+## Un subagente devuelve un artefacto; varios agentes exigen arbitraje
+
+::: {.quad}
+- **Subagente · sí** — solo compara pasajes contra el paquete y devuelve las
+  diferencias.
+- **Subagente · no es** — otra ventana donde usted pega el resultado a mano.
+- **Multiagente · útil** — uno propone la interpretación, otro intenta
+  refutarla y usted arbitra.
+- **Multiagente · débil** — preguntar lo mismo a dos modelos y quedarse con el
+  texto que gustó más.
+:::
+
+::: {.lead}
+Delegar contexto no delega autoridad: cada encargo necesita producto, límites y
+regla de aceptación.
+:::
+
+::: {.notes}
+MINUTO · 32–35
+
+DECIR · «Verificar anclajes y revisar si el verbo excede el diseño son dos
+encargos separables: producen artefactos distintos y se pueden comparar. Editar
+la misma fila en paralelo, no.»
+
+SEÑALAR · el tercer cuadrante; después el cuarto
+
+ESPERAR · una tarea de su propio trabajo que sí pueda correr en paralelo
+
+SI NADIE HABLA · «Si dos encargos escriben en el mismo archivo, probablemente
+no son dos encargos.»
+
+[Sources]
+- OpenAI, `Subagents`:
+  https://learn.chatgpt.com/docs/agent-configuration/subagents
+[/Sources]
+:::
+
+## El agente administra la cadena {.divider}
+
+::: {.notes}
+BLOQUE · 19 minutos · siete láminas
+
+PROPÓSITO · mostrar la arquitectura completa antes de encenderla. Cada lámina
+corresponde a algo que se verá funcionando en la demo, así que conviene ir
+rápido y prometer el concreto.
+
+SI VAN ATRASADOS · las láminas del ledger y del caso congelado son las más
+comprimibles; las de contrato, compuertas y validadores no.
+:::
+
+## El agente útil administra una cadena de evidencia
+
+Doce registros que cribar, cuatro fuentes que anclar, una decisión humana por
+fila y un brief que solo puede decir lo que las filas sostienen.
+
+::: {.completions}
+- estado que sobrevive al cierre de la sesión
+- procedencia por cada afirmación
+- compuertas que el agente no puede abrir
+:::
+
+::: {.lead}
+El agente no redacta un brief libre. Prepara filas y espera.
+:::
+
+::: {.notes}
+MINUTO · 35–38
+
+DECIR · «Fíjense en el cambio de encargo. No le pedimos "una revisión". Le
+pedimos que administre una cola de decisiones y que se detenga cada vez que la
+siguiente le corresponde a una persona.»
+
+SEÑALAR · las tres completaciones
+
+ESPERAR · que alguien diga qué afirmación de un brief temería no poder respaldar
+
+SI NADIE HABLA · «"La evidencia muestra que la IA persuade". ¿Qué fila, qué
+pasaje, qué diseño y qué población?»
+:::
+
+## La carpeta separa fuente, trabajo, humano, oficial y salida
+
+::: {.lean-code}
+```text
+literature_agent_lab/
+├── case/       fuentes congeladas · solo lectura, con hash
+├── work/       lo que el agente propone
+├── human/      lo que una persona decidió
+├── official/   el ledger · llega solo desde una decisión
+└── output/     el brief · se genera, no se escribe
+```
+:::
+
+::: {.lead}
+Un chat mezcla las cinco cosas en un hilo. Aquí cada una tiene dueño y regla de
+escritura.
+:::
+
+::: {.notes}
+MINUTO · 38–41
+
+DECIR · «Esta es la lámina que conviene fotografiar. La separación no es orden
+estético: define quién puede escribir dónde, y por eso permite revisar sin leer
+toda la conversación.»
+
+SEÑALAR · `case/`, después `work/`, después `human/`, y detenerse en `output/`
+
+ESPERAR · que alguien pregunte por qué `output/` está vacío
+
+SI NADIE HABLA · «Porque el brief no es un documento que se mejora. Es una
+consecuencia del ledger: si no hay filas aprobadas, no hay brief.»
+:::
+
+## El contrato vive antes del primer turno
+
+::: {.quad}
+- **Objetivo** — un brief donde cada afirmación tenga pasaje y localizador
+- **Autoridad** — leer `case/`; escribir `work/`, `STATE.json` y `TRACE.csv`
+- **Presupuesto** — doce registros, cuatro fuentes, una ronda por rechazo
+- **Terminado** — validador en verde y brief generado desde el ledger
+:::
+
+::: {.prompt}
+Codex lee `AGENTS.md` · Claude Code recibe las mismas reglas vía `CLAUDE.md`
+:::
+
+::: {.notes}
+MINUTO · 41–44
+
+DECIR · «No empezamos con "hazme un agente". Empezamos escribiendo cuatro
+cosas: qué produce, qué puede tocar, cuánto puede gastar y cómo sabemos que
+terminó. Si no pueden escribir las cuatro, todavía no hay agente que construir.»
+
+SEÑALAR · los cuatro cuadrantes, en orden
+
+ESPERAR · que la sala nombre una decisión indelegable de este caso
+
+SI NADIE HABLA · «Aceptar que un diseño observacional no permite un verbo
+causal. El agente puede mostrar la tensión; el alcance lo decide una persona.»
+
+[Sources]
+- OpenAI, `AGENTS.md`:
+  https://learn.chatgpt.com/docs/agent-configuration/agents-md
+- Anthropic, `Claude Code memory`: https://code.claude.com/docs/en/memory
+[/Sources]
+:::
+
+## El ledger expone decisiones, no prosa
+
+::: {.map}
+- `evidence_id` · qué fila es
+- `source_id` · de dónde sale el pasaje
+- `verbatim_excerpt` + `locator` · dónde verificarlo
+- `final_interpretation` · qué se puede afirmar
+- `reviewer` · quién lo firmó
+:::
+
+::: {.prompt}
+Un brief pulido puede ocultar lo que falta. El ledger no.
+:::
+
+::: {.notes}
+MINUTO · 44–46
+
+DECIR · «Si mañana alguien cuestiona una frase del brief, esta tabla dice en
+una línea de dónde salió y quién la aceptó. Ese es todo el valor.»
+
+SEÑALAR · `verbatim_excerpt` y `locator` juntos
+
+ESPERAR · que alguien elija qué revisaría primero, el brief o el ledger
+
+SI NADIE HABLA · «El ledger. Revela qué quedó fuera antes de leer una prosa
+que suena completa.»
+:::
+
+## Cuatro compuertas que el agente no puede abrir
+
+::: {.rules}
+- Cribado · una persona escribe el estado y la razón
+- Verificación · una persona abre la fuente y firma la fila
+- Ledger oficial · solo recibe filas con verificación registrada
+- Ensamblaje · el brief se niega a existir si queda una fila abierta
+:::
+
+::: {.lead}
+`uncertain` y `editorial_flag` no avanzan solos. Sacar algo de ahí exige una
+decisión nueva.
+:::
+
+::: {.notes}
+MINUTO · 46–49
+
+DECIR · «Las dos compuertas humanas exigen terminal interactiva y reteclear el
+identificador. Las otras dos son comprobaciones deterministas que se niegan a
+avanzar. Esa fricción convierte aprobar en un acto, no en un descuido.»
+
+SEÑALAR · las cuatro reglas; después la línea sobre `uncertain`
+
+ESPERAR · que alguien pregunte qué ve antes de aprobar
+
+SI NADIE HABLA · «El pasaje, el localizador y el diseño. Aprobar solo la frase
+final no demuestra nada.»
+
+CUIDADO · el hash de `human/` es un tripwire pedagógico, no una frontera de
+seguridad del sistema operativo. Decirlo en voz alta.
+:::
+
+## Once validadores y ninguno llama al modelo
+
+::: {.completions}
+- el pasaje coincide carácter por carácter con la ficha
+- el localizador es el que la ficha declara
+- ningún pasaje supera veinticinco palabras
+- ningún verbo causal aparece junto a un diseño que no lo admite
+- ninguna fila llega al ledger sin verificación humana
+:::
+
+::: {.lead}
+Atrapan lo mecánico para liberar atención humana para lo que no lo es.
+:::
+
+::: {.notes}
+MINUTO · 49–52
+
+DECIR · «El validador no entiende de causalidad. La cuarta comprobación es
+léxica: busca verbos en una lista y mira qué diseño declara la ficha. Una frase
+causal escrita con cuidado pasa igual. Por eso la compuerta humana no sobra:
+el código atrapa el error tonto y deja el error interesante para ustedes.»
+
+SEÑALAR · la cuarta completación; decir en voz alta que es léxica
+
+ESPERAR · que la sala elija cuál validador vale más
+
+SI NADIE HABLA · «El anclaje textual: convierte una afirmación del brief en algo
+que otra persona puede comprobar en treinta segundos.»
+
+[Sources]
+- Los once validadores:
+  ../exercises/literature_agent_lab/scripts/validate_review.py
+[/Sources]
+:::
+
+## El caso congelado: doce registros y cuatro fuentes
+
+::: {.quad}
+- **Ocho registros reales** · metadatos y DOI verificables, para cribar
+- **Cuatro fuentes de entrenamiento** · sintéticas y etiquetadas, para extraer
+- **Tres filas de evidencia** · una fuente queda excluida en el cribado
+- **Dos errores sembrados** · uno lo atrapa el código, el otro solo una persona
+:::
+
+::: {.prompt}
+Corpus congelado · la clase no depende de la red ni de una cuenta
+:::
+
+::: {.notes}
+MINUTO · 52–54
+
+DECIR · «Sean explícitos con la sala: los ocho registros son reales y su DOI
+resuelve. Las cuatro fuentes con pasaje son sintéticas, escritas para este
+ejercicio, y así están rotuladas en el paquete y en el brief. No mezclamos las
+dos capas, y nadie debe citar un pasaje sintético como si fuera un artículo.»
+
+SEÑALAR · las dos primeras viñetas; después la cuarta
+
+ESPERAR · nada; es una advertencia de honestidad, no una pregunta
+
+SI ALGUIEN OBJETA · «Buena objeción. Con fuentes reales el ejercicio depende de
+acceso y de derechos; con fuentes rotuladas depende solo del método. El método
+es lo transferible.»
+
+[Sources]
+- Paquete y aviso de fuentes sintéticas:
+  ../exercises/literature_agent_lab/case/source_packet.md
+[/Sources]
+:::
+
+## Demostración {.divider}
+
+::: {.notes}
+BLOQUE · 19 minutos · cuatro láminas
+
+ARRANQUE · copiar el estado de espera antes de empezar, no en vivo:
+`cp -R fixtures/waiting_gate/. .`
+
+ARCO · el agente ya propuso; el validador ya bloquea; falta la parte humana. La
+demo consiste en aprobar una fila, rechazar otra, cerrar la sesión, reanudar y
+ensamblar.
+
+SI ALGO FALLA · `fixtures/ready` deja todo verificado y permite mostrar el
+ensamblaje en un minuto. La demo se puede recortar sin perder el argumento.
+:::
+
+## Primer encargo: inventariar y proponer, nada más
+
+::: {.lean-code}
+```text
+$ cd course/exercises/literature_agent_lab
+$ codex                 # o: claude
+
+Aplica case/protocol.md a los doce registros.
+Escribe work/screening_pending.csv con estado y razón.
+No escribas en human/ ni en official/.
+Ejecuta el validador y muéstrame qué bloquea.
+```
+:::
+
+::: {.prompt}
+Primero comprender · después proponer · nunca firmar
+:::
+
+::: {.notes}
+MINUTO · 54–58
+
+DECIR · «Miren lo que NO dice el encargo. No dice "decide". No dice "resume".
+Pide un artefacto acotado y prohíbe explícitamente dos carpetas. Ese es el
+patrón que se llevan.»
+
+CLIC · mostrar `work/screening_pending.csv` lleno y `human/` todavía vacío
+
+ESPERAR · que alguien note que el agente propuso `uncertain` en algún registro
+
+SI NADIE HABLA · señalar el registro cuyo título no alcanza y leer la razón que
+escribió el agente
+
+SI NO HAY TERMINAL · mostrar los archivos ya poblados de `fixtures/waiting_gate`
+y narrar el encargo. El argumento no depende de ejecutar en vivo.
+:::
+
+## La compuerta ocurre de verdad, aquí, ahora
+
+::: {.lean-code}
+```text
+$ python3 scripts/validate_review.py
+BLOCKED
+- causal-language: EV-T3 uses 'redujo' but T3 declares
+  'estudio observacional'
+- anchor: EV-T4 locator does not match T4
+- gate: human verification pending for EV-T1, EV-T3, EV-T4
+```
+:::
+
+::: {.lead}
+El agente llegó hasta aquí y se detuvo. No puede seguir sin una persona.
+:::
+
+::: {.notes}
+MINUTO · 58–63
+
+DECIR · «`EV-T3` es exactamente la fila que ustedes auditaron a mano en el
+minuto quince. Lo que a ustedes les costó cinco minutos, el validador lo marca
+en un segundo, porque es mecánico. Lo que no es mecánico sigue siendo de
+ustedes.»
+
+CLIC · correr el validador; después aprobar la fila limpia en vivo:
+`python3 scripts/review_gate.py --kind evidence --id EV-T1`
+`--decision verified --by "Su nombre"`
+
+ESPERAR · el momento en que la terminal pide reteclear `EV-T1`; hacer una pausa
+ahí y dejar que la sala lo vea
+
+SI NADIE REACCIONA · preguntar: «¿cuántas veces han aprobado algo con menos
+fricción que esto?»
+:::
+
+## Rechazar, cerrar la sesión, reanudar
+
+::: {.lean-code}
+```text
+$ python3 scripts/review_gate.py --kind evidence --id EV-T3 \
+    --decision rejected \
+    --correction "Diseño observacional" \
+    --by "…"
+# EV-T4 · localizador e intención ≠ conducta
+# cerrar la terminal · abrir una sesión nueva
+
+Lee STATE.json y TRACE.csv. ¿Dónde quedamos?
+No edites. Espera confirmación.
+```
+:::
+
+::: {.prompt}
+Si el agente necesita el chat anterior para saber dónde quedó, la arquitectura
+falló.
+:::
+
+::: {.notes}
+MINUTO · 63–68
+
+DECIR · «Éste es el momento importante del bloque. Rechazamos una fila, cerramos
+todo y abrimos una sesión limpia. El agente lee estado y traza, dice qué fila
+volvió a la cola y por qué, y propone la versión corregida sin inventar lo que
+pasó antes.»
+
+CLIC · rechazar `EV-T3`; rechazar también `EV-T4`, explicando que el código
+atrapó su localizador incorrecto pero una persona detectó el salto de intención
+a conducta; pedir al agente que corrija y vuelva a proponer ambas filas;
+verificar las dos; cerrar; abrir sesión nueva; pedir el resumen
+
+ESPERAR · que la sala note que el rechazo no borró nada: dejó un hueco visible
+que el validador nombra
+
+SI FALTA TIEMPO · usar `fixtures/rejected`, correr el validador y leer la línea
+`evidence: no row yet for T3`. Es el mismo argumento en veinte segundos.
+
+SI PREGUNTAN POR r2–r5 · «Son registros reales incluidos durante el cribado,
+pero este paquete no distribuye sus pasajes. El brief de práctica se ensambla
+solo con las tres fuentes sintéticas incluidas y verificadas.»
+:::
+
+## El brief se ensambla; no se escribe
+
+::: {.lean-code}
+```text
+$ python3 scripts/assemble_brief.py
+Wrote output/review_brief.md
+from 3 verified ledger rows
+
+$ # editar el brief a mano y volver a validar
+BLOCKED
+- assembly: review_brief.md was not generated
+  exactly from the ledger
+```
+:::
+
+::: {.lead}
+Tres filas verificadas, tres afirmaciones. Ni una frase más.
+:::
+
+::: {.notes}
+MINUTO · 68–73
+
+DECIR · «Abramos el brief. Cada afirmación trae fuente, diseño, población,
+pasaje, localizador y quién la firmó. Y fíjense en lo que dice la fila de T4:
+aumentó la intención declarada de compartir, y el estudio no midió conducta. Esa
+frase incómoda sobrevivió porque una persona la corrigió; el validador no la
+habría atrapado.»
+
+CLIC · ensamblar; abrir el brief; agregar una frase a mano; volver a validar
+
+ESPERAR · que alguien pregunte si esto no es demasiado rígido
+
+SI NADIE HABLA · plantearlo usted: «¿Es demasiado rígido? Depende de si el
+documento va a sostener una decisión. Para explorar, no. Para lo que se firma,
+sí.»
+:::
+
+## Transferencia {.divider}
+
+::: {.notes}
+BLOQUE · 2 minutos · una lámina
+
+PROPÓSITO · que cada persona salga con un encargo concreto, no con una
+impresión general. Dos minutos, individual, por escrito.
+:::
+
+## Empiecen por la decisión que no delegarían
+
+1. Nombren un artefacto que ya producen y sus fuentes.
+2. Escriban la decisión que **nunca** delegarían.
+3. Escriban dos comprobaciones puramente mecánicas.
+4. Definan qué archivo guarda el estado entre sesiones.
+5. Decidan qué evidencia acompaña cada afirmación del producto.
+
+::: {.prompt}
+2 min · [abrir el laboratorio](../exercises/literature_agent_lab/README.md)
+:::
+
+::: {.notes}
+MINUTO · 73–75
+
+DECIR · «El orden importa: empiecen por el paso dos. Si no pueden nombrar una
+decisión indelegable, todavía no saben dónde poner la compuerta, y sin compuerta
+no están construyendo un agente sino automatizando una opinión.»
+
+SEÑALAR · el paso 2; después el paso 3
+
+ESPERAR · dos minutos por escrito; recoger una respuesta en voz alta si el
+reloj lo permite
+
+SI NADIE HABLA · ofrecer el caso: respuesta a comité de ética. Producto: ledger
+de observaciones, cambios propuestos, aprobaciones y versión final.
+:::

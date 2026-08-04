@@ -1,0 +1,8 @@
+{
+  "status": "not_started",
+  "stage": "screening",
+  "last_completed_item": null,
+  "next_item": "r1",
+  "allowed_action": "inventory",
+  "pending_human_decision": null
+}

@@ -1,0 +1,13 @@
+record_id,human_decision,human_reason,reviewer,timestamp
+T1,include,"Adultos asignados al azar, mensaje generado por LLM y apoyo declarado posterior",Facilitador,2026-08-03T12:00:00+00:00
+T2,exclude,"La persuasion ocurre entre modelos; las personas solo califican texto",Facilitador,2026-08-03T12:00:00+00:00
+T3,include,"Adultos, exposicion al asistente y postura declarada posterior con comparador",Facilitador,2026-08-03T12:00:00+00:00
+T4,include,"Adultos asignados al azar, mensaje generado por LLM e intencion declarada posterior",Facilitador,2026-08-03T12:00:00+00:00
+r1,uncertain,"El titulo no permite saber si hay participantes humanos y resultado posterior",Facilitador,2026-08-03T12:00:00+00:00
+r2,include,"Microtargeting con LLM evaluado sobre personas segun el titulo y la revista",Facilitador,2026-08-03T12:00:00+00:00
+r3,include,"Persuasividad conversacional de un LLM medida sobre personas",Facilitador,2026-08-03T12:00:00+00:00
+r4,include,"Mensajes generados por LLM y apoyo a politicas en personas adultas",Facilitador,2026-08-03T12:00:00+00:00
+r5,include,"Persuasion politica con IA conversacional sobre participantes humanos",Facilitador,2026-08-03T12:00:00+00:00
+r6,editorial_flag,"El alcance encaja pero el registro arrastra una advertencia editorial sin resolver",Facilitador,2026-08-03T12:00:00+00:00
+r7,exclude,"La persuasion ocurre entre modelos; no hay cambio de actitud humana posterior",Facilitador,2026-08-03T12:00:00+00:00
+r8,exclude,"La intervencion es una etiqueta de contenido, no un mensaje persuasivo generado por LLM",Facilitador,2026-08-03T12:00:00+00:00

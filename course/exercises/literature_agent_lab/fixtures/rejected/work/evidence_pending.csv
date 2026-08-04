@@ -1,0 +1,2 @@
+evidence_id,source_id,claim_id,study_design,population,intervention,comparator,outcome,verbatim_excerpt,locator,ai_interpretation,proposed_at
+EV-T4,T4,C3,experimento aleatorizado,adultos,mensaje generado por un LLM sobre una noticia dudosa,condición de control sin mensaje,intención declarada de compartir,"La intención declarada de compartir aumentó frente al control; el estudio no registró la conducta de compartir.","resumen, oración de resultados principales","El mensaje aumentó la conducta de compartir frente al control.",2026-08-03T12:07:00+00:00
