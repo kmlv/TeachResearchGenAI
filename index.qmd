@@ -19,3 +19,4 @@ Presentaciones y materiales del taller.
 - [Demo de auditoría de datos](https://github.com/kmlv/TeachResearchGenAI/tree/main/course/exercises/data_audit_demo)
 - [Demo de verificación en Lean](https://github.com/kmlv/TeachResearchGenAI/tree/main/course/exercises/lean_verification_demo)
 - [Guía de Jupyter, VS Code y Codex](materials/guides/guia-demo-jupyter-vscode-codex.pdf)
+- [Economía y cognición sintética (APE 2026)](materials/slides/economia-cognicion-sintetica-ape-2026-bcrp.pdf)
