@@ -373,6 +373,135 @@ $hairline: #ececec; // hairlines
   font-variant-numeric: tabular-nums;
 }
 
+// ─── Planning as autonomy grows ────────────────────────────────────────────
+// A three-step horizon makes the argument visible: when the system can take
+// more actions before returning control, a mistaken direction travels farther.
+// The plan below is the containment mechanism, not a decorative checklist.
+
+.reveal .planning-path {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 54px;
+  width: $frame;
+  margin: 0;
+}
+
+.reveal .planning-stage {
+  position: relative;
+  min-height: 154px;
+  padding: 15px 0 0;
+  border-top: 3px solid $accent;
+}
+
+.reveal .planning-stage:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  top: -27px;
+  right: -42px;
+  color: $mark;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.reveal .planning-stage h3 {
+  margin: 0 0 10px;
+  color: $accent;
+  font-size: 29px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.reveal .planning-stage > p {
+  max-width: 350px;
+  margin: 0;
+  color: $ink;
+  font-size: 27px;
+  line-height: 1.3;
+}
+
+.reveal .planning-risk {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: $quiet;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.reveal .planning-risk p {
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
+.reveal .planning-rationale {
+  max-width: 1160px;
+  margin: 26px 0 0;
+  color: $ink;
+  font-size: 31px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.reveal .planning-rationale p {
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
+.reveal .planning-frame {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  column-gap: 34px;
+  align-items: center;
+  width: $frame;
+  margin: 25px 0 0;
+  padding: 16px 0 0;
+  border-top: 1px solid $hairline;
+}
+
+.reveal .planning-frame h3 {
+  margin: 0;
+  color: $accent;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.reveal .planning-frame ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 24px;
+  margin: 0;
+}
+
+.reveal .planning-frame li {
+  margin: 0;
+  color: $ink;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.reveal .planning-frame li::before {
+  display: none;
+}
+
+.reveal .planning-payoff {
+  margin: 22px 0 0;
+  color: $accent;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.reveal .planning-payoff p {
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
 // ─── Completions (Aplicación) ───────────────────────────────────────────────
 // Three sentence stems the room finishes aloud, revealed one at a time. Set at
 // the rules scale because they are this slide's centrepiece, and without the

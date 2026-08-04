@@ -90,6 +90,74 @@ comprendido, evaluado y aprobado plenamente.
 Enfatizar la firma: la responsabilidad no se delega en la herramienta.
 :::
 
+## Más poder exige más planificación {.planning-slide}
+
+::: {.planning-path}
+::: {.planning-stage}
+### Asistente
+
+Propone una respuesta.
+
+::: {.planning-risk}
+Fallo local
+:::
+:::
+
+::: {.planning-stage}
+### Agente
+
+Decide y ejecuta varios pasos.
+
+::: {.planning-risk}
+Cadena de errores
+:::
+:::
+
+::: {.planning-stage}
+### Sistema
+
+Coordina tareas y herramientas.
+
+::: {.planning-risk}
+Proyecto desviado
+:::
+:::
+:::
+
+::: {.planning-rationale}
+Cuanto más puede hacer la IA antes de devolvernos el control, más lejos puede
+avanzar en la dirección equivocada.
+:::
+
+::: {.planning-frame}
+### Antes de delegar
+
+- Objetivo claro
+- Evidencia para verificar
+- Límites éticos
+- Criterio de parada
+:::
+
+::: {.planning-payoff}
+Cuando ejecutar cuesta menos, decidir bien qué ejecutar vale más.
+:::
+
+::: {.notes}
+Recorrer la progresión de izquierda a derecha. Un asistente normalmente deja
+una respuesta para revisar. Un agente puede tomar varias decisiones y usar
+herramientas antes de devolvernos el control. Un sistema puede además repartir
+trabajo y encadenar resultados. Por eso el alcance de una decisión inicial mal
+formulada también crece.
+
+La planificación no es escribir un prompt largo. Es acordar antes de delegar
+qué resultado buscamos, qué evidencia permitiría aceptarlo, qué límites no se
+deben cruzar y cuándo detenerse. En investigación, una ejecución muy fluida no
+repara una mala pregunta, evidencia inadecuada ni una decisión ética omitida.
+
+Cerrar con la frase inferior y enlazar: las cuatro reglas de la siguiente
+lámina forman parte del plan; no son controles que se agregan al final.
+:::
+
 ## Cuatro reglas
 
 ::: {.rules}
