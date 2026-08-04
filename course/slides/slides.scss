@@ -403,12 +403,18 @@ $hairline: #ececec; // hairlines
   font-weight: 400;
 }
 
-.reveal .planning-stage h3 {
+.reveal .planning-label {
   margin: 0 0 10px;
   color: $accent;
   font-size: 29px;
   font-weight: 600;
   line-height: 1.2;
+}
+
+.reveal .planning-label p {
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
 }
 
 .reveal .planning-stage > p {
@@ -461,12 +467,18 @@ $hairline: #ececec; // hairlines
   border-top: 1px solid $hairline;
 }
 
-.reveal .planning-frame h3 {
+.reveal .planning-frame-label {
   margin: 0;
   color: $accent;
   font-size: 25px;
   font-weight: 600;
   line-height: 1.2;
+}
+
+.reveal .planning-frame-label p {
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
 }
 
 .reveal .planning-frame ul {

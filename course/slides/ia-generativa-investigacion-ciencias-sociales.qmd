@@ -94,7 +94,9 @@ Enfatizar la firma: la responsabilidad no se delega en la herramienta.
 
 ::: {.planning-path}
 ::: {.planning-stage}
-### Asistente
+::: {.planning-label}
+Asistente
+:::
 
 Propone una respuesta.
 
@@ -104,7 +106,9 @@ Fallo local
 :::
 
 ::: {.planning-stage}
-### Agente
+::: {.planning-label}
+Agente
+:::
 
 Decide y ejecuta varios pasos.
 
@@ -114,7 +118,9 @@ Cadena de errores
 :::
 
 ::: {.planning-stage}
-### Sistema
+::: {.planning-label}
+Sistema
+:::
 
 Coordina tareas y herramientas.
 
@@ -130,7 +136,9 @@ avanzar en la dirección equivocada.
 :::
 
 ::: {.planning-frame}
-### Antes de delegar
+::: {.planning-frame-label}
+Antes de delegar
+:::
 
 - Objetivo claro
 - Evidencia para verificar
